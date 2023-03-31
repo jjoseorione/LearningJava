@@ -7,6 +7,10 @@ public class PromedioDeNNumeros{
 		int cont = 0;
 		System.out.println("Promedio de N números. \nIngrese valor de N:");
 		int n = teclado.nextInt();
+		if(n > 20){
+			System.out.println("Tampoco mames we, ¿vas a meter " + n + "valores?");
+			return;
+		}
 		while (cont < n){
 			System.out.print("\nEscriba el elemento " + (cont+1) + ": ");
 			prom += teclado.nextInt();

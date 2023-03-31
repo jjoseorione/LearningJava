@@ -4,7 +4,7 @@ public class Calificaciones{
 	public static void main(String[] args){
 		Scanner teclado = new Scanner(System.in);
 		int aprobados = 0, reprobados = 0, cont = 0;
-		float promedio = 0, calf, ultima = -1;
+		float promedio = 0, calf, ultima = 0;
 		System.out.print("Ingrese la cantidad de alumnos de su grupo: ");
 		int n = teclado.nextInt();
 		System.out.print("\nIngrese las calificaciones. Para corregir la última calificacion, ingrese -1.\n");
@@ -20,7 +20,7 @@ public class Calificaciones{
 				calf = teclado.nextFloat();
 			}
 
-			if (calf == -1 && ultima != -1){
+			if (calf == -1 && cont >= 1){
 				System.out.println("Se repite la calificacion anterior. ");
 				if (ultima >= 0 && ultima < 6)
 					reprobados--;

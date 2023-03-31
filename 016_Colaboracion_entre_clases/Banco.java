@@ -1,49 +1,85 @@
+//Ejemplo de colaboración de clases. La clase cliente es usada por la clase Banco
+
 import java.util.Scanner;
 
 public class Banco{
-	private Cliente c1, c2, c3;
+	private Cliente[] clientes;
 	private float saldoTotal;
-
-	public Banco(Cliente c1, Cliente c2, Cliente c3){
-		this.c1 = c1;
-		this.c2 = c2;
-		this.c3 = c3;
-		saldoTotal = c1.devuelveSaldo() + c2.devuelveSaldo() + c3.devuelveSaldo();
-	}
+	private String nombreBanco;
+	private int numClientes = 0;
 
 	public Banco(){
-		c1 = new Cliente();
-		c2 = new Cliente();
-		c3 = new Cliente();
-		saldoTotal = c1.devuelveSaldo() + c2.devuelveSaldo() + c3.devuelveSaldo();
+		nombreBanco = "Unnamed bank";
+		clientes = new Cliente[10];
 	}
 
-	public void premio100(){
-		this.c1.depositar(100);
-		this.c2.depositar(100);
-		this.c3.depositar(100);
+	public Banco(String nombreBanco, int maxClientes){
+		this.nombreBanco = nombreBanco;
+		if(maxClientes > 10)
+			maxClientes = 10;
+		this.clientes = new Cliente[maxClientes];
 	}
 
-	public void multa50(){
-		this.c1.retirar(50);
-		this.c2.retirar(50);
-		this.c3.retirar(50);
+	public boolean setNombreBanco(String nombreBanco){
+		if(this.nombreBanco.equals("Unnamed bank")){
+			this.nombreBanco = nombreBanco;
+			return true;	
+		}
+		else
+			return false;
 	}
 
-	private void calculaSaldo(){
-		saldoTotal = c1.devuelveSaldo() + c2.devuelveSaldo() + c3.devuelveSaldo();
+	public String getNombreBanco(){
+		return nombreBanco;
 	}
 
-	public float devuelveSaldo(){
-		calculaSaldo();
+	public int getNumClientes(){
+		return numClientes;
+	}
+
+	public int getMaxClientes(){
+		return clientes.length;
+	}
+
+	private void calculaSaldoBanco(){
+		saldoTotal = 0;
+		for(int i = 0; i < numClientes; i++){
+			saldoTotal += clientes[i].getSaldoCliente();
+		}
+	}
+
+	public float getSaldoBanco(){
+		calculaSaldoBanco();
 		return saldoTotal;
 	}
 
-	public static void main(String[] args){
-		Banco b = new Banco();
-		b.premio100();
-		System.out.print("\n\t" + b.devuelveSaldo());
+	public void addCliente(){
+		clientes[numClientes] = new Cliente();
+		numClientes++;
 	}
 
+	public void addCliente(String nombre, float saldo){
+		clientes[numClientes] = new Cliente(nombre, saldo);
+		numClientes++;
+	}
 
+	public boolean delCliente(int c){
+		if(c >= numClientes)
+			return false;
+		else{
+			clientes[c] = null;
+			for(int i = c; i <= (numClientes-1); i++)
+				clientes[i] = clientes[i+1];
+			numClientes--;
+			return true;
+		}
+	}
+
+	public Cliente[] getClientesBanco(){
+		return clientes;
+	}
+
+	public Cliente getCliente(int c){
+		return clientes[c];
+	}
 }

@@ -6,6 +6,7 @@ public class TablaSueldos{
 	private int[] sueldoTrimestre;
 	private Scanner teclado;
 	private int mayor, total = 0, n;
+	private boolean datosCargados = false;
 
 	public void cargarInfo(){
 		teclado = new Scanner(System.in);
@@ -16,20 +17,25 @@ public class TablaSueldos{
 		sueldoTrimestre = new int[n];
 
 		for (int i = 0; i < n; i++){
-			System.out.print("\n\tIngrese el nombre del empleado: ");
+			System.out.print("\n\tIngrese el nombre del empleado " + (i+1) + ": ");
 			empleados[i] = teclado.next();
 			sueldoTrimestre[i] = 0;
 			for (int j = 0; j < 3; j++){
-				System.out.print("Escriba el sueldo " + (j+1) + " de " + empleados[i] + ": ");
+				System.out.print("\n\t\tEscriba el sueldo " + (j+1) + " de " + empleados[i] + ": ");
 				sueldoMensual[i][j] = teclado.nextInt();
 				sueldoTrimestre[i] += sueldoMensual[i][j];
 				total += sueldoMensual[i][j];
 			}
 		}
 		System.out.print("\n\n\tDatos cargados.");
+		datosCargados = true;
 	}
 
 	public void imprimeDatos(){
+		if(!datosCargados){
+			System.out.print("\n\n\tNo se han cargado datos todavía.");
+			return;
+		}
 		for (int i = 0; i < n; i++){
 			System.out.print("\n\tEmpleado: " + empleados[i]);
 			for (int j = 0; j < 3; j++)
@@ -39,6 +45,10 @@ public class TablaSueldos{
 	}
 
 	public void obtieneMayor(){
+		if(!datosCargados){
+			System.out.print("\n\n\tNo se han cargado datos todavía.");
+			return;
+		}
 		int mayor = sueldoTrimestre[0];
 		int emp = 0;
 		for (int j = 1; j < 3; j++){
@@ -48,10 +58,14 @@ public class TablaSueldos{
 			}
 		}
 		System.out.print("\n\n\tEl sueldo mayor pertenece al empleado " + empleados[emp] +
-			"y es de " + sueldoTrimestre[emp] );
+			" y es de " + sueldoTrimestre[emp] );
 	}
 
 	public void imprimeTotal(){
+		if(!datosCargados){
+			System.out.print("\n\n\tNo se han cargado datos todavía.");
+			return;
+		}
 		System.out.print("\n\n\tEl total pagado en los ultimos 3 meses es de " + total);
 	}
 
@@ -59,9 +73,9 @@ public class TablaSueldos{
 		TablaSueldos ts = new TablaSueldos();
 		Scanner tec = new Scanner(System.in);
 		int r;
+		System.out.print("\n\n\tSueldos trimestrales");
 		do{
-			System.out.print("\n\n\tSueldos trimestrales"+
-				"\n\tElija una opción:\n" +
+			System.out.print("\n\tElija una opción:\n" +
 				"\n\t1. Cargar valores" +
 				"\n\t2. Imprimir Datos" +
 				"\n\t3. Obtener empleado con mayores ingresos" +

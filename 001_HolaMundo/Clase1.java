@@ -1,12 +1,6 @@
 public class Clase1 {
-public static void main(String[] args){
-int i = 0;
-switch(args[0]) {
-default : i = i + 3;
-case "2" : i = i + 2;
-case "0" : break;
-case "1" : i = i + 1;
-}
-System.out.println("i is "+i);
-}
+	public static void main(String[] args){
+		System.out.println("Adelante, Comando Estelar");
+		System.out.println("Comando estelar, adelante ¿Me escuchan?");
+	}
 }

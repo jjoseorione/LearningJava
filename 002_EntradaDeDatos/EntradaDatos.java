@@ -7,13 +7,17 @@ public class EntradaDatos{
 		int horasTrabajadas;
 		float costoHora;
 		float sueldo;
+		System.out.println();
 		System.out.print("Ingrese la cantidad de horas trabajadas por empleado: ");
 		horasTrabajadas = teclado.nextInt();
 		System.out.print("Ingrese el valor de la hora: ");
 		costoHora = teclado.nextFloat();
 		sueldo = costoHora * horasTrabajadas;
+		System.out.println();
 		System.out.print("El empleado debe cobrar: $");
 		System.out.print(sueldo);
+		System.out.println();
+		System.out.println();
 	}
 	
 }

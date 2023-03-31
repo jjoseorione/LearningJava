@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Matrices{
-	private Scanner teclado;
 	private int[][] matriz;
 
 	public void cargar(){
-		teclado = new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
 		matriz = new int[3][3];
 		System.out.print("\n\n\tCarga de valores\n");
 		for (int i = 0; i < 3; i++){
@@ -18,16 +17,21 @@ public class Matrices{
 	}
 
 	public void imprimeMatriz(){
+		System.out.println();
 		for (int i = 0; i < 3; i++){
+			System.out.print("\t|");
 			for (int j = 0; j < 3; j++)
-				System.out.print("\t" + matriz[i][j] + " ");
-			System.out.print("\n");
+				System.out.print(" " + matriz[i][j] + " ");
+			System.out.print("|\n");
 		}
 	}
 
 	public void imprimeDiagonal(){
-		for (int i = 0; i < 3; i++)
-			System.out.print("\t" + matriz[i][i] + " ");
+		for (int i = 0; i < 3; i++){
+			System.out.println();
+			System.out.print("|");
+			System.out.print(" " + matriz[i][i] + " ");
+		}
 	}
 
 	public static void main(String[] args){

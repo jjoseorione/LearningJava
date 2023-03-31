@@ -1,3 +1,6 @@
+//Si el primer número es mayor, se realiza suma y diferencia
+//Si el segundo número es mayor, se realiza producto y cociente
+//Si ambos números son iguales, no se realiza operación.
 import java.util.Scanner;
 
 public class SumaProducto{
@@ -5,10 +8,12 @@ public class SumaProducto{
 		float num1;
 		float num2;
 		Scanner teclado = new Scanner(System.in);
+		System.out.println();
 		System.out.print("Escribe el primer numero: ");
 		num1 = teclado.nextFloat();
 		System.out.print("Escribe el segundo numero: ");
 		num2 = teclado.nextFloat();
+		System.out.println();
 		if (num1 > num2){
 			float suma = num1 + num2;
 			float diferencia = num1 - num2;
@@ -27,5 +32,6 @@ public class SumaProducto{
 		}
 		else
 			System.out.print("Los numeros son iguales");
+		System.out.println();
 	}
 }

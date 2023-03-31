@@ -6,14 +6,17 @@ public class CadenaDeCaracteres{
 		int edad1, edad2;
 		String nombre1, nombre2;
 		Scanner teclado = new Scanner(System.in);
+		System.out.println();
 		System.out.print("Nombre de la primera persona: ");
 		nombre1 = teclado.next();
 		System.out.print("Edad de " + nombre1 + ": ");
 		edad1 = teclado.nextInt();
+		System.out.println();
 		System.out.print("Nombre de la segunda persona: ");
 		nombre2 = teclado.next();
 		System.out.print("Edad de " + nombre2 + ": ");
 		edad2 = teclado.nextInt();
+		System.out.println();
 		if (edad1 > edad2)
 			System.out.print(nombre1 + " es mayor con " + edad1 + " años.");
 		else if(edad2 > edad1)
