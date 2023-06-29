@@ -1,0 +1,55 @@
+Para crear un proyecto se utiliza el siguiente comando:
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+	archetype:generate
+		Un archetype (arquetipo) es una plantilla predefinida que se utiliza para generar la estructura básica de un proyecto en Maven. Cada arquetipo define una estructura de directorios y archivos que se utilizan para crear un proyecto que incluye una configuración básica de Maven. 
+
+		Un arquetipo típicamente incluye un conjunto de archivos de configuración, como el archivo pom.xml de Maven, un conjunto inicial de código fuente y otros recursos necesarios para crear una aplicación o librería.
+
+		El uso de arquetipos es una práctica común en el desarrollo de software con Maven, ya que puede acelerar el proceso de inicio de un nuevo proyecto y garantizar que la estructura y configuración básica sean consistentes en todos los proyectos de una organización.
+
+		Maven proporciona varios arquetipos integrados para diferentes tipos de proyectos, como aplicaciones web, aplicaciones Java estándar, proyectos con pruebas unitarias, entre otros. También es posible crear arquetipos personalizados para proyectos específicos.
+
+		El arquetipo "generate" es un arquetipo predefinido de Maven que se utiliza para generar código de ejemplo para un proyecto en varios lenguajes de programación, como Java, Groovy, Scala y otros.
+
+		Cuando se crea un proyecto utilizando el arquetipo "generate", Maven genera un conjunto de clases de ejemplo y otros archivos necesarios para compilar, empaquetar y ejecutar el proyecto. El código generado incluye una clase principal que puede ejecutar el proyecto, así como otras clases y recursos de ejemplo que se pueden utilizar como punto de partida para desarrollar el proyecto.
+
+		Además, el arquetipo "generate" también proporciona un conjunto básico de pruebas unitarias que se pueden utilizar para verificar el correcto funcionamiento del proyecto. Estas pruebas son generadas por el plugin de Maven "maven-surefire-plugin" y se ejecutan automáticamente durante el proceso de construcción del proyecto.
+
+		En resumen, el arquetipo "generate" es una forma rápida y sencilla de generar un conjunto básico de código y pruebas para un nuevo proyecto en Maven, lo que puede acelerar el proceso de desarrollo y ayudar a los desarrolladores a entender la estructura básica de un proyecto Maven.
+
+	DgroupId=com.mycompany.app
+		El groupId es un identificador único que se utiliza para identificar un proyecto o módulo dentro de un repositorio de artefactos de Maven. El groupId suele estar formado por una cadena de caracteres que identifica al grupo o la organización responsable del proyecto, seguido de uno o varios subidentificadores que pueden identificar módulos o subproyectos dentro del proyecto.
+
+		El parámetro groupId sirve para identificar el proyecto, por lo que se debe asignar un un esquema de nombre. El groupId debe seguir la nomenclatura de paquetes de java. Es decir, debe iniciar con un dominio inverso.
+
+		El groupId es uno de los elementos obligatorios que deben definirse en el archivo POM (Project Object Model) de Maven para cada proyecto o módulo. Este identificador se utiliza para construir la ruta en la que se almacenará el artefacto generado por el proyecto en el repositorio de artefactos de Maven.
+
+		Por ejemplo, si el groupId de un proyecto es "com.miempresa", y el artefacto generado se llama "mi-proyecto", entonces el artefacto se almacenará en el repositorio de artefactos de Maven en la siguiente ruta: "/com/miempresa/mi-proyecto/version/mi-proyecto-version.jar".
+
+		En resumen, el groupId en Maven es un identificador único que se utiliza para identificar un proyecto o módulo en el repositorio de artefactos de Maven y es uno de los elementos obligatorios en el archivo POM de Maven.
+		
+	artifactId
+		En Maven, el artifactId es un identificador único que se utiliza para identificar el artefacto generado por un proyecto o módulo. Es decir, es el nombre del compilado o del proyecto; es un jar o un war. El artifactId es uno de los elementos obligatorios que deben definirse en el archivo POM (Project Object Model) de Maven para cada proyecto o módulo.
+
+		El artifactId se utiliza junto con el groupId para construir la ruta en la que se almacenará el artefacto generado por el proyecto en el repositorio de artefactos de Maven. Además, el artifactId se utiliza como parte del nombre del archivo JAR (o del archivo de otro tipo) generado por el proyecto.
+
+		Por ejemplo, si el groupId de un proyecto es "com.miempresa", y el artifactId es "mi-proyecto", entonces el artefacto generado se llamará "mi-proyecto-version.jar" y se almacenará en la ruta "/com/miempresa/mi-proyecto/version/mi-proyecto-version.jar" en el repositorio de artefactos de Maven.
+
+		En resumen, el artifactId en Maven es un identificador único que se utiliza para identificar el artefacto generado por un proyecto o módulo en Maven y es uno de los elementos obligatorios en el archivo POM de Maven.
+
+Ejecutando el sig comando: mvn archetype:generate -DgroupId=com.orion.example -DartifactId=mi-primer-app
+
+Crearemos un proyecto con la estructura que se nos muestra en la documentación. La consola nos hará algunas preguntas de configuración
+
+El parametro -DinteractiveMode=false evita que se nos pregunten las configuraciones anteriores y que se seleccionen por default.
+
+El parámetro -DarchetypeArtifactId=maven-archetype-quickstart si es omitido se creará por default una aplicación java simple, pero existen diferentes valores que se pueden agregar para crear algún proyecto diferente, por ejemplo, con DarchetypeArtifactId=maven-archetype-webapp creará un proyecto con una estructura adecuada para una aplicación web.
+
+Si entramos a la carpeta de nuestro proyecto y ejecutamos el comando mvn compile, se creará una carpeta llamada target, dentro de la cual se tendrán todos los compilados del proyecto (classes).
+
+Con el comando mvn package crearemos el jar del proyecto. Esto creará varios archivos y carpetas adicionales dentro de la carpeta target.
+
+Para ejecutar el jar debemos entrar a la carpeta target y escribir el comando java -cp <nombre-jar> <paquete-metodo-main>.App (App es el nombre de la clase principal). En el caso de las webapps se pueden ejecutar en un servidor.
+
+Con el comando mvn clean limpiaremos la carpeta target.

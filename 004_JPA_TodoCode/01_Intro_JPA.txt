@@ -1,0 +1,17 @@
+¿Qué es un ORM?
+
+	Un ORM (Object Relational Mapping) es un modelo de programación que permite mapear las estructuras de una base de datos relacional (Relational Databse Management System), sobre una estructura lógica de entidades con el objeto de simplificar y acelerar el desarrollo de nuestras aplicaciones.
+
+	Las estructuras de la base de datos relacional quedan vinculadas con las entidades lógicas o base de datos virtual definida en el ORM., de tal modo que las acciones CRUD a ejecutar sobre la vase de datos física, se realizan de forma indirecta por medio del ORM.
+
+	La consecuencia más directa es que, además de "mapear", los ORMs tienden a "liberarnos" de la escritura o generación manual de código SQL necesario para realizar las sentencias o consultas y gestionar la persistencia de datos en el RBDMS
+
+	Así, los objetos o entidades de la base de datos virtual creada en nuestro ORM, podrán ser manipulados por medio de algún lenguaje de nuestro interés según el tipo de ORM utilizado.
+
+¿Qué es JPA?
+
+	JPA (Java Persistence API) es un ORM que tiene como objetivo lograr la persistencia de datos entre una aplicación desarrollada en Java y una base de datos. JPA busca traducir el modelado de las clases Java a un modelado relacional en una bae de datos, posibilitando al programador elegir qué clases u objetos quiere persistir.
+
+¿Cómo funciona JPA?
+
+	JPA se vale de una serie de mapeos que se deben realizar sobre cada uno de los elementos de una clase; los mismos se representan mediante annotations (@). JPA cuenta con proveedores de JPA, entre ellos, Eclipselink, Hibernate, Toplink, entre otros.

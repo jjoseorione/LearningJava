@@ -1,0 +1,8 @@
+Método getParameter()
+
+	-Es utilizado para obtener el valor de un parámetro enviado por el cliente vía los métodos GET o POST. De esta manera podemos utilizar el parámetro enviado en la página de action (el servlet)
+
+Ejemplo de uso:
+	Si enviamos un dato desde un formulario JSP y el mismo está en una caja de texto llamada txtNombre, entonces la forma de obtener ese dato será: 
+		String dato = request.getParameter("txtNombre");
+	Donde request es la request hecha al servlet.

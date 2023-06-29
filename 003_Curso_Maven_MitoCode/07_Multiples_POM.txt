@@ -1,0 +1,5 @@
+Es posible usar diferentes archivos de configuración (POM) e indicarle a maven cuál POM utilizar para el build
+
+Para realizar esto desde eclipse, se puede realizar un Run As -> Maven build -> y en la sección Goals se agrega: -f pom pom_2.xml.
+
+Desde línea de comandos se realiza mvn -f pom pom_2.xml

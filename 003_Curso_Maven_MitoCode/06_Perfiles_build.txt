@@ -1,0 +1,11 @@
+Perfiles en Maven
+
+En Maven se pueden especificar distintos perfiles con diferentes configuraciones a considerar para construir el proyecto. Para crear perfiles es necesario especificarlos en el archivo pom.xml. Dentro de la definición de cada perfil podemos indicar diferentes especificaciones (como plugins o properties) para la construcción del proyecto. 
+
+En este ejemplo se crearán 3 archivos diferentes de propiedades (properties) simulando 3 ambientes distintos: dev, prod y qa. Dentro del archivo pom.xml se especificarán 3 perfiles (uno por cada ambiente). Adicionalmente se agregará a los 3 perfiles un plugin que nos permitirá mostrar un mensaje en consola para saber qué properties se está ejecutando.
+
+En el apartado <build> se especifica un filtro para que se tome el ambiente a utilizar desde la variable ${env}. Así utilizaremos sólo el archivo .properties deseado según el perfil que especifiquemos al realizar el build. 
+
+La propiedad env es nombrada así por nosotros mismos desde el apartado de properties. A partir de aquí, env es una variable que contendrá lo que se especifique. En cada perfil, la variable es sobreescrita para que contenga el ambiente que deseamos construir. En lugar de env, podríamos elegir cualquier otro nombre para la propiedad, pero lo mejor es ser específicos.
+
+Para especificar el perfil a construir desde la terminal, se utiliza el comando -P seguido del nombre del perfil (dev, prod o qa) y de la palabra package.

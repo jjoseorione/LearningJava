@@ -1,0 +1,3 @@
+El método find[clase], donde clase es el nombre de la clase que controlamos con el controller, nos ayuda a recuperar de la base de datos el objeto con el id (clave primaria) que le indiquemos como argumento.
+
+El método find[clase]Entities devuelve una list de objetos con todos los registros de la tabla indicada. En el ejemplo utilizamos una ArrayList, por lo tanto hay que realizar una conversión de forma adecuada.

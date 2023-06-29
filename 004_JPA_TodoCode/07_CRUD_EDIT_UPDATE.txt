@@ -1,0 +1,1 @@
+Para realizar un EDIT/UPDATE existen distintas formas. La más básica consiste en enviar todo un objeto al método edit del JPAController y se modificarán los campos que encuentre diferentes (los cuales cambiaremos con el set del objeto). Al igual que destroy, el método edit debe ser a prueba de excepciones en el caso de que el id seleccionado no exista.

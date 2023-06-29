@@ -1,0 +1,3 @@
+Para realizar un DELETE, sólo necesitamos el id. Por lo tanto, tanto el método de lógica como el de persistencia para el DELETE deberán llevar como argumento únicamente el id del alumno a eliminar.
+
+El método de JPA para el DELETE se llama destroy. Cuando se llama al método destroy, se debe utilizar un bloque try/catch o en su defecto un throws para controlar el caso en que el id no exista en la base de datos.

@@ -1,0 +1,14 @@
+JSP (Java Server Pages)
+
+-Es una tecnología no muy actual, pero sí muy utilizada
+-Es una tecnología que permite crear páginas web dinámicas basadas en HTML y XML, entre otros tipos de documentos
+-Jsp requiere de un servidor web que sea compatible con contenedores servlet, como Apache Tomcat o Glassfish
+-Cada JSP contendrá mayoritariamente etiquetas HTML y CSS, como todo frontend, sin embargo, podrá utilizar etoquetas especiales para especificar porciones de código Java en donde sea necesario. En este aspecto es parecido a PHP.
+
+Ejemplo:
+...
+<body>
+	<h1>Hola mundo desde HTML</h1>
+	<% String hola = "Hola mundo desde Java"; %>
+	<%= hola %>
+</body>

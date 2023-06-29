@@ -1,0 +1,11 @@
+Para instalar mysql en nuestro proyecto, basta que lo agregemos a las dependencias de Maven. Podemos dar click derecho en Dependencies -> add dependency -> buscar en apartado query -> mysql: mysql-connector-java -> version 8.0.17 (preferentemente). Posteriormente debemos realizar un Clean and Build para descargar las dependencias.
+
+Despues de instalar la dependencia, debemos ir a Services -> Databases -> New Connection -> Seleccionamos la dependencia (carpeta .M2) -> agregamos datos de conexión de base de datos. Se aconseja dejar como único parámetro ?serverTimeZone=UTC (esto sirve para no tener problemas de zona horaria).
+
+Para este proyecto, crearemos diferentes paquetes para cumplir con el modelo de capas, por lo que se creará un paquete para la interfaz gráfica, otro para la lógica y otro para la persistencia.
+
+Dentro del paquete de persistencia hacemos clic derecho -> New -> Other -> Persistence -> Persistence Unit -> Agregamos nombre y elegimos biblioteca de persistencia (para este ejemplo, EclipseLink), así como la conexión a la BD y Create -> Finish.
+
+Lo que hace la unidad de persistencia es crear un archivo xml que guarda la información de la conexión a las BD.
+
+El fichero persistence.xml se encuentra dentro de la carpeta META-INF de un proyecto JAVA EE, puesto que este fichero se encarga de conectarnos a la base de datos y define el conjunto de clases que vamos a gestionar. Por suerte el fichero es parte del standard y existirá en cualquier implementación de JPA que se utilice. Además, en el documento XML podemos las propiedades de conexión a la base de datos.

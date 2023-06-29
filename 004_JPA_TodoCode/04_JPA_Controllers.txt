@@ -1,0 +1,7 @@
+ El JPA Controller es la clase que nos permitirá realizar operaciones CRUD para las entidades que hayamos especificado en la unidad de persistencia. Dentro del JPA controler existen los métodos necesarios para realizar operaciones Create, Update, Read y Delete para una clase de persistencia en específico. Como consecuencia, se tendrá un JPA Controller por cada clase de persistencia. Es importante observar que cada método CRUD del JPAController crea una instancia de EntityManager con el método getEntityManager, para después operar el objeto con la base de datos y finalmente cerrar el EM
+
+ Debido a que el JPA Controller es una clase, éste debe instanciarse para que se pueda utilizar correctamente. Para ello se creará una Controladora de Persistencia, la cual es una clase que tiene como atributos a una instancia de cada JPA Controller que necesitemos instanciar y como métodos, a cada uno de los métodos CRUD de los JPAControllers que vayamos a utilizar.
+
+ Posteriormente, tendremos que instanciar la Controladora de Persistencia dentro del main.
+
+ Por último debemos conectar la base de datos y correr el proyecto para visualizar los resultados.

@@ -1,0 +1,10 @@
+Utilizando Maven con IDEs
+
+Cada IDE tiene un Maven embebido, pero es posible utilizar la versión de nuestra preferencia entrando a las configuraciones del IDE.
+
+También en cada IDE es posible elegir el arquetipo deseado al crear un proyecto con Maven. Se nos pedirá el Group ID, el Arifact ID, entre otras cosas y se creará el proyecto.
+
+En ocasiones es posible que la versión de la JDK usada en el proyecto no sea la deseada. Para corregirlo únicamente basta agregar las etiquetas <maven.compiler.source> y <maven.compiler.target> y dentro agregar la versión deseada; estas etiquetas van dentro de <properties></properties>. Es posible escribir el código con una versión de JDK y ejecutarlo con una versión mayor.
+
+Es posible importar un proyecto maven existente a nuestro IDE. En eclipse sucede que se nos agregan archivos de configuración adicionales propios del IDE como .classpath, .project y .settings. Si se aplica un mvn clean, se limpiará la carpeta target. Sin embargo, si ejecutamos mvn eclipse:clean, se removerán los archivos de eclipse y sólo quedarán los que sean propios de maven. 
+

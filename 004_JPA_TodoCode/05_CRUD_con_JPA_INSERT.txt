@@ -1,0 +1,5 @@
+Una vez creada la Controladora de Persistencia en el paquete de Persistencia, se deberá crear también una Controladora Lógica en el paquete de Lógica. Lo anterior con motivo de que se usará un modelo de capas en el que la lógica se ejecuta en el paquete de lógica, mientras que las operaciones de persistencia se realizan en el paquete de persistencia.
+
+La clase ControladoraLogica mapea a la ControladoraPersistencia, ya que tiene como atributo a un objeto de ésta y además los métodos de ControladoraLogica llaman a los métodos equivalentes de ControladoraPersistencia.
+
+Al crear un objeto en el main, éste se enviará al paquete de lógica, el cual tratará los datos. El paquete de lógica los reenvía al paquete de persistencia y el paquete de persistencia se encarga de realizar las operaciones de base de datos.

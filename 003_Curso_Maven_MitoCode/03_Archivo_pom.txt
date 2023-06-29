@@ -1,0 +1,57 @@
+Archivo pom.xml
+	
+	POM significa Project Object Model
+
+	En Maven, el archivo POM (Project Object Model) es un archivo XML que describe un proyecto y sus dependencias. El archivo POM contiene información sobre el proyecto, como el nombre, la versión, la descripción, el groupId y el artifactId, así como información sobre las dependencias del proyecto, los plugins utilizados y otros detalles relacionados con la construcción y el empaquetado del proyecto.
+
+	El archivo POM se encuentra en el directorio raíz del proyecto y se utiliza como la fuente de configuración principal para Maven. El archivo POM también puede heredar de otro POM, lo que permite una configuración común para múltiples proyectos relacionados. En este caso, el POM padre se especifica en la sección de herencia del POM hijo.
+
+	El archivo POM es esencial para la construcción y gestión de proyectos en Maven. Maven utiliza la información proporcionada en el archivo POM para descargar y gestionar las dependencias del proyecto, compilar y empaquetar el proyecto, y realizar otras tareas de construcción y gestión.
+
+	En resumen, el archivo POM en Maven es un archivo XML que describe un proyecto y sus dependencias, y es esencial para la construcción y gestión de proyectos en Maven.
+
+Súper POM
+
+	En Maven, el Super POM (Project Object Model) es un archivo POM predefinido y oculto que se utiliza como modelo para todos los proyectos de Maven. Es decir, todos los proyectos de Maven heredan implícitamente del Super POM, incluso si no se especifica explícitamente en el archivo POM de un proyecto.
+
+	El Super POM define la configuración global para Maven, como los repositorios remotos y locales, las versiones predeterminadas de los plugins y las definiciones de plugins para la construcción de proyectos. La mayoría de los plugins y configuraciones utilizados por Maven son definidos por el Super POM.
+
+	El Super POM es proporcionado por Maven y no necesita ser definido o configurado manualmente. Sin embargo, se puede sobrescribir el Super POM para proporcionar configuraciones personalizadas para un proyecto específico. Para hacer esto, se puede crear un archivo POM personalizado en el directorio raíz del proyecto que especifique los valores que se desean sobrescribir.
+
+	En resumen, el Super POM en Maven es un archivo POM predefinido y oculto que define la configuración global para Maven y se utiliza como modelo para todos los proyectos de Maven, incluso si no se especifica explícitamente en el archivo POM de un proyecto.
+
+POM mínimo
+
+	Un POM mínimo (Minimum POM en inglés) es un archivo POM (Project Object Model) simplificado que contiene solo la configuración básica necesaria para un proyecto en Maven. En lugar de incluir todas las configuraciones y secciones detalladas, un POM mínimo solo contiene los elementos esenciales para que el proyecto se construya correctamente.
+
+	Un POM mínimo suele contener los siguientes elementos:
+
+		• groupId: Identificador único que representa al grupo o la organización responsable del proyecto.
+		• artifactId: Identificador único que representa el artefacto generado por el proyecto.
+		• version: Número de versión del proyecto.
+		• name: Nombre del proyecto.
+		• packaging: Tipo de empaquetado del proyecto (por ejemplo, jar, war, pom).
+	
+	Estos elementos básicos son necesarios para que Maven pueda identificar el proyecto y realizar tareas de construcción básicas, como compilar el código fuente y empaquetarlo en el formato especificado.
+
+	Un POM mínimo puede ser útil en situaciones en las que se necesita un archivo POM rápido y básico para un proyecto simple o de prueba, o cuando se desea tener un punto de partida limpio para agregar configuraciones adicionales según sea necesario.
+
+	Es importante tener en cuenta que un POM mínimo puede no incluir todas las configuraciones y secciones avanzadas necesarias para proyectos más complejos, como las dependencias, los plugins y otras configuraciones específicas del proyecto. Estos elementos se pueden agregar según los requisitos del proyecto.
+
+	En la sección dependencies se agregan las dependencias (bibliotecas) de nuestro proyecto. Las dependencias pueden especificarse en el archivo pom para evitar transportar los jar cada vez que se instala el proyecto en otro equipo. Estas dependencias pueden encontrarse en MVNRepository
+
+	En Maven, los Dependency Scopes definen el alcance de un Dependency (dependencia). El alcance de una dependencia determina en qué situaciones se utilizará la dependencia durante el ciclo de compilación y construcción del proyecto. Los Dependency Scopes disponibles en Maven son los siguientes:
+
+		compile: Este es el alcance predeterminado si no se especifica ningún alcance. Las dependencias con este alcance se incluyen en el classpath del proyecto y están disponibles tanto en tiempo de compilación como en tiempo de ejecución.
+
+		provided: Las dependencias con este alcance se incluyen en el classpath del proyecto durante el tiempo de compilación, pero no se incluyen en el paquete o archivo war/jar final generado por Maven, ya que se espera que la dependencia esté presente en el entorno de ejecución. Este alcance se usa comúnmente para dependencias de servidor o bibliotecas de Java EE.
+
+		runtime: Las dependencias con este alcance no se incluyen en el classpath del proyecto durante la compilación, pero sí se incluyen en el paquete final generado. Esto significa que la dependencia estará disponible en tiempo de ejecución, pero no en tiempo de compilación.
+
+		test: Las dependencias con este alcance solo se utilizan durante la ejecución de pruebas, no se incluyen en el paquete final generado. Este alcance se usa comúnmente para dependencias de prueba, como JUnit o Mockito.
+
+		system: Las dependencias con este alcance son similares a las dependencias "provided", pero en lugar de buscar la dependencia en el repositorio remoto de Maven, se espera que se encuentre en el sistema local. Este alcance se usa para dependencias que no se pueden cargar desde un repositorio remoto, como bibliotecas nativas del sistema operativo.
+
+		import: Este alcance solo se usa para importar dependencias de otro archivo POM de Maven. Este alcance se usa comúnmente para administrar dependencias compartidas en varios proyectos.
+
+	En resumen, el alcance de una dependencia en Maven indica en qué situaciones se utilizará la dependencia durante el ciclo de compilación y construcción del proyecto.

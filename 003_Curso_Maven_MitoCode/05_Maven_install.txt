@@ -1,0 +1,13 @@
+Comando mvn install
+
+Cuando trabajamos en proyectos grandes, es posible que necesitemos reutilizar código de otros proyectos. En este ejemplo, utilizaremos dos proyectos: Simple-netbeans-maven y Simple-netbeans-install. El primero, tendrá un paquete com.orion.model y con una clase Persona con sus atributos, getters y setters.
+
+Si al primer proyecto le aplicamos el comando mvn install desde la consola, el proyecto será compilado y empaquetado dentro del proyecto Java. Se crearán los archivos correspondientes al proyecto en la carpeta default de maven (en este caso es user/.m2/). Se creará la estructura del paquete que contendrá los archivos del proyecto, entre los cuales se encontrará el jar del proyecto.
+
+Para reutilizar el código debemos ir al archivo pom.xml del segundo proyecto y se agrega una <dependency> apuntando al segundo proyecto. Después se realiza un Maven->Update.
+
+Luego, podemos agregar más código en el primer proyecto y guardarlo como una versión distinta (cambiando la versión en pom.xml). Al momento de hacer mvn install, se creará una carpeta nueva con la nueva versión. Si queremos usar la nueva versión en el segundo proyecto, debemos apuntar a ella en el archivo pom.xml.
+
+También es posible desde eclipse hacer Run as -> Maven Clean y Run as -> Maven install, en lugar de realizar manualmente el comando mvn install en consola.
+
+En resumen, el comando install realiza la instalación de las dependencias dentro del repositorio local para poder ser utilizadas en otros proyectos.

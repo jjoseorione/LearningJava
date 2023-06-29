@@ -1,0 +1,21 @@
+El mapeo Objeto-Relacional (ORM) es una técnica utilizada para convertir clases (y sus relaciones) de un sistema que utiliza un lenguaje de programación orientado a objetos a el modelado de una base de datos relacional
+
+El ORM realiza el mapeo mediante una serie de indicaciones que se realizan con el uso de annotations en Java.
+
+Annotations en JPA:
+	• @Entity: Especifica la creación de una entidad. Se coloca al inicio de la definición de una clase.
+	• @Id: Primary Key de la entidad
+		○ @GeneratedValue(strategy = GenerationType.SEQUENCE): Establece que la ID se va a generad de forma automática. La estrategia de generación puede variar, SEQUENCE indica que se realizará de manera secuencial, pero existen otras estrategias.
+	• @Basic: Para hacer referencia a atributos comunes.
+	• @Temporal: Se usa normalmente en fechas.
+		○ Si se requiere tener en cuenta la fecha, se utiliza: @Temporal(TemporalType.TIMESTAMP)
+		○ Si sólo se tiene en cuenta la fecha (DATE), se utiliza: @Temporal(TemporalType.DATE)
+	• @OneToMany: Indicar una relación unidireccional de 1 a n.
+	• @OneToOne: Indicar una relación de 1 a 1.
+	• @ManyToMany: Indicar una relación n a n.
+
+//Para ver el uso de las primeras etiquetas, ver la clase Alumno.
+
+Para agregar nuestras clases de persistencia a la unidad de persistencia, debemos ir al XML persistence.xml y agregar una etiqueta con el formato:
+	<class>com.orion.cursojpa.logica.Alumno</class>
+Donde se puede ver que se agrega el nombre calificado completo de la clase entre las etiquetas class. Si se realiza desde un IDE, se puede agregar desde la sección Design. 

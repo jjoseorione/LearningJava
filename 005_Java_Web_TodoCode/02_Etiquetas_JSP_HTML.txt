@@ -1,0 +1,16 @@
+Etiquetas de JSP
+
+<%-- --%>
+			Apertura y cierre para realizar comentarios. Por ejemplo: <%-- esto es un comentario -->
+
+<%@ %>
+			Apertura y cierre para directivas/atributos de configuración de JSP. Por ejemplo: <%@ page language='java' contentType='text/html' %>
+
+<% %>
+			Apertura y cierre para inclusión de sentencias de código Java en general. Esto no es visto/percibido por el usuario. Por ejemplo: <% if(numero > numero2) {...} %>
+
+<%= %>		
+			Apertura y cierre para mostrar el resultado de una expresión o contenido de una variable. Lo que se indique aquí serpa visualizado por el usuario como si estuviera escrito directamente en HTML. Por ejemplo: <%=nombre%>
+
+<%! %>
+			Apertura y cierre para hacer uso exclusivo de declaración de variables y métodos de instancia. Que se compartirán entre varios JSP asociados al mismo servlet.

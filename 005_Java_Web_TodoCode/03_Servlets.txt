@@ -1,0 +1,13 @@
+¿Qué es un Servlet?
+
+	-Es una clase especial de Java que se utiliza como punto intermedio entre una página JSP y el servidor web donde está alojada la lógica de una aplicación.
+
+	-Un servlet se encarga de recibir peticiones o requests desde un cliente, tratarlas y analizar si es necesario realizar alguna solicitud en particular o brindar una determinada respuesta o response.
+
+	-Para poder tratar cada una de las peticiones, utiliza una serie de métodos dependiendo del verbo por el cual se reciba la petición (GET, POST, PUT, DELETE, etc.)
+
+Los servlets tienen diferentes métodos que pueden ser utilizados dependiendo del tipo de solicitud que reciban por parte del cliente. Los dos más usados son:
+
+	-doGet(): Es el método encargado de recibir las solicitudes que provienen mediante método GET
+
+	-doPost(): Es el método encargado de recibir las solicitudes que provienen mediante método POST

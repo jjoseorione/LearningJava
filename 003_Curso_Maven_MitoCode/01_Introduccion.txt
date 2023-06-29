@@ -1,0 +1,29 @@
+Introducción:
+
+Apache Maven es una herramienta de administración y comprensión de proyectos de software basados en Java. Está basada en el concepto de modelo de objeto de proyecto (POM), Maven puede manejar la construcción, reporteo y documentación de un proyecto, desde una pieza central de información.
+
+Maven es una herramienta de gestión de proyectos de software que se utiliza para simplificar y automatizar el proceso de construcción, prueba y distribución de aplicaciones Java. En lugar de tener que realizar manualmente todas las tareas relacionadas con la construcción de un proyecto, como compilar el código fuente, generar documentación, manejar dependencias, empaquetar y distribuir la aplicación, Maven lo hace automáticamente para ti.
+
+Algunas de las principales características y ventajas de Maven incluyen:
+
+Manejo de dependencias: Maven simplifica la gestión de dependencias de una aplicación. Por ejemplo, si una aplicación requiere una biblioteca específica, Maven puede descargar automáticamente y agregar esa biblioteca a la ruta de clases de la aplicación.
+
+Proceso de construcción simplificado: Maven define una estructura de proyecto estándar y un proceso de construcción declarativo, que simplifica la gestión de diferentes fases del ciclo de vida del proyecto.
+
+Configuración basada en XML: Maven utiliza un archivo pom.xml (Project Object Model) para definir la configuración del proyecto, lo que permite personalizar y gestionar el proyecto fácilmente.
+
+Soporte para diferentes plugins: Maven admite una amplia variedad de plugins que se pueden utilizar para personalizar y extender su funcionalidad, como el plugin de compilación, el plugin de empaquetado, el plugin de pruebas, entre otros.
+
+Integración con sistemas de control de versiones: Maven se integra con sistemas de control de versiones como Git, Subversion, CVS, entre otros, lo que facilita el seguimiento de los cambios en el código fuente de la aplicación y la gestión de las diferentes versiones del proyecto.
+
+En resumen, Maven es una herramienta poderosa y útil para simplificar y automatizar el proceso de construcción de proyectos Java y es ampliamente utilizada en la industria del desarrollo de software.
+
+METAS DE MAVEN
+
+La meta primordial de Maven es permitir al desarrollador comprender el estado completo de una obra de desarrollo en el menor tiempo posible. Para lograr esta meta, Maven trata con varias areas de interés:
+
+-Hacer el proceso de construcción (build) más fácil
+-Proveer una construccióm del sistema de manera uniforme
+-Proveer infomación de calidad sobre proyecto 
+-Fomentar mejores prácticas de desarrollo
+
