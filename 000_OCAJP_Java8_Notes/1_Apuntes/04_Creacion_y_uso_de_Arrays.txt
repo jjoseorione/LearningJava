@@ -1,0 +1,172 @@
+4.1 Declarar, instanciar, inicializar y utilizar arrays (vectores) unidimensionales
+
+	Un array (o vector) es un objeto que puede almacenar un número fijo de datos de un solo tipo. Por ejemplo, un array de datos int podrá guardar únicamente valores de tipo int. Se pueden almacenar tanto valores primitivos como valores de referencia. Por ejemplo, se puede tener un array de Strings, el cual podrá almacenar sólo referencias a objetos de tipo String. Es importante notar que para tipos referenciados, el array guarda únicamente las referencias y no los objetos en sí.
+
+	4.1.1 Declarar variables array
+
+		Cuando se declara una variable de tipo array, se debe especificar el tipo que queremos que almacene y añadir un par de corchetes []. Por ejemplo, si queremos un array de enteros, se debe escribir int[].
+
+		Es posible tener arrays de múltiples dimensiones y se deberá aplicar un par de corchetes por cada dimensión que queramos que tenga el array.
+
+		Ejemplos:
+			int i;	//declara una variable tipo int
+			int[] ia1, ia2; //ia1 e ia2 son ambos arrays de una dimensión
+			int[][] iaa;	//iaa es un array bidimensional
+
+		En la declaración nunca se debe especificar el tamaño del array. La declaración siempre tiene corchetes vacíos.
+
+		Existe otra sintaxis para declarar arrays, la cual permite agregar los pares de corchetes al nombre de la variable en lugar de al tipo almacenado para que se declare el array.
+
+		Ejemplos:
+			int i, ia1[];	//i es un entero, ia1 es un array unidimensional de enteros
+			int[] ia2, iaa[];	//ia2 es un array de enteros, iaa es un array
+								//bidimensional de enteros
+
+		Para los arrays de objetos aplican las mismas reglas.
+
+		Ejemplos:
+			Object[] obja, objaa[];		//obja es un array unidimensional de Objetos, 													//pero objaa es un array bidimensional de Objetos
+			String[] strA;		//strA es un array unidimensional de Strings
+
+		Es importante recalcar que la notación antes vista es únicamente para declar arrays, por lo tanto, ninguna de los ejemplos crea arrays.
+
+	4.1.2 Crear e inicializar objetos de tipo array
+
+		Crear arrays usando expresiones de creación de arrays
+
+			Se pueden crear objetos de tipo array con la palabra new.
+			Ejemplos:
+				int[] ia = new int[10];		//Crea un array de 10 enteros
+				boolean[] ba = new boolean[3];	//Crea un array de 3 booleanos
+				String[] stra = new String[5];	//Crea un array de 5 Strings
+				MyClass[] myca = new MyClass[5]; //Crea un array de 5 objetos MyClass
+
+			La parte derecha del signo = de cada sentencia en el ejemplo se conoce como "expresión de creación de array". Cada elemento de los arrays creados es inicializado a valores default bien definidos: Las referencias son inicializadas en null, los primitivos numéricos en 0 y los booleanos en false.
+
+			Un array puede tener valores duplicados sin ningún problema (como al momento de inicializarse).
+
+			En Java, los arrays (ya sean de tipos primitivos o de objetos), son instancias de clases específicas. No son instancias de la clase Object, pero al ser Object la raíz de todas las clases, los arrays hereden todos los miembros de la clase Object.
+
+			La clase a la que pertenece cada Array es una combinación de 3 elementos:
+				- Uno o más corchetes de apertura, según la dimensión del array.
+				- Una letra, la cual varía segun el tipo que contiene el array: Z para boolean, B para byte, C para Char, S para short, I para int, J para long, F para float, D para double y L para objetos.
+				- El nombre completo calificado de la clase a la que pertenecen los objetos que se almacenan en el array seguido por punto y coma, sólo en caso de que se trate de un array de objetos. Recordemos que estrictamente hablando, los objetos no se "almacenan" dentro del array, sino sus referencias. En caso de un array de primitivos, este elemento queda en blanco.
+
+			Ejemplos:
+				Un array declarado como long[][] pertenece a la clase [[J
+				Un array declarado como mypackage.SomeClass[][][] pertenece a la clase [[[Lmypackage.SomeClass;.
+
+		Crear arrays usando inicializadores.
+
+			Es posible crear arrays sin utilizar la palabra new y asignando directamente sus valores entre llaves y separados por comas. 
+				Ejemplos:
+					int[] ia = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};	//Crea un array de 10 enteros
+					boolean[] ba = {true, false, false};	//Crea un array de 3 booleanos
+					String[] str = {"a", "b", "c", "d", "e"}	//Crea un array de 5 cadenas.
+					MyClass[] myca = {new MyClass(), new MyClass(), new myClass()}	//Crea un array de3 objetos de tipo MyClass
+
+			La parte derecha del signo = de cada sentencia en el ejemplo se conoce como "inicializador de array".
+
+			Los incializadores de array pueden mezclarse con expresiones de creación. Por ejemplo:
+				int[] ia = new int[]{ 1, 2, 3, 4, 5 };
+
+			Cuando se combinan expresiones de creación de array con sus inicializadores, no sólo no es necesario especificar la longitud del array, ya que el compilador lo deduce al contar los elementos inicializados, sino que además es un error hacerlo, por lo que algo como lo siguiente, no compilará:
+				int[] ia = new int[2]{ 1, 2 };
+
+4.2 Utilizando arrays
+
+	4.2.1 Indexar arrays
+
+		En java, el primer índice de un array es el 0. Por ejemplo, si se tiene una variable accounts que apunta a un array de 100 objetos Account, entonces el primer elemento es el accounts[0] y el centésimo elemento es el accounts[99]. De igual forma, si se tiene un array ia de 5 ints, el primer elemento será el ia[0] y el quinto será el ia[4].
+
+		Si se intenta acceder a un índice que esté fuera de los límites del array, se lanzará una instancia de ArrayIndexOutOfBoundsException. Por ejemplo, si se tiene int[] ia = new int[3], las sentencias int i = ia[-1]; e int i = ia[3]; causarán que se lance una ArrayIndexOutOfBoundsException.
+
+		Por extraño que parezca, es posible tener arrays de longitud 0. Por ejemplo, int[] ia = new int[0]; crea un array de longitud 0. No hay elementos en este array. Es importante señalar que un array de longitud 0 no es lo mismo que null. Un ejemplo de un array de longitud 0 es el array args en el método main, ya que si no se especifican parámetros en la línea de comandos, este array es de longitud cero.
+
+		Los arrays en java son de longitud fija. Una vez que se crean, no es posible cambiar el número de elementos que se pueden almacenar. Así que, por ejemplo, si se tiene un array de 5 enteros y se quisiera guardar un sexto valor, lo único que puede hacerse es crear un nuevo array con 6 elementos, hacer que la variable original apunte a este nuevo array y cambiar los valores del array nuevo para que coincidan con el anterior.
+
+	4.2.2 Miembros de un objeto array
+
+		Array length: 
+			Todos los arrays tienen un campo llamado length, el cual es de tipo entero. Este campo es público y guarda la longitud del array. Además, el campo es final (ya que no es posible cambiar la longitud del array) y no puede ser menor a 0 (ya que la longitud mínima de un array es 0).
+
+		Array cloning:
+			Todos los arrays tienen un método público llamado clone(), el cual devuelve una copia del array que lo invoca. Este nuevo array es de la misma longitud y copia los valores del array que lo invoca. Es importante señalar que cuando se clona un array de tipos primitivos, el nuevo array obtiene una copia de esos valores; cuando se clona un array de tipos referenciados, el nuevo array contiene una copia de las mismas referencias que el array de origen y no crea nuevos objetos.
+
+		Miembros heredados desde la clase Object:
+			Debido a que java.lang.Object es la clase raíz de todas las clases, las clases array heredan todos los miembros de la clase Object, como los métodos toString, equals y hashCode.
+
+	4.2.3 Comportamiento de arrays en tiempo de ejecución
+
+		La comprobación de tipos de un array y sus elementos se realiza en tiempo de ejecución por la JVM en lugar de ser en tiempo de compilación por el compilador. Por ejemplo, si se tiene un array de Strings, la JVM no dejará que ningún elemento de ese array apunte a otro objeto que no sea un String, incluso cuando el compilador no sea capaz de percatarse de una violación como la siguiente:
+			String[] sa = { "1", "2", "3" };
+			Object[] oa = sa
+			oa[0] = new Object();
+
+		El código anterior compilará de forma adecuada, pero la JVM lanzará una java.lang.ArrayStoreException en la tercera línea.
+
+		Los arrays son "covariantes". Esto significa que se pueden almacenar objetos de la subclase con la que origignalmente fueron declarados. Quiere decir que si se declara un array de tipo java.lang.Number, éste podría albergar objetos de tipo java.lang.Integer o java.lang.Float, ya que ambas son subclases de java.lang.Number. Por ejemplo:
+
+			Number[] na = { 1, 2, 3 };
+			na[0] = new Float(1.2f);
+
+		El código anterior, compilará y correrá sin problemas.
+
+	4.2.4 Uso de Strings
+
+		Los arrays son poderosos como una estructura de datos, y a la vez parcialmente primitivos como un tipo de dato. Pero debido a su simplicidad, se utilizan como piedras angulares para otros tipos y estructuras de datos. Por ejemplo, el tipo String está construído a base de un array de chars, mismo caso con StringBuffer y StringBuilder. Todas estas clases envuelven un array de caracteres y añaden métodos para manipular dicho array.
+
+		Los arrays también son ampliamente utilizados para construir estructuras de datos de alto nivel como List, Stack y Queue. La clase ArrayList crea una List que administra su colección de objetos utilizando un array. Debido a que esta clase provee muchas más funcionalidades, suelen utilizarse más que un array en crudo.
+
+		Adicionalmente, la biblioteca estándar de Java incluye la clase java.util.Arrays la cual contiene un gran número de métodos útiles para manipular cualquier array.
+
+4.3 Declarar, instanciar, inicializar y utilizar arrays multidimensionales
+
+	4.3.1 Arrays multidimensionales
+
+		En java, un array de dos dimensiones no es otra cosa que un array en el que cada indice contiene la referencia a otro array. Por ejemplo, la declaración int[][] iaa; no crea una "matriz" de ints, sino que crea un array de arrays de ints.
+
+		La principal diferencia de este enfoque con el enfoque tradicional de arrays multidimensionales es que se pueden tener arrays multidimensionales "dentados". Por ejemplo, en un array de dos dimensiones de algún lenguaje como C, si se ve como una matriz, cada fila debe tener el mismo número de elementos (o columnas). En cambio, en java, al ver los arrays multidimensionales como arrays de arrays, se puede tener diferente número de elementos en cada "fila". Lo mismo aplica para dimensiones superiores.
+
+		Reglas para la creación de arrays de arrays:
+
+			I. La dimensión de un array está determinada por el número de pares de corchetes que existan en su declaración. Por ejemplo, las líneas int[] ia; int ia[]; declaran ambas un array de ints. En el caso de int[] iaa[]; int iaa[][] ambas declaran un array de arrays de ints. Por otra parte, int[][] iaaa[]; es un array de arrays de arrays de ints.
+
+			II. Nunca se especifica la longitud del array en la declaración.
+
+			III. Las reglas de expresiones de creación de arrays e inicializadores de arrays se aplican de la misma manera que en arrays unidimensionales.
+				Ejemplos:
+					a) int[][] iaa = new int[2][3];	
+
+						iaa apunta a un array de dos elementos, donde cada elemento contiene la dirección de un array de 3 ints. Cada elemento de los dos arrays de ints son inicializados en 0.
+
+					b) int[][] iaa = new int[3][];
+
+						Es posible crear arrays de arrays especificando sólo la longitud del array de orden superior (o de los n de orden superior, si es multidiensional); de esta manera iaa apunta a un array de 3 elementos, donde cada elemento apuntará a un array de ints que aún no ha sido creado; es decir, es un array de arrays de ints. Mientras no se han creado o asignado las referencas, cada elemento de iaa contiene null, ya que aún no se asigna a qué arrays debe apuntar. Se puede asignar los índices de iaa de con las sentencias iaa[0] = new int[2]; iaa[1] = new int[3] para que el primer elemento de iaa apunte a un array de 2 ints y el segundo apunte a un array de 3 ints, teniendo así un array dentado. Luego de estas dos sentencias, iaa[2] sigue conteniendo null, ya que no se le ha asignado ninguna referencia; mientras que los arrays a los que apuntan iaa[0] e iaa[1] contienen ceros como valor default. Este mismo proceso puede aplicarse a arrays de orden 3, 4, 5, etc.
+
+					c) int[][] iaa = new int[][]{ new int[]{ 1, 2 } };
+
+						Esta sentencia utiliza una expresión de creación de array junto con un inicializador de array. También podría utilizarse si la expresiónde creación, de la siguiente manera: 
+							int[][] iaa = { { 1, 2 } };
+						Esta última sentencia crea el mismo array que la anterior.
+
+					d) Object[] obj[] = { { "string is also an object" }, { null }, { new Object(), new Integer(10)} };
+
+						Esta sentencia crea un array de arrays de objetos. Si se analiza se puede ver que el array es de longitud 3, pues guarda referencias a 3 arrays de objetos; el primero de ellos, contiene sólo un elemento, el cual es la cadena "string is also an object"; el segundo de ellos contiene sólo una referencia nula (null), la cual puede ser asignada más tarde a un objeto; el tercer elemento es un array de objetos el cual contiene la creación de un objeto Object y un Integer.
+
+	4.3.2 Asignando arrays de primitivas a variables tipo Object.
+
+		Es posible asignar un array a una variable tipo objeto:
+			int[] intArray = new int[]{ 0, 1, 2 };
+			Object obj = intArray;
+		Esto es válido debido a que los arrays son objetos. 
+
+		Ahora, si se intenta realizar lo siguiente:
+			Object[] oa = intArray;
+		El código no compilará debido a que oa es un array de objetos, mientras que intArray es un array de primitivos int.
+
+			Object[] oa = new int[2][3];
+		Esto es válido, debido a que se declara un array de objetos, y se le asigna un array de arrays de ints; un array de ints es un objeto, así que es válido asignar un array de arrays de ints a una variable array de objetos.
+
+			Object[][] oaa = new int[2][3];
+		Esto no es válido debido a que oaa es un array de arrays de objetos, mientras que la expresión de creación crea un array de arrays de ints.

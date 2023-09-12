@@ -1,0 +1,54 @@
+6.1 Crear condicionantes if/else
+
+	6.1.1 Sintaxis básica de if e if-else
+
+		Es importante recordar que una sentencia vacía es válida (sólo un ;) es válida, por lo cual las sentencias como if(algo); ó else; son válidas, aunque no ejecuten nada.
+
+	6.1.2 Uso de if e if-else en el examen
+
+		Los problemas que pueden presentarse en el examen con if-else tienen que ver con lo siguiente (ver ejemplos en el libro)
+
+		-Sintaxis incorrecta
+		-Sangrías
+		-Else faltante
+		-Else "colgante"
+			El bloque else se aigna al if más próximo
+		-Usar asignación en la condición
+		-Usar incremento prefijo y posfijo en la condicion
+
+6.2 Crear condicionantes ternarias
+
+	Las condicionantes ternarias tienen la forma:
+
+	operando1 ? operando2 : operando3
+
+	El operando1 debe ser una expresión que devuelva un valor booleano. Este booleano se usa para decidir cuál de los otros dos operandos será devuelto. Si la expresión booleana es verdadera, la expresión completa toma el valor del operando2; si la expresión booleana es falsa, la expresión toma el valor del operando3. Se puede notar entonces que el operador ternario es un operador condicional.
+
+	Es importante comprender que una condicionante ternaria no puede ser una sentencia por sí misma, ya que en realidad es únicamente una operación. Para que sea una sentencia válida, debe formar parte de alguna expresión. De igual forma, los operandos 2 y 3 deben ser valores y no pueden ser sentencias sin valor o métodos que devuelvan void.
+
+	Una expresión condicional ternaria puede devolver primitivos y referencias. Si el segundo y tercer operando son boolean, el tipo de la expresión es boolean. Si el segundo y tercer operando son primitivos numéricos, la expresión ternaria toma el tipo más grande. Si el segundo y tercer operando no son ambos booleanos o primitivos numéricos, el tipo de retorno es una referencia, en cuyo caso, si alguno es un primitivo, se usará autoboxing para devolver un wrapper. Si los operadores 2 y 3 son referencias del mismo tipo, la expresión ternaria toma el mismo tipo; si los operadores 2 y 3 son referencias a tipos diferentes, se toma la superclase común más específica de ambos. Por ejemplo, si se tiene String e Integer, se devuelve Object; pero si se tiene Integer y Byte, se devuelve Number.
+
+	El operador ternario también tiene la propiedad de corto circuito al igual que los operadores && y ||. La principal diferencia radica en que los operadores lógicos pueden o no evaluar ambos operadores, mientras que el operador ternario siempre evalúa (y ejecuta) sólo la expresión del operando que se devolverá después de evaluar la condición (el segundo si la condición es true o el tercero si la condición es false). Por lo tanto, una operación ternaria como la siguiente: true ? ++x : ++y, hará que sólo se aumente "x", mientras que "y" seguirá conservando su valor porque el ++y no será ejecutado.
+
+6.3 Uso de sentencias switch
+
+	La expresión evaluada dentro de un switch soporta los siguientes tipos:
+
+		I. Un conjunto limitado de tipos numéricos integrales: byte, short, char e int. A pesar de ser un tipo numérico integral, long no puede evaluarse dentro de switch, mientras que float, double y boolean no son numéricos integrales.
+		
+		II. Tipo enum.
+		
+		III. Los tipos referenciados no son admitidos, aunque la excepción a la regla es el tipo java.lang.String, así que se puede utilizar una expresión String dentro de la expresión evaluada en un switch.
+
+	Las etiquetas case deben ser constantes en tiempo de compilación y deben de ser asignables al tipo de la expresión switch. Por lo tanto, si la expresión switch es de tipo byte, las etiquetas case no pueden contener valores más grandes que un byte. De igual manera, sí la expresión switch es de tipo String, las etiquetas case deben ser constantes con valores String.
+
+	En una sentencia switch, los bloques case son opcionales. Se puede disponer únicamente del bloque default y funcionará.
+
+	Otra cosa importante es que, aunque es muy común utilizar una sola variable en la evaluación switch, en realidad se puede evaluar toda una expresión comprendida por varios operandos y operadores. Así pues, cuando se evalúa esta expresión, todos los conceptos de promoción numérica, casting y precedencia de operadores aplican de la misma manera que en cualquier otra expresión, por lo que se debe verificar que las etiquetas case sean válidas y compatibles con la expresión switch.
+
+	El bloque default también es opcional, en el sentido de que no es necesario para que el código compile.
+
+	De la misma manera, el orden en el que aparecen las etiquetas case y default no es importante en términos de compilación. Pueden aparecer en cualquier orden y el compilador los aceptará.
+
+	Por último, la sentencia break; también es opcional. Puede prescindirse de ella y el código compilará sin errores. La sentencia break sirve para salir del bloque switch una vez que se ha ejecutado lo que se desea, así que en caso de que el bloque case que se esté ejecutando no la contenga, se ejecutará el siguiente caso hasta que se encuentre una sentencia break;
+

@@ -1,0 +1,207 @@
+3.1 Tipos en Java
+
+	Java tiene dos clasificaciones de tipos: primitivos y de referencia.
+
+	Los tipos primitivos están diseñados para ser usados con datos duros como enteros, números de punto flotante, caracteres y booleanos. Entre ellos se encuentran byte, char, short, int, long, float, double y boolean.
+
+	Los tipos de referencia, por otra parte, están diseñados para trabajar con datos que tienen un significado especial y único. Los tipos de referencia son todas las clases, interfaces y enums, sin importar quien o cómo las definan. Es decir, cuando se escribe una clase, interfaz o enum, estamos definiendo un tipo de referencia.
+
+	Java maneja dos tipos de variables, uno para tipos de referencia y otro para tipos primitivos.
+
+	Todas las variables contienen únicamente números. Si la variable es de tipo primitivo, el número almacenado se interpreta según el tipo (int, float, char, etc.). Si la variable es de tipo referenciado, el número almacenado es la referencia en memoria donde se almacena el tipo.
+
+	No se puede asignar directamente una referencia en memoria a una variable (String str = 250). Sólo se puede igualar a otra variable de referencia (obj1 = obj2 //obj1 ahora apunta al mismo objeto que obj2). También es posible desreferenciar una variable de referencia con null (str = null).
+
+3.2 Diferencia entre variables de referencia y variables primitivas
+
+	Las variables primitivas no pueden ser referenciadas. Tampoco pueden invocar métodos o tener campos, porque no son objetos.
+
+	Cuando una variable referenciada consulta un campo o invoca un método, no es la variable en sí misma, sino el objeto el que realiza la consulta o la invocación.
+
+	Cuando una variabe primitiva se iguala con otra con el operador "=", ésta se "clona" o copia su valor de una variable a otra. Esto es, existen dos valores iguales en memoria. Los cambios que sufra una de las dos no afecta a la otra.
+
+	Cuando una variabe primitiva se iguala con otra con el operador "=", sólo se copia la referencia, lo que hace que ambas apunten al mismo objeto (no se clona ni se crea otro objeto en memoria). Esto es, existen dos referencias en memoria, pero sólo existe un objeto. Si se modifica el objeto por medio de una de las dos referencias, los cambios se pueden visualizar en ambas referencias, ya que el objeto es el mismo.
+
+3.3 Declarar e inicializar variables.
+
+	3.3.1 Declarar e inicializar variables
+
+		Existen varias formas de declarar e inicializar variables. Se pueden declarar sin inicializarse, declararse e inicializarse a la vez, declarar más de una variable del mismo tipo en una misma línea y también mezclar estas últimas dos formas. Adicionalmente las variables de tipos refernciados pueden inicializarse con null.
+
+	3.3.2 Variables no inicializadas y valores por defecto
+
+		Las variables no inicializadas no tienen ningún uso y son fuente de muchos problemas. En Java no está permitido utilizar una variable si no ha sido inicializada. En la mayoría de los casos, la JVM inicializa una variable con valores predeterminados según su tipo.
+
+		- Java no tiene problema si tienes variables no inicializadas, siempre y cuando no intentes utilizarlas. El código compilará si una variable no inicializada no se utiliza. Si una variable no inicializada intenta ser usada, el código no compilará
+
+		- Java inicializa variables estáticas y de instancia a los valores default si no se inicializan de forma explícita y el código podrá compilarse y ejecutarse sin problemas. Las variables numéricas serán 0 ó 0.0, las booleanas serán false, los char serán u0000 (carácter 0) y las de referencia serán null. Las cadenas y los vectores son objetos, así que su valor default es null.
+
+		- Java no inicializa variables locales (de método o de bloque) si no las inicializas explícitamente y no dejará compilar el código si existen variables locales no inicializadas que intentan ser utilizadas. El compilador busca si existe una ruta en el flujo del programa en que una variable que quiera ser utilizada, no haya sido utilizada. Para esto, toma en cuenta sólo la información disponible en tiempo de compilación, por lo que puede dar posibles valores a una variable evaluada (en un if, por ejemplo) aunque la variable no tenga oportunidad de cambiar en el flujo del programa; esto último sólo se evita con la palabra "final" para dar certeza al compilador de que una variable no cambiará su valor.
+
+	3.3.3 Asignando valores a variables
+
+		Literales
+
+			La forma más básica de asignar valores a una variable es usando literales; es decir valores fijos como 10, 5, true, false, 'a', 'b', "Hola", etc.
+
+			Para hacer más fácil la lectura de números grandes, se pueden usar guines bajos para serparar (como si fueran espacios o comas). Por ejemplo, 1000000.0 se puede escribir como 1_000_000.0. Se pueden agregar los guiones bajos que se deseen y en la posición que se deseen, excepto al principio y al final del número.
+
+			Una literal numérica sin decimal es por default considerada como int, mientras que una con punto, por dafault se considera como double.
+
+			Por lo tanto, para que una literal numérica se considere long, se debe de concatenar una letra L (mayúscula o minúscula) al final y para que se considere float, se debe de concatenar una letra F (mayúscula o minúscula) al final. Por ejemplo: 1234L o 1234.0F.
+
+			Una literal carácter puede escribirse entre comillas simples; por ejemplo 'a' o 'A'. También se puede utilizar la notación Unicode hexadecimal ('\uxxxx') donde xxxx es un valor hexadecial definido para cada caracter.
+
+			Existen sólo dos literales booleanas: true y false.
+
+			También null es considerada una literal, pero sólo puede uilizarse en variables de tipos referenciados.
+
+			Es posible escribir literales numéricas en binario, hexadecimal u octal. Las literales hexadecimales deben iniciar con 0x ó 0X, las binarias con 0b ó 0B y las octales sólo con 0.
+
+		Asignación usando otra variable
+
+			Otra forma de asignar valores a una variable es copiarlos desde otra variable. Es importante que para variables de tipos referenciados, lo que se copia no es el objeto en sí, sino la referencia al objeto.
+
+		Asignación con palabra return
+
+			Otra forma de asignar un valor a una variable es con la palabra return. Cuando se retorna un valor desde un método, éste puede asignarse a una variable.
+
+		Asignar valores de un tipo a otro tipo de variable
+
+			Si el valor asignado cabe dentro del tipo de variable, no se requiere ningún tratamiento especial. Se realiza un "ensanchamiento implícito". Por ejemplo, se puede asignar un valor byte a un int o un valor int a un double.
+
+			Si el valor asignado es más grande que el soportado por la variable, no se permite que se asigne el valor.
+
+			Si se quiere copiar el valor de una variable de gran tamaño (por ejemplo, un long) dentro de una de tamaño menor (por ejemplo, un int) y el valor efectivamente cabe en la segunda (por ejemplo, 10), se debe cumplir alguna de dos condiciones para que se permita:
+
+				La primera es que la variable origen debe ser final para que el compilador tenga la certeza de que el valor cabe en la variable objetivo; a esto se le conoce como "estrechamiento implícito". El "estrechamiento implícito" sólo sirve en asignaciones y no en llamadas a métodos. Es decr, si se tiene un método que tome un short y se intenta pasar un int a éste método, la llamada al método no compilará aunque el valor enviado como parámetro sea lo suficientemente pequeño para entrar en un short.
+
+				La segunda es que se realice un casting (conversión). Se puede realizar casting entre todos los tipos primitivos, excepto con boolean. Si se realiza un casting y el valor de la variable origen es más grande de lo que la variable objetivo pueda soportar, ocurre un desbordamiento y sólo se guarda la parte que pueda ser guardada. Por ejemplo, si se realiza int i = 128; byte b = (byte) i; la variable b guardará -128 debido a que se truncan los bits faltantes y se realiza complemento a 2.
+
+			Es muy importante
+
+		Asignar short o byte a char
+
+			Tanto short, como char tienen una longitud de 16 bits. Debería ser posible asignar un short a un char sin problema. Pero char es no signado mientras que short es signado, por lo tanto sus rangos son diferentes y puede haber pérdida de información. Por lo tanto, para poder asignarse adecuadamente deben cumplir los requerimientos antes mencionados (ser una constante en tiempo de compilación como una literal o una variable final, o utilizar un cast).
+
+		Asignar float a int o double a long o viceversa.
+
+			A pesar de que int y float o double y long son del mismo tamaño, sus rangos son diferentes. Para asignar un float a un int o un double a un long, se requiere un casting. Sin embargo, para el caso contrario (de int a float o de long a double) es permitido realizar una asignación directa, aunque se perderá presición en el dato almacenado debido a que float y double son imprecisos.
+
+	3.3.4 Variables final
+
+		Las variables final son variables que no cambian su valor durante el flujo del programa. Por lo tanto, son constantes. Se puede hacer final a variables de instancia, variables estáticas, variables de método, variables de referencia y parámetros de método. Es importante notar que si una variable de referencia es final, quiere decir que la variable no puede apuntar (referenciar) a ningún otro objeto, no que el objeto en sí no pueda ser modificado.
+
+3.4 Saber cómo leer o escribir en campos de objetos
+
+	3.4.1 Accediendo campos de objetos
+
+		Para utilizar un campo de un objeto se necesita en primer lugar una variable de referencia que apunte a dicho objeto. A la variable se le aplica el operador punto y se escribe el nombre del campo al que se desea acceder. No es posible acceder al campo de un objeto sin una referencia.
+
+		En ocasiones puede que no queramos crear una variable de referencia para un objeto temporal. Para ese caso es posible aplicar el operador punto directamente en la creación del objeto. Por ejemplo: int result = new Calculator().calculate(7, 2). El compilador creará una variable temporal de referencia para apuntar al objeto creado y ejecutar el método. Una vez que se utiliza la referencia temporal, se pierde toda referencia al objeto y no hay forma de acceder nuevamente a él.
+
+		Dentro de un objeto se puede acceder a la referencia a ese mismo objeto con una variable especial llamada "this"
+
+	3.4.2 ¿Qué es "this"?
+
+		En Java siempre se necesita una referencia a un objeto para acceder a sus campos y métodos. Si dentro de un método de instancia se trata de acceder a otro método o a un campo, sin especificar alguna referencia, la JVM asume que el método o campo al que se intenta acceder es el del mismo objeto dentro del que se está invocando. También es posible especificar la referencia de forma explícita con la variable "this", la cual apunta al mismo objeto dentro del que se invoca.
+
+		La utilidad de this surge principalmente cuando se tiene un campo de un objeto con el mismo nombre que una variable local (o parámetro) dentro un método del mismo objeto. Si se trata de llamar a la variable de instancia (o campo) dentro del método sólo con el nombre, se dará prioridad a la variable local; entonces, para acceder a la variable de instancia se deberá usar la referencia al objeto con "this" y el operador punto. Si en lugar de una variable de instancia, se tiene una variable estática, se puede acceder tanto con this como con el nombre de la clase, aunque recordemos que siempre es preferible acceder a campos o métodos estáticos con el nombre de la clase y no con un objeto.
+
+		La variable this puede copiar su valor a otra variable de referencia para tener otra referencia al mismo objeto, pero no se puede cambiar el valor de "this"; es decir, es final. Se puede acceder a this sólo desde el contexto de una instancia de ina clase. Se puede acceder a this en bloques inicializadores, constructores, métodos de instancia e incluso clases anidadas. No se puede utilizar this desde métodos estáticos o bloques estáticos, debido a que no pertenecen a ningún objeto.
+
+3.5 Explicando el ciclo de vida de un objeto
+
+	3.5.1 Ciclo de vida de un objeto
+
+		Todos lo objetos se crean en el montón (o heap). El espacio en el heap es limitado, por lo que podría llenarse si se crean demasiados objetos. Es por eso que en Java el heap es administrado completamente por la JVM.
+
+		La JVM lleva un registro de las referencias que existen a cada objeto y en el momento en el que un objeto queda sin ninguna referencia, se sabe que es un objeto al que el programa ya no puede acceder y pasa a ser considerado "basura". La JVM entonces reclama el espacio en memoria que ocupó el objeto basura. A esta actividad se le conoce como "recolección de basura". De esta manera la JVM administra por sí sola el espacio en memoria y el programador no tiene que hacer nada al respecto (ni puede).
+
+		En el ciclo de vida de un objeto, el objeto cobra vida cuando es creado; permanece vivo todo el tiempo que siga estando referenciado desde una parte activa del programa. El objete queda inaccesoble y muere cuando ya no quedan referencias a él.
+
+	3.5.2 Recolección de Basura
+
+		La recolección de basura es una actividad realizada periódicamente por la JVM para reclamar la memoria ocupada por objetos que ya no se encuentran en uso.
+
+		La JVM realiza la recolección de basura en intervalos regulares de tiempo. No es posible para un programa controlar la periodicidad del recolector de basura. Tampoco es posible para el programador hacer que se realice una recolección de basura inmediatamente. El método gc dentro de la clase java.lang.System permite realizar una solicitud para recolección de basura, pero no hay garantía de que suceda de inmediato. La JV permite opciones de configuración para modificar el comportamiento del recolector de basura desde línea de comandos.
+
+		La JVM reclama la memoria utilizada por objetos basura. Luego trata de organizar el heap de manera que existan grandes espacios de memoria disponible.
+
+		Los objetos considerados basura son aquellos que son inaccesibles debido a que ya no tienen referencias que apunten a ellos o a que sus mismas referencias son inaccesibles por ser parte de otros objetos inaccesibles. En resumen, un objeto es elegible para ser recolectado como basura si deja de haber una vía para acceder a él.
+
+		Nota: Puede ser útil estudiar acerca de finalization, finalize method, object resurrection, types of references, algorithms used to identify garbage, customizing the behavior of garbage collector through command line options, and object generations.
+
+	3.5.3 Recolector de basura para el examen
+
+		Para el examen se suelen hacer dos tipos de preguntas respecto al recolector de basura: Encontrar en qué línea un objeto empieza a ser elegible para ser recolectado como basura o dada una línea específica, encontrar qué objetos son elegibles para ser recolectados como basura. Para ambos se tiene que realizar una prueba de escritorio y es preferible usar trazos o anotaciones que ayuden a llevar la prueba, en lugar de hacerla sólo mentalmente.
+
+		Para el caso de las cadenas, se aplican otros conceptos (como el pool de cadenas) que se mezclan con el de recolector de basura, por lo que no es recomendable explicar los conceptos del mismo con cadenas.
+
+3.6 Clases wrapper (envoltorios)
+
+	En Java se tienen dos principales tipos de variables: primitivas (int, char, long, float, etc.) y de referencia (objetos). Los tipos primitivos son muy útiles para tareas simples. El problema de tener dos tipos de variables está en que ambos tienen diferentes interpretaciones y diferentes tratamientos. 
+
+	Si una clase o método recibe como parámetros sólo variables de tipo referenciado (por ejemplo, la clase ArraList), no se podrán ingresar datos de tipo primitivo. Es por eso que existen clases que "envuelven" a los datos primitivos para convertirlos a objetos.
+
+	Las clases wrapper son Byte, Character, Short, Integer, Long, Float, Double y Boolean. Todas ellas se encuentran en el paquete java.lang. 
+
+	Las clases Byte, Short, Integer, Long, Float y Double son hijas (o extensiones) de la clase padre java.Lang.Number. Las clases Number, Character y Boolean son hijas de la clase java.lang.Object.
+
+	3.6.2 Creando objetos de clases wrapper
+
+		Existen tres maneras de crear objetos de clases wrapper.
+
+			I. Usando constructores. Ejemplo: 
+				Integer i1 = new Integer(10); 
+				Integer i2 = new Integer ("10");
+				Char c = new Character ('c');
+				Boolean b1 = new Boolean(true);
+				Boolean b2 = new Boolean("false");
+
+				Todos los clases wrappers, excepto el de java.lang.Character, proveen dos constructores: Uno que acepta el tipo primitivo relevante y otro que acepta una cadena. La clase java.lang.Characte provee únicamente el constructor con tipo primitivo. Adicionalmente, la clase java.lang.Float tiene un constructor que puede recibir un double.
+
+				Es importante recordar que no existe el estrechamiento implícito en pase de parámetro a métodos y que todas las literales enteras que se escriban en el código son consideradas int por default. En consecuencia, una instrucción como Short s3 = new Short(10); no copilará, debido a que el constructor requiere una variable tipo short y el 10 que se envía se considera de tipo int.
+
+			II. Utilizando los métodos estáticos valueOf. 
+
+				Cada una de las clases wrapper tienee dos métodos estáticos con el nombre valueOf; uno de ellos toma el tipo primitivo relevante como parámetro, mientras que el otro toma un String. Nuevamente, la clase Character es la excepción, pues sólo tiene un método valueOf, el cual toma un caracter como parámetro. En el caso de la clase Float, a diferencia del constructor, no existe un método valueOf adicional que reciba un tipo double.
+
+				Se debe tener cuidado con los métodos valueOf y con los constructores que reciben String como parámetro, ya que si se envía null o un valor que no pueda ser convertido en el tipo requerido, se lanzará una NumberFormatException. Por ejemplo, Integer i = valueOf("10.2"); lanzará una NumbrFormatException.
+
+				El constructor y el método valueOf de la clase Boolean pueden recibir null o cualquier string como parámetro y siempre devolverá false, a menos que se envíe la palabra "true" ya sea en mayúsculas, minúsculas o una combinación de ambas.
+
+				La ventaja de usar valueOf por encima de un constructor es que el método valueOf posiblemebte devuelva un objeto en caché (como el pool de cadenas), mientras que el constructor crea siempre un nuevo objeto. Por lo tanto, los métodos valueOf son más eficientes que los constructores y deben ser utilizados cuando no se requieran objetos por separado.
+
+			III. Por medio de autoboxing
+
+				Autoboxing es una facilidad que provee Java para poder asignar una variable primitiva a una de tipo wrapper y el compilador en automático empaquetará el dato primitivo dentro de un objeto wrapper. Por ejemplo: Integer i = Integer.valueOf(100), puede escrbirse solamente Integer i = 100;
+
+				De igual manera, si un método espera un método espera un objeto como parámetro, es posible simplemente pasar un primitivo y éste se empaquetara en automático dentro de un wrapper. Por ejemplo: yList.add(Integer.valueOf(100)); se puede escribir myList.add(100);.
+
+				Al autoboxing utiliza objetos en caché de la misma forma que lo hace el método valueOf.
+
+	3.6.3 Convirtiendo objetos wrapper en primitivos
+
+		Existen dos formas diferentes de obtener primitivas desde objetos wrapper
+
+			I. Utilizando los métodos <tipo>Value. 
+
+				Todas las clases wrapper tienen un método que retorna como primitiva el valor envuelto por ese wrapper. La clase Integer tiene el método intValue, Boolean tiene booleanValue, Character tiene charValue, etc.
+
+				Recordemos que todas las clases wrapper numéricas son extensiones de la clase abstracta Number; esta clase define byteValue y shortValue y declara intValue, longValue, floatValue y doubleValue. Como consecuencia, es posible obtener valores primitivos de cualquiera de estos tipos desde cualquiera de los wrapper numéricos
+
+			II. Por medio de unboxing
+
+				Unboxing es lo opuesto a autoboxing. Es posible asignar directamente  cualquier objeto wrapper a una variable primitiva del mismo tipo y el compilador extraerá de manera automática el valor primitivo para asignarlo en la variable objetivo. Por ejemplo:
+
+					Integer i1 = 10; 	//Se realiza autoboxing y se crea un objeto
+										//Integer que se almacenará en i1
+					int i2 = i1;		//Se realiza el unboxing del objeto para guardar
+										//el valor primitivo dentro de i2
+
+				Es importante recordar que el unboxing compilará adecuadamente sólo si la variable objetivo es del tamaño adecuado para almacenar el valor envuelto. Por ejemplo, byte b = i1 no compilará, mientras que float f = i1 sí compilará porque un int no cabe dentro de un byte, pero sí dentro de un float.
+
+		Las clases wrapper también contienen el método parse<tipo>, los cuales permiten crear primitivos (según el tipo) a partir de Strings; por ejemplo, Integer tiene parseInt. De igual forma que con valueOf, la cadena debe poder interpretarse como el tipo primitivo objetivo, o de otro modo se lanzará una NumberFormatException. Existen otras variaciones de este método que no son necesarias para el examen.
+
+		

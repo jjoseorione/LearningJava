@@ -1,0 +1,10 @@
+Variables y Constantes	
+
+	Una variable es un nombre que se asocia con una porción de la memoria de la computadora, en la que se guarda un valor determinado.
+
+	Las constantes son valores que se mantienen siempre de igual manera y que no dependen de una asignación para obtener el mismo. Por ejemplo, pi.
+
+Tipos de datos
+
+	Los tipos de datos definen qué puede ser almacenado dentro de una variable y los límites de lo que ahí se almacena. Por ejemplo, enteros, decimales, booleanos, caracteres, enteros, objetos.
+

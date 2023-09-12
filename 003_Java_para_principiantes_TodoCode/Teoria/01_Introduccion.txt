@@ -1,0 +1,21 @@
+Java es un lenguaje de programación y tecnología pensado para desarrollo de aplicaciones de gran envergadura.
+
+Características que lo diferencian:
+	-Lenguaje orientado a objetos
+	-Multiplataforma
+	-Manejo automático de memoria
+	-Evolución constante
+	-Gran demanda en el mercado
+
+Versiones de Java:
+
+	J2SE (Java 2 Standard Edition): Tiene como objetivo el desarrollo de aplicaciones de escritorio. Incluye la funcionalidad básica del lenguaje como manejo de clases, colecciones, entrada/salida, acceso a base de datos, manejo de sockets, hilos de ejecución, etc.
+
+	J2EE (Java 2 Enterprise Edition): Tiene como objetivo el desarrollo de aplicaciones empresariales de gran envergadura. Contempla ambientes web, como los ambientes manejados por servidores de aplicación. Las tecnologías principales inclídas en esta área son Servlets, JSP y EJB, frameworks, entre otras.
+
+Qué se necesita para programar en Java
+	
+	-IDE
+	-JRE (Java Runtime Environment). Es un conjunto de utilidades que permite la ejecición de programas de Java
+	-JDK (Java Development Kit). Es un software que provee herramientas de desarrollo para la creación de programas en Java.
+	

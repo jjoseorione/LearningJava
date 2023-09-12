@@ -1,0 +1,9 @@
+Operadores
+
+	Un operador es un símbolo especal que indica al compilador que debe efectuar una determinada operación
+
+	Estas operaciones pueden ser de asignación, aritméticas, condicionales, relacionales, entre otras.
+
+	Aritméticos: Suma (+), Resta (-), Multiplicación (*), División (/)
+	Relacionales: == (igual), < (menor que), > (mayor que), <= (menor o igual), >= (mayor o igual), != (diferente).
+	Condicionles && (AND), || (OR), ! (NOT).

@@ -1,0 +1,176 @@
+7.1 Qué es un ciclo
+
+	Un ciclo es un conjunto de instrucciones que se repiten hasta que se cumple cierta condición o hasta que se ejecuta una sentencia "break". Cada repetición es llamada "iteración"
+
+7.2 Crear y usar ciclos while
+
+	Un ciclo while ejecuta un conjunto de instrucciones mientras que se cumple una condición. Es decir, se revisa la condición, y si es verdadera, se ejecutan las sentencias correspondientes al bloque; al finalizar las sentencias, se evalúa nuevamente la condición. Si la condición es verdadera, se ejecutan nuevamente las sentencias del bloque; si es falsa, el control del programa va a la siguiente sentencia después de bloque.
+
+	La condición de control puede ser únicamente una variable (suele llamarse variable de control) o puede ser una expresión compleja. En cualquier caso, la expresión debe devolver un boolean. A diferencia de otros lenguajes, Java no pemite que se usa un entero como valor de condición. Por lo tanto, un ciclo como while(1) no compilará.
+
+7.3 Crear y usar ciclos do-while
+
+	La principal diferencia entre el ciclo while y el do-while radica en que el ciclo do-while ejecuta las instrucciones dentro del bloque siempre al menos una vez, mientras que el ciclo while puede no ejecutarlas ni una vez si la condición no se cumple desde el inicio.
+
+7.4 Crear y usar ciclos for
+
+	La variable de control de un ciclo for es solo visible dentro del ciclo y no es visible fuera del bloque cuando se crea dentro de la sentencia for.
+
+	Dentro de la sintaxis del ciclo for, la sección de inicialización, la sección de condición y la sección de actualización son todas opcionales, por lo cual se puede prescindir de ellas. También son opcionales las sentencias asociadas al ciclo. Lo que no es opcional, son los punto y coma que separan las secciones ciclo. Por lo tanto, se puede tener una un ciclo como for( ; ; ); el cual es válido para el compilador (aunque el código que esté debajo será marcado como imposible de alcanzar), pero for(); ó for(;); no lo son.
+
+	El orden de ejecución del ciclo for es el siguiente:
+
+		I. El bloque de inicialización es el primero en ser ejecutado. Se ejecuta una sólo vez sin importar del número de iteraciones del ciclo. Si esta sección está vacía, es ignorada.
+
+		II. La siguiente es la sección de condición. Si el resultado de la expresión de esta sección es verdadera, se ejecuta la iteración correspondiente (es decir, las sentencias dentro del bloque). Si el resultado es falso, el loop termina en ese mismo momento; es decir, no se ejecuta ni la sección de actualización, ni las sentencias dentro del bloque. Si esta sección está vacía, se asume true.
+
+		III. Se ejecutan las sentencias dentro del bloque.
+
+		IV. Se ejecuta la sección de actualización. Si esta sección está vacía, es ignorada
+
+		V. El control es devuelvo a la sección de condición.
+
+	La sección de inicialización
+
+		La sección de inicialización permite especificar código que va a ser ejecutado al principio del ciclo. Este código debe pertenecer a una categoría de sentencias que son llamadas "sentencias de expresión". Eso significa que son expresiones que pueden ser utiliazadas como sentencias en sí mismas; éstas son: expresiones de asignación, expresiones de pre/post incremento/decremento, llamada a métodos y expresiones de creación de instancias de clases (por ejemplo, utilizando el operador new). Además de sentencias de expresión, es posible declarar variables locales al ciclo.
+
+		Es posible usar aignaciones múltiples dentro de la sección de inicialización. Por ejemplo: for(i = 0, k = 7, obj = "hello";i<10; i++);
+
+		El método utilizado dentro de esta sección puede devolver void. Por ejemplo: for(System.out.println("starting the loop now"); i<10; i++);
+
+		Es posible usar múltiples expresiones. Por ejemplo: 
+		for(k++, i--, new String();i<10; i++);
+
+		Es posible realizar múltiples declaraciones (de un solo tipo). Por ejemplo: for(int i = 5, k = 7; i<10; i++);
+
+		No es posible realizar múltiples declaraciones con diferentes tipos. Por ejemplo, lo siguiente no es válido:  for(int i = 5, String str = ""; i<10; i++);
+
+		Es muy importante recordar que las variables declaradas dentro de esta sección, no son visibles fuera del ciclo.
+
+		No es necesario (en términos de compilación) que el código de esta sección esté relacionado con las otras secciones.
+
+	La sección de condición
+
+		Esta sección debe contener una expresión que devuelva boolean o Boolean. Si esta sección está vacía, se considera siempre true por default.
+
+	La sección de actualización
+
+		Las reglas de la sección de actualización son muy parecidas a las de la sección de inicialización, con la única excepción de que no es posible tener declaraciones en esta sección.
+
+		Por lo general, esta sección es utilizada para actualizar el valor de la variable de control, pero existen distintas formas de urilizarla.
+
+		No es necesario (en términos de compilación) que el código de esta sección esté relacionado con las otras secciones.
+
+		Pueden realizarse asignaciones en esta sección. Por ejemplo:
+		for(;i<10; i = someRef.getValue())
+
+		También pueden realizarse llamada a métodos. Por ejemplo:
+		for(int i = 0; i<10; callSomeMethod() );
+
+		De igual forma, puede utilizarse más de una expresión. Por ejemplo:
+		for(int i = 0; i<10; System.out.println("El valor de i es " + i), i++);
+		El código anterior escribe los números del 1 al 9.
+
+7.5 Crear y utilizar el ciclo for mejorado
+
+	El ciclo for mejorado, también llamado for-each, es un ciclo que sirve para iterar los objetos de una colección, como listas, o arrays. Este ciclo abstrae la creación de la variable de control y del límite de iteración (es decir, la condición). La sintaxis es la siguiente:
+
+	El ciclo:
+
+		String[] values = { "a", "bb", "ccc" };
+			for(int i = 0; i<values.length; i++){
+				System.out.println(values[i]); //do something with each value
+			}
+
+	Puede ser sustituído por:
+
+		String[] values = { "a", "bb", "ccc" };
+			for(String value : values){
+				System.out.println(value); //do something with each value
+			}
+
+	Este último ciclo puede leerse como: "por cada value dentro de values, realizar lo siguiente". En el ejemplo se muestra un array de Strings, pero puede utilizarse de igual forma con cualquier otra colección como listas o sets, o con arrays de cualquier otro tipo.
+
+	Sintaxis del ciclo for-each
+
+		La sintaxis del ciclo for-each es la siguiente:
+
+			for(Tipo nombreVariable : array_o_Iterable ){
+				sentencias(s);
+			}
+
+		En caso de que sólo se tenga una sentencia, se puede prescindir del bloque y se tendría lo siguiente:
+
+			for(Tipo nombreVariable : array_o_iterable ) sentencias(s);
+
+		"Tipo" es el tipo de elementos que se encuentran dentro del array o colección; variableName es el nombre de la variable local al ciclo con la que se hace referencia al elemento del array o colección; y array_o_iterable es el array u objeto que implementa la interfaz java.util.Iterable.
+
+		Se hace la generalización de Iterable, ya que cualquier clase que quiera iterar con el ciclo for-each, debe implementar la interfaz java.util.Iterable.
+
+		Para fines del examen, sólo es necesario saber que el ciclo for-each es útil para iterar sobre List y ArrayList.
+
+	Ciclo for-each en la práctica 
+
+		En el ejemplo anterior, únicamente se usaba Object como el tipo de variable dentro del loop, ya que únicamente se requería imprimir el objeto en pantalla. Pero si se necesita invocar a un método específico dentro de la variable, se debe de usar un cast específico. Por ejemplo:
+
+			List names = //Obtiene names de algún lado
+			for(Object obj : names){
+				String name = (String) obj;
+				System.out.println(name.toUpperCase());
+			}
+
+		El verdadero poder del ciclo for-each es despertado cuando se utilizan genéricos para generizar la colección que se está intentando iterar. El ejemplo anterior se muestra a continuación con genéricos:
+
+			List<String> names = //Obtiene names de algún lado
+			for(String name : names){
+				System.out.println(name.toUpperCase());
+			}
+
+		A pesar de que el tema de genéricos no está incluído en el examen de OCAJP, es posible que aparezcan preguntas del ciclo foreach que utilicen genéricos. No es necesario saber mucho acerca de genéricos para responder estas preguntas, pero al menos debe de conocerse la sintaxis.
+
+	Contar el número de iteraciones
+
+		En un ciclo for normal, la variable de iteración nos indica en qué iteración estamos. No existe dicha variable en el ciclo foreach, por lo que si queremos saber en qué iteración estamos, es necesario crear una variable para ello.
+
+7.6 Uso de break y contine
+
+	La sentencia break hace que el ciclo sea finalizado en ese momento, aunque no haya llegado al final de sus posibles iteraciones. Esta sentencia sirve para cualquier ciclo, es decir, para while, do-while, for y for-each. Cuando se llega a una sentencia break, el ciclo se detiene por completo, no se ejecutan más las secciones de condición ni de actualización (en el caso del ciclo for) y el control se otorgará a la primera línea despues del bloque del ciclo.
+
+	La sentencia continue se salta el resto de las sentencias de esa iteración. Es decir, se salta a la sección de actualización (en caso de ser un ciclo for) y despues se evalúa la condición del for para decidir si se ejecuta la siguiente iteración. Al igual que la sentencia break, la sentencia continue es aplicable a todos los ciclos.
+
+	Las sentencias break y continue siempre se utilizan (en la práctica) junto con una condicional. De no ser así, el código que esté debajo de ellas sería inalcanzable y el compilador se quejará al respecto.
+
+7.7 Usando break y continue con ciclos anidados
+
+	Cuando se usen ciclos anidados, es importante verificar que las variables de control de cada ciclo se estén utilizando, evaluando y actualizando correctamente, según lo que se quiera realizar. En el examen habrá preguntas con ciclos de varios niveles. Lo mejor será siempre ejecutar el código de forma manual y cuidadosa en una hoja de papel para poder determinar correctamente la respuesta correcta.
+
+	La forma de utilizar sentencias break y continue dentro de ciclos anidados es igual en primera instancia.
+
+	Cuando se esté en un ciclo anidado, pero se quiera salir (break o continue) de más de un ciclo a la vez, se utilizan las sentencias break y continue con etiquetas. Por ejemplo:
+
+		CICLO_I:
+		for(int i = 0; i<10; i++){
+			for (int j = 0; j < 10; j++){
+				System.out.println("i = " + i + " j = " + j);
+				if(i == 4 && j == 5)
+					break CICLO_I;
+			}
+		}
+
+	En el código anterior, la sentencia break detiene el conteo en los valores i = 4 y j = 5. Al utilizar la etiqueta CICLO_I, el break aplica para el ciclo más exterior. La sentencia continue puede utilizarse de la misma manera junto con una etiqueta.
+
+	Una etiqueta es simplemente un nombre que se le da a un bloque de sentencias. Puede tratarse de cualquier estructura de control (if, for, while, do-while, for-each, switch y bloques simples de código). No es spoible eplicarse a métodos, sentencias individuales o expresiones. La convención para escribir etiquetas es utilizar mayúsculas y separar palabras con guión bajo, aunque no es una regla de compilación.
+
+	Reglas para utilizar continue y break con etiquetas
+
+		Para utilizar break y continue etiquetados, es necesario recordar que la etiqueta debe estar presente en la sentencia de alguno de los ciclos dentro de los que se encuentra la sentencia break o continue. Es decir, no se puede utilizar en el break o el continue una etiqueta que no haga referencia a alguno de los ciclos dentro de los que se encuentra la misma sentencia break o continue. Por ejemplo:
+
+			ETIQUETA_1: for(String s : array) System.out.println(s);
+			for(int i = 0; i < 10; i++){
+				if(i == 2)
+					continue ETIQUETA_1 //Esta línea no compila debido a que
+										//ETIQUETA_1 no hace referencia a algún
+										//ciclo que contenga esta sentencia continue
+			}
+
+		Es posible utilizar break y continue etiquetados dentro de un ciclo no anidado, aunque debido a que no es necesario especificar una etiqueta, no es necesario ni tiene sentido hacerlo. También es posible utilizar brake etiquetado (aunque no continue) dentro de cualquier bloque de sentencias, no sólo en ciclos, aunque esto no es utilizado y no es relevante para el examen.

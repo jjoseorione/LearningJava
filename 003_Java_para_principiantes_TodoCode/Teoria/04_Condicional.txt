@@ -1,0 +1,5 @@
+Condicional If (Si)
+
+	La estructura de control "if" permite decidir entre dos opciones resultantes de la evaluación de una sentencia. Si la evaluación es positiva, se ejecuta una parte del cóigo, de lo contrario el código dentro de la condición no se ejecuta o se establece otra serie de acciones para que se ejecuten en ese caso.
+
+	Cuando se procesa una declaración "if", se evalúa la expresión de condición y el resultado es interpretado como un valor booleano. Si el resultado es verdero, se ejeutan las sentencias contenidas dentro del "If". En caso contrario, el programa o realiza lo que se encuentra dentro de ese bloque.

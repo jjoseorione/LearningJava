@@ -1,0 +1,194 @@
+2.1 Definir el alcance de las variables
+
+	2.1.1 Alcance de variables
+
+		Java tiene 3 alcances de visibilidad de variables: clase, método y bloque.
+		Java tiene 5 alcances de tiempo de vida de variables: clase, instancia, método, ciclo for y bloque.
+
+	2.1.2 Alacance y visibilidad
+
+		El alcance se refiere a los lugares dentro de un programa en los que una variable es accesible ya sea de manera directa o de manera referenciada. Una variable de método puede ensombrecer a una variable de clase, de manera que la de método tenga mayor prioridad, pero ambas sean visibles.
+
+		Si se declara una variable dentro de un ciclo, la visibilidad de esa variable será sólo dentro de ese ciclo.
+
+		Si se declara una variable dentro de un bloque como if, do/while o switch, la variable será visible sólo dentro del bloque.
+
+		La visibilidad no debe confundirse con accesibilidad (public, private, protected). Visibilidad se refiere a si el compilador es capaz de ver la variable de manera directa y sin ninguna ayuda desde algún punto en específico.
+
+	2.1.3 Alcance y tiempo de vida
+
+		Además de a la visibilidad, el alcance se refiere también al tiempo de vida de las variables.
+
+		En Java, la existencia de una variable depende de la existencia del contexto a la que pertenece (bloque, ciclo fot, método, instancia y clase). 
+
+		Cuando un bloque termina, las variables creadas dentro de ese bloque dejan de existir.
+
+			Nota: en Java existen los bloques "flotantes": bloques de código únicamente encerrados entre llaves que no están ligados a ninguna palabra reservada como "for", "while", "class", etc.
+
+		Las variables definidas en un ciclo for (cabecera) existen sólo mientras el ciclo continua. Las variables definidas dentro del bloque del ciclo, tienen tiempo de vida de bloque y sólo existen hasta que finaliza cada iteración.
+
+		Cuando un método termina, las variables definidas dentro de ese método, dejan de existir.
+
+		Cuando un objeto deja de existir, las variables de instancia del objeto dejan de existir.
+
+		Cuando una clase es descargada por la JVM, las variables estáticas de esa clase dejan de existir.
+
+		El compilador sólo considera la visibilidad para la compilación, pero no el tiempo de vida. En caso de bloques, métodos y ciclos, la visicbilidad y el tiempo de vida coinciden, pero no es así para objetos y clases.
+
+	2.1.5 Alcance para el Examen
+
+		No se puede definir dos variables con el mismo alcance y el mismo nombre.
+
+		Es posible traslapar un campo de instancia con una variable de método, pero no es posible traslapar una variable de método con una de ciclo o bloque.
+
+2.2 Definir la estructura de una clase de Java
+
+	2.2.1 Ambigüedad de la palabra "clase"
+
+		La palabra "clase" puede referirse a distintas cosas. Puede referirse al concepto de "clase" en POO (abstración de un concepto), puede referirse al código escrito en Java por medio de la palabra class o puede referirse al archivo .class que surge luego de la compilación.
+
+		El examen se enfoca únicamente en el seguno concepto (código fuente).
+
+	2.2.2 Estructura de un código fuente Java
+
+		I. Cero o una sentencia de paquete
+		II. Cero, una o muchas sentencias import
+		III. Una o muchas definiciones de tipos referenciados (clases, interfaces, enums).
+
+		El orden importa.
+
+	2.2.3 Miembros de una clase
+
+		Dentro de una clase se puede tener declaraciones de campos, métodos, constructores e inicializadores (bloques de código que se ejecutan una vez por clase si son estáticos o una vez por objeto si no son estáticos), incluso se pueden tener tipos referenciados anidados. Todos ellos se llaman "miembros" de una clase.
+
+		Los miembros pueden ser estáticos o no estáticos (de instancia).
+
+		No se puede tener una sentencia directamente dentro de una clase que no pertenezca a la clasificación mostrada previamente.
+
+		Comentarios JavaDoc: Java promueve la documentación del código. Ésta debe iniciar con /**, finalizar con */ y cada renglón debe iniciar con * y un espacio. Se pueden incluir elementos HTML y se deben utilizar anotaciones como @param, @return y @see. La JDK contiene una herramienta que genera documentación HTML basado en los comentarios.
+
+	2.2.4 Relación entre el nombre de un archivo fuente Java y el nombre de una clase
+
+		El código de un tipo público de alto nivel debe estar en un archivo con el mismo nombre.
+
+		Se pueden tener varios tipos (clases, enums, interfaces) en un archivo, pero sólo una puede ser pública y debe tener el mismo nombre que el archivo.
+
+		Se pueden tener varios tipos públicos anidados, ya que la regla sólo aplica para tipos de alto nivel.
+
+		Todo esto lo realiza el compilador, el cual convierte el código fuente a archivos .class independientes para cada tipo. La JVM no sabe nada acerca de cómo está organizado el código fuente.
+
+		Aún así, se recomienda que cada tipo de alto nivel, público o no, se guarde en un archivo independiente.
+
+2.3 Poner clases dentro de paquetes
+
+	2.3.1 La sentencia package
+
+		Cada tipo de Java pertenece a algún paquete. Éste se especifica usando la sentencia package, la cual debe ser la primera sentencia del archivo. 
+
+		Si no hay sentencia package, los tipos en el archivo se agregan al paquete por defecto, el cual no tiene nombre. El paquete sin nombre no tiene nombre y por tanto no puede ser referenciado para sentencias import.
+
+		No se recomienda no añadir ninguna sentencia package en nuestros archivos Java.
+
+2.4 Importando clases Java a nuestra clase
+
+	2.4.1 Una sentencia importante
+
+		Si todas nuestras clases están en el mismo paquete, podemos sólo usar el nombre de una clase para usarla desde otra clase.
+
+		Para usar una clase desde otra que esté en diferente paquete, debemos usar el nombre completo calificado. Si utilizamos el nombre de la clase, el compilador buscará la clase sólo en el mismo paquete.
+
+		Si añadimos una sentencia import, ya sea de la clase o de el paquete completo (con *), nos ahorraremos escribir el nombre completo calificado de la clase. Se recomienda importar clases independientes en lugar de usar el operador *
+
+		Se puede utilizar la sentencia import static taxes.Values.*; para importar todos los miembros estáticos de la clase Values del paquete taxes. Los miembros importados podrán usarse utilizando sólo su nombre (sin necesidad de nombrar la clase).
+
+		La palabra "import" no es literal, ya que realmente no se importa nada a nuestra clase; sólo se le indica al compilador en qué paquetes buscar clases referidas en el código.
+
+		El paquete java.lang está siempre por default importado en todas las clases.
+
+		No es posible importar "subpaquetes" usando import. Por ejemplo, la sentencia import com.enthuware.*; importará todas las clases en el paquete com.enthuware, pero no importará ninguna clase del paquete com.enthuware.ocajp. Además, la sentencia import com.enthuwa.*.* no está permitida. De manera estricta, no existen los "subpaquetes" en java.
+
+		Las clases que no se encuentren en ningún paquete, no podrán ser utilizadas desde otros paquetes.
+
+		Si se importan dos clases con el mismo nombre de diferentes paquetes, no podrá usarse el nombre de la clase porque será ambiguo. Se deberá usar el nombre completo calificado para ambas o sólo importar una y la otra ser referenciada por su nombre completo calificado.
+
+2.5 Crear aplicaciones Java ejecutables con un método principal (main).
+
+	2.5.1 El método main
+
+		Las clases java no son "ejecutables". No es posible "ejecutar" clases de Java. La JVM sí es un ejecutable. La JVM se ejecuta enviando como argumento el nombre completo calificado de una clase. La JVM busca en esa clase un método específico, y si lo encuentra, le pasa el control. Este método es el método main. Cuando se dice 
+
+		El método main tiene características muy específicas:
+			-El nombre debe ser siempre "main"
+			-Debe tomar forzosamente un único parámetro que sea un arreglo de cadenas.
+			-Siempre retorna void
+			-Siempre es público
+			-Siempre es estático
+			-Se puede declarar cualquier excepción con throws
+
+	2.5.2 Argumentos en línea de comandos
+
+		Cuando se ejecuta una clase desde línea de comandos, es posible especificar cualquier número de argumentos. Los argumentos son recibidos por el método main como un vector de cadenas.
+
+2.6 Correr un programa Java desde línea de comandos
+
+	El compilador de java se llama javac
+
+	El compilador devuelve n archivos de tipo class (según las clases existentes)
+
+	La JDK se llama java
+
+2.7 Resumen de las características y componentes de Java
+
+	Beneficios:
+
+		I. Orientado a objetos
+
+			• Encapsulación: Asegura que las clases sean diseñadas para que sólo algunos campos y métodos de un objeto sean accesibles para otros objetos. Java permite controles de acceso como public/protected/private, los cual promuebe la encapsulación.
+
+			• Herencia: Java permite a una clase extenderse (heredarse) desde máximo otra clase, pero permite que una clase implemente más de una interfaz. Por lo tanto, Java permite herencia multiple de tipo, pero no permite herencia múltiple de estado e implementación.
+
+			• Polimorfismo: Asegura que en tiempo de ejecución la ejecución de un método dependa del objeto al que se hace referencia. Si una subclase sobreescribe un método de la clase padre y si el objeto referido por una variable es del tipo de la subclase, entonces se utiliza la versión del método de la subclase, incluso si la variable fue declarada con el tipo de la variable padre. Ejemplo:
+				class Animal {
+					public void makeSound() {
+					System.out.println("Grr...");
+					}
+				}
+				class Cat extends Animal {
+					public void makeSound() {
+						System.out.println("Meow");
+					}
+				}
+				class Dog extends Animal {
+					public void makeSound() {
+						System.out.println("Woof");
+					}
+				}
+
+				public static void main(String[ ] args) {
+					Animal a = new Dog();
+					Animal b = new Cat();
+					a.makeSound();
+					//Imprime "Woof" porque el objeto se creó como Dog (aunque la variable sea tipo Animal)
+
+					b.makeSound();
+					//Imprime "Meow" porque el objeto se creó como Cat (aunque la variable sea tipo Animal)
+				}
+
+		II. Independencia de plataforma: El código compilado de Java se encuentra en bytecode, el cual es interpretado por la JVM. Por lo tanto, el código compilado puede correr en cualquier plataforma que tenga una JVM instalada.
+
+		III. Amplia biblioteca estándar.
+
+		IV. Poco complejo: Java elimina conceptos complejos de programación como apuntadores, herencia multiple, sobrecarga de operadores, sentencia goto, directivas del compilador, etc.
+
+		V. Colector de basura.
+
+		VI. Seguridad. Una aplicación de Java puede correr con un gestor de seguridad. El gestor de seguridad puede ser modificado para permitir sólo las operaciones que uno quiera permitir a la aplicación. Se pueden descargar aplicaciones Java de terceros de internet y ejecutarse desde un sandbox que permita limitar lo que el programa puede realizar en nuestra máquina.
+
+		VII. Multihilo. Java permite desarrollar aplicaciones multihilo mucho más fácil que otros lenguajes.
+
+	Componentes:
+
+		I. Herramientas de desarrollador: La JDK contiene inmersas varias aplicaciones además del compilador (javac) y la JVM (java), como el depurador (jdb), inspector de clases (javap) y generador de documentación (javadoc).
+
+		II. Biblioteca estándar de Java: Una colección de clases listas que pueden utilizarse para construis cualquier aplicación.
+
