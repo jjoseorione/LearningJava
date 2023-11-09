@@ -1,0 +1,1 @@
+Crear clases en dos paquetes diferentes. Definir miembros estáticos y de instancia en una de las clases y acceder a todos esos campos desde otra clase. Observar qué sucede cuando intentamos utilizar los métodos de una y otra.

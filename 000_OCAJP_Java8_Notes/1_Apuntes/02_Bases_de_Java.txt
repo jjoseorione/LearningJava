@@ -5,7 +5,7 @@
 		Java tiene 3 alcances de visibilidad de variables: clase, método y bloque.
 		Java tiene 5 alcances de tiempo de vida de variables: clase, instancia, método, ciclo for y bloque.
 
-	2.1.2 Alacance y visibilidad
+	2.1.2 Alcance y visibilidad
 
 		El alcance se refiere a los lugares dentro de un programa en los que una variable es accesible ya sea de manera directa o de manera referenciada. Una variable de método puede ensombrecer a una variable de clase, de manera que la de método tenga mayor prioridad, pero ambas sean visibles.
 
@@ -19,7 +19,7 @@
 
 		Además de a la visibilidad, el alcance se refiere también al tiempo de vida de las variables.
 
-		En Java, la existencia de una variable depende de la existencia del contexto a la que pertenece (bloque, ciclo fot, método, instancia y clase). 
+		En Java, la existencia de una variable depende de la existencia del contexto a la que pertenece (bloque, ciclo for, método, instancia y clase). 
 
 		Cuando un bloque termina, las variables creadas dentro de ese bloque dejan de existir.
 
@@ -33,13 +33,22 @@
 
 		Cuando una clase es descargada por la JVM, las variables estáticas de esa clase dejan de existir.
 
-		El compilador sólo considera la visibilidad para la compilación, pero no el tiempo de vida. En caso de bloques, métodos y ciclos, la visicbilidad y el tiempo de vida coinciden, pero no es así para objetos y clases.
+		El compilador sólo considera la visibilidad para la compilación, pero no el tiempo de vida. En caso de bloques, métodos y ciclos, la visibilidad y el tiempo de vida coinciden, pero no es así para objetos y clases. Por ejemplo:
+
+			public class TestClass{
+				int data = 10;
+				public static void main(String[] args){
+					TestClass t = new TestClass();
+					t = null;
+					System.out.println(t.data); //En este punto t.data es visible y el código compilará sin problemas, a pesar de que el objeto ya no existe
+				}
+			}
 
 	2.1.5 Alcance para el Examen
 
-		No se puede definir dos variables con el mismo alcance y el mismo nombre.
+		No se puede definir dos variables con el mismo alcance y el mismo nombre. 
 
-		Es posible traslapar un campo de instancia con una variable de método, pero no es posible traslapar una variable de método con una de ciclo o bloque.
+		Sin embargo, es posible traslapar un campo de instancia con una variable de método, pero no es posible traslapar una variable de método con una de ciclo o bloque.
 
 2.2 Definir la estructura de una clase de Java
 
@@ -55,11 +64,11 @@
 		II. Cero, una o muchas sentencias import
 		III. Una o muchas definiciones de tipos referenciados (clases, interfaces, enums).
 
-		El orden importa.
+		Este orden importa.
 
 	2.2.3 Miembros de una clase
 
-		Dentro de una clase se puede tener declaraciones de campos, métodos, constructores e inicializadores (bloques de código que se ejecutan una vez por clase si son estáticos o una vez por objeto si no son estáticos), incluso se pueden tener tipos referenciados anidados. Todos ellos se llaman "miembros" de una clase.
+		Dentro de una clase se puede tener declaraciones de campos, métodos, constructores e inicializadores (bloques de código que se ejecutan una vez por clase si son estáticos o una vez por objeto si son de instancia o no estáticos), incluso se pueden tener tipos referenciados anidados. Todos ellos se llaman "miembros" de una clase.
 
 		Los miembros pueden ser estáticos o no estáticos (de instancia).
 
@@ -95,7 +104,7 @@
 
 		Si todas nuestras clases están en el mismo paquete, podemos sólo usar el nombre de una clase para usarla desde otra clase.
 
-		Para usar una clase desde otra que esté en diferente paquete, debemos usar el nombre completo calificado. Si utilizamos el nombre de la clase, el compilador buscará la clase sólo en el mismo paquete.
+		Para usar una clase desde otra que esté en diferente paquete, debemos usar el nombre completo calificado. Si utilizamos sólo el nombre de la clase, el compilador buscará la clase sólo en el mismo paquete.
 
 		Si añadimos una sentencia import, ya sea de la clase o de el paquete completo (con *), nos ahorraremos escribir el nombre completo calificado de la clase. Se recomienda importar clases independientes en lugar de usar el operador *
 
@@ -115,11 +124,11 @@
 
 	2.5.1 El método main
 
-		Las clases java no son "ejecutables". No es posible "ejecutar" clases de Java. La JVM sí es un ejecutable. La JVM se ejecuta enviando como argumento el nombre completo calificado de una clase. La JVM busca en esa clase un método específico, y si lo encuentra, le pasa el control. Este método es el método main. Cuando se dice 
+		Las clases java no son "ejecutables". No es posible "ejecutar" clases de Java. La JVM sí es un ejecutable. La JVM se ejecuta enviando como argumento el nombre completo calificado de una clase. La JVM busca en esa clase un método específico, y si lo encuentra, le pasa el control. Este método es el método main. Cuando se dice de manera coloquial que se va a ejecutar una clase, en realidad lo que se realiza es el procedimiento antes descrito.
 
 		El método main tiene características muy específicas:
 			-El nombre debe ser siempre "main"
-			-Debe tomar forzosamente un único parámetro que sea un arreglo de cadenas.
+			-Debe tomar forzosamente un único parámetro que sea un vector de cadenas.
 			-Siempre retorna void
 			-Siempre es público
 			-Siempre es estático
@@ -143,7 +152,7 @@
 
 		I. Orientado a objetos
 
-			• Encapsulación: Asegura que las clases sean diseñadas para que sólo algunos campos y métodos de un objeto sean accesibles para otros objetos. Java permite controles de acceso como public/protected/private, los cual promuebe la encapsulación.
+			• Encapsulación: Asegura que las clases sean diseñadas para que sólo algunos campos y métodos de un objeto sean accesibles para otros objetos. Java permite controles de acceso como public/protected/private, los cual promueve la encapsulación.
 
 			• Herencia: Java permite a una clase extenderse (heredarse) desde máximo otra clase, pero permite que una clase implemente más de una interfaz. Por lo tanto, Java permite herencia multiple de tipo, pero no permite herencia múltiple de estado e implementación.
 
@@ -178,7 +187,7 @@
 
 		III. Amplia biblioteca estándar.
 
-		IV. Poco complejo: Java elimina conceptos complejos de programación como apuntadores, herencia multiple, sobrecarga de operadores, sentencia goto, directivas del compilador, etc.
+		IV. Poco complejo: Java elimina conceptos complejos de programación como apuntadores, herencia múltiple, sobrecarga de operadores, sentencia goto, directivas del compilador, etc.
 
 		V. Colector de basura.
 
@@ -190,5 +199,5 @@
 
 		I. Herramientas de desarrollador: La JDK contiene inmersas varias aplicaciones además del compilador (javac) y la JVM (java), como el depurador (jdb), inspector de clases (javap) y generador de documentación (javadoc).
 
-		II. Biblioteca estándar de Java: Una colección de clases listas que pueden utilizarse para construis cualquier aplicación.
+		II. Biblioteca estándar de Java: Una colección de clases listas que pueden utilizarse para construir cualquier aplicación.
 

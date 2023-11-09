@@ -1,0 +1,1 @@
+2. Definir una variable local dentro de un método. Actualizar esta variable dentro de un ciclo while e imprimir el valor de la variable después de que el ciclo finaliza. Revisar qué sucede cuando se define una variable con el mismo nombre dentro del ciclo while.

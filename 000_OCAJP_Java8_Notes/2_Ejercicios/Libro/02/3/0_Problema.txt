@@ -1,0 +1,1 @@
+3. Crear una clase dentro del paquete foo y otra clase dentro del paquete foo.bar con un método estático. Invocar el método estático de la clase en el paquete foo usando diferentes sentencias import.

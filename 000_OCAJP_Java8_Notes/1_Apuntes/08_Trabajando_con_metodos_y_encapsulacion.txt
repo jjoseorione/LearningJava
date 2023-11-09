@@ -279,4 +279,4 @@
 
 	8.5.3 Sobrecarga de constructores
 
-		Una clase puede tener cualquier n
+		Una clase puede tener cualquier número de 

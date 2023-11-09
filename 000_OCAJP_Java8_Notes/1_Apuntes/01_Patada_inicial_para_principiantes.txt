@@ -2,7 +2,7 @@
 
 	1.1.1 Una cuestión de perspectiva
 
-		En los Estados Unidos, al igual que en otros países desarrollados, las cosas están extremadaente bien definidas. Los productos especifican claramente cómo deben de ser usados y en qué casos pueden fallar. Las personas pueden confiar en estas especificaciones porque las cosas funcionan como se espera y fallan en la forma que deben hacerlo. Además , siempre se espera que dichos artículos tengan especificaciones detalladas.
+		En los Estados Unidos, al igual que en otros países desarrollados, las cosas están extremadamente bien definidas. Los productos especifican claramente cómo deben de ser usados y en qué casos pueden fallar. Las personas pueden confiar en estas especificaciones porque las cosas funcionan como se espera y fallan en la forma que deben hacerlo. Además, siempre se espera que dichos artículos tengan especificaciones detalladas.
 
 		En pocas palabras, la gente sabe exactamente qué están obteniendo cuando adquieren algo. Esto es como si la misma sociedad fuera "orientada a objetos".
 
@@ -10,23 +10,23 @@
 
 	1.1.2 API
 
-		Probablemente has escuchado que API significa Application Programming Interface, pero ¿realmente entiendes qué significa? A este concepto puede también aplicarse la analogía de relacionar conceptos de programación con conceptos de la vida real. Cuando utilizas un apagador, no te preocupas qué hay dentro del apagador o cómo funciona, sólo te preocupas por conectarlo y utilizarlo como debe ser utilizado. De igual manera, un automovil provee controles que permiten conducirlo y utilizar todas sus características; estos controles son todo lo que necesitas conocer para operar correctamente el automovil.
+		Probablemente has escuchado que API significa Application Programming Interface, pero ¿realmente entiendes qué significa? A este concepto puede también aplicarse la analogía de relacionar conceptos de programación con conceptos de la vida real. Cuando utilizas un apagador, no te preocupas por saber qué hay dentro del apagador o cómo funciona, sólo te preocupas por conectarlo y utilizarlo como debe ser utilizado. De igual manera, un automovil provee controles que permiten conducirlo y utilizar todas sus características; estos controles son todo lo que necesitas conocer para operar correctamente el automovil.
 
-		Con los componentes de software ocurre la misma situación. Un componente de software no tiene por qué se un montón de clases y paquetes encapsulados dentro de un archivo jar, sino que puede ser tan pequeño como una sola clase con un solo método. Pero sin importar lo simple que sea un fragmento de código, debes pensar en cómo esperas que los demás lo utilicen. Debes pensar en diferentes maneras en las que los usuarios puedan usar el componente. También debes pensar cómo el componente debe comportarse en caso de que el componente no sea utilizado en la forma en la que se espere que se utilice. En otras palabras, debes de especificar una interfaz para tu componente, incluso antes de empezar a programarlo, donde interfaz no se refiere al concepto de interfaz de Java, sino a una especificación de cómo interactuar con tu componente. En un automóvil, los controles como el volante, los pedales, la palanca, etcetera, son su interfaz. En un componente de software, la especificación de las clases públicas, métodos, campos, enums, etcétera, es su interfaz. Como desarrollador de aplicaciones,, si quieres usar un componente desarrollado por alguien más, sólo debes de preocuparte por la interfaz de dicho componente.
+		Con los componentes de software ocurre la misma situación. Un componente de software no tiene por qué ser un montón de clases y paquetes encapsulados dentro de un archivo jar, sino que puede ser tan pequeño como una sola clase con un solo método. Pero sin importar lo simple que sea un fragmento de código, debes pensar en cómo esperas que los demás lo utilicen. Debes pensar en diferentes maneras en las que los usuarios puedan usar el componente. También debes pensar cómo el componente debe comportarse en caso de que no sea utilizado en la forma en la que se espera que se utilice. En otras palabras, debes de especificar una interfaz para tu componente, incluso antes de empezar a programarlo, donde interfaz no se refiere al concepto de interfaz de Java, sino a una especificación de cómo interactuar con tu componente. En un automóvil, los controles como el volante, los pedales, la palanca, etcetera, son su interfaz. En un componente de software, la especificación de las clases públicas, métodos, campos, enums, etcétera, es su interfaz. Como desarrollador de aplicaciones,, si quieres usar un componente desarrollado por alguien más, sólo debes de preocuparte por la interfaz de dicho componente.
 
-		En el mundo de Java, una colección de clases provistas por un un tercero para un propósito en particulares llamada "biblioteca" y la JavaDoc para esas clases, describe su API. Cuando instalas el JRE, éste incluye un gran número de clases y paquetes, las cuáles son comunmente llamadas biblioteca estándar de Java, y la colección de sus clases públicas e interfaces es conocida como la API de Java.
-
-		[A partir de aquí se acaba la traducción directa y sólo escribimos conceptos clave muy necesarios de recordar. En su mayoría leeremos]
+		En el mundo de Java, una colección de clases provistas por un un tercero para un propósito en particular es llamada "biblioteca" y la JavaDoc para esas clases, describe su API. Cuando instalas el JRE, ésta incluye un gran número de clases y paquetes, las cuáles son comunmente llamadas biblioteca estándar de Java, y la colección de sus clases públicas e interfaces es conocida como la API de Java.
 
 	1.1.3 Tipo, clase, enum e interfaz
 
-		Una clase describe comportamiento y la implementación de dicho comportamiento. Por ejemplo, una cuenta de banco, donde el comportamiento sería depositar o retirar dinero y la definición sería la forma en que esto se realiza
+		Una clase describe comportamiento y la implementación de dicho comportamiento. Por ejemplo, una cuenta de banco, donde el comportamiento sería depositar o retirar dinero y la implementación sería la forma en que esto se realiza
 
 		Un enum (corto para enumeración) también permite combinar descripción e implementación del comportamiento, con la dierencia de que limita a un número fijo de instancias. Por ejemplo, existen sólo 7 días de la semana y no sería correcto que se agregue una nueva instancia a dicha definición.
 
-		Una interfaz permite definir sólo la descripción del comportamiento sin la implementación del mismo. Por ejemplo, un "movible" puede ser una interfaz qe describa algo que se mueve. Un movible puede ser una vaca, un atomóvil o incluso el precio de una acción en el mercao de valores. Todas estas cosas se mueven, pero cada una de manera muy distinta. El punto clave con la interfaz es que no se puede instanciar, ya que no se puede tener una instancia de "movible". Por lo tanto, una interffaz es siempre abstracta ya que no existe en sí misma, sino que debe implementarse el comportamiento de la interfaz.
+		Una interfaz permite definir sólo la descripción del comportamiento sin la implementación del mismo. Por ejemplo, un "movible" puede ser una interfaz qe describa algo que se mueve. Un movible puede ser una vaca, un atomóvil o incluso el precio de una acción en el mercado de valores. Todas estas cosas se mueven, pero cada una de manera muy distinta. El punto clave con la interfaz es que no se puede instanciar, ya que no se puede tener una instancia de "movible". Por lo tanto, una interffaz es siempre abstracta ya que no existe en sí misma, sino que debe implementarse el comportamiento de la interfaz.
 
 		Adicionalmente existen clases abstractas, la cual es un punto medio entre una interfaz y una clase, ya que define tanto comportamiento como implementación del mismo, pero dicha implementación es aún incompleta, por lo que debe completarse antes de crear instancias ya que de igual forma no puede implementarse por sí misma.
+
+
 
 1.2 Por qué esto es así
 
@@ -52,11 +52,11 @@
 1.6 Stack (pila) y Heap (Montón)
 	En Java se necesitan dos tipos de memoria asignada: Una memoria temporal que pueda ser limpiada tan pronto como un método finaliza su llamada y otra para cosas permanentes que se mantengan por más tiempo que la llamada de un método. El espacio para cosas temporales se llama Stack o Pila, mientras que la memoria para el resto de cosas es llamado Heap o Montón.
 
-	En Java, cada hilo tiene su propia porción fija de Pila. La Pila debe su nombre a que es como una Pila (por ejemplo, un tubo de papas fritas) en donde se ven agrupando las variables una encima de otra (de abajo hacia arriba) y van desapareciendo conforme dejan de ser necesarias (de arriba hacia abajo). Cuando un hilo muere, toda la pila de ese hilo es liberada.
+	En Java, cada hilo tiene su propia porción fija de Pila. La Pila debe su nombre a que es como una Pila (por ejemplo, un tubo de papas fritas) en donde se van agrupando las variables una encima de otra (de abajo hacia arriba) y van desapareciendo conforme dejan de ser necesarias (de arriba hacia abajo). Cuando un hilo muere, toda la pila de ese hilo es liberada.
 
 	El montón es como un montón, ya que los objetos caen en la forma en que se acomoden solas (aleatoria). La JVM organiza el montón, lo cual es un tema que se estudia cuando se quieren optimizar aplicaciones.
 
-	Cuando se crea un objeto en cuaquier parte del código (ya sea en un método o en una clase), la JVM reserva espacio para el objeto en el montón y pone su contenido en ese espacio. En Java, un prgrama nunca libera este espacio de manera explícita, sino que es manejado por la JVM. Para que un método acceda a un objeto, éste debe usar su referencia que apunte a dicho objeto. Si no existe ninguna referencia en ninguna pila a través de la cual un objeto pueda ser accedido, dicho objeto se considera basura y será limpiado automáticamente por el recolector de basura de la JVM.
+	Cuando se crea un objeto en cuaquier parte del código (ya sea en un método o en una clase), la JVM reserva espacio para el objeto en el montón y pone su contenido en ese espacio. En Java, un programa nunca libera este espacio de manera explícita, sino que es manejado por la JVM. Para que un método acceda a un objeto, éste debe usar una referencia que apunte a dicho objeto. Si no existe ninguna referencia en ninguna pila a través de la cual un objeto pueda ser accedido, dicho objeto se considera basura y será limpiado automáticamente por el recolector de basura de la JVM.
 
 	Los objetos residen siempre en el Heap, mientras que sus variables de referencia pueden residir en el Heap o en el Stack, dependiendo de en qupe parte del código fueron creados.
 
@@ -75,13 +75,13 @@
 
 		Una convención es un acuerdo implícito dentro de una comunidad. No tiene el peso de una regla, ya que no hay nada malo con no cumplirla, pero se acostumbra hacerlo. En el mundo de la programación, por ejemplo, se acostubra nombrar como i, j, o k a las variables utilizadas en ciclos. No hay nada de malo con ponerle i como nombre a una variable que guarde algo más trascendente que una variable de ciclo, pero eso hará el código menos entendible.
 
-	1.7.2 Concenciones en Java
+	1.7.2 Convenciones en Java
 
 		Algunas de las más importantes son:
 
 			1. Camel Case: Palabras juntas (sin guiones o guiones bajos) e iniciando cada palabra con mayúscula.
 
-				a) Las clases inician siempre con mayúscula. Por ejemplo: RadOnlyArrayFisty
+				a) Las clases inician siempre con mayúscula. Por ejemplo: ReadOnlyArrayList
 
 				b) Los paquetes inician con minúscula. Por ejemplo: dataStructures.
 
@@ -89,7 +89,7 @@
 
 			2. Nombres. Los nombres deben ser significativos y descriptivos.
 
-			3. Nombres de los paquetes. Utilizan una combinación de un dominio inverso con un grupo y/o el nombre de la aplicación. Por ejemplo, para la empresa Bank Of America, en la división de Fixen Income Technologies que desarrolla la aplicación FX Blotter, todos los paquetes de esa aplicación deben empezar con com.bofa.fit.fxblotter. El nobre completo para una clase llamada ReadOnlyFirst podría ser com.bofa.fit.fxblotter.dataStructures.ReadOnlyArrayList. La razón por la que se utiliza el dominio inverso es porque hace fácil crear nombres de paquetes que sean únicos a nivel mundial. Por ejemplo, si un desarrollador de otra área está creando su propia clase ReadOnlyArrayList, el nombre completo de esa clase puede ser com.bofa.derivatives.dataStructures.ReadOnlyArrayList. No habría problema si un desarrollador quiere usar ambas clases al mismo tiempo en su código al mismo tiempo, ya que los nombres son diferentes. Ambos programadores pusieron nombres diferentes a sus paquetes sin siquiera hberse comunicado y a la vez ambos paquetes son únicos a nivel global porque el dominio de la compañía es único a nivel global.
+			3. Nombres de los paquetes: Utilizan una combinación de un dominio inverso con un grupo y/o el nombre de la aplicación. Por ejemplo, para la empresa Bank Of America, en la división de Fixed Income Technologies que desarrolla la aplicación FX Blotter, todos los paquetes de esa aplicación deben empezar con com.bofa.fit.fxblotter. El nombre completo para una clase llamada ReadOnlyArrayList podría ser com.bofa.fit.fxblotter.dataStructures.ReadOnlyArrayList. La razón por la que se utiliza el dominio inverso es porque hace fácil crear nombres de paquetes que sean únicos a nivel mundial. Por ejemplo, si un desarrollador de otra área está creando su propia clase ReadOnlyArrayList, el nombre completo de esa clase puede ser com.bofa.derivatives.dataStructures.ReadOnlyArrayList. No habría problema si un desarrollador quiere usar ambas clases al mismo tiempo en su código al mismo tiempo, ya que los nombres son diferentes. Ambos programadores pusieron nombres diferentes a sus paquetes sin siquiera hberse comunicado y a la vez ambos paquetes son únicos a nivel global porque el dominio de la compañía es único a nivel global.
 
 1.8 Compilación y Ejecución
 
@@ -117,7 +117,7 @@
 
 		El compilador revisa reglas sintácticas únicamente y no errores lógicos, ya que no ejecuta ningún código. Sin embargo, si encuentra algo que le parezca lógicamente incorrecto, tendrá un error.
 
-		La JVM sí ejecuta código y es la que encontrará excepciones cuando exista un error ent tiempo de ejecución.
+		La JVM sí ejecuta código y es la que encontrará excepciones cuando exista un error en tiempo de ejecución.
 
 1.9 Nomenclatura (coloquial)
 
@@ -125,7 +125,7 @@
 
 	II. Tipo: Puede referirse a clases, interfaces, enums y también a tipos primitivos (byte, char, short, int, float, double y boolean).
 
-	III. Tipos primitivos: byte, cjar, short, int, long, float, double y boolean. Son llamados primitivos porque sólo contienen datos y no comportamiento.
+	III. Tipos primitivos: byte, char, short, int, long, float, double y boolean. Son llamados primitivos porque sólo contienen datos y no comportamiento.
 
 	IV. Tipos referenciados: Clases, interfaces y enums. Son referenciados porque siempre son llamados a través de referencias y nunca directamente. Contienen datos y también comportamiento.
 
