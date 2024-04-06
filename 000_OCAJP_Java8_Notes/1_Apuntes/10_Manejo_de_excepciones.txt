@@ -1,0 +1,67 @@
+10.1 Excepciones
+
+	10.1.1 Manejo de excepciones en Java
+
+		Las excepciones sirven para manejar situaciones excepcionales. Por ejemplo, en un programa que copia un archivo, pueden ocurrir distintos problemas, como que no se pueda abrir el archivo, no se tengan permisos de escritura, no quede espacio en disco, entre otros. Este tipo de situaciones pueden ocurrir, pero no se espera que ocurran todo el tiempo, por lo que son llamadas "excepcionales".
+
+		Cuando ocurre una situación excepcional, puede que queramos dar alguna retroalimentaçión al usuario sobre lo que ha ocurrido e incluso darle una alternativa para que el programa continue. Por ejemplo, podríamos permitir al usuario elegir otro archivo si el archivo elegido no fue encontrado. Una forma de lograr este tipo de control de excepciones podría ser la siguiente:
+
+			if(checkFileAccess(file1)){
+				if(checkWritePermission(targetDirectory)){
+					//codigo para flujo normal de programa
+				}
+				else{
+					System.out.println("No es posible crear el archivo2");
+				}
+			}
+			else{
+				System.out.println("No es posible leer archivo1");
+			}
+
+		El enfoque anterior se vuelve sumamente tedioso, difícil de leer y de mantener. Además, este enfoque provee alternativas para problemas previamente conocidos, pero en caso de que ocurra un problema no conocido, el programa podría terminar de manera súbita.
+
+		El mecanismo de excepciones de Java está diseñado para ayudarnos a escribir código que cubra todas las posibles rutas de ejecución que el programa podría tomar: 1. La ruta de operación normal. 2. La ruta para sutuaciones excepcionales conocidas. 3. La ruta para situaciones excepcionales desconocidas. El programa anterior podría ser escrito:
+
+		__________________SE TERMINAN APUNTES, INICIAN SÓLO NOTAS PUNTUALES__________
+
+	10.1.3 Partes del manejo de excepciones
+
+		Cláusula throws
+			Sirve para avisar al usuario de una clase que un método puede devolver una expcepción. De esta manera, el usuario de la clase puede decidir si manejar la excepeción dentro de un bloque try/catch o propagarla también con una cláusula throws. 
+
+		El objeto java.lang.Throwable
+
+			La clase Throwable es la clase raíz de todas las excepciones, la cual captura los detalles del programa en el momento en el que es creada. Contiene la cadena de métodos que condujeron la excepción (llamada stack trace) y cualquier mensaje informativo especificado por el programador al momento de crear la excepción. Tiene dos clases hijas: java.lang.Error y java.lang.Exception; y muchas clases nietas, cada una creada para una situación específica. Es posible crear nuestras propias subclases extendiendo cualquiera de las de esta familia de clases. Siempre que se hable en forma general de "excepciones", se está hablando de un descendiente de la clase Throwable.
+
+		La sentencia throw
+
+			La sentencia throw es usada por un programador para "lanzar" una excepción. Esto se realiza cuando el programador decide que la finalización del código se vuelve inútil. Por ejemplo, si un método está calculando un interés con base en tiempo, y el tiempo que el método recibe como parámetro es negativo, el cálculo se vuelve en automático incorrecto. El programador decide entonces lanzar una excepción utilizando la sintaxis: throw objetoDeLaClaseThrowable;. El objetoDeLaClaseThrowable puede ser un objeto implícito o explícito.
+
+			Lá sentencia throw se utiliza cuando el programador no quiere lidiar con la excepción y decide propagarla al método que invocó el método en el que se utilizo la sentencia throw. Es importante saber que sólo se pueden lanzar instancias de la familia Throwable. No es posible lanzar cualquier otro tipo de objeto.
+
+		La cláusula throws
+
+			Java requiere que listemos las excepciones que un método puede lanzar a través de la cláusula throws de dicho método. Esto se relaciona con el objetivo de diseño de Java de permitirle al usuario conocer el comportamiento completo de un método y de esta manera, el método invocador puede manejar la excepción o propagarla.
+
+		La sentencia try
+
+			Consiste de un bloque try, ninguno o muchos bloques catch y un bloque opcional llamado finally. El bloque try contiene el código que puede lanzar excepciones, los bloques catch son los que se ejecutan en caso de excepciones y el bloque finally se ejecuta después de que los bloques try y catch.
+
+			Los bloques try, catch y finally requieren siempre de llaves, aunque se trate de una única sentencia. Un bloque try debe siempre ser acompañado ya sea de al menos un bloque catch o del bloque finally. Si se crea un bloque try solo, el código no compila. El bloque try es la contraparte de throw, ya que ponerla en un fragmento de código significa que el programador va a lidiar con la situación en caso de que se presente una excepción.
+
+			El bloque catch es donde el programador intenta recuperarse de la excepción. Si el bloque dentro de try genera una excepción, se inicia la ejecución del bloque catch. La cláusula catch dentro del bloque catch especifíca que excepción se va a manejar dentro de ese bloque. Para ello, se escribe la clase de la excepción a manejar, seguida de una variable donde se guardará la referencia a una instancia de dicha excepción.
+
+			El bloque finally es donde se intenta salvar la situación o minimizar el daño sin intentar recuperarse de la excepción. Por ejemplo, un método que copia un archivo a otro puede únicamente cerrar todos los archivos dentro del bloque finally. En caso de omitir el bloque catch, la excepción no fue manejada y por lo tanto es propagada al método invocador luego de que finalice el bloque finally. El bloque finally (si está presente) siempre se ejecuta, sin importar lo que pase dentro del bloque try o catch. La única razón por la que podría no ejecutarse es si el bloque try o catch invocan a System.exit() para detener a la JVM.
+
+10.2 Diferencia entre excepciones checked y unchecked
+
+	Cuando se compila un método, el compilador revisa qué excepciones podrían ser lanzadas dentro de dicho método y devueltas al invocador. Si esa excepción no está dentro de la cláusula throws, el compilador se rehusa a compilar el método. Sin embargo, el compilador no revisa todos los tipos de excepciones, sino que sólo revisa un tipo de excepciones, llamadas "checked exceptions" (excepciones revisadas) y nos fuerza a enlistar sólo las excepciones que pertenezcan a esta categoría dentro de la cláusula throws.
+
+	Las excepciones que no pertenecen a esta categoría son llamadas "unchecked exceptions" (exceptiones no revisadas). Se llaman así, ya que el compilador no se preocupa si un fragmento de código lanza una excepción de este tipo y enlistarlas en la cláusula throws es opcional.
+
+	Todas las clases que desciendan de java.lang.Throwable, pero no desciendan de java.lang.Error o java.lang.RuntimeException, son excepciones revisadas. El resto (java.lang.Error, java.lang.RuntimeException y sus subclases) son excepciones no revisadas.
+
+	Las excepciones no revisadas son situaciones inesperadas y no son forzadas a ser incluídas dentro de la cláusula throws porque no se gana nada forzando al invocador a manejarlas. Sólo las excepciones revisadas necesitan ser declaradas porque el invocador del método puede tener un plan de recuperación. Existen dos tipos de excepciones no revisadas: las que descienden de java.lang.RuntimeException y las que descienden de java.lang.Error.
+
+	
+

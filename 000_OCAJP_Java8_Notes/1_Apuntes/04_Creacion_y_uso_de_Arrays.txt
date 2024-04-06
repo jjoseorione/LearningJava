@@ -146,7 +146,7 @@
 
 					c) int[][] iaa = new int[][]{ new int[]{ 1, 2 } };
 
-						Esta sentencia utiliza una expresión de creación de array junto con un inicializador de array. También podría utilizarse si la expresiónde creación, de la siguiente manera: 
+						Esta sentencia utiliza una expresión de creación de array junto con un inicializador de array. También podría utilizarse sin la expresión de creación, de la siguiente manera: 
 							int[][] iaa = { { 1, 2 } };
 						Esta última sentencia crea el mismo array que la anterior.
 

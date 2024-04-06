@@ -1,0 +1,1 @@
+7. Crear una clase llamada TransformerFactory con un método llamado getTransformer. Este método debe retornar distintos tipos de transformadores según el argumento que se envíe. Utilizar esta fábrica para crear diferentes tipos de transformadores e invocar el método transform en ellos.

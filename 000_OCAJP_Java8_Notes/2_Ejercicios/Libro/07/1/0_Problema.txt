@@ -1,0 +1,1 @@
+1. Inicializar una matriz triangular de enteros utilizando un ciclo for, de tal forma que cada elemento contenga el valor igual a la suma de su fila y columna. Realizar lo mismo utilizando un ciclo while.

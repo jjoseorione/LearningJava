@@ -1,0 +1,15 @@
+1. Dada las siguientes dos clases:
+
+	public class TestClass{
+		public static void main(String[] args){
+			Document d = new PdfDocument();
+			System.out.println(d.getType());	//debe imprimit "pdf"
+		}
+	}
+
+	class Document{
+		private String type = "dummy";
+		private byte[] data;	//Insertar setters y getters apropiados
+	}
+
+La clase TestClass refiere a una clase llamada PdfDocument. Escribir código para esta clase de modo que TestClass imprima "pdf" cuando sea ejecutada.

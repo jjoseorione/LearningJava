@@ -1,0 +1,1 @@
+3. Crear un array de chars que contenga 4 valores. Escribir sentencias de asignación envolviendo el array, de tal forma que el primer elemento contenga el valor del segundo elemento, el segundo elemento contenga el valor que había en el tercer elemento, y el tercer elemento contenga el valor del cuarto elemento.

@@ -1,0 +1,1 @@
+4. Crear una clase con un método main y ejecutar la clase con algunos argumentos. Imprimir en pantalla el número de argumentos.

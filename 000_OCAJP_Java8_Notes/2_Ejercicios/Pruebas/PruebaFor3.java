@@ -4,6 +4,6 @@ public class PruebaFor3{
 		for(int i=0 ; b = !b ; ) {
 			System.out.println(i++);
 		}
-		//Imprime sólo cero. 
+		//Imprime sólo un cero. 
 	}
 } 

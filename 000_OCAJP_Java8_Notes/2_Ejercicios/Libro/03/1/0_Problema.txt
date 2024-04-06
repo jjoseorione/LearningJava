@@ -1,0 +1,1 @@
+1. Definir un tipo referenciado llamado Bird. Definir un método de instancia llamado fly dentro de Bird. Definir algunas variables estáticas y de instancia de tipo int, float, double, boolean y String dentro de Bird.

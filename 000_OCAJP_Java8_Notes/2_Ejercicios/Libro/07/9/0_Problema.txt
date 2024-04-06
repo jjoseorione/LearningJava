@@ -1,0 +1,1 @@
+9. Dados dos arrays del mismo tamaño y tipo, copiar los elementos del primer array en orden inverso.

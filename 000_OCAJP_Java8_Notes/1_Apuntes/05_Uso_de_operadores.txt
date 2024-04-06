@@ -50,7 +50,7 @@
 				= (Binario)
 					Asignación simple. Se copia al primer operando el valor de la segunda. Es importante recordar que para tipos referenciados se copia el valor de la referencia. Es importante saber que el operador de asignación tiene asociatividad de derecha a izquierda. Lo que significa que a = b = c = d = 100; será lo mismo que escribir d = 100; c = d; b = c; a = b;
 
-				*=, /*, %=, +=, -=, <<=, >>=, >>>=, &=, |= (Binario)
+				*=, /=, %=, +=, -=, <<=, >>=, >>>=, &=, |= (Binario)
 					Asignaciones compuestas. Son llamadas de esta manera porque realizan dos acciones a la vez. Realizan una operación (aritmética o bit a bit) y posteriormente asignan el resultado de la operación al operando del lado izquierdo. Estos operadores sirven sólo en operados numéricos. La única excepción es +=, el cual sirve también con Strings para concatenar.
 
 			Operadores bit a bit (No requerido para el examen)
@@ -91,7 +91,7 @@
 
 		Diferencia entre expresión y sentencia
 
-			Una expresión es un conjunto de variables, operadores, constantes y/o funciones que un lenguae de programación interpreta y calcula para generar (o retornar) un nuevo valor. Toda expresión tiene un valor, ya sea primitivo o de referencia, y por lo tanto puede asignarse a una variable u operarse para crear expresiones más grandes.
+			Una expresión es un conjunto de variables, operadores, constantes y/o funciones que un lenguaje de programación interpreta y calcula para generar (o retornar) un nuevo valor. Toda expresión tiene un valor, ya sea primitivo o de referencia, y por lo tanto puede asignarse a una variable u operarse para crear expresiones más grandes.
 
 			Una sentencia es una línea de código completa que puede ejecutarse y puede tener o no tener un valor. A diferencia de una expresión. no es posible combinar sentencias para crear una sentencia más grande, pero es posible escribir sentencias una tras otra para formar un programa.
 
@@ -145,7 +145,7 @@
 		Ejemplo:
 			Integer i = 1;
 			Integer j = i;	// ahora j e i apuntan al mismo objeto
-			i++; // Se asignaa i un nuevo objeto que contiene 2
+			i++; // Se asigna a i un nuevo objeto que contiene 2
 				// j todavía apunta al objeto original
 			System.out.println(i + " " + j); //Imprime 2 1
 
@@ -203,7 +203,7 @@
 
 		Es importante saber y recordar que los operadores de asignación compuesta no funcionan en declaraciones, por lo que una sentencia como String str += "test" no funcionará.
 
-	5.1.15 Promoción numérica y casting (conversión)
+	5.1.5 Promoción numérica y casting (conversión)
 
 		La promoción numérica se puede resumir en dos reglas
 
@@ -215,8 +215,10 @@
 
 				public class TestClass{
 					public static void main(String[] args){
-						byte b = 1;
-						short s = -b;	//b es convertido a int antes de aplicar el operador "-".
+						byte b = 1;		//Compila debido a que 1 es una constante en tiempo de
+										//compilación
+						short s = -b;	//b es convertido a int antes de aplicar el operador
+										//"-".
 						System.out.println(b);
 					}
 				}
@@ -239,19 +241,20 @@
 				float f = 1.0f;		//Se escribe f para especificar que un valor es float
 				double d = 1.0;		
 
-				int x = f - 1;		//No compila debido a que el resultado es float (float es más
-									//grande que int)
-				float f3 = f + d;	//No compila debido a que el resultado es double (double es más
+				int x = f - 1;		//No compila debido a que el resultado es float (float es
+									//más grande que int)
+				float f3 = f + d;	//No compila debido a que el resultado es double (double es
+									//más
 									//grande que float e int)
 
-			Todas las líneas que fallan en el ejemplo son debidas a promoción numérica. Para realizar estas operaciones es necesario asegurarle al compilador que somos conscientes de lo que estamos haciendo y que estamos de acuerdo con la pérdida de información (si llega a haber alguna). Esto se realiza a travez de un casting específico. El código anterior quedaría arreglado de la siguiente manera:
+			Todas las líneas que fallan en el ejemplo son debido a promoción numérica. Para realizar estas operaciones es necesario asegurarle al compilador que somos conscientes de lo que estamos haciendo y que estamos de acuerdo con la pérdida de información (si llega a haber alguna). Esto se realiza a través de un casting específico. El código anterior quedaría arreglado de la siguiente manera:
 
 				short s1 = 1;
 				byte b1 = 1;
 				byte b2 = 2;
 
-				short s2 = (short) +s1);
-				byte b = (byte) (81 + 2);
+				short s2 = (short) (+s1);
+				byte b = (byte) (s1 + 2);
 				b = (byte) (b1 & b2);
 
 				s2 = (short) (s1 << 1);
@@ -302,7 +305,7 @@
 			Acceso a miembros y arrays		. []
 			Cast 							()
 			Posfijos						expr++, expr--
-			Unarios							++expr, -expr, +expr, -expr, ~, !
+			Unarios							++expr, --expr, +expr, -expr, ~, !
 			Multiplicativos					*, /, %
 			Aditivos						+, -
 			Corrimiento						<<, >>, >>>
@@ -343,30 +346,54 @@
 
 		Orden de evaluación
 
-			Una vez que una expresión es agrupada según sus reglas de precendencia y asociatividad, el proceso de evaluación inicia. Este paso es en el que el cálculo de cada término de la expresión se realiza. En java, las expresiones se evalúan de izquierda a derecha. Así pues, si se tiene la expresión getA() - getB() + getC(), el método getA será invocado primero, seguido de getB() y getC(). Si getA resulta en una excepción, no se evaluarán getB ni getC. Es importante recalcar que el orden de evaluación no cambia con la agrupación, por lo que incluso usando paréntesis para que la expresión sea getA() - (getB() + getC()), se seguirá invocanfo primero a getA, seguido por getB y getC, tan sólo por su orden de aparición.
+			Una vez que una expresión es agrupada según sus reglas de precendencia y asociatividad, el proceso de evaluación inicia. Este paso es en el que el cálculo de cada término de la expresión se realiza. En java, las expresiones se evalúan de izquierda a derecha. Así pues, si se tiene la expresión getA() - getB() + getC(), el método getA será invocado primero, seguido de getB() y getC(). Si getA resulta en una excepción, no se evaluarán getB ni getC. Es importante recalcar que el orden de evaluación no cambia con la agrupación, por lo que incluso usando paréntesis para que la expresión sea getA() - (getB() + getC()), se seguirá invocando primero a getA, seguido por getB y getC, tan sólo por su orden de aparición.
 
 5.2 Igualdad entre cadenas
 
-	A PARTIR DE AQUÍ SÓLO SE RESALTAN COSAS REALMENTE IMPORTANTES. SE REALIZARÁN APUNTES DETALLADOS SÓLO EN CASO DE TENER EL TIEMPO SUFICIENTE
+	Las cadenas son objetos de la clase java.lang.String que representa una serie de caracteres. Los objetos de la clase String son llamados simplemente strings. Los objetos de la clase string son considerados fundamentales y Java provee tratamiento especial para ellos en términos de cómo son creados, almacenados y utilizados.
 
-	Las cadenas son objetos de la clase java.lang.String
+	Creación de cadenas: Las cadenas pueden crearse utilizando la palabra new e invocando cualquiera de sus constructores. Por ejemplo, String str = new String("hello"); o new String( new char[]{ 'h' , 'e' , 'l' , 'l' , 'o' }) o también simplemente escribiendo el texto entre paréntesis. Sin embargo, debido a que las cadenas se utilizan muy a menudo en un programa, Java permite crearlas sin el operador new, simplemente escribiendo una serie de caracteres entre comillas. Por lo tanto, la misma cadena puede crearse escribiendo String str = "hello".
 
-	Las cadenas son objetos con tratamiento diferente, debido a que se utilizan muy a menudo. Pueden crearse a partir de su constructores o también simplemente escribiendo el texto entre paréntesis.
+	Inmutabilidad de cadenas: Las cadenas son inmutables, lo que significa que no es posible cambiar su contenido. Por lo tanto, la cadena "hello" permanecerá así. Existen métodos que dan la ilusión de cambiar el contenido de alguna cadena (como concat o replace), pero en realidad lo que hacen es devolver una cadena nueva y no cambian al cadena original.
 
-	Las cadenas son inmutables, lo que significa que no es posible cambiar su contenido. Existen métodos que dan la ilusión de cambiar el contenido de alguna cadena, pero en realidad lo que hacen es devolver una cadena nueva y no cambian al cadena original.
+	Almacenamiento de strings: Todas las cadenas, al igual que el resto de objetos, se crean en el heap. Sin embargo, las cadenas creadas sin usar la palabra new se alojan en una región especial del heap, llamado "string pool" o "pool de cadenas". Las cadenas que se creen con el operador new se guardan en el heap regular con el resto de objetos.
 
-	Todas las cadenas, al igual que el resto de objetos, se crean en el heap. Sin embargo, las cadenas creadas sin usar la palabra new se alojan en una región especial del heap, llamado "string pool" o "pool de cadenas".
+	El próposito del pool de cadenas es mantener una colección de cadenas únicas. Cada vez que se crea una nueva cadena sin el uso de la palabra "new", java revisa si esa cadena ya existe en el pool de cadenas. Si la cadena existe, se devuelve una referencia a la misma; y si no, se crea la cadena en el pool y se devuelve la referencia. Así, por ejemplo, si se utiliza la cadena "hello" dos veces en el código como se muestra a continuación, se devolverá una referencia a la misma cadena:
 
-	El próposito del pool de cadenas es mantener una colección de cadenas únicas. Cada vez que se crea una nueva cadena sin el uso de la palabra "new", java revisa si esa cadena ya existe en el pool de cadenas. Si la cadena existe, se devuelve una referencia a la misma; y si no, se crea la cadena en el pool y se devuelve la referencia.
+		String str1 = "hello";
+		String str2 = "hello";
+		System.out.println(str1 == str2);	//Imprime true;
+		String str3 = new String("hello");
+		String str4 = new String("hello");
+		System.out.println(str1 == str3);	//Imprime false
+		System.out.println(str3 == str4);	//Imprime false
+
+	En el código anterior, str1 y str2 reciben la referencia al mismo objeto dentro del pool de cadenas. Luego, str3 y str4 reciben ambas referencias a objetos String completamente diferentes. De hecho, cuando se realiza la sentencia new String("hello"); se crean dos objetos String, uno en el pool debido a la String escrita entre comillas y otra en el heap regular debido a la palabra new.
 
 	El string pool es una manera de ahorrar memoria, pues se evita la creación de múltiples cadenas con el mismo contenido.
 
-	Es posible obtener una cadena del pool por medio del método intern()  on base en una cadena creada con new. A esto se le conoce como "interning" de objetos String.
+	Es posible obtener una cadena del pool por medio del método intern() con base en una cadena creada con new. Por ejemplo:
+
+		String str1 = "hello";
+		String str2 = new String("hello");
+		String str3 = str2.intern();		//Obtiene una cadena dentro del pool de cadenas 
+											//con el mismo valor de str2
+		System.out.println(str1 == str2);	//Imprime false
+		System.out.println(str1 == str3);	//Imprime true 
+
+	A esto se le conoce como "interning" de objetos String.
+
+	A partir de Java 7 las cadenas dentro del pool son también recolectadas como basura al igual que el resto de objetos que se quedan sin ninguna referencia a ellas.
 
 	5.2.2 Comparación entre dos cadenas
 
 		Existen dos formas de comparar dos cadenas. Utilizando el operador == y utilizando el método equals de la clase String.
 
-		Es importante recordar que al comparar dos variables referenciadas con ==, se comparan únicamente las referencias. Si ambas variables apuntan a la misma referencia, entonces tambien las cadenas son iguales. Sin embargo, si se tienen dos objetos distintos (uno en el pool y otro fuera del pool, o ambos fuera del pool), la comparación con == será negativa, incluso cuando el contenido de ambos objetos sea el mismo. Por lo tanto, el operador == no garantiza éxito si lo que se está comparando es el contenido de las cadenas; es preferible el uso de equals.
+		Es importante recordar que al comparar dos variables referenciadas con ==, se comparan únicamente las referencias. Si ambas variables apuntan a la misma referencia, entonces tambien las cadenas son iguales. Por ejemplo:
 
-		El método equals compara el array de caracteres contenido en cada objeto String, por lo que, sin importar que se trate de diferentes objetos, devolverá la comparación únicamente del texto de interés. Si se compara una variable String contra una literal String, es preferible invocar el método equals desde la literal que desde la variable, por ejemplo, es preferible "1234".equals(str) que str.equals("1234"). Lo anterior es debido a que si str es null, la primera forma devolverá false, mientras que la segunda arroja un NullPointerException.
+			String str = "hello";
+			System.out.println(str == "hello"); 		//Imprime true
+
+		Sin embargo, si se tienen dos objetos distintos (uno en el pool y otro fuera del pool, o ambos fuera del pool), la comparación con == será negativa, incluso cuando el contenido de ambos objetos sea el mismo. Recordemos que cuando se crean cadenas con el operador new, un objeto completamente nuevo es creado. Por lo tanto, el operador == no garantiza éxito si lo que se está comparando es el contenido de las cadenas; es preferible el uso del método equals.
+
+		El método equals compara el contenido del array de caracteres contenido en cada objeto String y devuelve "true" si la información coincide o "false" si no coincide, por lo que, sin importar que se trate de diferentes objetos, devolverá la comparación únicamente del texto de interés. Si se compara una variable String contra una literal String, es preferible invocar el método equals desde la literal que desde la variable, por ejemplo, es preferible "1234".equals(str) que str.equals("1234"). Lo anterior es debido a que si str es null, la primera forma devolverá false, mientras que la segunda arroja un NullPointerException.

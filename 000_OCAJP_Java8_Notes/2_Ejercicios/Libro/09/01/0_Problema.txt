@@ -1,0 +1,1 @@
+1. Estás desarrollando una aplicación que permite a un usuario comparar automóviles. Utilizar clases abstractas, clases e interfaces para modelar las entidades Coche, Camion, Vehiculo y Conducible. Declarar y definir un método llamado conducir() en los lugares apropiados.

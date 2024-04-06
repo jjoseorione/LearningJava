@@ -1,0 +1,1 @@
+3. Se espera que se reseteen muchos dispositivos electrónicos en el futuro. Reescribir el código anterior de tal forma que el método reset de TestClass sea capaz de resetear cualquier dispositivo sin necesidad de cambiar el método reset.

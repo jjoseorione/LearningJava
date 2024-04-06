@@ -7,11 +7,11 @@
 
 	2.1.2 Alcance y visibilidad
 
-		El alcance se refiere a los lugares dentro de un programa en los que una variable es accesible ya sea de manera directa o de manera referenciada. Una variable de método puede ensombrecer a una variable de clase, de manera que la de método tenga mayor prioridad, pero ambas sean visibles.
+		El alcance se refiere a los lugares dentro de un programa en los que una variable es accesible ya sea de manera directa o de manera referenciada. Una variable de método puede ensombrecer (shadowing) a una variable de clase (atributo), de manera que la de método tenga mayor prioridad, pero ambas sean visibles.
 
 		Si se declara una variable dentro de un ciclo, la visibilidad de esa variable será sólo dentro de ese ciclo.
 
-		Si se declara una variable dentro de un bloque como if, do/while o switch, la variable será visible sólo dentro del bloque.
+		Si se declara una variable dentro de un bloque como if, do/while, switch o try/catch, la variable será visible sólo dentro del bloque.
 
 		La visibilidad no debe confundirse con accesibilidad (public, private, protected). Visibilidad se refiere a si el compilador es capaz de ver la variable de manera directa y sin ninguna ayuda desde algún punto en específico.
 
@@ -84,7 +84,7 @@
 
 		Se pueden tener varios tipos públicos anidados, ya que la regla sólo aplica para tipos de alto nivel.
 
-		Todo esto lo realiza el compilador, el cual convierte el código fuente a archivos .class independientes para cada tipo. La JVM no sabe nada acerca de cómo está organizado el código fuente.
+		Estas restricciones son revisadas por el compilador, el cual convierte el código fuente a archivos .class independientes para cada tipo. La JVM no sabe nada acerca de cómo está organizado el código fuente.
 
 		Aún así, se recomienda que cada tipo de alto nivel, público o no, se guarde en un archivo independiente.
 
@@ -100,7 +100,7 @@
 
 2.4 Importando clases Java a nuestra clase
 
-	2.4.1 Una sentencia importante
+	2.4.1 La sentencia import
 
 		Si todas nuestras clases están en el mismo paquete, podemos sólo usar el nombre de una clase para usarla desde otra clase.
 

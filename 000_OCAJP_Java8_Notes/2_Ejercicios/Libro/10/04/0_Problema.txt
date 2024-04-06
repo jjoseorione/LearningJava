@@ -1,0 +1,11 @@
+1. Crear un método llamado cuentaVocales que reciba un array de chars como entrada y retorne el número de vocales que hay en el array. Además, el método debe lanzar una excepción revisada si el array contiene 'x'.
+
+2. Invocar el método cuentaVocales desde el método main en un ciclo que imprima el valor de retorno para cada argumento de la línea de comandos. Observar qué ocurre en las siguiente situaciones: no hay argumentos, hay muchos argumentos, hay muchos argumentos pero el primero contiene una x. Utilizar el método toCharArray
+
+	R: El programa se detiene en cuanto se encuentra una x. Se detendrá en cuanto evalúe un argumento que contenga una x. Mientras no encuentre una x, el método funcionará correctamente.
+
+3. Asegurarse de que el método main imprime el número de vocales en otros argumentos, incluso si un argumento contiene una x.
+
+4. Ingresar null en el método countVowels y observar la salida.
+
+	R: En este caso, el programa se detiene por completo, ya que no hay bloque catch que se acomode para un NullPointerException. Si lo hubiera, se podría recuperar del problema.

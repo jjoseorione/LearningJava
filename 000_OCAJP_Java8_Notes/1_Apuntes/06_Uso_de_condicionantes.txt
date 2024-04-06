@@ -2,35 +2,337 @@
 
 	6.1.1 Sintaxis básica de if e if-else
 
-		Es importante recordar que una sentencia vacía es válida (sólo un ;) es válida, por lo cual las sentencias como if(algo); ó else; son válidas, aunque no ejecuten nada.
+		La sentencia if es probablemente la más usada en Java, ya que permite ejecutar una sentencia o un conjunto de sentencias si una condición en particular es verdadera. Si la condición es falsa, la sentencia (o conjunto de sentencias) no son ejecutadas. Las siguientes son dos formas en las que se puede construir una sentencia if:
+
+			if( expresiónBooleana ) sentencia;
+
+		Puede notarse que no hay llaves para la senetencia. La sentencia if termina con el punto y coma. Si se tienen múltiples sentencias a ejecutar en lugar de sólo una, se puede poner todo dentro de un bloque de la siguiente forma:
+
+			if( expresiónBooleana ){
+				ninguna, una o muchas sentencias;
+			}
+
+		Se puede observar que no hay punto y coma al final del bloque. Puede llevarlo o no llevarlo y no habrá diferencia.
+
+		La sentencia if-esle es muy similar a la sentencia if, excepto que tiene además una parte else en la que se puede escribir la o las condiciones que queremos que se ejecuten si la condición se evalúa como falsa:
+
+			if( expresiónBooleana ) unaSentencia;	//Se requiere el punto y coma
+			else otraSentencia;		//Se requiere el punto y coma. El bloque if termina con el
+									//punto y coma
+
+		Nuevamente, si se tienen múltiples sentencias a ejecutar en lugar de una, se pueden poner tantas como se requieran en el bloque else:
+
+			if ( expresiónBooleana ) unaSentencia;	//Se requiere el punto y coma
+			else{
+				Ninguna, una o muchas sentencias;
+			}		//No se requiere el punto y coma aquí, aunque puede colocarse y el resultado
+					//es el mismo
+
+		También pueden mezclarse las dos formas de bloque vistas. Si tanto la parte if como la parte else tienen varias sentencias:
+
+			if ( expresiónBooleana ){
+				Ninguna, una o muchas sentencias;
+			}		//No debe haber punto y coma aquí. Ponerlo es un error
+			else{
+				Ninguna, una o muchas sentencias
+			}		//No se requiere el punto y coma aquí, aunque puede colocarse
+
+		Es importante recordar que una sentencia if vacía (sólo un ;) es válida, por lo cual las sentencias como if(algo); ó else; son válidas, aunque no ejecuten nada.
 
 	6.1.2 Uso de if e if-else en el examen
 
 		Los problemas que pueden presentarse en el examen con if-else tienen que ver con lo siguiente (ver ejemplos en el libro)
 
-		-Sintaxis incorrecta
-		-Sangrías
-		-Else faltante
-		-Else "colgante"
-			El bloque else se aigna al if más próximo
-		-Usar asignación en la condición
-		-Usar incremento prefijo y posfijo en la condicion
+		• Sintaxis incorrecta:
+
+			boolean flag = true;
+			if(flag)
+			else System.out.println("false");	//Error de compilación
+
+			En el código anterior, no hay una sentencia o conjunto de sentencias para la parte if. Si no se requiere ningún código a ejecutar para la sección if, pero sí para la sección else, necesitar poner un bloque de código vacío o un punto y coma para indicar que la sección if ha finalizado. Por ejemplo:
+
+			boolean flag = false;
+			if( flag ){
+			}
+			else System.out.println("false");
+
+			ó
+
+			boolean flag = false;
+			if( flag ); else System.out.println("false");
+
+			En lugar de tener una sección if vacía, es mejor negrar la condición y agregar las instrucciones dentro del bloque if, de la siguiente forma:
+
+			boolean flag = false;
+			if( !flag ){
+				System.out.println("false");
+			}
+
+		• Sangría
+
+			A diferencia de otros lenguajes (como Python), la sangría (o los espacios en blanco extras) no tienen ninguna relevancia en Java. El sangradio es utilizada únicamente para legibilidad del código. Por lo tanto, los siguientes fragmentos de código son equivalentes e intercambiables:
+
+			boolean flag = false;
+			if( flag )
+			System.out.println("false");
+			else System.out.println("true");
+			{
+			System.out.println("false");
+			}
+
+			boolean flag = false;
+			if( flag )
+				System.out.println("false");
+			else 
+				System.out.println("true");
+			{
+				System.out.println("false");
+			}
+
+			Sin embargo, debido a que el segundo fragmento está propiamente espaciado, es fácil de entender que el último bloque de código no está asociado con el bloque if/else, sino que es un bloque independiente de código y será ejecutado sin importar el valor de flag. Por lo tanto, este código imprimirá true y false.
+
+			A continuación hay otro ejemplo con mal especiado:
+
+			boolean flag = false;
+			int i = 0;
+			if(flag)
+				i = i + 1;
+				System.out.println("true");
+			else
+				i = i + 2;
+				System.out.println("false");
+
+			El código anterior tiene la intención de confundir y hacer creer que hay dos sentencias en la sección if y dos sentencias en la sección else. Pero, con un sangrado correcto, es claro lo que el código en realidad está haciendo:
+
+			boolean flag = false;
+			int i = 0;
+			if(flag) i = i + 1;
+			System.out.println("true");
+			else i = i + 2;
+			System.out.println("false");
+
+			Se puede notar que las últimas tres líneas de código son sentencias independientes. La sentencia else está completamente fuera de lugar en este fragmento, ya que no está asociada a ningún if y por lo tanto causará un error de compilacoión
+
+		• Else faltante
+
+			Como se vio anteriormente, el bloque else no es obligatorio en una sentencia if. Puede tenerse únicamente la sentencia if. Pero cuando se conjunta con una mala sangría, una sentencia if puede ser difícil de entender como se muestra en el siguiente código:
+
+				boolean flag = true;
+				if(flag)
+				System.out.println("true");
+				{
+				System.out.println("false");
+				}
+
+			El código anterior imprime true y false porque no hay ninguna sección else en el código. La segunda sentencia println es parte de un bloque independiente y no es parte de la sentencia if.
+
+		• Else "colgante"
+			
+			Un "else colgante" es un problema conocido en lenguajes de programación que tienen sentencias if e if-else. Este problema es ilustrado en el siguiente fragmento de código que tiene dos bloques if pero sólo un bloque else:
+
+				int value = 3;
+				if(value == 0)
+				if(value == 1) System.out.println("b");
+				else System.out.println("c");
+
+			La pregunta aquí es ¿con cuál if debe asociarse el else? Hay dos respuestas que podrían ser razonables:
+
+				int value = 3;
+				if(value == 0){
+					if(value == 1) System.out.println("b");
+				}
+				else System.out.println("c");
+
+				y
+
+				int value = 3;
+				if(value == 0){
+					if(value == 1) 
+						System.out.println("b");
+					else
+						System.out.println("c");
+				}
+
+			En la primera interpretación, el bloque else es asociado al primer if, mientras que en la segunda interpretación, el bloque else es asociado al segundo if. Siguiendo la primera interpretación, el código imprimirá  c; mientras que siguiendo la segunda interpretación, el código no imprimirá absolutamente nada. Para el compilador, ambas formas podrían ser válidas, lo que volvería ambiguo el código. Por lo tanto, los desarrolladores del lenguaje Java rompieron la ambiguedad al decidir que lo correcto es la segunda interpretación. De esta manera, la palabra else está siempre asociada al if inmediato anterior. En consecuencia, el código del ejemplo en realidad no imprimirá nada, ya que no hay else asociado al primer if. Basado en la discusión anterior ¿cuál será la salida del siguiente código?
+
+				int value = 3;
+					if(value == 0)
+					if(value == 1)
+						System.out.println("b");
+					else
+						System.out.println("c");
+					else
+						System.out.println("d");
+
+			El código imprimirá d.
+
+		• Usar sentencia de asignación en la condición
+
+			Recuerda que cada sentencia de asignación por sí misma es una expresión válida con un valor propio. Su tipo y valor el mismo que el de la variable objetivo. Este hecho puede ser utilizado para escribir código que pueda resultar confuso, como el que se muestra a continuación:
+
+				boolean flag = false;
+				if(flag = true){
+					System.out.println("true");
+				}
+				else{
+					System.out.println("false");
+				}
+
+			Observa que flag no está siendo comparada con la literal true. Más bien, se está asignando el valor true a la variable flag. Por lo tanto, el valor de la expresión flag = true es true, y en consecuencia, se ejecutará la sentencia perteneciente al bloque if, en lugar del bloque else. A pesar de que este tipo de código no es apreciado en un ambiente profesional, algo como lo siguiente puede ser muy común:
+
+				String data = null;
+				if( (data = readData()) != null) //asumiendo que readData() devuelve un string
+				{
+					//hacer algo
+				}
+
+			El código anterior es adecuado ya que la operación de asignación está claramente separada de la operación de comparación. El valor de la expresión data = readData() está siendo comparada con null. Hay que recordar que el valor de esta expresión es el mismo que el de la variable objetivo de la asignación (data, en este caso). Por lo tanto, el contenifo del bloque if será ejecutado sólo si a data se le asigna una referencia no nula.
+
+		• Usar incremento prefijo y posfijo en la condicion
+
+			En el examen puede haber condiciones que utilicen incremento (y decremento) pre y posfijo. Por ejemplo:
+
+				int x = 0;
+				if(x++ > 0){	//Línea 2
+					x--;		//Línea 3
+				}
+
+				if(++x == 2){	//Línea 6
+					x++			//Línea 7
+				}
+			System.out.println(x);
+
+			Puede evaluarse fácilmente el cósigo anterior si se tiene clara la diferencia entre el valor de una expresión y el valor de una variable utilizada en la expresión. En la línea 2, se realiza la comparación, resultando false, y posteriormente se incrementa la variable, dando como resultado x = 1. La línea 3 no se ejecuta. Luego, en la línea 6, primero se aumenta la variable, dando como resultado x = 2 y posteriormente se realiza la comparación, dando como resultado true. En consecuencia, la línea 7 se ejecuta y x se incrementa nuevamente dando como resultado x = 3. Por lo tanto, el código imprimirá "3".
+
+			Por último, hay que recordar que las condiciones son utilizadas en expresiones ternarias y también en ciclos, por lo que es importante aplicar los mismos conceptos.
 
 6.2 Crear condicionantes ternarias
 
-	Las condicionantes ternarias tienen la forma:
+	Las condicionantes ternarias tienen la siguiente sintaxis:
 
 	operando1 ? operando2 : operando3
 
-	El operando1 debe ser una expresión que devuelva un valor booleano. Este booleano se usa para decidir cuál de los otros dos operandos será devuelto. Si la expresión booleana es verdadera, la expresión completa toma el valor del operando2; si la expresión booleana es falsa, la expresión toma el valor del operando3. Se puede notar entonces que el operador ternario es un operador condicional.
+	El operando1 debe ser una expresión que devuelva un valor booleano. Este booleano se usa para decidir cuál de los otros dos operandos será devuelto. Si la expresión booleana es verdadera, la expresión completa toma el valor del operando2; si la expresión booleana es falsa, la expresión toma el valor del operando3. Se puede notar entonces que el operador ternario es un operador condicional (a diferencia de &, |, ! y ^, los cuáles son simplemente operadores lógicos).
 
-	Es importante comprender que una condicionante ternaria no puede ser una sentencia por sí misma, ya que en realidad es únicamente una operación. Para que sea una sentencia válida, debe formar parte de alguna expresión. De igual forma, los operandos 2 y 3 deben ser valores y no pueden ser sentencias sin valor o métodos que devuelvan void.
+	Ejemplos:
 
-	Una expresión condicional ternaria puede devolver primitivos y referencias. Si el segundo y tercer operando son boolean, el tipo de la expresión es boolean. Si el segundo y tercer operando son primitivos numéricos, la expresión ternaria toma el tipo más grande. Si el segundo y tercer operando no son ambos booleanos o primitivos numéricos, el tipo de retorno es una referencia, en cuyo caso, si alguno es un primitivo, se usará autoboxing para devolver un wrapper. Si los operadores 2 y 3 son referencias del mismo tipo, la expresión ternaria toma el mismo tipo; si los operadores 2 y 3 son referencias a tipos diferentes, se toma la superclase común más específica de ambos. Por ejemplo, si se tiene String e Integer, se devuelve Object; pero si se tiene Integer y Byte, se devuelve Number.
+		boolean sweet = false;
+		int calories = sweet ? 200 : 100; //Asigna 100 a calories
+		boolean sweetflag = (calories == 100 ? false : true)	//Asigna false a sweetflag
 
-	El operador ternario también tiene la propiedad de corto circuito al igual que los operadores && y ||. La principal diferencia radica en que los operadores lógicos pueden o no evaluar ambos operadores, mientras que el operador ternario siempre evalúa (y ejecuta) sólo la expresión del operando que se devolverá después de evaluar la condición (el segundo si la condición es true o el tercero si la condición es false). Por lo tanto, una operación ternaria como la siguiente: true ? ++x : ++y, hará que sólo se aumente "x", mientras que "y" seguirá conservando su valor porque el ++y no será ejecutado.
+		boolean hardcoded = false;
+		double rate = hardcoded ? 10.0 : getRateFromDB(); //Asumiento que getRateFromDB()
+														  //retorna un double
+														  //se invoca a getRateFromDB()
+
+		String value = sweetflag ? "Sweetened" : "Unsweetened";	//Asigna "unsweetened" a value
+
+		Object obj = sweetflag ? "Sweetened" : new Object();	//Devuelve un nuevo Object
+
+	El operador condicional ternario a veces es visto simplemente como una forma abreviada de una sentencia if/else, pero es similar a if/else sólo cuando se tiene que realizar una asignación condicional. La diferencia fundamental radica en que la expresión ternaria es una expresión, mientras que if/else es una sentencia. Como se vio anteriormente, toda expresión tiene un valor, y por lo tanto, una expresión ternaria también lo tiene. Debido a que el valor de una expresión ternaria toma el valor del segundo o tercer operando, puede utilizarse como parte de una expresión más grande. Como se puede ver en el ejemplo anterior, se puede incluso incluir métodos que retornen algún valor, pero no con métodos void. Con la sentencia if/else no existe tal restricción, como puede verse en el siguiente ejemplo:
+
+		boolean flag = true;
+		if(flag) System.out.println("true");
+		else System.out.println("false");
+
+	El código anterior compila bien e imprime true, pero un código similar realizado con expresión ternaria, no compilará:
+
+		flag ? System.out.println("true") : System.out.println("false");
+
+	Existe una doble razón por la que el código anterior no compila. La primera es que la expresión ternaria no es una sentencia en sí misma, lo que significa que no es posible tener una expresión ternaria como si fuera una instrucción, sino que debe ser parte de una sentencia válida, como una asignación. La segunda, es que los operandos dos y tres son invocaciones a métodos que devuelven void. Obviamente no puede asignarse void a ninguna variable y por lo tanto, aunque se realizara una asignación como la siguiente:
+
+		int x = flag ? System.out.println("true") : System.out.println("false");
+
+	El código no compilará de todos modos.
+
+	Una expresión condicional ternaria puede devolver primitivos y referencias. 
+
+	Si el segundo y tercer operando son boolean, el tipo de la expresión es boolean. Por ejemplo:
+
+		int a = 1, b = 2;
+		boolean flag = a == b ? : true : false;		//Expresión ternaria que devuelve boolean
+
+	Si el segundo y tercer operando son primitivos numéricos (o sus respectivos wrappers), la expresión ternaria toma el tipo más amplio de los dos numéricos. Por ejemplo:
+
+		double d = a == b? : 5 : 10.0;
+
+	En la expresión anterior, el segundo operando es int, muentras que el tercero es double. Debido a que double es más amplio que int, el tipo de la expresión ternaria es double. Por lo tanto, no es posible realizar lo siguiente:
+
+		int d = a == b? : 5 : 10.0;
+
+	Debido a que no es posible asignar un double a un int sin un casting explícito.
+
+	Si el segundo y tercer operando no son ninguno de los anteriores, la expresión retornará una referencia. Por ejemplo:
+
+		Object obj = a == b? 5 : "hello";.
+
+	Aquí el segundo operando es numérico, mientras que el tercero es String, por lo tanto, el tipo de retorno debe ser una referencia. En este caso, un operando es int, el cual puede ser empaquetado dentro de Integer, mientras que el otro es String. Por lo tanto, si el primer operando se evalúa como true, la expresión retornará un Integer, pero si se evalúa como false, retornará un objeto String. Recuerda que el compilador no ejecuta código y no puede determinar lo que la expresión retornará cuando sea ejecutado, por lo cual debe elegir un tipo que sea compatible con los tipos de ambos operandos. Esto se resuelve eligiendo la superclase en común más específica. En este caso, esta clase es java.lang.Object. Al elegir la superclase en común más específica, el compilador se asegura de que el resultado siempre sea compatible con los operandos. Por ejemplo:
+
+		Double d = 10.0;
+		Byte by = 1;
+		Number n = a == b? d : by;
+
+	En este caso, la superclase común más específica entre Double y Byte es java.lang.Number. Ejemplo:
+
+		int value = a == b ? 10 : "hello";	//No compila debido a que devuelve un Object, no int
+
+		System.out.println(a == b ? 10 : "hello");	//Compila y corre correctamente
+
+	El operador ternario también tiene la propiedad de corto circuito al igual que los operadores && y ||. La principal diferencia radica en que los operadores lógicos pueden o no evaluar ambos operadores, mientras que el operador ternario siempre evalúa (y ejecuta) sólo la expresión del operando que se devolverá después de evaluar la condición (el segundo si la condición es true o el tercero si la condición es false). Por lo tanto, una operación ternaria como la siguiente: true ? ++x : ++y, hará que sólo se aumente "x", mientras que "y" seguirá conservando su valor porque el ++y no será ejecutado. La propiedad de corto circuito del operador ternario es explotable para generar preguntas confusas en el examen. Por ejemplo ¿qué imprime el siguiente código?
+
+		int x = 0;
+		int y = 1;
+		System.out.println(x>y ? ++x : y++);
+		System.out.println(x+" "+y);
+
+	El código imprime 1 y 0 2. Lo anterior, debido a que la primera expresión ternaria se evalúa como false, lo que provoca que se devuelva el tercer operando. Al ser un aumento posfijo, primero se devuelve el valor actual (1) y posteriormente se aumenta y a 2. La variable x mantiene su valor debido a que no se ejecuta el segundo operando. Por último, se imprimen ambos valores, dando como resultado 0 y 2.
 
 6.3 Uso de sentencias switch
+
+	Una sentencia switch permite utilizar el valor de una variable para seleccionar qué bloque (o bloques) de código de un conjunto de bloques de código va a ejecutarse. Por ejemplo:
+
+		public class TestClass{
+			public static void main(String[] args){
+				int i = args.length;
+
+				switch(i){	//aquí inicia el bloque switch
+					case 0 : System.out.println("Sin argumentos");
+								brake;
+					case 1 : System.out.println("Un argumento");
+								brake;
+					case 2 : System.out.println("Dos argumentos");
+								brake;
+					case 3 : System.out.println("Muchos argumentos");
+								brake;		
+				}	//Aquí finaliza el bloque switch
+
+				System.out.println("Finalizado");
+			}
+		}
+
+		Hay cuatro bloques de código dentro de la sentencia switch. Cada bloque de código es asociado a una etiqueta case. Dependiendo del valor de la variable i, el control puede entrar en el bloque de código con esa misma etiqueta case y seguir ejecutando líneas hasta encontrar una sentencia break. Por ejemplo, si el valor de i es 0, el control entra en el primer bloque de código, luego imprime "Sin argumentos" y por último encuentra una sentencia break. La sentencia break causa que el control salga de la sentencia switch y se mueva a la siguiente sentencia, la cual imprime "finalizado".
+
+		Si el valor i no concuerda con ninguno de los valores de las etiquetas case, el control busca la etiqueta "default" y ,si existe, entra en él, pero si no existe, el control no entra a ningún bloque y la sentencia switch finaliza. Debido a que esta selección está hechoa basada en la expresión especificada en la sentencia switch, a esta expresión se le suele llamar "expresión switch".
+
+		Operacionalmente, es muy similar a un conjunto de if/else en cascada. De hecho el ejemplo anterior puede fácilmente ser escrito con sentencias if/else en lugar de switch, como se muestra a continuación:
+
+		public class TestClass{
+			public static void main(String[] args){
+				int i = args.length;
+
+				if(i == 0)
+					System.out.println("Sin argumentos");
+				else if(i == 1)
+					System.out.println("Un argumento");
+				else if(i == 2)
+					System.out.println("Dos argumentos");
+				else if(i == 3)
+					System.out.println("Tres argumentos");
+				System.out.println("Finalizado");
+			}
+		}
+
+	¿Para qué es necesaria una sentencia switch, pudiendo utilizar un conjunto de if/else? Para empezar, los if/else en cascada son mucho más verbosos que una sentencia switch. Además, la versión con switch es mucho más fácil de comprender que la versión con if/else. Pero, además de la simplicidad sintáctica, puede tener muchos más beneficios que se verán a continuación.
 
 	La expresión evaluada dentro de un switch soporta los siguientes tipos:
 
@@ -40,15 +342,78 @@
 		
 		III. Los tipos referenciados no son admitidos, aunque la excepción a la regla es el tipo java.lang.String, así que se puede utilizar una expresión String dentro de la expresión evaluada en un switch.
 
+	Comparado con una senteica if/else, donde toda la ramificación yace únicamente en una expresión booleana. Esto limita la sentencia if/else a únicamente dos ramas. Por supuesto, como se vió anteriormente, es posible crear más ramas a partir de anidar más sentencias if/else en cascada.
+
 	Las etiquetas case deben ser constantes en tiempo de compilación y deben de ser asignables al tipo de la expresión switch. Por lo tanto, si la expresión switch es de tipo byte, las etiquetas case no pueden contener valores más grandes que un byte. De igual manera, sí la expresión switch es de tipo String, las etiquetas case deben ser constantes con valores String.
 
-	En una sentencia switch, los bloques case son opcionales. Se puede disponer únicamente del bloque default y funcionará.
+	Lo curioso aquí es que, en una sentencia switch, los bloques case son opcionales. Se puede disponer únicamente del bloque default y funcionará. Por lo tanto, a pesar de lo superfluo que es, un código como el siguiente es completamente válido:
 
-	Otra cosa importante es que, aunque es muy común utilizar una sola variable en la evaluación switch, en realidad se puede evaluar toda una expresión comprendida por varios operandos y operadores. Así pues, cuando se evalúa esta expresión, todos los conceptos de promoción numérica, casting y precedencia de operadores aplican de la misma manera que en cualquier otra expresión, por lo que se debe verificar que las etiquetas case sean válidas y compatibles con la expresión switch.
+		switch(i){
+			dafault : System.out.println("Esto siempre se imprime");
+		}
 
-	El bloque default también es opcional, en el sentido de que no es necesario para que el código compile.
+	Otra cosa importante es que, aunque es muy común utilizar una sola variable en la evaluación switch, en realidad se puede evaluar toda una expresión comprendida por varios operandos y operadores. Así pues, cuando se evalúa esta expresión, todos los conceptos de promoción numérica, casting y precedencia de operadores aplican de la misma manera que en cualquier otra expresión, por lo que se debe verificar que las etiquetas case sean válidas y compatibles con la expresión switch. Por ejemplo:
 
-	De la misma manera, el orden en el que aparecen las etiquetas case y default no es importante en términos de compilación. Pueden aparecer en cualquier orden y el compilador los aceptará.
+		byte b = 10;
+		switch (b){
+			case 1000:
+				System.out.println("hello!");
+		}
 
-	Por último, la sentencia break; también es opcional. Puede prescindirse de ella y el código compilará sin errores. La sentencia break sirve para salir del bloque switch una vez que se ha ejecutado lo que se desea, así que en caso de que el bloque case que se esté ejecutando no la contenga, se ejecutará el siguiente caso hasta que se encuentre una sentencia break;
+	El código anterior no compila, debido a que el tipo de la expresión switch es byte, y la etiqueta case 1000 no cabrá dentro de byte. En otras palabras, las etiquetas case deben ser asignables al tipo de la expresión switch. Por otra parte:
 
+		byte b = 10;
+		switch (b+1){
+			case 1000:
+				System.out.println("hello!");
+		}
+
+	El código anterior compila correctamente debido a que ahora la expresión realiza promoción numérica y el tipo del resultado es int.
+
+	El bloque default también es opcional, en el sentido de que no es necesario para que el código compile. Se puede tener como máximo un bloque default, el cuál será ejecutado si el resultado de la expresión switch no coincide con ninguna de las etiquetas case.
+
+	Java no dicta la forma en la que deben aparecer las etiquetas case o el bloque default. Por lo tanto, aunque se acostumbra tener el bloque default al final del bloque switch, se puede tener al principio o en cualquier otra posición. De la misma manera, Java no se preocupa por el orden en el que aparezcan las etiquetas case. Sin embargo, esto no quiere decir que no sea importante. El orden de las etiquetas case toma importancia cuando se usa en combinación con las setencias break.
+
+	Anteriomente se mencionó que el principio de una etiqueta case determina el punto de entrada al bloque switch y que la sentencia brake determina la salida del bloque. Sin embargo, la sentencia break también es opcional. Un bloque case no necesariamente debe finalizar con una sentencia break. Si se modifica el programa que se mostró previamente, se tiene lo siguiente:
+
+		public class TestClass{
+			public static void main(String[] args){
+				switch(args.length){
+					case 0: System.out.println("Sin argumentos");
+					case 1: System.out.println("Sólo un argumento");
+					case 2: System.out.println("Dos argumentos");
+					default: System.out.println("Muchos argumentos");
+				}
+				System.out.println("Finalizado");
+			}
+		}
+
+	Ahora se prescindió de las sentencias break. Si se corre este programa sin ningún argumento, la salida será:
+
+		Sin argumentos
+		Sólo un argumento
+		Dos argumentos
+		Muchos argumentos
+		Finalizado
+
+	Lo anterior se debe a que el control entra en la etiqueta case 0 y ejecuta todas las sentencias del bloque switch, incluso los que están asociados a otros bloques case aunque no concida la etiqueta con el valor de args.length. A esto se le conoce como comportamiento de "caída libre". En ausencia de una sentencia break, el control cae al siguiente bloque case y al siguiente, y no se detiene sino hasta encontrar una sentencia break o el fin del bloque switch. Esto funciona cuando se requiere repetir sentencias para múltiples valores de la expresión switch. Por ejemplo:
+
+		char ch = 0;
+		int noOfVowels = 0;
+		while( (ch = readCharFromStream()) > 0){
+			switch(ch){
+				case 'a' :
+				case 'e' :
+				case 'i' :
+				case 'o' :
+				case 'u' :
+					nameOfVowels++;
+
+				default :
+					logCharToWhatever(ch)
+			}
+		}
+
+		El código anterior registra cada carácter que recibe, pero incrementa la variable noOfVowels sólo si el carácter es una vocal minúscula. Este tipo de preguntas son muy comunes en el examen, por lo que es de vital importancia poner mucha atención a qué bloque recibe el control y dónde finaliza, así como buscar si hay algún break faltante dentro de un bloque case.
+
+		

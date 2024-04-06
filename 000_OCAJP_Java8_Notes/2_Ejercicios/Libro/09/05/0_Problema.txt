@@ -1,0 +1,9 @@
+1. Estás desarrollando una aplicación que permite a un usuario comparar automóviles. Utilizar clases abstractas, clases e interfaces para modelar las entidades Coche, Camion, Vehiculo y Conducible. Declarar y definir un método llamado conducir() en los lugares apropiados.
+
+2. Cada vehículo debe tener marca y modelo. ¿Qué se puede hacer para estar seguro de que el método getMakeAndModel pueda ser invocado en cada vehículo?
+
+	R: Heredarlo desde la clase padre
+
+3. Se necesita obetener la identificación de un vehículo llamando al método getVIN() en cualquier vehículo. Además, se requiere que ninguna subclase pueda cambiar el método getVIN ¿cómo se debe realizar este método?
+
+	R: En la clase padre de todos los vehículos y marcado como final.

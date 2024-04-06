@@ -1,0 +1,3 @@
+11. Dada la sentencia int[][] nums = new int[1][3]; ¿cuántos valores enteros pueden guardarse en nums? Escribir cómo puede direccionarse cada elemento de nums.
+
+R: Se pueden guardar sólo 3 valores enteros.

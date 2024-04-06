@@ -1,0 +1,3 @@
+8. Definir e inicializar un array de arrays de ints que simule una matriz triangular de enteros.
+
+9. Declarar un array de arrays de ints e inicializarlo utilizando los elementos del array creado en el ejercicio anterior, de tal manera que simule una matriz triangular invertida.

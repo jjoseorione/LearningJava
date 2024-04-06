@@ -1,0 +1,1 @@
+5. Escribir un método que acepte un String como entrada y cuente el número de espacios en ella desde el inicio y se detenga sólo si encuentra una x.

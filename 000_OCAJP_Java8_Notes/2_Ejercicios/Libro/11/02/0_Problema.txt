@@ -1,0 +1,22 @@
+2. Dado el siguiente código:
+
+	class Radio{
+		private double frequency = 1.1;	//Insertar getters y setters apropiados
+	}
+
+	class TV{
+		private int channel = 5;	//Insertar getters y setters apropiados
+	}
+
+	public class TestClass{
+		public static void main(String[] args){
+			TV t = new TV();
+			Radio r = new Radio();
+			reset(t);
+			reset(r);
+			System.out.println(r.getFrequency());	//Debe imprimir 0.0
+			System.out.println(t.getChannel());		//Debe imprimir 0
+		}
+	}
+
+Escribir código para el método reset de tal forma que TestClass imprima 0.0 y 0 cuando se ejecute.

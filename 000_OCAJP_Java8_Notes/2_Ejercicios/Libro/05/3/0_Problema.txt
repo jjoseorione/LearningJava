@@ -1,0 +1,28 @@
+3. ¿Qué imprimirá el siguiente código y por qué?
+
+		String s = "a";
+		String[] sa = { "a" , s , s.substring(0,1) , new String("a") , ""+'a' };
+		for(int i = 0; i < sa.length; i++){
+			System.out.println(i);
+			System.out.println(s == sa[i]);
+			System.out.println(s.equals(sa[i]));
+		}
+
+	La salida es:
+		0
+		true
+		true
+		1
+		true
+		true
+		2
+		true
+		true
+		3
+		false
+		true
+		4
+		true
+		true
+
+	Debido a que todos los elementos del array excepto el 3 (new String("a")) devuelven una cadena interna en el pool y por lo tanto comparten la misma referencia.

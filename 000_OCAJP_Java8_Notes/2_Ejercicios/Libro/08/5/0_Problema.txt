@@ -1,0 +1,15 @@
+3. Crear una clase llamada Student con algunos campos como studentId, name y address. ¿Estos campos deberían ser estáticos o de instancia? Agregar el método main a esta clase y acceder a los campos desde el método main.
+
+	R: Los campos deben ser de instancia, porque si fueran estáticos serían compartidos por todas las instancias
+
+4. Agregar un campo estático a la clase Student. Acceder a este campo desde otra clase. Utiliza la sentencia import adecuada para acceder al campo de forma directa. Cambiar accesibilidad del campo para ver qué ocurre con el código que intenta acceder a él.
+
+	R: Cuando está público, lo imprime sin problema. Cuando tiene protected, default o private, el código no compila con el error "cannot find symbol". La forma de acceder de forma directa al campo static es con la sentencia import static paquete.class.*;
+
+5. Crear un método llamado method1 en TestClass que acepte un objeto Student y actualice los campos estáticos y de instancia de este objeto. Pasar el mismo objeto Student a un método llamado method2 que imprima los valores. Asignar un nuevo objeto Student a la variable Student de method2 y establecer sus campos con otros valores. Después de regresar a method1, imprimir nuevamente los valores. Explicar la salida.
+
+	R: La salida será "Valor cambiado" para ambos campos en ambas impresiones, debido a que la variable student de method1 nunca cambio de objeto al cual apuntar, y dicho objeto nunca cambió sus valores. Lo que se hizo fue crear un nuevo objeto y ese objeto únicamente era referenciado por la variable student de method2. Pero la variable de method1 nunca dejó de apuntar al objeto original.
+
+	El campo estático sí cambia su valor, debido a que en nuestra clase este cmapo aumenta cada vez que se crea una nueva instancia y a que sólo existe un campo para toda la clase, y no uno por cada instancia. Si el campo estático no aumentara con cada instancia, el valor permanecería igual. Si en method2 cambiamos el valor del campo estático, ése sería el único campo que mostraría un distinto valor.
+
+	El campo studentId permanece igual debido a que en nuestro ejemplo es final y no puede ser cambiado. Si quitamos la sentencia final y lo asignamos manualmente por cada objeto, ocurriría lo mismo que con name y con email.

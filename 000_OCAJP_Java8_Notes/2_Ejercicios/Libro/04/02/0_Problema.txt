@@ -1,0 +1,1 @@
+2. Dados los siguientes arrays: int[] first = new int[3];, int[] second = {};, y int[] third = null;, imprimir la longtitud de los tres arrays e imprimir cada elemento de los tres arrays.

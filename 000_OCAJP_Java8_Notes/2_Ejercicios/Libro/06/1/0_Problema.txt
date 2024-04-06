@@ -1,0 +1,1 @@
+1. Escribir un método que acepte un número como entrada e imprima si el número es par o impar utilizando una sentencia if/else, así como una expresión ternaria.

@@ -1,0 +1,5 @@
+1. Crear un método llamdo "add" que pueda aceptar cualquier número de valores enteros y retorne la suma de estos valores.
+
+2. Crear otro método llamado add en la misma clase que pueda recibir cualquier número de valores enteros y retorne un String que contenga la concatenación de todos los valores. ¿Qué se puede hacer para resolver el error de compilación que se origina debido a la presencia de dos métodos con la misma firma? Invocar estos métodos desde el método main de la clase.
+
+R: Se puede cambiar el nombre del método.

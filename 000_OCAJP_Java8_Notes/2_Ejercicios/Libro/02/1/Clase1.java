@@ -3,12 +3,12 @@ package paquete1;
 import java.util.Scanner;
 
 public class Clase1{
-	int campo1 = 1;
-	double campo2 = 2.2;
-	float campo3 = 3.3F;
-	static long campo4 = 4.4L;
-	static char campo5 = '5';
-	static String campo6 = "Seis";
+	public int campo1 = 1;
+	public double campo2 = 2.2;
+	public float campo3 = 3.3F;
+	public static long campo4 = 4L;
+	public static char campo5 = '5';
+	public static String campo6 = "Seis";
 
 	public void metodo1(){
 		System.out.println("Metodo 1");

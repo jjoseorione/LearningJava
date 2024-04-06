@@ -6,7 +6,7 @@
 public class Clase1{
 	public static void main(String[] args){
 		int valor = 0;
-		int i = 10
+		int i = 10;
 
 		while(i > 0){
 			valor+=i;

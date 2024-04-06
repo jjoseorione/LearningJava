@@ -1,0 +1,11 @@
+6. Dadas las siguientes dos clases:
+
+	class XMLTransformer{
+		public String transform(String Data){ return "xmldata"; }
+	}
+
+	class NetworkTransformer{
+		public String transform(String Data) throws IOException { return "data from network"; }
+	}
+
+Modificar el código anterior agregando un tipo padre llamado Transformer

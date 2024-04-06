@@ -1,0 +1,1 @@
+2. Escribir un método que determine si un número N recibido por el usuario es un número primo o no, dividiendo dicho numero con entre todos los numeros desde 2 hasta N/2 y revisando el residuo

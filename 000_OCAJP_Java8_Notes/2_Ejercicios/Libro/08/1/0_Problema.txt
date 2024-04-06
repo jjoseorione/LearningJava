@@ -1,0 +1,1 @@
+1. Crear un método llamdo "add" que pueda aceptar cualquier número de valores enteros y retorne la suma de estos valores.

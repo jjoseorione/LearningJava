@@ -1,0 +1,23 @@
+package com.jjoseorione.test;
+import com.jjoseorione.vehiculos.*;
+
+public class TestClass{
+	public static void main(String[] args){
+		Coche c1 = new Coche("KRMS-055");
+		Camion c2 = new Camion("WRMS-085");
+		System.out.println(c1.conducir(13));
+		System.out.println(c1.getMakeAndModel());
+		System.out.println(c1.getVIN());
+		c1.start();
+		System.out.println(c2.conducir(8));
+		System.out.println(c2.getMakeAndModel());
+		System.out.println(c2.getVIN());
+		c2.start();
+
+		ToyCar tc = new ToyCar();
+		System.out.println(tc.conducir(13));
+		System.out.println(tc.getMakeAndModel());
+		System.out.println(tc.getVIN());
+		tc.start();
+	}
+}

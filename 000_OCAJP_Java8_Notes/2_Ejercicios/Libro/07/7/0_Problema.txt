@@ -1,0 +1,12 @@
+7. Para evitar la posibilidad de inadvertidamente cometer el error mostrado en el ejercicio anterior, un programador decidió usar ciclos foreach de la siguiente manera:
+
+for(String[] chara : chars){
+	for(String s : chara){
+		s = ""+cha;
+		cha++;
+	}
+}
+
+¿Es una buena idea?
+
+R: No. No funciona debido a que el ciclo for-each mapea los valores del array dentro de una variable auxiliar, lo que provoca que sólo pueda ser usado para lectura de los valores del array. Al realizar la asignación s = ""+cha, sólo estamos cambiando el valor de la variable auxiliar s, pero no se realiza ningún cambio en los valores del array.

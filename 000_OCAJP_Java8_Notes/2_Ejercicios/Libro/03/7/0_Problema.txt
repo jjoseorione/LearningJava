@@ -1,0 +1,13 @@
+1. Definir un tipo referenciado llamado Bird. Definir un método de instancia llamado fly dentro de Bird. Definir algunas variables estáticas y de instancia de tipo int, float, double, boolean y String dentro de Bird.
+
+2. Crear una clase TestClass que tenga una variable estática de tipo Bird. Inicializar esta variable con un objeto válido de tipo Bird. Imprimir los valores default de las variables de Bird desde el método main de TestClass. También imprimir la variable estática de TestClass desde main. Observar el resultado.
+
+3. Crear e inicializar una variable de instancia de tipo Bird en TestClass. Asignar valores a los miembros de la variable Bird de instancia en el método main de TestClass y también a los de la variable Bird estática. Imprimir los valores de ambos objetos Bird. Observar lo que ocurre con las variables estáticas.
+
+4. Escribir código dentro del método fly para imprimir los valores de todos los miembros de Bird. Modificar el método main de TestClass para que invoque a fly en ambas instancias de Bird. Observar los valores impresos, principalmente las variables estáticas.
+
+5. Agregar una variable de instancia de tipo Bird dentro de Bird. Inicializar esta variable en la misma línea utilizando "new Bird()". Instanciar un objeto de tipo Bird dentro del método main de TestClass y ejecutarlo. Observar la salida.
+
+6. Remover la parde de inicialización de la variable Bird que se agregó en el ejercicio anterior. Inicializarla con un nuevo objeto Bird separado del main de TestClass. Identificar cuántos objetos Bird se recolectarán como basura cuando finalice main.
+
+7. Agregar un parámetro de tipo Float al método fly de Bird. Retornar un valor int desde fly por medio de un casting del parámetro a int. Invocar fly múltiples veces desde el main de TestClass pasando una literal float, un objeto Float, una literal double, un int, un Integer y una cadena conteniendo un valor float. Observar cuál de ellas compila.

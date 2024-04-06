@@ -1,0 +1,3 @@
+8. Utilizar un ciclo for-each para imprimir valores alternados de un array. ¿Es posible utilizar el ciclo for-each para imprimir los valores de un array en reversa?
+
+R: No, no es posible correr el ciclo en reversa.

@@ -1,0 +1,5 @@
+1. Crear un método llamado cuentaVocales que reciba un array de chars como entrada y retorne el número de vocales que hay en el array. Además, el método debe lanzar una excepción revisada si el array contiene 'x'.
+
+2. Invocar el método cuentaVocales desde el método main en un ciclo que imprima el valor de retorno para cada argumento de la línea de comandos. Observar qué ocurre en las siguiente situaciones: no hay argumentos, hay muchos argumentos, hay muchos argumentos pero el primero contiene una x. Utilizar el método toCharArray
+
+	R: El programa se detiene en cuanto se encuentra una x.

@@ -1,0 +1,23 @@
+Anotaciones del Test 2
+
+	• Una variable local o una de ciclo siempre sombreará a una de instancia, sin crear conflicto entre ellas. Esto sin importar en qué momento del código fue creada la variable.
+
+	• Recordar que el acomodo de las cláusulas catch pueden llevar a unreachable code
+
+	• De nuevo recordar que las variables de instancia y estática y los métodos estáticos se enlazan en tiempo de compilación. Los métodos de instancia sí se enlazan en tiempo de ejecución.
+
+	• En las expresiones, primero se eválúan (sustituyen los valores) y posteriormente se realiza la operación.
+
+	• Tener cuidado con los else colgantes. No confíes en la sangría, ya que puede ser engañosa
+
+	• Tener cuidado con los indices no válidos en arrays. En un array de longitud 10 no existe el índice 10
+
+	• Consejo: en evaluación de expresiones que incluyan operadores compuestos, conviene desarrollar el operador copuesto para que tengamos una expresión larga y más entendible
+
+	• El constructor Boolean(String) es indiferente a myúsculas y minúsculas en el string que recibe. Es importante recordar que si se comparan dos objetos wrapper, se tomarán como referencias y no se aplicará unboxing. El unboxing sólo se aplica cuando se puede inferir que se está esperando un primitivo, pero se otorga un wrapper. Cuando se tienen dos wrappers, no se puede inferir lo anterior debido a que ambos son objetos y bien pueden simplemente compararse sus referencias.
+
+	• Recordar que las excepciones también son objetos
+
+	• El constructor de la subclase siempre debe llamar al constructor de la superclase. En caso de que no haya llamada al constructor de la superclase de forma explícita, el compilador llamará por default a super() en cada constructor que no tenga la llamada. Esto puede causar conflicto si en la superclase no existe el constructor noargs. La llamada a super se puede realizar de forma indirecta realizando una llamada a otro constructor con this y que este otro constructor llame a algún super(args...)
+
+	• De nuevo, los métodos de instancia no privados se llaman SIEMPRE respecto al objeto real, aunque sean llamados desde algún método de la subclase.

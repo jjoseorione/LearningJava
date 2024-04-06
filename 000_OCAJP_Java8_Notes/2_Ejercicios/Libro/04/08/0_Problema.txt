@@ -1,0 +1,1 @@
+8. Definir e inicializar un array de arrays de ints que simule una matriz triangular de enteros.

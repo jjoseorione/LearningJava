@@ -1,0 +1,44 @@
+Anotaciones del examen Foundations
+
+Operadores y estructuras de decisión
+
+	• Es posible utilizar operadores compuestos numéricos sobre char, pero no es posible asignar directamente una variable numérica.
+	• La variable evaluada en un switch no puede ser boolean, long, float ni double. Ésta sólo puede ser byte, short, char, int, String y enum.
+	• Los valores de las etiquetas case deben ser asignables a la variable evaluada (tipo y tamaño).
+	• Todas las etiquetas case deben ser constantes en tiempo de compilación (literales o variables final).
+	• No puede haber dos etiquetas case con el mismo valor.
+	• Un short no puede ser asignado a un char directamente, se necesita un casting a menos que el short sea una constante en tiempo de compilación y quepa dentro del char.
+	• Estrechamiento implícito sólo ocurre para byte, short, char e int. Nunca para float, double ni long.
+	• No existe el operador <<<, sólo <<.
+	• La comparación Byte == Integer no compila. No hay unboxing porque ambos operadores son objetos y no se puede esperar un primitivo de ningún lado de la comparación. En este caso, se comparan las referencias, pero el compilador se da cuenta de que ni siquiera son tipos que puedan compartir referencias, y por lo tanto no compila.
+
+
+
+Trabajando con métodos
+
+	• La palabra synchronized no puede aplicarse a una clase (sólo a métodos).
+	• La palabra private sí puede aplicarse a una clase si es anidada
+	• Las variables final pueden ser ocultadas en la subclase. En realidad, cualquier variable puede ser ocultada
+	• El método de instancia invocado es siempre el del objeto (polimorfismo, sobreescritura). El método estático o campo (estático o de instancia) invocado es siempre el de la variable
+	• El tipo de retorno siempre va inmediatamente antes del nombre del método
+
+Manejo de excepciones
+
+	• Las excepciones lanzadas desde un inicializador estático no compilan.
+
+Trabajando con herencia
+
+	• Los modificadores abstract y static no pueden ir juntos, ya que abstract es para que el método sea sobreescrito y un método estático nunca se sobreescribe.
+	• Un método nativo no puede ser abstract
+	• Cuando se implementa el método de una interfaz, éste debe ser público, igual que el de la interfaz.
+
+
+Repasar los temas siguientes:
+
+	• Expresiones lambda								50
+	• Trabajando com métodos							71
+	• Trabajando con tipos de datos						71
+	• Uso de operadores y estructuras de decisión		72
+	• Uso de ciclos										75
+	• Trabajando con la API de String y StringBuilder	75
+	• Trabajando con herencia							87

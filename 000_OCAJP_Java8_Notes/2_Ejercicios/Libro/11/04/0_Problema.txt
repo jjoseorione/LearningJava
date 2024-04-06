@@ -1,0 +1,9 @@
+4. Dado el siguiente código:
+
+	class Pie{
+		public void makePie(){
+			System.out.println("making pie");
+		}
+	}
+
+Crear dos clases PumpkinPie y ApplePie que extiendan Pie. Sobreescribir el método makePie en estas clases. Asegurarse de que el método sobreescrito se invoca también cuando se invoque makePie en los objetos de estas clases.

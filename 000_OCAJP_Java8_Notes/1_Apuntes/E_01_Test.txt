@@ -1,0 +1,24 @@
+Anotaciones del Test 1
+
+	• Para que aparezca el StackTrace se debe llamar a printStackTrace()
+
+	• Para wrappers:
+		parsePrimitivo(String) convierte String en el primitivo deseado
+		Wrapper.valueOf(String || primitivo)	Convierten String o primitivo en wrapper
+		Wrapper.primitivoValue() devuelven el primitivo de dicho wrapper
+	
+	• Los guiones bajos sólo se pueden entre números. 123_.345_667f no es correcto
+	
+	• En la sección de inicialización de for se pueden utilizar expresiones de sentencia y declaración e iniciación de variables de un solo tipo. Las expresiones se separan por coma
+	
+	• Las cadenas creadas en tiempo de ejecución crean una nueva cadena en el pool, por lo que difieren de las que son constantes en tiempo de ejecución, aunque contengan lo mismo
+
+	• Los wrappers son inmutables, por lo tanto, cuando se les aplican operaciones matemáticas, en realidad se devuelven referencias a otros objetos y no a los mismos.
+
+	• Los campos en interfaces son siempre public, static y final (como constantes)
+
+	• SecurityException es hija de RunTimeException, y por lo tanto es no revisada. Suele lanzarla el programador.
+
+	• El operador de asignación tiene la menor precedencia de todos los operadores
+
+	• El método getClass es un método de instancia de la clase Object. Al ser de instancia, tiene enlace dinámico y devuelve la clase del objeto y no de la variable.

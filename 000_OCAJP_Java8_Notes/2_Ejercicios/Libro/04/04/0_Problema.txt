@@ -1,0 +1,1 @@
+4. Declarar e inicializar un array de longitud 4 de tipo array de Strings sin utilizar la palabra new, y de tal forma que ninguno de los dos arrays de Strings tengan la misma longitud. Imprimir la longitud de cada uno de los arrays uno por uno.

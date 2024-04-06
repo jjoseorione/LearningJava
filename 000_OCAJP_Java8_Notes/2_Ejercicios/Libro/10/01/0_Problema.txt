@@ -1,0 +1,1 @@
+1. Crear un método llamado contarVocales que reciba un array de chars como entrada y retorne el número de vocales que hay en el array. Además, el método debe lanzar una excepción revisada si el array contiene 'x'.

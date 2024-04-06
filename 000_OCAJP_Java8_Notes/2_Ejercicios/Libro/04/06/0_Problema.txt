@@ -1,0 +1,3 @@
+5. Dada la sentencia String[][] names = new String[2][3]; ¿Cuántas Strings son necesarias para llenar completamente los nombres? Inicializar cada elemento de names con una String no nula. Imprimir cada uno de estos valores uno por uno sin usar loops. Realizar la misma tarea utilizando ciclos for anidados.
+
+6. Definir dos variables de tipo array de Strings. Inicializarlos utilizando los elementos del array creado en el ejercicio anterior.

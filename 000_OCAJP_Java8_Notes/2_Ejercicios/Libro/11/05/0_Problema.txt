@@ -1,0 +1,17 @@
+4. Dado el siguiente código:
+
+	class Pie{
+		public void makePie(){
+			System.out.println("making pie");
+		}
+	}
+
+Crear dos clases PumpkinPie y ApplePie que extiendan Pie. Sobreescribir el método makePie en estas clases. Asegurarse de que el método sobreescrito se invoca también cuando se invoque makePie en los objetos de estas clases.
+
+5. Agregar un método estático nombrado getCalories en Pie
+
+public static int getCalories(){
+	return 100;
+}
+
+Crear una nueva clase llamada Nutricionist con un método llamado printCalories. Este método debe tomar cualquier tipo de Pie e imprimir el número correcto de calorias que sea aplicable para cada tipo de Pie
