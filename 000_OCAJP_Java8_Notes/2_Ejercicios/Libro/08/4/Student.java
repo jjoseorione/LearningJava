@@ -11,7 +11,7 @@ public class Student{
 	}
 
 	public static void callsMain(){
-		main(null);
+		main(new String[]{"true"});			//Si se llama a main se debe especificar el argumento args
 	}
 
 	public Student(String name, String email){
@@ -42,9 +42,12 @@ public class Student{
 		s2.name = "Esther Nila";
 		s1.email = "p_p@gmail.com";
 		s2.email = "esthernila@gmail.com";
-		System.out.println(s1);
-		System.out.println(s2);
-		System.out.println(s3);
+		if(args.length == 0 || !Boolean.parseBoolean(args[0]))
+		{	
+			System.out.println(s1);
+			System.out.println(s2);
+			System.out.println(s3);
+		}
 	}
 
 }

@@ -4,7 +4,7 @@
 
 		Ya hemos visto métodos en capítulos previos. De hecho, hemos utilizado hasta ahora el método main para correr todos nuestros programas.
 
-		Un método es lo que le da comportamiento a un tipo. Java permite que las clases, interfaces y enums tengan algún comportamiento. Dicho comportamiento no es más que una acción realizada por algún fragmento de código. Si esperas tener esta acción lista para realizarse cuando lo requierasm enronces es necesario meter el fragmento de código dentro de un método y darle un nombre. Esto permite invocar la acción cuando sea que lo necesites usando únicamente su nombre. Es como una caja negra a la que le das cierta entrada y te devuelve una salida.
+		Un método es lo que le da comportamiento a un tipo. Java permite que las clases, interfaces y enums tengan algún comportamiento. Dicho comportamiento no es más que una acción realizada por algún fragmento de código. Si esperas tener esta acción lista para realizarse cuando lo requieras entonces es necesario meter el fragmento de código dentro de un método y darle un nombre. Esto permite invocar la acción cuando sea que lo necesites usando únicamente su nombre. Es como una caja negra a la que le das cierta entrada y te devuelve una salida.
 
 		La estructura básica de un método es la siguiente:
 
@@ -42,7 +42,7 @@
 				if(x > 0) return 2*x;
 			}
 
-		El código anterior generará un error de compilación con el mensaje "error: missing return statement" debido a que el método no devolverá nada si la condición se evalúa como falsa. Esto tiene sentido si consideramos qué ocurrirá en la invocación del método get2X si el método no devuelve nada. Por ejemplo ¿qué valor se asignará a y en la siguiente sentencia?
+		El código anterior generará un error de compilación con el mensaje "error: missing return statement" debido a que el método no devolverá nada si la condición se evalúa como falsa. Esto tiene sentido si consideramos qué ocurrirá en la invocación del método get2X si el método no devuelve nada. Por ejemplo ¿qué valor se asignará a "y" en la siguiente sentencia?
 
 			int y = get2X(-1);
 
@@ -117,7 +117,7 @@
 					return new Object();	//No compilará, debido a que un Object no es un String
 				}
 
-		Estas reglas aseguran que sólo los valores que sean asignables a la variable declarada como retirno puedan ser devueltos por un método. En otras palabras, si es posible asignar un valor particular a una variable del mismo tipo de la de retorno del método, entonces es posible utilizar ese valor en la sentencia return del método. Por ejemplo, es posible asignar un valor char a una variable int directamente, por lo tanto, es posible retornar un valor char desde un método que declara devolver int.
+		Estas reglas aseguran que sólo los valores que sean asignables a la variable declarada como retorno puedan ser devueltos por un método. En otras palabras, si es posible asignar un valor particular a una variable del mismo tipo de la de retorno del método, entonces es posible utilizar ese valor en la sentencia return del método. Por ejemplo, es posible asignar un valor char a una variable int directamente, por lo tanto, es posible retornar un valor char desde un método que declara devolver int.
 
 		Java no permite devolver más de una variable desde un método, sin excepción. Ésta parece una restricción algo difícil de superar si queremos retornar múltiples valores desde un método. Por ejemplo, supongamos que tenemos un método llamado getName, el cual requiere devolver nombre y apellidos de forma separada. Una forma de lograrlo sería utilizar una clase que capture múltiples valores y después devolver una referencia a un objeto de dicha clase. El objeto get Name podría verse de la siguiente forma:
 
@@ -166,7 +166,7 @@
 				//Aquí el código del método
 			}
 
-		En la declaración y definición del método no hay diferencia, pues los argumentos aún se acceden a través de un array llamado este caso values. Sin embargo, en la llamada al mismo, no es necesario crear un array para pasarlo como parámetro, sino que se puede directamente pasar ints como argumentos. Por lo tanto, las siguientes invocaciones son válidas:
+		En la declaración y definición del método no hay diferencia, pues los argumentos aún se acceden a través de un array llamado en este caso values. Sin embargo, en la llamada al mismo, no es necesario crear un array para pasarlo como parámetro, sino que se puede directamente pasar ints como argumentos. Por lo tanto, las siguientes invocaciones son válidas:
 
 			double average = average();		//Sin argumentos
 			double average = average(1)		//Un argumento
@@ -231,7 +231,7 @@
 
 		Para la persepectiva del compilador, la sobrecarga de métodos no es nada especial. Debido a que el compilador se preocupa únicamente por la firma de los métodos, para él no hay diferencia de si dos métodos son diferentes en el nombre, o en la lista de parámetros, o en ambos. Sea como sea, para el compilador se trata de diferentes métodos.
 
-		Sin embargo, para el programador, la sobrecarga de métodos tiene particular importancia, al igual que para los usuarios de alguna clase, ya que puede hacer que el código sea mucho más intuitivo, o mucho más confuso. Por ejemplo, hasta ahora hemos utilizado el método System.out.println para imprimit en pantalla distintos valores, pero en realidad no se trata de un único método, sino que existen múltiples métodos con el nombre println, pero con distinta lista de parámetros, para así poder imprimir String, int, byte, Object, etc. Podemos comprobar esto si entramos a la JavaDoc de la clase java.io.PrintStram. Sería mucho más frustrante si tuviéramos que utilizar printlnByte para imprimit un byte, printlnShort para imprimir un short, printlnString para imprimir un String, etc. En este caso, la sobrecarga de métodos hace la vida mucho más fácil al tener que recordar un único nombre.
+		Sin embargo, para el programador, la sobrecarga de métodos tiene particular importancia, al igual que para los usuarios de alguna clase, ya que puede hacer que el código sea mucho más intuitivo, o mucho más confuso. Por ejemplo, hasta ahora hemos utilizado el método System.out.println para imprimir en pantalla distintos valores, pero en realidad no se trata de un único método, sino que existen múltiples métodos con el nombre println, pero con distinta lista de parámetros, para así poder imprimir String, int, byte, Object, etc. Podemos comprobar esto si entramos a la JavaDoc de la clase java.io.PrintStream. Sería mucho más frustrante si tuviéramos que utilizar printlnByte para imprimit un byte, printlnShort para imprimir un short, printlnString para imprimir un String, etc. En este caso, la sobrecarga de métodos hace la vida mucho más fácil al tener que recordar un único nombre.
 
 		Ahora consideremos el siguiente código:
 
@@ -258,7 +258,7 @@
 
 	8.2.3 Selección de método.
 
-		El código mostrado en la sección anterior ayuda a ilustrat un claro problema con métodos sobrecargados. Cuando la lista de parámetros no es muy diferente, es difícil entender cuál de los métodos será elegido en una llamada. Si los parámetros son demasiado similares, puede incluso convertirse en una tarea imposible.
+		El código mostrado en la sección anterior ayuda a ilustrar un claro problema con métodos sobrecargados. Cuando la lista de parámetros no es muy diferente, es difícil entender cuál de los métodos será elegido en una llamada. Si los parámetros son demasiado similares, puede incluso convertirse en una tarea imposible.
 
 		Java especifica reglas precisas que son usadas por el compilador para eliminar la ambigüedad de las llamadas a métodos. No habrá preguntas demasiado complicadas en el examen, pero es necesario saber algunas reglas básicas para entender algunos casos simples. Las reglas son las siguientes:
 
@@ -342,7 +342,7 @@
 
 		Aplicando la regla 5: Un byte puede ser ensanchado a int y un int puede ser recibido por un método que acepte int... Por lo tanto, la versión con varargs será invocada.
 
-		Ahora bien, ¿cuál método será elegido para la llamada processDara(10); si se tienen los siguientes métodos:
+		Ahora bien, ¿cuál método será elegido para la llamada processData(10); si se tienen los siguientes métodos:
 
 			void processData(Long value){ }
 			void procesData(Long... values){ }
@@ -399,7 +399,7 @@
 				public static void main(String[] args){
 					System.out.println(Foo.bar) //Imprime 0
 					System.out.println(Foo.biz)	//Imprime null
-					Boo.NestedClass nc = new Boo.BestedClass
+					Boo.NestedClass nc = new Boo.NestedClass
 				}
 			}
 
@@ -498,11 +498,11 @@
 			}
 		}
 
-	Técnicamente es posible importar miembros estáticos de una interfaz también, pero desde una perspectiva de diseño, es mejor utilizar una clase para definir constantes y reservar el uso de interfaces para definir comportamiento términos de métodos.
+	Técnicamente es posible importar miembros estáticos de una interfaz también, pero desde una perspectiva de diseño, es mejor utilizar una clase para definir constantes y reservar el uso de interfaces para definir comportamiento en términos de métodos.
 
 	8.3.5 Accediendo a miembros de instancia desde un método estático.
 
-		Debido a que un método estático pertenece a la clase y no a un objeto de esa clase, un método estático no se ejecuta desde el contexto de ninguna instancia de esa clase. Por otra parte, un método de instancia siempre se invoca sobre una instancia específica de esa clase y por lo tanto se ejecuta dentro del contexto de la instancia sobre la que fue invocada. Una método de instancia puede acceder a la referencia a su propia instancia utilizando la variable implícita "this". Debido a que no hay ninguna instancia asociada a un método estático, la variable this no está disponible desde un método estático. La razón por la que "this" es llamada una variable implícita toma importancia aquí. Esta variable no es declarada explícitamnte en ninguna parte y el compilador asume su existencia en un método de instancia. Cuando el compilador detecta un miembro de instancia siendo accedido desde un método directamente, el compilador utiliza la variable this para acceder a dicho miembro, aunque uno no la escriba de forma explícita en su código. Luego, cuando un miembro estático intenta acceder a un miembro de instancia, this no está disponible y el compilador se quejará de que una variable no estática no puede ser referida desde un contexto no estático. El siguiente ejemplo ilustra dicho punto:
+		Debido a que un método estático pertenece a la clase y no a un objeto de esa clase, un método estático no se ejecuta desde el contexto de ninguna instancia de esa clase. Por otra parte, un método de instancia siempre se invoca sobre una instancia específica de esa clase y por lo tanto se ejecuta dentro del contexto de la instancia sobre la que fue invocada. Una método de instancia puede acceder a la referencia de su propia instancia utilizando la variable implícita "this". Debido a que no hay ninguna instancia asociada a un método estático, la variable this no está disponible desde un método estático. La razón por la que "this" es llamada una variable implícita toma importancia aquí. Esta variable no es declarada explícitamnte en ninguna parte y el compilador asume su existencia en un método de instancia. Cuando el compilador detecta un miembro de instancia siendo accedido desde un método directamente, el compilador utiliza la variable this para acceder a dicho miembro, aunque uno no la escriba de forma explícita en su código. Luego, cuando un miembro estático intenta acceder a un miembro de instancia, this no está disponible y el compilador se quejará de que una variable no estática no puede ser referida desde un contexto no estático. El siguiente ejemplo ilustra dicho punto:
 
 			class Book{
 				int name;
@@ -518,7 +518,7 @@
 				}
 			}
 
-		En el código anterior, el compilador detecta que name es una variable de instancia e intenta acceder a ella a través de la referencia "this". Es decir, realiza this.name. Pero debido a que this no está disponible en printName1, genera un error. No hay problema con printName2 debido a que printName2 es un método de instancia y en él "this" sí está disponible. Es importante recordar que no siempre es necesario urilizar la referencia "this" de forma explícita para acceder a miembros de instancia; sólo es necesario utiilizarla si existe una variable local con el mismo nombre dentro del método en el que nos encontramos y queremos hacer referencia a la variable de instancia en lugar de la variable local.
+		En el código anterior, el compilador detecta que name es una variable de instancia e intenta acceder a ella a través de la referencia "this". Es decir, realiza this.name. Pero debido a que this no está disponible en printName1, genera un error. No hay problema con printName2 debido a que printName2 es un método de instancia y en él "this" sí está disponible. Es importante recordar que no siempre es necesario utilizar la referencia "this" de forma explícita para acceder a miembros de instancia; sólo es necesario utiilizarla si existe una variable local con el mismo nombre dentro del método en el que nos encontramos y queremos hacer referencia a la variable de instancia en lugar de la variable local.
 
 		Un error común entre los principiantes es creer que un método estático no puede acceder a miembros de instancia. Este error se debe a que se esucha o lee por todos lados dicha afirmación. En realidad, se trata de una afirmación a medias. Lo correcto sería decir que un método estático no puede acceder a miembros de instancia sin especificar la instancia del miembro al que se quiere acceder. Esto puede ilustrarse con el siguiente ejemplo:
 
@@ -570,7 +570,7 @@
 				}
 
 				public static void main(String[] args){
-					double interet = computerInterest(100, 1);
+					double interest = computeInterest(100, 1);
 					System.out.println(interest);
 					interest = computeInterest(100, 2);
 					System.out.println(interest);
@@ -583,7 +583,7 @@
 			10.0
 			20.0
 
-		Lo primero a notar aquí es que en la primera línea impresa, el valor de RATE es 0.0. Esto ocurre debido a que la JVM ya inicializó RATE a su valor default 0.0. Este valor inicial es el que se imprime. Luego, RATE recibe el valor 10. Lo siguiente a notar es que RATE sólo se imprime una vez. Esto se debe a que un bloque estático se ejecuta una única vez cuando la clase es cargada e inicializada. La JVM nunca ejecuta un bloque estático de nuevo, sin importar cuántas veces es utilizada la clase. Existen algunas pocas reglas acetca de los bloques estáticos:
+		Lo primero a notar aquí es que en la primera línea impresa, el valor de RATE es 0.0. Esto ocurre debido a que la JVM ya inicializó RATE a su valor default 0.0. Este valor inicial es el que se imprime. Luego, RATE recibe el valor 10. Lo siguiente a notar es que RATE sólo se imprime una vez. Esto se debe a que un bloque estático se ejecuta una única vez cuando la clase es cargada e inicializada. La JVM nunca ejecuta un bloque estático de nuevo, sin importar cuántas veces es utilizada la clase. Existen algunas pocas reglas acerca de los bloques estáticos:
 
 			I. Una clase puede tener tantos bloques estáticos como se desee y serán ejecutados en el orden en el que aparezcan en la clase.
 
@@ -677,7 +677,7 @@
 		Idealmente, los usuarios de la clase anterior deberían usar el método getTaxAmount, pero imaginemos que alguno de ellos accede directamente a la variable rate de la siguiente forma:
 
 			//código en alguna otra clase
-			souble price = 95.00;
+			double price = 95.00;
 			TaxCalculator tc = new TaxCalculator();
 			double taxAmt = price*tc.rate;
 
@@ -696,13 +696,13 @@
 
 		Debido a que ya no existe la variable rate en la clase, todo el código que accede a la variable rate ahora fallará desde su compilación. El usuario de la clase TaxCalculator debió desde un inicio utilizar el método getTaxAmount y no habría tenido ningún problema. Para evitar el error de compilación el desarrollador ahora deberá dar mantener la variable rate, incluso cuando ya no es requerida por la clase. Ahora ¿qué pasaría si la variable rate cambia en la base de datos, pero no es actualizada en la clase TaxCalculator? ¿Qué pasaría si un usuario descuidado actualiza la variable rate en un momento inoportuno mientras otro la está utilizando para calcular impuestos? En ambos casos, los usuarios podrían estar calculando erróneamente los impuestos y no habría ningún mensaje que avise al desarrollador del problema que están cometiendo. Éste es un problema serio.
 
-		Pero el problema no se limita únicamente s los usuarios confiando en los detalles internos de la clase. La clase TaxCalculator no da ninguna pista de qué características soporta ¿Cómo se supone que los usuarios sepan que deben usar únicamente el método getTaxAmount en lugar de la variable rate? En otras palabras, la clase TaxCalculator no hace un contrato público y clase, y en consecuencia, sería injusto culpar únicamente a los usuarios de la clase.
+		Pero el problema no se limita únicamente a los usuarios confiando en los detalles internos de la clase. La clase TaxCalculator no da ninguna pista de qué características soporta ¿Cómo se supone que los usuarios sepan que deben usar únicamente el método getTaxAmount en lugar de la variable rate? En otras palabras, la clase TaxCalculator no hace un contrato público y claro, y en consecuencia, sería injusto culpar únicamente a los usuarios de la clase.
 
 		En general, en los componentes de software como las clases, interfaces y enums, pueden existir miembros que no están diseñados para que se acceda a ellos directamente desde cualquier otra clase. Si algún usuario hace uso de estos campos para algún desarrollo y posteriormente dicho campo es eliminado o sustituido por alguna otra funcionalidad, el software que utilizaba el campo en cuestión deberá ser modificado para que siga funcionando. Es para ello que Java hace uso de modificadores de acceso.
 
 	8.4.2 Modificadores de acceso
 
-		Java permite agregar modificadores de acceso a los miembros de una clase para determinar qué o quién puede acceder a ellos. Es posible especificar 3 diferentes modificadores de acceso: private, protected y public; si no se especifica ninguno, se selecciona el acceso conocido como "default", lo que da un total de 4 tipos de acceso diferentes. Estos modificadores muestran de forma nuestra intención sobre cómo deben usarse los miembros de nuestra clase no sólo al programador, sino también al compilador. El compilador nos ayuda a reforzar nuestra intención rehusándose a compilar el código que vaya en contra de nuestras intenciones. Los modificadores afectan la accesibilidad de la siguiente manera:
+		Java permite agregar modificadores de acceso a los miembros de una clase para determinar qué o quién puede acceder a ellos. Es posible especificar 3 diferentes modificadores de acceso: private, protected y public; si no se especifica ninguno, se selecciona el acceso conocido como "default", lo que da un total de 4 tipos de acceso diferentes. Estos modificadores muestran de forma clara nuestra intención sobre cómo deben usarse los miembros de nuestra clase no sólo al programador, sino también al compilador. El compilador nos ayuda a reforzar nuestra intención rehusándose a compilar el código que vaya en contra de nuestras intenciones. Los modificadores afectan la accesibilidad de la siguiente manera:
 
 		Acceso private: Sólo los miembros de la misma clase pueden acceder a los miembros que hayan sido especificados como private, lo que significa que no es posible acceder a estos miembros desde otras clases.
 
@@ -740,7 +740,7 @@
 
 		En el ejemplo anterior, el compilador no permite a acctId ser accedido desde la referencia simpleAcct, pero permitirá acceder a acctId desde la referencia hrAcct. Idealmente, debido a que acctId es protected y un miembro protected puede ser accedido desde una subclase, sin importar el paquete de la subclase, entonces simpleAcct.acctId debería ser válido ¿Entonces cuál es el problema?
 
-		En realidad, protected permite a una subclase acceder a sus propios campos que hereda de la superclase. HRAccount hereda el campo acctId desde la clase Account, así que la clase HRAccount posee el campo acctId contenido en cualquier objeto HRAccount, pero no posee el campo de los objetos Account.
+		En realidad, protected permite a una subclase acceder a sus propios campos que hereda de la superclase (o mejor dicho, le permite heredarlos). HRAccount hereda el campo acctId desde la clase Account, así que la clase HRAccount posee el campo acctId contenido en cualquier objeto HRAccount, pero no posee el campo acctIt de los objetos Account.
 
 		En términos técnicos, la subclase está autorizada a acceder a un miembro protected de la superclase sólo si la subclase está involucrada en la implementación de la clase de la variable que está intentando acceder a ese miembro. Es decir, la variable debe estar declarada con el tipo de la subclase; si está declarada con el tipo de la superclase, no se permitirá acceder aunque la variable apunte a un objeto de la subclase.
 
@@ -763,8 +763,12 @@
 				public static void main(String[] args){
 				NewHRAccount newHRAcct = new NewHRAccount();
 
-				newHRAcct.acctId = "111";	//¿Esto compilará? R: Sí
-				newHRAcct.name = "John";	//¿Esto compilará? R: No
+				newHRAcct.acctId = "111";	//¿Esto compilará? R: Sí, porque este campo lo
+											//herédó desde HRAccount, por lo tanto es poseído
+											//por HRAccount
+				newHRAcct.name = "John";	//¿Esto compilará? R: No, porque este campo no lo
+											//heredó de HRAccount, por lo tanto no es poseído
+											//por HRAccount
 				}
 			}
 
@@ -781,7 +785,7 @@
 			Una clase de alto nivel sólo puede tener dos tipos de acceso: public y default. Pero una clase anidada puede tener cualquiera de los 4 tipos de acceso. Por ejemplo:
 
 				public class Outer{
-					private class Ineer1 { }
+					private class Inner1 { }
 					protected class Inner2 { }
 				}
 
@@ -864,7 +868,7 @@
 
 		Podemos notar que el método main realmente no hace nada más que crear una instancia de TestClass. Como resultado de esta creación, la JVM ejecuta cada uno de los dos inicializadores y luego devuelve la recién creada instancia al método main. Por supuesto, el método main no asigna la referencia del objeto creado a ninguna variable, y no hay problema con ello.
 
-		Un inicializador de instancia debe aparecer directamente sobre el alcance de la clase. Por ejemplo, el bloque de código en el método main del siguiente código, no es un inicializador de instancia. Es sólo el código normal de un método. Aún así, es válido y no genera errores:
+		Un inicializador de instancia debe aparecer directamente sobre el alcance de la clase. Por ejemplo, el bloque de código en el método main del siguiente código, no es un inicializador de instancia. Es sólo un bloque de código dentro de un método. Aún así, es válido y no genera errores:
 
 			public class TestClass{
 				{
@@ -881,13 +885,14 @@
 				}
 			}
 
-		Ahora ¿qué imprime el código anterior?. Así es, imprime "Mundo!¡Hola " (por supuesto, sin las comillas). Mientras se ejecuta el método main, la JVMM encuentra la sentencia que imprime "Mundo!". Lugo encuentra la instrucción de crear una instancia de Testclass. Puede notarse que es la primera instancia de TestClass que se crea. Cuando termina la creación de esta instancia, ésta ejecuta el inicializador de instancia que imprime "¡Hola ". Por lo tanto, la salida neta en consola es "Mundo!¡Hola ".
+		Ahora ¿qué imprime el código anterior?. Así es, imprime "Mundo!¡Hola " (por supuesto, sin las comillas). Mientras se ejecuta el método main, la JVM encuentra la sentencia que imprime "Mundo!". Lugo encuentra la instrucción de crear una instancia de Testclass. Puede notarse que es la primera instancia de TestClass que se crea. Cuando termina la creación de esta instancia, ésta ejecuta el inicializador de instancia que imprime "¡Hola ". Por lo tanto, la salida neta en consola es "Mundo!¡Hola ".
 
+		//Importante
 		Los inicializadores se ejecutan primero; es decir, antes que los constructores. 
 
-		Los inicializadores de instancia tienen acceso a todos los miembros de una clase, tanto estáticos como de instancia. Al igual qe los métodos de instancia, los inicializadores tienen acceso a las variables implícitas "this" y "super" (super se verá más adelante).
+		Los inicializadores de instancia tienen acceso a todos los miembros de una clase, tanto estáticos como de instancia. Al igual que los métodos de instancia, los inicializadores tienen acceso a las variables implícitas "this" y "super" (super se verá más adelante).
 
-		Cuando se accede a campos te instancia, el orden de aparición en relación al bloque inicializador es importante. Aunque una variable de instancia declarada en cialquier parte de la clase es visible para todos los inicializadores de instancia, un inicializador de instancia no puede utilizar el valor de la variable si está declarada después del inicializador, aunque sí puede asignarle un valor. Por ejemplo, consideremos el siguiente código:
+		Cuando se accede a campos de instancia, el orden de aparición en relación al bloque inicializador es importante. Aunque una variable de instancia declarada en cualquier parte de la clase es visible para todos los inicializadores de instancia, un inicializador de instancia no puede utilizar el valor de la variable si está declarada después del inicializador, aunque sí puede asignarle un valor. Por ejemplo, consideremos el siguiente código:
 
 			public class Testclass{
 				{
@@ -920,7 +925,7 @@
 				}
 			}
 
-		Aunque el código compila y corre correctamente, podría sorprendernos lo que imprime. La JVM ejecuta los bloques inicializadores de instancia y las sentencias inicializadoras de varriables de instancia en el orden en el que aparecen. Por lo tanto, en el código anterior, la JVM ejecuta el bloque inicializador de instancia antes de ejecutar la inicialización de la variable en la sentencia int i = 10; En este punto, la JVM ya ha alojado memoria para la variable i, y ya le ha dado el valor default a i, el cuál es 0. Cuando se esta ejecutando el inicializador de instancia, la JVM invoca el método printI. El método printI imprime el valor de i, el cuál es 0 en ese momento.
+		Aunque el código compila y corre correctamente, podría sorprendernos lo que imprime. La JVM ejecuta los bloques inicializadores de instancia y las sentencias inicializadoras de variables de instancia en el orden en el que aparecen. Por lo tanto, en el código anterior, la JVM ejecuta el bloque inicializador de instancia antes de ejecutar la inicialización de la variable en la sentencia int i = 10; En este punto, la JVM ya ha alojado memoria para la variable i, y ya le ha dado el valor default a i, el cuál es 0. Cuando se esta ejecutando el inicializador de instancia, la JVM invoca el método printI. El método printI imprime el valor de i, el cuál es 0 en ese momento.
 
 	8.5.2 Crear constructores
 
@@ -987,7 +992,7 @@
 
 			2. Cómo se ve: El constructor default es el constructor más simple y sencillo que verás. No toma ningún argumento, no tiene cláusulas throws y no contiene ningún código. Pero algo peculiar acerca del constructor default es su accesibilidad. El constructor default tiene siempre la misma accesibilidad que la clase: si la clase es pública, también el constructor lo es; si la clase tiene accesibilidad default, el constructor también la tendrá.
 
-		El constructor default es a menudo también llamado "default no-args", debido a que no toma argumentos, aunque esto es técnicamente imprecido, porque el constructor default es siempre el constructor no-args. No existe tal cosa como un constructor default con argumentos.
+		El constructor default es a menudo también llamado "default no-args", debido a que no toma argumentos, aunque esto es técnicamente impreciso, porque el constructor default es siempre el constructor no-args. No existe tal cosa como un constructor default con argumentos.
 
 		Por otro lado, es posible escribir un constructor no-args de forma explícita en una clase con una cláusula throws y una accesibilidad diferente. Por ejemplo, es común tener una clase con un constructor private no-args si no quieres que nadie pueda crear instancias de esta clase.
 
@@ -1029,7 +1034,7 @@
 
 		Obsérvese que en lugar de utilizar el nombre del constructor, la clase utiliza "this". Es decir, en lugar de llamar Account(111, name);, el código llama a this(111, name); para invocar el otro constructor. De hecho, no está permitido intentar invocar otro constructor utilizando el nombre del constructor, así que esto causatía un error de compilación.
 
-		Invocar desde un constructor a otro constructor es una técnica compun que es utilizada para inicializar una instancia con diferente número de argumentos. Como se mostró anteriormente, el constructor con un argumento llama al constructor con dos argumentos. El primer constructor envía al segundo un parámetro provisto por el usuario y otro por default. Esto ayuda a mantener toda la lógica de inicialización en un solo constructor, mientras que permite al usuario de la calse crear instancias enviando diferentes parámetros. La única restricción en la llamada a otro constructor, es que debe ser la primera línea de código dentro de un constructor. Esto implica que un constructor pueda invocar otro constructor una vez como máximo. Por lo tanto, los siguientes tres fragmentos de código para constructores de la clase Account no compilarán:
+		Invocar desde un constructor a otro constructor es una técnica común que es utilizada para inicializar una instancia con diferente número de argumentos. Como se mostró anteriormente, el constructor con un argumento llama al constructor con dos argumentos. El primer constructor envía al segundo un parámetro provisto por el usuario y otro por default. Esto ayuda a mantener toda la lógica de inicialización en un solo constructor, mientras que permite al usuario de la calse crear instancias enviando diferentes parámetros. La única restricción en la llamada a otro constructor, es que debe ser la primera línea de código dentro de un constructor. Esto implica que un constructor pueda invocar otro constructor una vez como máximo. Por lo tanto, los siguientes tres fragmentos de código para constructores de la clase Account no compilarán:
 
 			Account(String name){
 				System.out.println("llamando al constructor de dos argumentos");
@@ -1046,7 +1051,7 @@
 				//Esto sólo sería válido si existe un método llamado Account
 			}
 
-		Es imposible invocar al constructor de una clase de forma directa, ya que éste es invocado sólo como resultado de la creación de una nueva instancia utilizando la palabra "new". La única excepción a esta regla es cuando un constructor invoca a otro construcot por medio de la palabra this (también por medio de "super", del cuál se hablará más tarde). En otras palabras, si se tiene una referencia a un objeto, no es posible utilizar esa referencia para invocar el constructor de ese objeto.
+		Es imposible invocar al constructor de una clase de forma directa, ya que éste es invocado sólo como resultado de la creación de una nueva instancia utilizando la palabra "new". La única excepción a esta regla es cuando un constructor invoca a otro constructor por medio de la palabra this (también por medio de "super", del cuál se hablará más tarde). En otras palabras, si se tiene una referencia a un objeto, no es posible utilizar esa referencia para invocar el constructor de ese objeto.
 
 		Ahora, consideremos el siguiente programa. ¿Cuál de las líneas (A, B, C o D) debe ser descomentada para que imprima 111, dummy?
 
@@ -1083,7 +1088,7 @@
 
 		Los inicializadores de instancia y los constructores están destinados al mismo propósito, es decir, darle al programador la oportunidad de inicializar la instancia. Pero existen un par de diferencias entre ellos:
 
-			1. Cuando se crea una instancia de una clase, la JVM ejecuta todos los inicializadores de instancia de esa clase uno por uno, pero sólo ejecuta uno de sus constructores (dependiendo de los argumentos que sean enviados). Por supuesto, como se vio antes, es posible para un constructor invocar otro constructor utilizando "this". Pot otra parte, no es posible un encadenamiento de inicializadores de instancia.
+			1. Cuando se crea una instancia de una clase, la JVM ejecuta todos los inicializadores de instancia de esa clase uno por uno, pero sólo ejecuta uno de sus constructores (dependiendo de los argumentos que sean enviados). Por supuesto, como se vio antes, es posible para un constructor invocar otro constructor utilizando "this". Por otra parte, no es posible un encadenamiento de inicializadores de instancia.
 
 			2. La restricción del uso de variables declaradas debajo de un inicializador de instancia no es aplicable a constructores. Como se explicó anteriormente, un inicializador de instancia puede referenciar por adelantado (forward reference) a una variable, pero sólo para asignar un valor a dicha variable y no para utilizar su valor.
 
@@ -1118,7 +1123,7 @@
 		Ahora que sabemos sobre inicializadores y constructores, podemos ver nuevamente el tema de variable final. Debido a que el valor de una variable final no puede ser cambiado, Java no les asigna un valor default, sino que en lugar de eso, obliga al programador a asignar un valor de forma explícita antes de que pueda ser usado por otras clases. Esta idea de inicialización explícita conduce a las siguientes reglas acerca de inicialización:
 
 			1. Inicialización explícita de una variable static final.
-			Una variable estáticapuede ser utilizada por otras clases sólo después de que la clase ha sido cargada y está lista para utilizarse. Esto significa que la variable debe estar inicializada en el momento en el que la carga se la clase se ha completado. En consecuencia, es posible asignar un valor a una variable final static en el momento de su declaración o en cualquiera de los inicializadores estáticos, como se muestra a continuación:
+			Una variable estática puede ser utilizada por otras clases sólo después de que la clase ha sido cargada y está lista para utilizarse. Esto significa que la variable debe estar inicializada en el momento en el que la carga de la clase se ha completado. En consecuencia, es posible asignar un valor a una variable final static en el momento de su declaración o en cualquiera de los inicializadores estáticos, como se muestra a continuación:
 
 				class TestClass{
 					static final boolean DEBUG = true;	//inicializando en la decl
@@ -1202,7 +1207,7 @@ ___________FINALIZA TRADUCCIÓN DIRECTA, INICIA RESUMEN___________
 
 		Como se vio en la sección de modificadores de acceso, permitir a otras clases acceder directamente a las variables de una clase puede causar problemas. Cuando se diseña una clase, la funcionalidad debería presentarse por medio de métodos y no de variables. Existen dos ventajas de realizar esto:
 
-			1. Se tiene la livertad de modificar la implementación de la funcionalidad sin afectar a los usuarios de la clase.
+			1. Se tiene la libertad de modificar la implementación de la funcionalidad sin afectar a los usuarios de la clase.
 
 			2. Se puede asegurar de que el valor de la variable siempre es consistente con la lógica de negocio. Por ejemplo, en un objeto Persona, la variable edad no debería ser negativa. Si la variable edad es pública, se corre el riesgo de que alguien la vuelva negativa. En cambio, un método puede agregar la restricción de que la edad sólo pueda ser positiva.
 
@@ -1212,7 +1217,7 @@ ___________FINALIZA TRADUCCIÓN DIRECTA, INICIA RESUMEN___________
 
 		Encapsulación de miembros estáticos
 
-		En genetal, es mejor tener las variables estáticas como private. Idealmente, las únicas variables que deberían ser públicas son las constantes.
+		En general, es mejor tener las variables estáticas como private. Idealmente, las únicas variables que deberían ser públicas son las constantes.
 
 	8.6.2 Convención de nombres de JavaBeans
 
@@ -1229,11 +1234,11 @@ ___________FINALIZA TRADUCCIÓN DIRECTA, INICIA RESUMEN___________
 
 		JavaBeans
 
-		JavaBeans es un conjunto de convenciones que permite que cualquiera haga uso de un objeto reconociendo fácilmente las propiedades que tiene el objeto. Existen sólo dos cosas que se deben saber sobre un JavaBean para el examn:
+		JavaBeans es un conjunto de convenciones que permite que cualquiera haga uso de un objeto reconociendo fácilmente las propiedades que tiene el objeto. Existen sólo dos cosas que se deben saber sobre un JavaBean para el examen:
 
 			1. Si una clase tiene un método no privado cuyo nombre inicie con "get", seguido por una letra mayúscula, entonces la clase tiene una propiedad con el nombre del método omitiendo el get. El tipo de dicha propiedad es el mismo que el que retorna dicho método. Por ejemplo, la clase Book tiene el método getTitle(), el cual devuelve String. Por lo tanto, la clase Book tiene una propiedad llamada title de tipo String. Este método es llamado el "getter" de la propiedad title. Si el tipo de la propiedad es boolean (o Boolean), el nombre del getter puede también iniciar con "is" en lugar de "get";
 
-			2. De manera similira, si una clase tiene un método no privado cuyo nombre inicie con "set" y toma como parámetro un argumento del midmo tipo de retorno del método get, entonces esta propiedad se considera editable y el método es llamado "setter" de esa propiedad. Por ejemplo, la clase Book tiene un método llamado setTitle, lo que significa que la propiedad set es editable. Si no fuera editable es "read only". Obsérvese que no se hace mención al nombre de la variable detrás de esta propiedad.
+			2. De manera similar, si una clase tiene un método no privado cuyo nombre inicie con "set" y toma como parámetro un argumento del mismo tipo de retorno del método get, entonces esta propiedad se considera editable y el método es llamado "setter" de esa propiedad. Por ejemplo, la clase Book tiene un método llamado setTitle, lo que significa que la propiedad title es editable. Si no fuera editable es "read only". Obsérvese que no se hace mención al nombre de la variable detrás de esta propiedad.
 
 				package library;
 				public class Book{
@@ -1264,7 +1269,7 @@ ___________FINALIZA TRADUCCIÓN DIRECTA, INICIA RESUMEN___________
 
 	8.7.1 Pasando argumentos a métodos
 
-		Java utiliza únicamente paso de parámetros por valor. Esto quiere decir que si pasamos, por ejemplo, una variable como parámetro, el método recibe una copia de ese valor para trabajar con él. Si el valor enviado es cambiado en el método, el cambio no tiene ningún efecto sobre la variable original. Esto ocurrer tanto para variables primitivas, como variables referenciadas. 
+		Java utiliza únicamente paso de parámetros por valor. Esto quiere decir que si pasamos, por ejemplo, una variable como parámetro, el método recibe una copia de ese valor para trabajar con él. Si el valor enviado es cambiado en el método, el cambio no tiene ningún efecto sobre la variable original. Esto ocurre tanto para variables primitivas, como variables referenciadas. 
 
 	8.7.2 Pasando objetos a métodos
 

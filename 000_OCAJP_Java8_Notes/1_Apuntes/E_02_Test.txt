@@ -1,23 +1,43 @@
 Anotaciones del Test 2
 
-	• Una variable local o una de ciclo siempre sombreará a una de instancia, sin crear conflicto entre ellas. Esto sin importar en qué momento del código fue creada la variable.
+	2. Una variable local o una de ciclo siempre sombreará a una de instancia sin crear conflicto entre ellas. Esto sin importar en qué momento del código fue creada la variable.
 
-	• Recordar que el acomodo de las cláusulas catch pueden llevar a unreachable code
+	3. Recordar que el acomodo de las cláusulas catch pueden llevar a unreachable code. Si se pone primero la excepción más general, nunca se podrán evaluar los catch más específicos.
 
-	• De nuevo recordar que las variables de instancia y estática y los métodos estáticos se enlazan en tiempo de compilación. Los métodos de instancia sí se enlazan en tiempo de ejecución.
+	6. De nuevo recordar que las variables de instancia y estáticas y los métodos estáticos se enlazan en tiempo de compilación. Los métodos de instancia sí se enlazan en tiempo de ejecución. Por ejemplo, si una interfaz tiene una variable y luego la clase que implementa dicha interfaz crea una variable que sombrea a la de la interfaz, cuando se haga una llamada a la variable por medio de una variable creada con el tipo de la interfaz, el compilador hará que siempre se apunte a la de la interfaz, incluso cuando el objeto real sea del tipo de la clase que implementa la interfaz:
+		Interfaz intrfz = new Clase();
+		System.out.println(intrfz.var);	//Imprime la variable de la interfaz, la cual puede diferir de la de la clase
 
-	• En las expresiones, primero se eválúan (sustituyen los valores) y posteriormente se realiza la operación.
+	8. En las expresiones, primero se evalúan (sustituyen los valores) y posteriormente se realiza la operación. En caso de que se tenga una expresión dentro de un array, se evalúa esa expresión antes de realizar las operaciones. Por ejemplo:
+		int i = 0;
+		int [] iA = {10, 20};
+		iA[i] = i = 30;			//En este punto i vale 0, Por lo tanto se evalúa como iA[0] = i = 30;
+								//y posteriorente se evalúa i[0] = 30. No se lanza excepción.
 
-	• Tener cuidado con los else colgantes. No confíes en la sangría, ya que puede ser engañosa
+	11. Tener cuidado con los else colgantes. No confíes en la sangría, ya que puede ser engañosa
 
-	• Tener cuidado con los indices no válidos en arrays. En un array de longitud 10 no existe el índice 10
+	12. Tener cuidado con los índices no válidos en arrays. En un array de longitud 10 no existe el índice 10
 
-	• Consejo: en evaluación de expresiones que incluyan operadores compuestos, conviene desarrollar el operador copuesto para que tengamos una expresión larga y más entendible
+	14. Recordar que aunque while(false) y for(; false ;) llevan a error de compilación por código inalcanzable, if(false) sí es válido, ya que puede tratarse de un proceso debug. En este ejemplo se usa la literal false directamente, pero puede ser cualquier constante en tiempo de compilación que sea false (como una creada con la palabra final).
 
-	• El constructor Boolean(String) es indiferente a myúsculas y minúsculas en el string que recibe. Es importante recordar que si se comparan dos objetos wrapper, se tomarán como referencias y no se aplicará unboxing. El unboxing sólo se aplica cuando se puede inferir que se está esperando un primitivo, pero se otorga un wrapper. Cuando se tienen dos wrappers, no se puede inferir lo anterior debido a que ambos son objetos y bien pueden simplemente compararse sus referencias.
+	16. Importante: Una clase abstracta sí puede extender a una clase concreta y un método abstracto puede sobreescribir (override) a un método ya implementado.
 
-	• Recordar que las excepciones también son objetos
+	20. Consejo: Para problemas que involucren ciclos, no intentar (al menos por mucho tiempo) hacerlo de forma mental, ya que nos puede llevar a perder mucho tiempo valioso. Usar lápiz y papel.
 
-	• El constructor de la subclase siempre debe llamar al constructor de la superclase. En caso de que no haya llamada al constructor de la superclase de forma explícita, el compilador llamará por default a super() en cada constructor que no tenga la llamada. Esto puede causar conflicto si en la superclase no existe el constructor noargs. La llamada a super se puede realizar de forma indirecta realizando una llamada a otro constructor con this y que este otro constructor llame a algún super(args...)
+	27. Consejo: en evaluación de expresiones que incluyan operadores compuestos, conviene desarrollar el operador copuesto para que tengamos una expresión larga y más entendible
 
-	• De nuevo, los métodos de instancia no privados se llaman SIEMPRE respecto al objeto real, aunque sean llamados desde algún método de la subclase.
+	28. Importante: Las variables estáticas Boolean.TRUE y Boolean.FALSE devuelven un objeto wrapper. El constructor Boolean(String) es indiferente a mayúsculas y minúsculas en el string que recibe. El método Boolean.valueOf retorna una referencia a las constantes Boolean.TRUE y Boolean.FALSE (es decir, no crean nuevos objetos), por lo que algo como Boolean.valueOf("true") == Boolean.TRUE devuelve true. Es importante recordar que si se comparan dos objetos wrapper, se tomarán como referencias y no se aplicará unboxing. El unboxing sólo se aplica cuando se puede inferir que se está esperando un primitivo, pero se otorga un wrapper. Cuando se tienen dos wrappers, no se puede inferir lo anterior debido a que ambos son objetos y bien pueden simplemente compararse sus referencias. Cuando se comparan con == un boolean y un Boolean, se desempaqueta el Boolean y se comparan como primitivos.
+
+	29. Dentro de un foreach se puede utilizar el modificador final en la variable auxiliar. Por ejemplo, algo como for(final Object o2 : c) donde c es un Collection, es completamente válido.
+
+	30. Consejo: tener cuidado con métodos que parecen constructores. Por ejemplo, en la clase TestClass, el método public void TestClass(long pLong) {} parece un constructor, pero en realidad es un método.
+
+	34. Al final de un método o constructor se puede poner ; y no hay problema. Por ejemplo, el constructor public TestClass(String s1, String s2) { }; es completamente válido.
+
+	42. Recordatorio: Cuando se llama a un índice de un array, primero se debe evaluar completamente la expresión dentro de los corchetes y posteriormente se opera el array con los corchetes. Por lo tanto, en una expresión como ar[m()] = 5, primero se evaluará el método m() aunque ar sea nulo o sus índices sean nulos o cualquier otro caso.
+
+	52. Recordar que las excepciones también son objetos
+
+	55. El constructor de la subclase siempre debe llamar al constructor de la superclase. En caso de que no haya llamada al constructor de la superclase de forma explícita, el compilador llamará por default a super() en cada constructor que no tenga la llamada. Esto puede causar conflicto si en la superclase no existe el constructor no-args. La llamada a super se puede realizar de forma indirecta realizando una llamada a otro constructor con this y que este otro constructor llame a algún super.
+
+	56. De nuevo, los métodos de instancia no privados se llaman SIEMPRE respecto al objeto real, aunque sean llamados desde algún método de la superclase, ya que la llamada se realiza con la variable this, y this apuntará al objeto real.

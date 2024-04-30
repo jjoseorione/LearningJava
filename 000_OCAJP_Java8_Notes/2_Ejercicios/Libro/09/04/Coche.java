@@ -7,7 +7,7 @@ public class Coche extends Vehiculo{
 	public String conducir(int distancia){
 		return "Conduciendo coche, avanzando " + distancia + " metros.";
 	}
-	public void start(){
-		System.out.println("Encender coche");
-	}
+	// public void start(){
+	// 	System.out.println("Encender coche");
+	// }
 }

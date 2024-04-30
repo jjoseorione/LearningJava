@@ -1,5 +1,5 @@
 package com.jjoseorione.vehiculos;
 
-interface Conducible{
+public interface Conducible{
 	String conducir(int x);
 }

@@ -6,10 +6,11 @@ public class TestClass{
 	public static void main(String[] args){
 		Data d = new Data();
 
-		Data ad[] = new Data[3];
-		ad[0] = d;
-		ad[1] = d;
-		ad[2] = d;
+		// Data ad[] = new Data[3];
+		// ad[0] = d;
+		// ad[1] = d;
+		// ad[2] = d;
+		Data ad[] = new Data[]{d, d, d};
 
 		ad[1].value = 51677147;
 

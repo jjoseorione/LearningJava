@@ -7,3 +7,13 @@
 3. Se necesita obetener la identificación de un vehículo llamando al método getVIN() en cualquier vehículo. Además, se requiere que ninguna subclase pueda cambiar el método getVIN ¿cómo se debe realizar este método?
 
 	R: En la clase padre de todos los vehículos y marcado como final.
+
+4. Crear una interfaz llamada Conducible con un método default start(). Invocar start en instancias de clases que implementen Conducible. Sobreescribir start() de tal forma que imprima un mensaje diferente en cada clase.
+
+5. Asegurarse de que cada vehículo sea creado con un VIN
+
+	R: Se crea el constructor en la clase Vehiculo, de tal forma que no exista un constructor no-args default. Luego, en los constructores de las clases concretas realizamos una llamada al constructor de Vehiculo.
+
+6. Crear una clase llamada ToyCar que extienda a Coche, pero no requiera ningún argumento para creación de instancia.
+
+	R: Se agrega explícitamente un constructor no-args a ToyCar que invoque el constructor de Vehiculo enviando un parámetro default. De esta manera, el constructor de ToyCar no solicita ningún parámetro.

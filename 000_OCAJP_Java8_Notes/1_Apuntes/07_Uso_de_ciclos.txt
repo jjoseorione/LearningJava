@@ -122,7 +122,7 @@
 			for( inicializacion ; condicion ; actualizacion)
 				sentencia;
 
-		Dentro de la sintaxis del ciclo for, la sección de inicialización, la sección de condición y la sección de actualización son todas opcionales, por lo cual se puede prescindir de ellas. También son opcionales las sentencias asociadas al ciclo. Lo que no es opcional, son los punto y coma que separan las secciones ciclo. Por lo tanto, se puede tener una un ciclo como for( ; ; ); el cual es válido para el compilador (aunque el código que esté debajo será marcado como imposible de alcanzar), pero for(); ó for(;); no lo son.
+		Dentro de la sintaxis del ciclo for, la sección de inicialización, la sección de condición y la sección de actualización son todas opcionales, por lo cual se puede prescindir de ellas. También son opcionales las sentencias asociadas al ciclo. Lo que no es opcional, son los punto y coma que separan las secciones del ciclo. Por lo tanto, se puede tener una un ciclo como for( ; ; ); el cual es válido para el compilador (aunque el código que esté debajo será marcado como imposible de alcanzar), pero for(); ó for(;); no lo son.
 
 		El orden de ejecución del ciclo for es el siguiente:
 
@@ -134,7 +134,7 @@
 
 			IV. Se ejecuta la sección de actualización. Si esta sección está vacía, es ignorada
 
-			V. El control es devuelvo a la sección de condición.
+			V. El control es devuelto a la sección de condición.
 
 	7.4.3 Partes del ciclo for
 
@@ -214,8 +214,10 @@
 			Es importante observar que no hay punto y coma después de la expresión de actualización. El paréntesis de cierre es suficiente para determinar el final de la expresión.
 
 			De igual forma, puede utilizarse más de una expresión. Por ejemplo:
-			for(int i = 0; i<10; System.out.println("El valor de i es " + i), i++);
-			El código anterior escribe los números del 1 al 9.
+
+				for(int i = 0; i<10; System.out.println("El valor de i es " + i), i++);
+			
+			El código anterior escribe los números del 0 al 9.
 
 7.5 Crear y utilizar el ciclo for mejorado
 
@@ -251,7 +253,7 @@
 
 			for(Tipo nombreVariable : array_o_iterable ) sentencias(s);
 
-		"Tipo" es el tipo de elementos que se encuentran dentro del array o colección; variableName es el nombre de la variable local al ciclo con la que se hace referencia al elemento del array o colección; y array_o_iterable es el array u objeto que implementa la interfaz java.util.Iterable.
+		"Tipo" es el tipo de elementos que se encuentran dentro del array o colección; variableName es el nombre de la variable local de ciclo con la que se hace referencia al elemento del array o colección; y array_o_iterable es el array u objeto que implementa la interfaz java.util.Iterable.
 
 		Se hace la generalización de Iterable, ya que cualquier clase que quiera iterar con el ciclo for-each, debe implementar la interfaz java.util.Iterable.
 
@@ -280,9 +282,13 @@
 
 		En un ciclo for normal, la variable de iteración nos indica en qué iteración estamos. No existe dicha variable en el ciclo foreach, por lo que si queremos saber en qué iteración estamos, es necesario crear una variable para ello.
 
+	Nota importante no mencionada en el libro:
+
+		En la práctica nos hemos dado cuenta de que la variable auxiliar utilizada en el ciclo for-each es una variable que copia el contenido de los índices del iterable. Al ser una copia, nos servirá únicamente como lectura y no como escritura. Es decir, si se intenta utilizar la variable auxiliar para modificar el contenido del iterable, sólo se cambiará el valor de la variable auxiliar, mientras que el contenido del iterable quedará exactamente igual.
+
 7.6 Uso de break y contine
 
-	Hay ocasiones en las que no reqeurimos que un ciclo siga su camino completo. Por ejemplo, si se está buscando un id dentro de una lista de ids, no es necesario seguir buscadno luego de haberlo encontrado.
+	Hay ocasiones en las que no requerimos que un ciclo siga su camino completo. Por ejemplo, si se está buscando un id dentro de una lista de ids, no es necesario seguir buscadno luego de haberlo encontrado.
 
 	La sentencia break hace que un ciclo sea finalizado en ese momento, aunque no haya llegado al final de sus posibles iteraciones. Esta sentencia sirve para cualquier ciclo, es decir, para while, do-while, for y for-each. Cuando se llega a una sentencia break, el ciclo se detiene por completo, no se ejecutan más las secciones de condición ni de actualización (en el caso del ciclo for) y el control se otorgará a la primera línea despues del bloque del ciclo.
 
@@ -294,12 +300,13 @@
 
 	Cuando se usen ciclos anidados, es importante verificar que las variables de control de cada ciclo se estén utilizando, evaluando y actualizando correctamente, según lo que se quiera realizar. En el examen habrá preguntas con ciclos de varios niveles. Lo mejor será siempre ejecutar el código de forma manual y cuidadosa en una hoja de papel para poder determinar correctamente la respuesta correcta.
 
-	La forma de utilizar sentencias break y continue dentro de ciclos anidados es igual en primera instancia. Si se requiere salir o continuar con el ciclo más interior en el que se encuentra la ejecución del progra,a sólo se requiere utilizar la sentencia break; o continue; sin ninguna diferencia.
+	La forma de utilizar sentencias break y continue dentro de ciclos anidados es igual en primera instancia. Si se requiere salir o continuar con el ciclo más interior en el que se encuentra la ejecución del programa sólo se requiere utilizar la sentencia break; o continue; sin ninguna diferencia.
 
 	Cuando se esté en un ciclo anidado, pero se quiera salir (break o continue) de más de un ciclo a la vez, se utilizan las sentencias break y continue con etiquetas. Por ejemplo:
 
 		CICLO_I:
 		for(int i = 0; i<10; i++){
+			CICLO_II:
 			for (int j = 0; j < 10; j++){
 				System.out.println("i = " + i + " j = " + j);
 				if(i == 4 && j == 5)
@@ -325,7 +332,7 @@
 
 		Es posible utilizar break y continue etiquetados dentro de un ciclo no anidado, aunque debido a que no es necesario especificar una etiqueta, no es necesario ni tiene sentido hacerlo. 
 
-		También es posible utilizar brake etiquetado (aunque no continue) dentro de cualquier bloque de sentencias, no sólo en ciclos. Por ejemplo, el siguiente código es completamente válido e imprime "1 3".
+		---También es posible utilizar brake etiquetado (aunque no continue) dentro de cualquier bloque de sentencias, no sólo en ciclos. Por ejemplo, el siguiente código es completamente válido e imprime "1 3".---
 
 		public static void main(String[] args){
 			MYLABEL:{

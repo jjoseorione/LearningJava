@@ -1,4 +1,4 @@
-class Nutricionist{
+class Nutricionist{		//Solución incorrecta
 	public void printCalories(Pie p){
 		if(p instanceof ApplePie)
 			System.out.println( ( (ApplePie) p ).getCalories());

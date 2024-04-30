@@ -2,8 +2,8 @@ package com.jjoseorione.vehiculos;
 
 public class Camion extends Vehiculo{
 	public Camion(String vin){
+		super(vin);
 		this.makeAndModel += " Camion";
-		this.vin = vin;
 	}
 	public String conducir(int distancia){
 		return "Conduciendo camion, avanzando " + distancia + " metros.";

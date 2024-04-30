@@ -1,3 +1,3 @@
 1. Definir un tipo referenciado llamado Bird. Definir un método de instancia llamado fly dentro de Bird. Definir algunas variables estáticas y de instancia de tipo int, float, double, boolean y String dentro de Bird.
 
-2. Creat una clase TestClass que tenga una variable estática de tipo Bird. Inicializar esta variable con un objeto válido de tipo Bird. Imprimir los valores default de las variables de Bird desde el método main de TestClass. También imprimir la variable estática de TestClass desde main. Observar el resultado.
+2. Crear una clase TestClass que tenga una variable estática de tipo Bird. Inicializar esta variable con un objeto válido de tipo Bird. Imprimir los valores default de las variables de Bird desde el método main de TestClass. También imprimir la variable estática de TestClass desde main. Observar el resultado.

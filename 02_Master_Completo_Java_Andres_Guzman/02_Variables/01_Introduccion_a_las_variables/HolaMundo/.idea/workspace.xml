@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbd8c2bb-1280-404b-a320-816a2825a754" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/01_Patada_inicial_para_principiantes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/01_Patada_inicial_para_principiantes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/03_Trabajando_con_tipos_de_datos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/03_Trabajando_con_tipos_de_datos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/04_Creacion_y_uso_de_Arrays.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/04_Creacion_y_uso_de_Arrays.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/05_Uso_de_operadores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/05_Uso_de_operadores.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/06_Uso_de_condicionantes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/06_Uso_de_condicionantes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/07_Uso_de_ciclos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/07_Uso_de_ciclos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/08_Trabajando_con_metodos_y_encapsulacion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/1_Apuntes/08_Trabajando_con_metodos_y_encapsulacion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/1/Clase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/1/Clase1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/1/Clase2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/1/Clase2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/2/Clase3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/C.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Libro/02/3/Clase5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaFor3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaVarargs.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaVarargs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaVarargs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../000_OCAJP_Java8_Notes/2_Ejercicios/Pruebas/PruebaVarargs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/001_HolaMundo/Clase1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/001_HolaMundo/Clase1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/002_EntradaDeDatos/EntradaDatos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/002_EntradaDeDatos/EntradaDatos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/003_AreaCuadrado/AreaCuadrado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/003_AreaCuadrado/AreaCuadrado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/004_SumaYProducto/SumaProducto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/004_SumaYProducto/SumaProducto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/005_PerimetroCuadrado/PerimetroCuadrado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/005_PerimetroCuadrado/PerimetroCuadrado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/CondicionIf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/CondicionIf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/NumeroMayor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/NumeroMayor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/PromedioCalificaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/PromedioCalificaciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/SumaProducto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/006_If/SumaProducto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/CadenaDeCaracteres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/CadenaDeCaracteres.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/Cadenas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/Cadenas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/Next.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/007_Strings/Next.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/DoWhile/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/DoWhile/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/Calificaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/Calificaciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/NumerosUnoAN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/NumerosUnoAN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/NumerosUnoAlCien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/For/NumerosUnoAlCien.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/Calificaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/Calificaciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/NumerosUnoAN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/NumerosUnoAN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/NumerosUnoAlCien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/NumerosUnoAlCien.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/PromedioDeNNumeros.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/008_Ciclos/While/PromedioDeNNumeros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/PlanoCartesiano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/PlanoCartesiano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/Triangulo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/009_Clases/Triangulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/010_Metodos_Argumentos/Tablas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/010_Metodos_Argumentos/Tablas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/010_Metodos_Argumentos/TablasPositivas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/010_Metodos_Argumentos/TablasPositivas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/CVectoresParalelos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/CVectoresParalelos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/DOrdenaElementos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/DOrdenaElementos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/OrdenaElementos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/OrdenaElementos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/PromedioEstaturas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/PromedioEstaturas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/SueldosEmpleados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/SueldosEmpleados.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/SueldosLength.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/SueldosLength.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/VectoresParalelos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/VectoresParalelos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/aSueldos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/aSueldos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/bSueldosLength.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/011_Arrays/bSueldosLength.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/012_Matrices/Matrices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/012_Matrices/Matrices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/013_Vectores_matrices_paralelos/TablaSueldos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/013_Vectores_matrices_paralelos/TablaSueldos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Platypus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Platypus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Sueldos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/014_Constructores/Sueldos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/015_Clase_String/ClaseString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/015_Clase_String/ClaseString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Banco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Banco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Init.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/016_Colaboracion_entre_clases/Init.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Operacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Operacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Prueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Resta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Resta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Suma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/017_Herencia/Suma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/018_Interfaces_visuales/Formulario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/018_Interfaces_visuales/Formulario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/Matematica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/Matematica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/PruebaPersona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/030_Atributos_Estaticos_y_Finales/PruebaPersona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/040_Metodos_Estaticos/Matematicas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/040_Metodos_Estaticos/Matematicas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/040_Metodos_Estaticos/Prueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/040_Metodos_Estaticos/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Demarcacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Demarcacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Equipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Equipo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Futbolista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Futbolista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Main/Prueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Prueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/041_Enum/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/Prueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/com/tutorial/rutinas/Cadena.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/com/tutorial/rutinas/Cadena.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/com/tutorial/rutinas/Matematica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/050_Paquetes/com/tutorial/rutinas/Matematica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Cuadrado1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Cuadrado1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Cuadrado2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Cuadrado2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Division.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/Division.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/ExcepcionVerificada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/ExcepcionVerificada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/060_Try_Catch/datos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Cuadrado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Cuadrado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Division.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Division.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Figura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Figura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Operacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Operacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/PruebaFiguras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/PruebaFiguras.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/PruebaOperaciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/PruebaOperaciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Resta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Resta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Suma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Suma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Triangulo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/070_Clases_abstractas/Triangulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/080_Clases_anidadas/Coordenadas$Punto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/080_Clases_anidadas/Coordenadas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/080_Clases_anidadas/Coordenadas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/080_Clases_anidadas/PruebaCoordenadas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../001_Java_Ya/080_Clases_anidadas/PruebaCoordenadas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/build/classes/ConcatenacionJava.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/ConcatenacionJava/src/ConcatenacionJava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/build/classes/HolaMundo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/HolaMundo.java/src/HolaMundo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_12_CaracteresEspeciales/src/CaracteresEspeciales.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/build/classes/ClaseScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_13_Clase_Scanner/src/ClaseScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/build/built-jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/build/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/dist/Leccion_15_Tipos_primitivos.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/dist/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_15_Tipos_primitivos/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/build/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_17_Primitivos_Flotantes/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/build/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_18_Inferencia_de_Tipos/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_19_tipo_char/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_20_tipo_booleano/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_21_coversion_de_tipos/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/build/classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Leccion_25_Operadores/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/build/classes/TareaScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_2/src/TareaScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/build/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/build/classes/tiendaLibros.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../002_Universidad_Java_Udemy/Fundamentos/Tarea_3/src/tiendaLibros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/01_Introduccion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/02_Creacion_primer_proyecto.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/03_Archivo_pom.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/04_Maven_Netbeans_Eclipse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/05_Maven_install.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/06_Perfiles_build.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/07_Multiples_POM.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/08_Dependencias_transitivas.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/09_Excluir_dependencias.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/src/main/java/com/orion/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/src/test/java/com/orion/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/classes/com/orion/example/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/mi-primer-app-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/surefire-reports/TEST-com.orion.example.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/surefire-reports/com.orion.example.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-app/target/test-classes/com/orion/example/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-webapp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-webapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Curso_Maven_MitoCode/mi-primer-webapp/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/01_Hola_Mundo/HolaMundo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/01_Hola_Mundo/HolaMundo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/02_Variables/Variable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/02_Variables/Variable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/03_Operadores/Operadores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/03_Operadores/Operadores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/04_Ejercicio_de_logica/Intercambio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/04_Ejercicio_de_logica/Intercambio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Codigo/05_Condicional/EjemploIf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Teoria/01_Introduccion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Teoria/02_Variables y tipos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Teoria/03_Operadores_aritmeticos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../003_Java_para_principiantes_TodoCode/Teoria/04_Condicional.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/01_Intro_JPA.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/02_Instalacion_mysql.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/03_ORM.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/04_JPA_Controllers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/05_CRUD_con_JPA_INSERT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/06_CRUD_DELETE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/07_CRUD_EDIT_UPDATE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/08_CRUD_FIND_FINDENTITIES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/CursoJPA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/logica/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/logica/ControladoraLogica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/persistencia/AlumnoJpaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/persistencia/ControladoraPersistencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/persistencia/exceptions/IllegalOrphanException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/persistencia/exceptions/NonexistentEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/java/com/orion/cursojpa/persistencia/exceptions/PreexistingEntityException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../004_JPA_TodoCode/cursoJPA/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/01_Que_es_Java_Web_JSP.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/02_Etiquetas_JSP_HTML.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/03_Servlets.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/04_getParameter.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/java/com/orion/servlets/SvUsuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/java/logica/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/webapp/index1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/src/main/webapp/mostrarUsuarios.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/Tomcat.dpf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/WEB-INF/classes/com/orion/servlets/SvUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/WEB-INF/classes/logica/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/index1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/HolaMundoWeb-1.0-SNAPSHOT/mostrarUsuarios.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/classes/com/orion/servlets/SvUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/classes/logica/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/endorsed/javaee-endorsed-api-7.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../005_Java_Web_TodoCode/HolaMundoWeb/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2c8RXfdiowbP8IW87NEKDVV5fzr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "Z:/Documents/Repositorios/LearningJava/02_Master_Completo_Java_Andres_Guzman/02_Variables/HolaMundo",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbd8c2bb-1280-404b-a320-816a2825a754" name="Changes" comment="" />
+      <created>1707491265742</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707491265742</updated>
+    </task>
+    <servers />
+  </component>
+</project>

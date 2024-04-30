@@ -1,0 +1,22 @@
+3. Instalación JDK
+	En este curso se utilizará la Open JDK 14
+
+4. Instalación IntelliJ Idea
+	En este curso se estará utilizando IntelliJ IDEA como IDE para desarrollo.
+
+5. Introducción a Java
+
+	Características:
+		• Muchos tipos de aplicaciones (consola, ventanas, web, distribuidas, etc.)
+		• Multiplataforma
+		• Programación orientada a objetos
+		• Recolector de basura
+		• Polimorfismo
+		• Moludaridad
+		• Encapsulamiento
+		• Lenguaje tipado
+
+6. Ejemplo Hola Mundo en Java
+	• La carpeta .idea es de configuraciones y no se toca
+	• Lo importante es el src, que es donde se guardan todos los archivos fuentes, paquetes, clases, etc.
+	• External Libraries son todas las dependencias, que en nuestro caso sólamente tenemos la JDK.

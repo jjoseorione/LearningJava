@@ -7,3 +7,5 @@
 3. Se necesita obetener la identificación de un vehículo llamando al método getVIN() en cualquier vehículo. Además, se requiere que ninguna subclase pueda cambiar el método getVIN ¿cómo se debe realizar este método?
 
 	R: En la clase padre de todos los vehículos y marcado como final.
+
+4. Crear una interfaz llamada Conducible con un método default start(). Invocar start en instancias de clases que implementen Conducible. Sobreescribir start() de tal forma que imprima un mensaje diferente en cada clase.

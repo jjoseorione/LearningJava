@@ -1,0 +1,35 @@
+Anotaciones del Unique Test 1
+
+	2. Es válido empezar un número binario con ceros. De hecho, se puede iniciar cualquier número con ceros a la izquierda y los ceros serán ignorados. Por ejemplo:
+		int a = 0b0111;
+		int b = 0b00000111;
+		System.out.println(a + " " + b);	//Imprime 7 7
+		int c = 011;
+		int d = 000011;
+		System.out.println(c + " " + d);	//Imprime 9 9
+
+	5. El bloque try/catch/finally, al funcionar como una condicional, define un nuevo alcance de variables en cada bloque. Por lo tanto, las variables creadas en el bloque try, no son visibles fuera de él (ni siquiera en catch o finally). Lo mismo ocurre para los bloques catch y finally.
+
+	6. Recordar que una expresión Lambda no crea un nuevo alcance de variables, lo que significa que no es posible reutilizar dentro de la expresión lambda el nombre de una variable local del método dentro del que se encuentra la expresión lambda, ya que sería redeclarar la misma variable.
+
+	7. Los contructores no pueden ser final. Tampoco abstract, static, native o synchronized. Los constructores sólo tienen modificador de acceso o ni siquiera eso en caso de que sean default.
+
+	10. Los ArrayList tienen tiempo de acceso constante, lo que significa que tardan el mismo tiempo para acceder a cada elemento. En contraste, una LinkedList tarda más en llegar al último elemento que al primero.
+
+	17. Aunque las etiquetas case y default dentro de un switch son todas opcionales, no puede prescindirse de todas y poner sentencias. En pocas palabras, no es posible tener sentencias dentro del bloque switch y no tener ninguna etiqueta en lo absoluto: o se pone alguna etiqueta case, o se pone etiqueta default, o se deja el bloque completamente vacía.
+
+	19. Los operadores aritméticos tienen mayor precedencia que los comparativos. Por lo tanto, la expresión (1 + 5 < 3 + 7) se evalúa como (1+5) < (3+7).
+
+	23. Importante: No confundir extensión de interfaces con implementación. Cuando una interfaz extiende a otra, sucede lo mismo que con las clase: los métodos se sobreescriben. Por lo tanto, si una interfaz extiende a otra y ambas implementan el mismo método default, no existe ningún conflicto debido a que la intefaz hija está redefiniendo el método, como sucede con las clases.
+
+	24. Las constantes case en un bloque switch deben de ser asignables al tipo de la variable que se está multiplexando. Esto aplica tanto en tipo como en tamaño.
+
+	25. De nuevo, acerca de polimorfismo: Los métodos que se ejecutan son SIEMPRE los del objeto real. No importa que se utilice casting hacia un supertipo (clase o interfaz), igual el método será siempre el del objeto al que apunta la variable. Para variables de instancia y estáticas y para métodos estáticos ocurre lo diametralmente opuesto: El método a ejecutar es siempre el de la variable declarada y se puede utilizar casting para ejecutar el de alguno de los supertipos; lo mismo ocurre para acceder a las variables. También recordemos que se puede utilizar la palabra reservada super para acceder al método de la clase padre dentro de la clase hija, pero es imposible subir más niveles. No se puede realizar algo como super.super.metodo(). Es imposible ejecutar el método sobreescrito de la clase abuela dentro de la clase hija.
+
+	29. El constructor de una clase hija extiende el constructor de la clase padre, ya que hace una llamada a super (ya sea implícita o explícita) y además puede (si se requiere, aunque no es obligatorio) agregar más código. Por esta razón, con constructores ocurre lo contrario que con métodos respecto a lanzamiento de excepciones. Mientras un método no puede lanzar una excepción que no sea lanzada por su antecesor (sólo puede lanzar la misma excepción, una subclase o ninguna), un constructor no puede lanzar una excepción más específica que su antecesor (DEBE lanzar la misma o una superclase y puede lanzar excepciones nuevas que no lance su antecesor). Un constructor no puede no lanzar una excepción si su antecesor sí lanza alguna. Lo anterior se debe a que la llamada a super compromete al constructor hijo a no lanzar una excepción más pequeña que la declarada en el constructor padre.
+
+	37. Recordatorio: Los métodos add y remove de ArrayList devuelven un booleano que nos dice si la lista fue modificada al realizar la operación. Para ArrayList, el método add siempre devuelve true.
+
+	45. Recordemos que, sólo a excepción de que se realice System.exit(), el bloque finally se ejecuta SIEMPRE, por lo tanto, aunque haya una sentencia return dentro de try, se ejecutará el bloque finally. Si en finally existe otra sentencia return, ésta última será la efectiva.
+
+	54. En números binarios o hexadecimales no se pueden utilizar los sufijos de punto flotante F, f, D, o d. Por otra parte, es posible utilizar l o L de long.

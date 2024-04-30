@@ -1,27 +1,32 @@
 package com.jjoseorione.letters;
 
 import java.util.Scanner;
-import java.io.*;
+import java.lang.Exception;
 
 public class TestClass{
 	static Scanner teclado = new Scanner(System.in);
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args){
+		args[0] = null;
 		for(String palabra : args){
-			char[] chars = palabra.toCharArray();
+			char[] chars;
+			if(palabra == null)
+				chars = null;
+			else  
+				chars = palabra.toCharArray();
 			try{
-				System.out.println(cuentaVocales(null));
+				System.out.println(cuentaVocales(chars));
 			}
-			catch(IOException e1){
+			catch(VowelDetectedException e1){
 				System.out.println("La cadena " + palabra + " contiene x");
 			}
 			catch(IllegalArgumentException e2){
-				System.out.println(e2);
+				System.out.println(e2.getMessage);
 			}
 		}
 	}
 
-	public static int cuentaVocales(char... letras) throws IOException{
+	public static int cuentaVocales(char... letras) throws VowelDetectedException{
 		if(letras == null)
 			throw new IllegalArgumentException("El argumento no puede ser null");
 		int numVocales = 0;
@@ -30,8 +35,14 @@ public class TestClass{
 			letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U')
 				numVocales++;
 			else if(letra == 'x' || letra == 'X')
-				throw new IOException("Se introdujo una x");
+				throw new VowelDetectedException("Se introdujo una x");
 		}
 		return numVocales;
+	}
+}
+
+class VowelDetectedException extends Exception{
+	public VowelDetectedException(String msg){
+		super(msg);
 	}
 }

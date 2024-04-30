@@ -26,8 +26,12 @@ public class TestClass{
 		// 	for(int j = 0; j < names[i].length; j++)
 		// 		System.out.println(names[i][j]);
 
-		String names1[] = names[0];
-		String names2[] = names[1];
+		String names1[] = new String[names[0].length];
+		String names2[] = new String[names[1].length];
+		for(int i = 0; i < names1.length; i++)
+			names1[i] = names[0][i];
+		for(int i = 0; i < names2.length; i++)
+			names2[i] = names[1][i];
 
 		for (String name : names1)
 			System.out.println("names1: " + name);

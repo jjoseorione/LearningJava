@@ -45,11 +45,11 @@
 
 		La sentencia try
 
-			Consiste de un bloque try, ninguno o muchos bloques catch y un bloque opcional llamado finally. El bloque try contiene el código que puede lanzar excepciones, los bloques catch son los que se ejecutan en caso de excepciones y el bloque finally se ejecuta después de que los bloques try y catch.
+			Consiste de un bloque try, ninguno o muchos bloques catch y un bloque opcional llamado finally. El bloque try contiene el código que puede lanzar excepciones, los bloques catch son los que se ejecutan en caso de excepciones y el bloque finally se ejecuta después de los bloques try y catch.
 
 			Los bloques try, catch y finally requieren siempre de llaves, aunque se trate de una única sentencia. Un bloque try debe siempre ser acompañado ya sea de al menos un bloque catch o del bloque finally. Si se crea un bloque try solo, el código no compila. El bloque try es la contraparte de throw, ya que ponerla en un fragmento de código significa que el programador va a lidiar con la situación en caso de que se presente una excepción.
 
-			El bloque catch es donde el programador intenta recuperarse de la excepción. Si el bloque dentro de try genera una excepción, se inicia la ejecución del bloque catch. La cláusula catch dentro del bloque catch especifíca que excepción se va a manejar dentro de ese bloque. Para ello, se escribe la clase de la excepción a manejar, seguida de una variable donde se guardará la referencia a una instancia de dicha excepción.
+			El bloque catch es donde el programador intenta recuperarse de la excepción. Si el bloque dentro de try genera una excepción, se inicia la ejecución del bloque catch. La cláusula catch dentro del bloque catch especifica qué excepción se va a manejar dentro de ese bloque. Para ello, se escribe la clase de la excepción a manejar, seguida de una variable donde se guardará la referencia a una instancia de dicha excepción.
 
 			El bloque finally es donde se intenta salvar la situación o minimizar el daño sin intentar recuperarse de la excepción. Por ejemplo, un método que copia un archivo a otro puede únicamente cerrar todos los archivos dentro del bloque finally. En caso de omitir el bloque catch, la excepción no fue manejada y por lo tanto es propagada al método invocador luego de que finalice el bloque finally. El bloque finally (si está presente) siempre se ejecuta, sin importar lo que pase dentro del bloque try o catch. La única razón por la que podría no ejecutarse es si el bloque try o catch invocan a System.exit() para detener a la JVM.
 

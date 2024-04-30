@@ -25,7 +25,7 @@
 		Para los arrays de objetos aplican las mismas reglas.
 
 		Ejemplos:
-			Object[] obja, objaa[];		//obja es un array unidimensional de Objetos, 													//pero objaa es un array bidimensional de Objetos
+			Object[] obja, objaa[];		//obja es un array unidimensional de Objetos, 									//pero objaa es un array bidimensional de Objetos
 			String[] strA;		//strA es un array unidimensional de Strings
 
 		Es importante recalcar que la notación antes vista es únicamente para declar arrays, por lo tanto, ninguna de los ejemplos crea arrays.
@@ -45,7 +45,7 @@
 
 			Un array puede tener valores duplicados sin ningún problema (como al momento de inicializarse).
 
-			En Java, los arrays (ya sean de tipos primitivos o de objetos), son instancias de clases específicas. No son instancias de la clase Object, pero al ser Object la raíz de todas las clases, los arrays hereden todos los miembros de la clase Object.
+			En Java, los arrays (ya sean de tipos primitivos o de objetos), son instancias de clases específicas. No son instancias de la clase Object, pero al ser Object la raíz de todas las clases, los arrays heredan todos los miembros de la clase Object.
 
 			La clase a la que pertenece cada Array es una combinación de 3 elementos:
 				- Uno o más corchetes de apertura, según la dimensión del array.
@@ -105,7 +105,7 @@
 
 		El código anterior compilará de forma adecuada, pero la JVM lanzará una java.lang.ArrayStoreException en la tercera línea.
 
-		Los arrays son "covariantes". Esto significa que se pueden almacenar objetos de la subclase con la que origignalmente fueron declarados. Quiere decir que si se declara un array de tipo java.lang.Number, éste podría albergar objetos de tipo java.lang.Integer o java.lang.Float, ya que ambas son subclases de java.lang.Number. Por ejemplo:
+		Los arrays son "covariantes". Esto significa que se pueden almacenar objetos de la subclase con la que originalmente fueron declarados. Quiere decir que si se declara un array de tipo java.lang.Number, éste podría albergar objetos de tipo java.lang.Integer o java.lang.Float, ya que ambas son subclases de java.lang.Number. Por ejemplo:
 
 			Number[] na = { 1, 2, 3 };
 			na[0] = new Float(1.2f);
@@ -130,7 +130,7 @@
 
 		Reglas para la creación de arrays de arrays:
 
-			I. La dimensión de un array está determinada por el número de pares de corchetes que existan en su declaración. Por ejemplo, las líneas int[] ia; int ia[]; declaran ambas un array de ints. En el caso de int[] iaa[]; int iaa[][] ambas declaran un array de arrays de ints. Por otra parte, int[][] iaaa[]; es un array de arrays de arrays de ints.
+			I. La dimensión de un array está determinada por el número de pares de corchetes que existan en su declaración. Por ejemplo, las líneas int[] ia1; int ia2[]; declaran ambas un array de ints. En el caso de int[] iaa1[]; int iaa2[][] ambas declaran un array de arrays de ints. Por otra parte, int[][] iaaa[]; es un array de arrays de arrays de ints.
 
 			II. Nunca se especifica la longitud del array en la declaración.
 
@@ -142,7 +142,7 @@
 
 					b) int[][] iaa = new int[3][];
 
-						Es posible crear arrays de arrays especificando sólo la longitud del array de orden superior (o de los n de orden superior, si es multidiensional); de esta manera iaa apunta a un array de 3 elementos, donde cada elemento apuntará a un array de ints que aún no ha sido creado; es decir, es un array de arrays de ints. Mientras no se han creado o asignado las referencas, cada elemento de iaa contiene null, ya que aún no se asigna a qué arrays debe apuntar. Se puede asignar los índices de iaa de con las sentencias iaa[0] = new int[2]; iaa[1] = new int[3] para que el primer elemento de iaa apunte a un array de 2 ints y el segundo apunte a un array de 3 ints, teniendo así un array dentado. Luego de estas dos sentencias, iaa[2] sigue conteniendo null, ya que no se le ha asignado ninguna referencia; mientras que los arrays a los que apuntan iaa[0] e iaa[1] contienen ceros como valor default. Este mismo proceso puede aplicarse a arrays de orden 3, 4, 5, etc.
+						Es posible crear arrays de arrays especificando sólo la longitud del array de orden superior (o de los n de orden superior, si es multidiensional); de esta manera iaa apunta a un array de 3 elementos, donde cada elemento apuntará a un array de ints que aún no ha sido creado; es decir, es un array de arrays de ints. Mientras no se han creado o asignado las referencas, cada elemento de iaa contiene null, ya que aún no se asigna a qué arrays debe apuntar. Se puede asignar los índices de iaa con las sentencias iaa[0] = new int[2]; iaa[1] = new int[3] para que el primer elemento de iaa apunte a un array de 2 ints y el segundo apunte a un array de 3 ints, teniendo así un array dentado. Luego de estas dos sentencias, iaa[2] sigue conteniendo null, ya que no se le ha asignado ninguna referencia; mientras que los arrays a los que apuntan iaa[0] e iaa[1] contienen ceros como valor default. Este mismo proceso puede aplicarse a arrays de orden 3, 4, 5, etc.
 
 					c) int[][] iaa = new int[][]{ new int[]{ 1, 2 } };
 

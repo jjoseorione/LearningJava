@@ -1,0 +1,32 @@
+• El ecosistema de Java tiene diferentes adiciones como Java Card, Java ME, Java SE, Java MP, Java EE.
+
+• Java es Multi plataforma debido a que el bytecode es el mismo en cualquier plataforma y éste es ejecutado por la JVM.
+
+• Para el análisis, diseño y arquitectura se utiliza el Lenguaje de Modelado Unificado (UML) para:
+	-Analizar requerimientos
+	-Modelar estructuras de código
+	-Describir despliegue de aplicaciones.
+
+• Algunos de los diagramas UML utilizados son:
+	-Diagrama de casos de uso
+	-Diagrama de clases
+	-Diagrama de actividades
+	-Diagrama de secuencia
+	-Diagrama de transición
+	-Diagrama de despliegue
+
+• La API Stream de Java ayuda a filtrar, mapear y reducir grandes flujos de datos. Los streams desempeñan acciones utilizando expresiones lambda.
+
+• La AIP IO de Java se utiliza para transferir información a través de una serie de flujos interconectados. Puede leer información desde varias fuentes y escribirla en distintos destinos.
+
+• La API Concurrency de Java toma ventaja de los CPU con arquitectura de múltiples núcleos. Ejecuta código de manera concurrente para asegurar un mejor desempeño y experiencia de usuario.
+
+• La API Persistence de Java utiliza el protocolo JDBC que permite la conexión a una base de datos y la ejecución de sentencias SQL. También permite a Java realizar mapeo de objetos relacionales
+
+• Java se utiliza de manera extendida para la creación de microservicios. Los microservicios permiten exponer código para ser reutilizado por las empresas de manera controlada, estandarizada y por medio del envío de mensajes.
+
+• El uso de servicios permite convertir objetos Java en XML o JSON y de vuelta a Java.
+
+• Mientras que Java EE puede ser ejecutado desde una terminal, Java EE debe ser ejecutado desde un Servidor como WebSphere, JBoss o Tomcat, los cuales proveen soporte para EJBs y Web Containers
+
+• La Oracle Cloud Ifraestructure soporta múltiples herramientas y tecnologías para el desarrollo de aplicaciones empresariales.

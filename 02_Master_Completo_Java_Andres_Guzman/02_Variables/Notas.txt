@@ -1,0 +1,10 @@
+1. Inroducción a las variables
+	• Java es fuertemente tipado.
+	• La declaración siempre contiene dos partes, el tipo de dato de la variable y su nombre. En la versión 10 ya existe el tipado dinámico con la palabra var.
+	• El tipo de variable determinar lo que la variable puede guardar.
+	• Existen dos principales categorías de tipos: primitivos y referenciados.
+	• Una nombre de variable en Java debe comenzar con cualquier letra (a-z, $, _) y puede ser seguida por cualquier numero de digitos o letras.
+
+2. Variables
+	• En intelliJ es posible utilizar los atajos sout + TAB y soutv + TAB 
+	• En IntelliJ es posible agregar lenguajes naturales (idiomas) para que no se nos muestren errores ortográficos

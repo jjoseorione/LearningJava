@@ -27,9 +27,13 @@ class Document{
 }
 
 class PdfDocument extends Document{
-	public String type = "pdf";
+	private String type = "pdf";
 	private byte[] data;
 
+	//Este método permite que se tome el campo type de PdfDocument
+	//Si este método no se sobreescribe, se tomará el método heredado
+	//por Document, el cual toma el campo de Document. El método de Document
+	//no tiene manera de saber que existe un campo type en PdfDocument.
 	public String getType(){
 		return this.type;
 	}

@@ -1,0 +1,50 @@
+Anotaciones del Test 3	
+
+	3. Constructor default se refiere específicamente al que es provisto por el compilador. Si el programador especifica un constructor no-args y sin instrucciones, no es default por el simple hecho de que lo provee el programador.
+
+	4. NaN es una constante que representa un dato que no puede representarse como número adecuadamente. Aparece cuando se realiza una división de 0.0 entre 0.0 (con tipo de dato float o double) o la raíz cuadrada de uno. 
+
+	5. El formato default para LocalDate, LocalTime y LocalDateTime es ISO. Si se imprimen objetos de estas clases sin especificar un formato distinto, se imprimirán con este formato.
+
+	6. Recordemos que cuando se evalúa una expresión, se realiza de izquierda a derecha y las variables que van cambiando se ven afectadas en sus siguientes evaluaciones. Por lo tanto, si se realiza algo como lo siguiente:
+
+		int = 4;
+		int ia[][][] = new int[i][i = 3][i];
+
+	La longitud final del array creado sera [4][3][3].
+
+	8. Importante: Aunque los ciclos creados con condición falsa (como while(false) o for(; false; ) ) no compilan por unreachable code, los que son creados con condición true son unreachable code sólo para el código que hay debajo del ciclo. Es decir, si se tiene un ciclo while(true) y no hay nada debajo, es posible compilarlo, ya que no hay código debajo que sea imposible ejecutar. De la misma manera, si el ciclo while(true) se encuentra dentro de un bloque try, el código dentro del bloque puede lanzar una excepción y ejecutar los bloques catch y/o finally. En cambio, si se tiene código dentro del try pero debajo del ciclo, ese código será inalcanzable.
+
+	8. OutOfMemoryError ocurre cuando el espacio en el heap se termina, por ejemplo, por mantener objetos muy pesados sin permitir que el GC realice limpieza. StackOverflowError ocurre cuando el espacio en el stack se termina. Cuando se llama a un método desde otro método, los detalles de la llamada se ponen en el stack. Si se encadena un número alto de llamadas (por ejemplo, llamadas recursivas) el stack (que es muy pequeño en comparación con el heap) se llenará y se obtendrá un StackOverflow.
+
+	11. Recordar que String no tiene método append. Este método sólo lo tienen StringBuilder y StringBuffer.
+
+	17. Recordar que ArrayList no tiene la variable length como ocurre con los arrays. En cambio, ArrayList posee el método size() en su lugar. También podría ser importante recordar que el método contains() no está tipado, sino que recibe Object, así que soporta cualquier objeto.
+
+	20. Importante: Java no permite nombrar una variable con palabras clave como if, for, else, while, class, package, final, etc. ni tampoco con literales como true, false o null, pero no hay problema en nombrar una variable igual a una clase.
+
+	21. Recordatorio: Las excepciones no revisadas son las hijas de RunTimeException y de Error. Todas las demás que sean hijas de Throwable, pero no de RunTimeException son revisadas. Si se crea una excepción que extienda a Exception o Throwable, será revisada.
+
+	26. Recordar que las variables que sean final deben inicializarse sí o sí en el código.
+
+	27. Consejo: Al igual que con los ciclos, cuando se difícil seguir mentalmente los objetos apuntados por varias variables, es conveniente plasmarlo en papel para llevar un mejor seguimiento.
+
+	35. Declarar los atributos de una clase como protected no es una buena forma de encapsular una clase. La encapsulación debe ser SIEMPRE con atributos private.
+
+	36. Recordemos que la variable this apunta siempre al objeto actual, por lo tanto es posible imprimirla con un println, el cual invocará a su método toString() (ya sea el de Object o el que se haya otorgado como sobreescritura).
+
+	37. Recordemos que una excepción interrumpe el flujo normal de un método. Un método no puede lanzar una excepción con throws y al mismo tiempo retornar un valor, ya que sólo puede realizar una de estas dos acciones. Por lo tanto, es posible que un método que promete devolver algún valor, lance una excepción con throws y no tenga una sentencia return. De hecho, si el método lanza la excepción de manera incondicional, todo el código por debajo es unreachable code.
+
+	38. Importante: main no es una palabra reservada de Java. Además, no existe ningún impedimento en llamar a una variable de la misma manera que un método existente. Por todo lo anterior, no existe ningún problema en llamar main a una variable.
+
+	45. El método charAt de String puede recibir un char, debido a que este es un tipo numérico integral y puede ser promovido a int, que es el valor esperado por el método. Además la documentación indica que la excepción lanzada cuando se pasa un valor mayor o igual a la longitud de la cadena (o menor a 0) es IndexOutOfBoundsException. Incluso aunque en la práctica pueda lanzar StringIndexOutOfBounds, la excepción declarada en la cláusula throws es IndexOutOfBoundsException.
+
+	47. Tener cuidado con bloques de código que se hacen pasar por bloques else.
+
+	51. Si intentamos lanzar una excepción nula, por ejemplo:
+			Exception e = null
+			throw e;
+		Será lanzado un NullPointerException.
+		También es importante recordar que las exceciones revisadas deben ser o declaradas en una sentencia throws o manejadas en un bloque try/catch. De no ser así, el código no compilará.
+
+	54. Aunque es posible que el tema de clases internas sea muy avanzado para el examen, es importante saber que las clases internas pueden referir a sus propias variables con la variable this (desde dentro de dicha clase). Si desde dentro de la clase interna quiero referir a una variable perteneciente a la clase externa, esto se logra con la variable this y anteponiendo el nombre de la clase externa. Por ejemplo, si la clase AccessTest tiene una clase interna llamada Inner, y desde dentro de la clase interna quiero referirme a una variable de instancia llamada var perteneciente a la clase externa, la ruta para hacerlo es con AccessTest.this.var. Si trato de llamar a this.var, se considera que se está llamando a una variable var que es parte de la clase interna

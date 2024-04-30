@@ -14,7 +14,8 @@ public class TestClass{
 			System.out.println("first " + element);	//tres veces cero
 
 		for( int element : second )
-			System.out.println("second" + element);	//no se ejecuta
+			System.out.println("second" + element);	//no se ejecuta debido a que el array es
+													//de longitud cero
 
 		for( int element : third )
 			System.out.println("third" + element);	//NullPointerException

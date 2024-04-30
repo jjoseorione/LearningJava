@@ -1,0 +1,54 @@
+Anotaciones del examen de preguntas más erradas. Calificación: 79%
+
+	21. Es muy importante aclarar tres cosas sobre temas separados:
+		• La cláusula finally de un bloque try/catch/finally o try/finally se ejecuta SIEMPRE, sólo exceptuando cuando se llama a System.exit().
+		• Un break etiquetado puede utilizarse no sólo en ciclos, sino también en bloques independientes de código. Un break etiquetado el cual su etiqueta apunta fuera del bloque en el que se encuentra, omitirá el resto del bloque al que pertenece la etiqueta. Es decir, aunque la sentencia break se encuentre dentro de un ciclo, si la etiqueta apunta no sólo fuera del ciclo, sino a un bloque exterior, no sólo se omite el ciclo, sino todo el bloque etiquetado. 
+		• Un bloque try/catch/finally funciona como una especie de condicional, ya que existe algo que condiciona el flujo del programa (la excepción). Por lo tanto, es posible que código que sin bloques try/catch/finally podría no compilar por unreachable code, dentro de un bloque try/catch/finally sí funcione. Tal es el caso de los break etiquetados en bloques independientes de código.
+		• Exception es la superclase de RunTimeException, y cualquier código puede lanzar un RunTimeException. Por lo tanto, si se intenta atrapar Exception, es válido no lanzarlo explícitamente, ya que en teoría cualquier código podría lanzar un RunTimeException. En contraste se tiene lo que sucede con las excepciones revisadas, como IOException, la cual debe ser lanzada de manera explícita o en consecuencia se tendría un bloque catch inalcanzable.
+	El problema:
+		¿Cuál será el resultado del siguiente código?
+
+		class TestClass{
+		   public static void main(String args[]){
+		      int i = 0;
+		      loop :         // 1
+		      {
+		         System.out.println("Loop Lable line");
+		         try{
+		            for (  ;  true ;  i++ ){
+		               if( i >5) break loop;       // 2
+		            }
+		         }
+		         catch(Exception e){
+		            System.out.println("Exception in loop.");
+		         }
+		         finally{
+		            System.out.println("In Finally");      // 3
+		         }
+		      }
+		   }
+		}
+
+	Respuesta: Primero, la etiqueta loop se encuentra apuntando a un bloque independiente de código, lo cual es completamente válido. El código se ejecuta con normalidad desde el inicio hasta el ciclo for. Dentro del ciclo for, se iterará hasta que i tenga un valor de 6. Luego, dentro de la condicional se evaluará i > 5 como true y se ejecutará la sentencia break loop. Sin embargo, aunque la sentencia break loop; intenta salir por completo del bloque etiquetado, recordemos que la sentencia finally se ejecuta SIEMPRE y esta regla tiene precedencia sobre el salto incondicional que representa la sentencia break. Por lo tanto, antes de salir por completo del bloque etiquetado, se ejecuta el bloque finally. Luego de eso, el código termina su ejecución.
+
+	43. No sólo es completamente válido tener más de una clase en un solo archivo, también es válido que cada clase tenga su propio main. Al final, cada clase tendrá su propio archivo .class y al llamar a cada clase, se ejecutará su propio método main.
+
+	44. Usando el complemento a 2 para obtener el -MIN_VALUE de un número signado de 4 bits (de -4 a 3). Suponiendo que el MIN_VALUE es -4 en binario sería 1000. Recordemos que una fórmula para cambiar el signo en complemento a 2 es cambiar ceros por unos y sumar uno. La lógica detrás de esto es que los números usan una especie de lógica negada donde los unos son ceros y los ceros son unos, además los números negativos van "atrasados" en una unidad en cuanto a magnitud, lo cual tiene origen en que si no se tuviera este "atraso", se tendrían dos representaciones del cero
+
+		1000    -8  Negado sería 0111, lo cual se atrasa en 1 del -8 deseado
+		...
+		1110	-2  Negado sería 0001, lo cual se atrasa en 1 del -2 deseado
+		1111	-1	Negado sería 0000, lo cual se atrasa en 1 del -1 deseado
+		0000	0 	Cero único, no hay cero positivo o cero negativo
+		0001 	1
+		...
+		0111 	7
+
+	Si utilizamos la fórmula nos damos cuenta que 0001 -> 1110 -> 1111 ; 0010 -> 1101 -> 1110. La fórmula antes vista es usada por el compilador para multiplicar por -1. Esta fórmula es la que utiliza java para multiplicar por -1. No puede únicamente cambiar el bit de signo, ya que nos daría un resultado erroneo y con magnitud diferente al original. Por lo tanto, si multiplicamos por -1 el MIN_VALUE que en este caso es 1000 nos daremos cuenta de que obtendremos 1000, el cual es exactamente el mismo número. Esto ocurre para cualquier número signado en complemento a 2, sin importar su tamaño en bits.
+
+	52. Puntos a considerar:
+		• No hay estrechamiento implícito en paso de parámetros. Por lo tanto, algo como short k = new Short(9) no funciona.
+
+		• El operador instanceof espera SIEMPRE una referencia en el lado izquierdo. Por lo tanto, no es posible pasar un primitivo y que se realice autoboxing. De todas maneras no tendría sentido, ya que el objetivo del autoboxing es poder comparar u operar wrappers con primitivos de manera más fácil.
+
+		• El operador == aplicado entre un wrapper numérico y un primitivo numérico siempre será válido, aunque pertenezcan a tipos distintos (por ejemplo, Integer con short) y se aplicará unboxing. Justo la comparación de valores es uno de los principales objetivos del unboxing.

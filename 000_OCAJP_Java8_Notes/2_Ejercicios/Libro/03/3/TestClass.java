@@ -22,12 +22,12 @@ public class TestClass{
 		t1.b1.name = "Loro cabeza de caracol";
 		t1.b1.doble = 86.5;
 
-		bs.numBirds = 2;
-		bs.height = 2.3f;
-		bs.weight = 4.8f;
-		bs.exotic = false;
-		bs.name = "Cenzontle";
-		bs.doble = 32.7;
+		bs.numBirds = t1.b1.numBirds;
+		bs.height = t1.b1.height;
+		bs.weight = t1.b1.weight;
+		bs.exotic = t1.b1.exotic;
+		bs.name = t1.b1.name;
+		bs.doble = t1.b1.doble;
 
 		System.out.println("t1.b1.numBirds: " + t1.b1.numBirds);
 		System.out.println("t1.b1.height: " + t1.b1.height);	

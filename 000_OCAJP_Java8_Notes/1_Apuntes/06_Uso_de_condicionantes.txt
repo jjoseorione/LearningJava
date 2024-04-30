@@ -6,7 +6,7 @@
 
 			if( expresiónBooleana ) sentencia;
 
-		Puede notarse que no hay llaves para la senetencia. La sentencia if termina con el punto y coma. Si se tienen múltiples sentencias a ejecutar en lugar de sólo una, se puede poner todo dentro de un bloque de la siguiente forma:
+		Puede notarse que no hay llaves para la sentencia. La sentencia if termina con el punto y coma. Si se tienen múltiples sentencias a ejecutar en lugar de sólo una, se puede poner todo dentro de un bloque de la siguiente forma:
 
 			if( expresiónBooleana ){
 				ninguna, una o muchas sentencias;
@@ -49,7 +49,7 @@
 			if(flag)
 			else System.out.println("false");	//Error de compilación
 
-			En el código anterior, no hay una sentencia o conjunto de sentencias para la parte if. Si no se requiere ningún código a ejecutar para la sección if, pero sí para la sección else, necesitar poner un bloque de código vacío o un punto y coma para indicar que la sección if ha finalizado. Por ejemplo:
+			En el código anterior, no hay una sentencia o conjunto de sentencias para la parte if. Si no se requiere ningún código a ejecutar para la sección if, pero sí para la sección else, se necesita poner un bloque de código vacío o un punto y coma para indicar que la sección if ha finalizado. Por ejemplo:
 
 			boolean flag = false;
 			if( flag ){
@@ -61,7 +61,7 @@
 			boolean flag = false;
 			if( flag ); else System.out.println("false");
 
-			En lugar de tener una sección if vacía, es mejor negrar la condición y agregar las instrucciones dentro del bloque if, de la siguiente forma:
+			En lugar de tener una sección if vacía, es mejor negar la condición y agregar las instrucciones dentro del bloque if, de la siguiente forma:
 
 			boolean flag = false;
 			if( !flag ){
@@ -70,7 +70,7 @@
 
 		• Sangría
 
-			A diferencia de otros lenguajes (como Python), la sangría (o los espacios en blanco extras) no tienen ninguna relevancia en Java. El sangradio es utilizada únicamente para legibilidad del código. Por lo tanto, los siguientes fragmentos de código son equivalentes e intercambiables:
+			A diferencia de otros lenguajes (como Python), la sangría (o los espacios en blanco extras) no tienen ninguna relevancia en Java. El sangrado es utilizado únicamente para legibilidad del código. Por lo tanto, los siguientes fragmentos de código son equivalentes e intercambiables:
 
 			boolean flag = false;
 			if( flag )
@@ -111,7 +111,7 @@
 			else i = i + 2;
 			System.out.println("false");
 
-			Se puede notar que las últimas tres líneas de código son sentencias independientes. La sentencia else está completamente fuera de lugar en este fragmento, ya que no está asociada a ningún if y por lo tanto causará un error de compilacoión
+			Se puede notar que las últimas tres líneas de código son sentencias independientes. La sentencia else está completamente fuera de lugar en este fragmento, ya que no está asociada a ningún if y por lo tanto causará un error de compilación
 
 		• Else faltante
 
@@ -156,19 +156,19 @@
 			En la primera interpretación, el bloque else es asociado al primer if, mientras que en la segunda interpretación, el bloque else es asociado al segundo if. Siguiendo la primera interpretación, el código imprimirá  c; mientras que siguiendo la segunda interpretación, el código no imprimirá absolutamente nada. Para el compilador, ambas formas podrían ser válidas, lo que volvería ambiguo el código. Por lo tanto, los desarrolladores del lenguaje Java rompieron la ambiguedad al decidir que lo correcto es la segunda interpretación. De esta manera, la palabra else está siempre asociada al if inmediato anterior. En consecuencia, el código del ejemplo en realidad no imprimirá nada, ya que no hay else asociado al primer if. Basado en la discusión anterior ¿cuál será la salida del siguiente código?
 
 				int value = 3;
-					if(value == 0)
-					if(value == 1)
-						System.out.println("b");
-					else
-						System.out.println("c");
-					else
-						System.out.println("d");
+				if(value == 0)
+				if(value == 1)
+					System.out.println("b");
+				else
+					System.out.println("c");
+				else
+					System.out.println("d");
 
 			El código imprimirá d.
 
 		• Usar sentencia de asignación en la condición
 
-			Recuerda que cada sentencia de asignación por sí misma es una expresión válida con un valor propio. Su tipo y valor el mismo que el de la variable objetivo. Este hecho puede ser utilizado para escribir código que pueda resultar confuso, como el que se muestra a continuación:
+			Recuerda que cada sentencia de asignación por sí misma es una expresión válida con un valor propio. Su tipo y valor es el mismo que el de la variable objetivo. Este hecho puede ser utilizado para escribir código que pueda resultar confuso, como el que se muestra a continuación:
 
 				boolean flag = false;
 				if(flag = true){
@@ -186,7 +186,7 @@
 					//hacer algo
 				}
 
-			El código anterior es adecuado ya que la operación de asignación está claramente separada de la operación de comparación. El valor de la expresión data = readData() está siendo comparada con null. Hay que recordar que el valor de esta expresión es el mismo que el de la variable objetivo de la asignación (data, en este caso). Por lo tanto, el contenifo del bloque if será ejecutado sólo si a data se le asigna una referencia no nula.
+			El código anterior es adecuado ya que la operación de asignación está claramente separada de la operación de comparación. El valor de la expresión data = readData() está siendo comparada con null. Hay que recordar que el valor de esta expresión es el mismo que el de la variable objetivo de la asignación (data, en este caso). Por lo tanto, el contenido del bloque if será ejecutado sólo si a data se le asigna una referencia no nula.
 
 		• Usar incremento prefijo y posfijo en la condicion
 
@@ -202,7 +202,7 @@
 				}
 			System.out.println(x);
 
-			Puede evaluarse fácilmente el cósigo anterior si se tiene clara la diferencia entre el valor de una expresión y el valor de una variable utilizada en la expresión. En la línea 2, se realiza la comparación, resultando false, y posteriormente se incrementa la variable, dando como resultado x = 1. La línea 3 no se ejecuta. Luego, en la línea 6, primero se aumenta la variable, dando como resultado x = 2 y posteriormente se realiza la comparación, dando como resultado true. En consecuencia, la línea 7 se ejecuta y x se incrementa nuevamente dando como resultado x = 3. Por lo tanto, el código imprimirá "3".
+			Puede evaluarse fácilmente el código anterior si se tiene clara la diferencia entre el valor de una expresión y el valor de una variable utilizada en la expresión. En la línea 2, se realiza la comparación, resultando false, y posteriormente se incrementa la variable, dando como resultado x = 1. La línea 3 no se ejecuta. Luego, en la línea 6, primero se aumenta la variable, dando como resultado x = 2 y posteriormente se realiza la comparación, dando como resultado true. En consecuencia, la línea 7 se ejecuta y x se incrementa nuevamente dando como resultado x = 3. Por lo tanto, el código imprimirá "3".
 
 			Por último, hay que recordar que las condiciones son utilizadas en expresiones ternarias y también en ciclos, por lo que es importante aplicar los mismos conceptos.
 
@@ -252,7 +252,7 @@
 		int a = 1, b = 2;
 		boolean flag = a == b ? : true : false;		//Expresión ternaria que devuelve boolean
 
-	Si el segundo y tercer operando son primitivos numéricos (o sus respectivos wrappers), la expresión ternaria toma el tipo más amplio de los dos numéricos. Por ejemplo:
+	---Si el segundo y tercer operando son primitivos numéricos (o sus respectivos wrappers), la expresión ternaria toma el tipo más amplio de los dos numéricos. Por ejemplo:---
 
 		double d = a == b? : 5 : 10.0;
 
@@ -278,14 +278,14 @@
 
 		System.out.println(a == b ? 10 : "hello");	//Compila y corre correctamente
 
-	El operador ternario también tiene la propiedad de corto circuito al igual que los operadores && y ||. La principal diferencia radica en que los operadores lógicos pueden o no evaluar ambos operadores, mientras que el operador ternario siempre evalúa (y ejecuta) sólo la expresión del operando que se devolverá después de evaluar la condición (el segundo si la condición es true o el tercero si la condición es false). Por lo tanto, una operación ternaria como la siguiente: true ? ++x : ++y, hará que sólo se aumente "x", mientras que "y" seguirá conservando su valor porque el ++y no será ejecutado. La propiedad de corto circuito del operador ternario es explotable para generar preguntas confusas en el examen. Por ejemplo ¿qué imprime el siguiente código?
+	---El operador ternario también tiene la propiedad de corto circuito al igual que los operadores && y ||. La principal diferencia radica en que los operadores lógicos pueden o no evaluar ambos operadores, mientras que el operador ternario siempre evalúa (y ejecuta) sólo la expresión del operando que se devolverá después de evaluar la condición (el segundo si la condición es true o el tercero si la condición es false). Por lo tanto, una operación ternaria como la siguiente: true ? ++x : ++y, hará que sólo se aumente "x", mientras que "y" seguirá conservando su valor porque el ++y no será ejecutado. La propiedad de corto circuito del operador ternario es explotable para generar preguntas confusas en el examen. Por ejemplo ¿qué imprime el siguiente código?
 
 		int x = 0;
 		int y = 1;
 		System.out.println(x>y ? ++x : y++);
 		System.out.println(x+" "+y);
 
-	El código imprime 1 y 0 2. Lo anterior, debido a que la primera expresión ternaria se evalúa como false, lo que provoca que se devuelva el tercer operando. Al ser un aumento posfijo, primero se devuelve el valor actual (1) y posteriormente se aumenta y a 2. La variable x mantiene su valor debido a que no se ejecuta el segundo operando. Por último, se imprimen ambos valores, dando como resultado 0 y 2.
+	El código imprime 1 y 0 2. Lo anterior, debido a que la primera expresión ternaria se evalúa como false, lo que provoca que se devuelva el tercer operando. Al ser un aumento posfijo, primero se devuelve el valor actual (1) y posteriormente se aumenta y a 2. La variable x mantiene su valor debido a que no se ejecuta el segundo operando. Por último, se imprimen ambos valores, dando como resultado 0 y 2.---
 
 6.3 Uso de sentencias switch
 
@@ -312,7 +312,7 @@
 
 		Hay cuatro bloques de código dentro de la sentencia switch. Cada bloque de código es asociado a una etiqueta case. Dependiendo del valor de la variable i, el control puede entrar en el bloque de código con esa misma etiqueta case y seguir ejecutando líneas hasta encontrar una sentencia break. Por ejemplo, si el valor de i es 0, el control entra en el primer bloque de código, luego imprime "Sin argumentos" y por último encuentra una sentencia break. La sentencia break causa que el control salga de la sentencia switch y se mueva a la siguiente sentencia, la cual imprime "finalizado".
 
-		Si el valor i no concuerda con ninguno de los valores de las etiquetas case, el control busca la etiqueta "default" y ,si existe, entra en él, pero si no existe, el control no entra a ningún bloque y la sentencia switch finaliza. Debido a que esta selección está hechoa basada en la expresión especificada en la sentencia switch, a esta expresión se le suele llamar "expresión switch".
+		Si el valor i no concuerda con ninguno de los valores de las etiquetas case, el control busca el bloque con la etiqueta "default" y ,si existe, entra en él, pero si no existe, el control no entra a ningún bloque y la sentencia switch finaliza. Debido a que esta selección está hecha basada en la expresión especificada en la sentencia switch, a esta expresión se le suele llamar "expresión switch".
 
 		Operacionalmente, es muy similar a un conjunto de if/else en cascada. De hecho el ejemplo anterior puede fácilmente ser escrito con sentencias if/else en lugar de switch, como se muestra a continuación:
 
@@ -360,7 +360,7 @@
 				System.out.println("hello!");
 		}
 
-	El código anterior no compila, debido a que el tipo de la expresión switch es byte, y la etiqueta case 1000 no cabrá dentro de byte. En otras palabras, las etiquetas case deben ser asignables al tipo de la expresión switch. Por otra parte:
+	---El código anterior no compila, debido a que el tipo de la expresión switch es byte, y la etiqueta case 1000 no cabrá dentro de byte. En otras palabras, las etiquetas case deben ser asignables al tipo de la expresión switch---. Por otra parte:
 
 		byte b = 10;
 		switch (b+1){

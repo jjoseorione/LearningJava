@@ -14,8 +14,8 @@ class NetworkTransformer extends Transformer{
 
 public class TestClass{
 	public static void main(String[] args) throws Exception{
-		XMLTransformer xt = new XMLTransformer();
-		NetworkTransformer nt = new NetworkTransformer();
+		Transformer xt = new XMLTransformer();
+		Transformer nt = new NetworkTransformer();
 		System.out.println(nt.transform("hola"));
 		System.out.println(xt.transform("adios"));
 	}

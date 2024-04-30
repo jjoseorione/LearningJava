@@ -21,11 +21,12 @@ public class TestClass{
 		final int DIMENSION = Integer.parseInt(args[0]);
 
 		int[][] matrix = new int[DIMENSION][];
+		
 		if(p == 1){
 			for(int i = 0; i < matrix.length; i++){
 				matrix[i] = new int[DIMENSION-i];
 				for(int j = 0; j < matrix[i].length; j++){
-					matrix[i][j] = i + j + 2;
+					matrix[i][j] = i + j;
 				}
 			}
 		}
@@ -35,7 +36,7 @@ public class TestClass{
 				matrix[i] = new int[DIMENSION-i];
 				int j = 0;
 				while( j < matrix[i].length ){
-					matrix[i][j] = i + j +2;
+					matrix[i][j] = i + j;
 					j++;
 				}
 				i++;

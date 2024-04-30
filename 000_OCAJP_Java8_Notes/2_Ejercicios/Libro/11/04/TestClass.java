@@ -6,7 +6,7 @@ class Pie{
 
 class PumpkinPie extends Pie{
 	public void makePie(){
-		super.makePie();
+		super.makePie();		//Se usa super.metodoPadre(), super() es para llamar constructores
 		System.out.println("Type of pie: Pumpkin");
 	}
 }

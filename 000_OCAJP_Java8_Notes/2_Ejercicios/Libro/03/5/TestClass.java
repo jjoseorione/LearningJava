@@ -8,7 +8,7 @@ public class TestClass{
 
 		Bird b1 = new Bird();
 
-		//Se lanza un stackOverflow debido a la recursividad infinita de objetos
+		//Se lanza un stackOverflowError debido a la recursividad infinita de objetos
 		//de la clase Bird.
 	}
 }

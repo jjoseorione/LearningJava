@@ -2,6 +2,7 @@ package com.jjoseorione.vehiculos;
 
 public class ToyCar extends Coche{
 	public ToyCar(){
-		super(null);
+		//super(null);
+		super("N.A.");
 	}
 }

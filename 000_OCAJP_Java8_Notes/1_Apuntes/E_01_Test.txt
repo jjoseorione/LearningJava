@@ -1,24 +1,59 @@
 Anotaciones del Test 1
 
-	• Para que aparezca el StackTrace se debe llamar a printStackTrace()
+	1. Para que aparezca el StackTrace se debe llamar a printStackTrace(). Si se imprime únicamente el objeto tipo Exception, sólo se imprime el nombre de la clase y el mensaje del Exception, pero no el StackTrace.
 
-	• Para wrappers:
-		parsePrimitivo(String) convierte String en el primitivo deseado
-		Wrapper.valueOf(String || primitivo)	Convierten String o primitivo en wrapper
-		Wrapper.primitivoValue() devuelven el primitivo de dicho wrapper
+	2. El acortamiento implícito no funciona con literales float, long o double. Por ejemplo, aunque la línea char ch = 30 funciona porque 30 cabe en el rango de char, la línea char ch = 30L no compilará porque es long.
+
+	5. Para wrappers:
+		Integer.parseInt(String): Método estático que convierte String en el primitivo deseado
+		Integer.valueOf(String || int): Método estático que convierte String o primitivo en wrapper de ese primitivo
+		Integer.intValue(): Método de instancia que devuelve el primitivo de dicho wrapper. Este método no es estático, así que se debe invocar sobre un objeto
+
+		Importante: no existen constructores no args. Por lo tanto, algo como Long() new o new Integer() es inválido
 	
-	• Los guiones bajos sólo se pueden entre números. 123_.345_667f no es correcto
+	8. Los guiones bajos sólo se pueden entre números. 123_.345_667f no es correcto, tampoco _1241 o 23__532
 	
-	• En la sección de inicialización de for se pueden utilizar expresiones de sentencia y declaración e iniciación de variables de un solo tipo. Las expresiones se separan por coma
+	12. En la sección de inicialización de for se pueden utilizar expresiones de sentencia y declaración e iniciación de variables de un solo tipo. Las expresiones se separan por coma. 
 	
-	• Las cadenas creadas en tiempo de ejecución crean una nueva cadena en el pool, por lo que difieren de las que son constantes en tiempo de ejecución, aunque contengan lo mismo
+	13. Las cadenas creadas en tiempo de ejecución crean una nueva cadena en el pool, por lo que difieren de las que son constantes en tiempo de compilación, aunque contengan lo mismo. Por ejemplo String s1 = "hello" y String s2 = "hel"+"lo" hará que s1 y s2 apunten a la misma cadena, pero teniendo lo = "lo" y s4 = "hel"+lo hará que s4 apunte a una cadena diferente que s1 y s2. Recordemos también que el método intern busca el valor de una cadena en el pool y nos devuelve una referencia a la cadena en el pool de cadenas (en caso de que exista).
 
-	• Los wrappers son inmutables, por lo tanto, cuando se les aplican operaciones matemáticas, en realidad se devuelven referencias a otros objetos y no a los mismos.
+	14. Recordemos que las cadenas nulas pueden imprimirse como null, pero no se les puede llamar ningún método (como concat, por ejemplo) porque lanzarán NullPointerException.
 
-	• Los campos en interfaces son siempre public, static y final (como constantes)
+	16. Los wrappers son inmutables, por lo tanto, cuando se les aplican incremento o decremento unario, en realidad se devuelven referencias a otros objetos y no a los mismos. También recordemos que Java siempre utiliza paso de parámetros por valor, de manera que si se invoca un método con parámetro primitivo, se entrega al método una copia del valor contenido, mientras que si se unvoca un método con parámetro referenciado, se entrega al método una copia de la referencia contenida por la variable.
 
-	• SecurityException es hija de RunTimeException, y por lo tanto es no revisada. Suele lanzarla el programador.
+	18. Los campos en interfaces son siempre public, static y final (como constantes). Por lo tanto, no se puede cambiar el valor de dichos campos en alguna clase que implemente la interfaz, aunque sí es posible sombrear dicha variable creando otra con el mismo nombre.
 
-	• El operador de asignación tiene la menor precedencia de todos los operadores
+	19. Recordemos que los constructores también se someten a reglas de modificadores de acceso. Si una clase padre tiene un único constructor con acceso default y una clase hija en otro paquete intenta acceder a él, ocurrirá un error de compilación, debido a que la clase hija no podrá acceder a ningún constructor de la clase padre. Cualquier subclase debe ser capaz de acceder a al menos un constructor de su superclase. Si la clase padre está en otro paquete, el constructor debe ser público o al menos protected para que pueda ser accedido por la subclase. Es posible que existan clases públicas que no permitan acceso público ni protected a ningún constructor y por ende no puedan ser extendidas. Esto puede pasar debido a que el creador de la clase padre quiere controlar el número de instancias de su clase que son creadas. En conclusión, si una clase no provee un constructor al que podamos acceder, nos será imposible extender dicha clase aunque la clase en sí misma sea pública, debido a las llamadas de constructores super() que realiza automáticamente el compilador.
 
-	• El método getClass es un método de instancia de la clase Object. Al ser de instancia, tiene enlace dinámico y devuelve la clase del objeto y no de la variable.
+	20. Recordemos que el método concat de String devuelve una referencia a una nueva cadena sin afectar la cadena original ni cambiar la referencia desde la que se invocó el método.
+
+
+	22. SecurityException es hija de RunTimeException, y por lo tanto es no revisada. Suele lanzarla el programador.
+
+	24. En la expresión str1.equals( str1 = str2 ); donde str1 = "one" y str2 = "two", primero se evalúan los operandos. Por lo tanto, las acciones se llevarían a cabo en el siguiente orden:
+		"one".equals( str1 = "two")
+		"one".equals( "two" );
+		false
+	Lo importante a notar es que str1 se evalúa antes de llamar al método equals.
+
+	28. Una clase abstracta puede tener método main sin ningún problema. También es posible, en términos de compilación, crear una variable declarada con el tipo de la clase abstracta (como pasa con las interfaces), asignarle una referencia nula e intentar llamar a un método abstracto, aunque no implementemos la clase abstracta, sólo que al contener null, devolverá un NullPointerException cuando se intente ejecutar.
+
+	30. En un array se evalúa primero la expresión de referencia. Esto significa que si se tiene un array nulo, por ejemplo int ar[] = null; y se intenta evaluar un índice de la siguiene manera: ar[++i] = 4. Primero se aumentará la variable i y posteriormente se devolverá un NullPointerException. Esto es importante debido a que si la excepción es manejada en un bloque try/catch, la variable i sí modificará su valor.
+
+	31. El operador de asignación tiene la menor presedencia de todos. Por lo tanto, una expresión como b2 != b1 = !b2 donde ambas variables b1 y b2 contienen false, se evaluará de la manera: false = !b2 y posteriormente fallará la compilación debido a que no se le puede asignar un valor a la literal false. Esto tiene lógica debido a que si se tuviera algo como b2 = b1 != b2 que es una sentencia que podríamos ver más comunmente, el código compilará sin problemas, debido a que se evalía como b2 = false, y b2 sí puede ser asignado como variable.
+
+	35. Si una interfaz tiene una variable y esta interfaz es implementada por una clase, la variable de la interfaz puede ser llamada (desde dentro de la clase) usando un objeto de la clase, usando el nombre de la interfaz e incluso utilizando sólo el nombre de la variable, ya que la clase la posee al heredarla de la interfaz.
+
+	40. El método getClass() es un método de instancia de la clase Object. Al ser de instancia, tiene enlace dinámico y devuelve la clase del objeto y no de la variable.
+
+	42. El compilador se quejará si se intenta llamar un método con una variable perteneciente a una clase que no soporta dicho método, sin importar si en tiempo de ejecución el objeto apuntado por la variable sí soporta el método. Por ejemplo, si se tiene Object obj = new Integer(5); la línea int i = obj.intValue() no compilará, ya que obj está declarada como Object, la cual no soporta el método intValue. Para poder llamarlo correctamente, se tendría que usar un casting sobre la variable, por ejemplo int i = ((Integer) obj).intValue()
+
+	43. La variable de entrada (o parámetro) de una expresión Lambda, debe ser declarada del mismo tipo que en el predicado en caso de que se declare el tipo en la expresión Lambda. Por ejemplo, si se tiene el predicado Predicate<List> como tipo esperado y se envía la expresión (ArrayList al -> al.isEmpty), la expresión no compilará debido a que al debe ser declarada como List. No puede ser ArrayList aunque ArrayList sea un subtipo de List.
+
+	45. Cuando se realiza sobreescritura (overriding) de métodos, el método de la clase hija puede retornar un subtipo del que retorna el método de la clase padre. Sin embargo, esto ocurre sólo para tipos referenciados. Para tipos primitivos, el tipo devuelto debe ser exactamente el mismo.
+
+	47. La propiedad de corto circuito no permite que se ejecute la parte de la expresión que ya no es relevante. Por ejemplo, si se tiene boolean bool2 = false y se ejecuta bool2 && method1(i++); no se ejecuta ni el i++ ni la llamada a method1.
+
+	51. Una interfaz puede extender cualquier número de interfaces a la vez. Cuando una interfaz extiende a otra, se puede declarar un método con la misma firma en ambas interfaces (padre e hija) y no habrá problema, ya que al final se implementará el método y sólo existirá un método con esa firma.
+
+	55. El ciclo foreach no puede iterar (directamente) un Map, debido a que Map no implementa la interfaz Iterable. Existe una forma de iterar un map, pero va más allá del temario del examen.

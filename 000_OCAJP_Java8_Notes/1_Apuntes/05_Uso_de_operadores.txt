@@ -4,7 +4,7 @@
 
 	5.1.1 Descripción general de operadores disponibles en Java
 
-		Java tiene un gran número de operadores, los cuales pueden clasificarse con base en el tipo de operaciones que realizan (aritméticas, relacionales, lógicas, bit a bit, asignación, otros); basado en el número de operandos que reciben (unarios, binarios, ternarios); o basados en el tipo de operandos que reciben (primitivos, incluyendo wrappers u objetos).
+		Java tiene un gran número de operadores, los cuales pueden clasificarse con base en el tipo de operaciones que realizan (aritméticas, relacionales, lógicas, bit a bit, asignación, miscelaneos); basado en el número de operandos que reciben (unarios, binarios, ternarios); o basados en el tipo de operandos que reciben (primitivos, incluyendo wrappers u objetos).
 
 			Operadores aritméticos:
 
@@ -43,12 +43,12 @@
 					Negación. Niega una variable booleana.
 
 				?: (Ternario)
-					Operador ternario. Es una versión resumida de un if/else para asignar valor a una variable.
+					Operador ternario. Es una versión resumida de un if/else para asignar valor a una variable. Se verá a detalle más adelante.
 
 			Operadores de asignación
 
 				= (Binario)
-					Asignación simple. Se copia al primer operando el valor de la segunda. Es importante recordar que para tipos referenciados se copia el valor de la referencia. Es importante saber que el operador de asignación tiene asociatividad de derecha a izquierda. Lo que significa que a = b = c = d = 100; será lo mismo que escribir d = 100; c = d; b = c; a = b;
+					Asignación simple. Se copia al primer operando el valor del segundo. Es importante recordar que para tipos referenciados se copia el valor de la referencia. Es importante saber que el operador de asignación tiene asociatividad de derecha a izquierda. Lo que significa que a = b = c = d = 100; será lo mismo que escribir d = 100; c = d; b = c; a = b;
 
 				*=, /=, %=, +=, -=, <<=, >>=, >>>=, &=, |= (Binario)
 					Asignaciones compuestas. Son llamadas de esta manera porque realizan dos acciones a la vez. Realizan una operación (aritmética o bit a bit) y posteriormente asignan el resultado de la operación al operando del lado izquierdo. Estos operadores sirven sólo en operados numéricos. La única excepción es +=, el cual sirve también con Strings para concatenar.
@@ -173,7 +173,7 @@
 				}
 			}
 
-		Hay una curiosidad más acerca del operando de concatenación, y ésta es que si se concatena con una referencia nula, se imprime la cadena "null". Eso se debe a que el operando revisa que exista una referencia válida antes de invocar el método toString. Normalmente si se trata de utilizar una referencia nula, se lanzará la excepción NullPointerException, pero con el operando de concatenación no ocurre esto. Ejemplo:
+		Hay una curiosidad más acerca del operando de concatenación, y ésta es que si se concatena con una referencia nula, se imprime la cadena "null". Eso se debe a que el operador revisa que exista una referencia válida antes de invocar el método toString. Normalmente si se trata de utilizar una referencia nula, se lanzará la excepción NullPointerException, pero con el operando de concatenación no ocurre esto. Ejemplo:
 
 			public class TestClass{
 				public static void main(String[] args){
@@ -324,7 +324,7 @@
 
 			Es importante notar que los operadores de acceso y casting son lo de mayor precedencia, mientras que el operador lambda tiene la menor presedencia. Esta es la razón por la que un código como el siguiente no compila:
 
-				int = 0;
+				int i = 0;
 				byte b = (byte) i + 1;
 
 			El casting se aplica únicamente sobre la variable i, debido a que tiene más precedencia que la suma. Luego, al realizar la suma, ambos operadores son transformados en int y el resultado de la operación es también int. La forma correcta de realizar la operación sería encerrar entre paréntesis también la suma (i + 1) para que se realice antes del casting.

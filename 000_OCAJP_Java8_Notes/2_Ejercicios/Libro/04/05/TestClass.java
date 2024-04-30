@@ -21,9 +21,14 @@ public class TestClass{
 		System.out.println(names[1][1]);
 		System.out.println(names[1][2]);
 
-		System.out.println("\nImprimiendo valores con ciclos:");
+		System.out.println("\nImprimiendo valores con ciclos for:");
 		for(int i = 0; i < names.length; i++)
 			for(int j = 0; j < names[i].length; j++)
 				System.out.println(names[i][j]);
+
+		System.out.println("\nImprimiendo valores con ciclos foreach:");
+		for(String[] aS : names)
+			for(String name : aS)
+				System.out.println(name);
 	}
 }

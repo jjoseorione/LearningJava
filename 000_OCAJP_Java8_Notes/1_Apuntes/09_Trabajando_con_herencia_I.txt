@@ -2,7 +2,7 @@
 
 	9.1.1 Entendiendo herencia
 
-		En términos generales, cuando una clase "extiende" o es hija de otra, se dice que "hereda" a la otra clase, pero esta descripción es muy vaga. Es importante entender qué significa realmente herencia.
+		En términos generales, cuando una clase "extiende" a o es hija de otra, se dice que "hereda" a la otra clase, pero esta descripción es muy vaga. Es importante entender qué significa realmente herencia.
 
 		Existen dos cosas que contiene una clase: Los campos de instancia definidos en la clase (es decir, estado); los métodos de instancia que proveen de comportamiento a la clase (es decir, implementación). Además, una clase, en sí misma, define un  tipo. Cualquiera de estas tres cosas puede ser heredada por la clase hija: estado, implementación o tipo.
 
@@ -14,7 +14,7 @@
 
 		Herencia de implementación
 
-		Antes de Java 8, sólo las clases tenían permitido tener implementación. A partir de la versión 8, Java permite también a las interfaces contener implementaciones e forma de métodos "default". Es decir, una clase puede heredar implementación siendo extendida de otra clase o implementando interfaces. Esto permite a una clase heredar implementaciones desde más de un tipo. Ésta es una forma de herencia múltiple de implementación. De cualquier forma, debido a la forma en que los métodos default son heredados en una clase, no es posible para una clase heredar más de una implementación de un método en Java. Esto se verá más adelante
+		Antes de Java 8, sólo las clases tenían permitido tener implementación. A partir de la versión 8, Java permite también a las interfaces contener implementaciones en forma de métodos "default". Es decir, una clase puede heredar implementación siendo extendida de otra clase o implementando interfaces. Esto permite a una clase heredar implementaciones desde más de un tipo. Ésta es una forma de herencia múltiple de implementación. De cualquier forma, debido a la forma en que los métodos default son heredados en una clase, no es posible para una clase heredar más de una implementación de un método en Java. Esto se verá más adelante.
 
 		Herencia de tipo
 
@@ -49,7 +49,7 @@
 
 		En el código anterior, Person es llamada la "clase padre" (también se le llama superclase o clase base) y Employee es la clase hija (también llamada sub clase o clase derivada). Debido a que Employee extiende Person, automáticamente "obtiene" el campo name y el método getName. Es decir, es posible acceder al campo name y al método getName desde un objeto tipo Employee como si estuvieran definidos en la clase Employee (de la misma forma que lo está el campo employeeId). De manera similar, la clase Employee "obtiene" la variable estática personCount y el método estático getPersonCount desde la clase Person. Es decir, también es posible acceder a personCount y getPersonCount en un objeto Employee como si estuviera definido en la misma clase Employee.
 
-		Los miembros heredados a una clase desde una superclase son tan válidos como los que se definen en la misma clase y, por lo tanto, son pasados como herencia a cualquier superclase. Por ejemplo, si se tiene una clase Manager que extienda desde la clase Employee, la clase Manager va a heredar todos los miembtos de la clase Employee, los cuáles incluyen tanto los miembros definidos en la clase Employee, como los que heredó desde la clase Person:
+		Los miembros heredados a una clase desde una superclase son tan válidos como los que se definen en la misma clase y, por lo tanto, son pasados como herencia a cualquier superclase. Por ejemplo, si se tiene una clase Manager que extienda desde la clase Employee, la clase Manager va a heredar todos los miembros de la clase Employee, los cuáles incluyen tanto los miembros definidos en la clase Employee, como los que heredó desde la clase Person:
 
 			public class Manager extends Employee{
 				public String projectId;
@@ -68,6 +68,7 @@
 
 		Heredando constructores e inicializadores
 
+		//Importante
 		Los constructores no son considerados miembros de una clase, y por lo tanto no son heredados. Por ejemplo:
 
 			class Person{
@@ -104,7 +105,7 @@
 
 	9.1.3 Herencia y modificadores de acceso
 
-		Los modificadores de acceso tiene impacto en la forma en que se realiza la herencia de miembros. Sólo aquellos miembros que sean visibles para otra clase (según las reGlas de modificadores de acceso) son heredados a la subclase.
+		Los modificadores de acceso tiene impacto en la forma en que se realiza la herencia de miembros. Sólo aquellos miembros que sean visibles para otra clase (según las reglas de modificadores de acceso) son heredados a la subclase.
 
 			private: Los miembros privados nunca son heredados por una subclase.
 
@@ -151,7 +152,7 @@
 
 				ra.setAccountNumber(10);	//válido, el setter es público. La
 											//propiedad existe aunque el campo no se
-											//hereda
+											//hereda (no se hereda el acceso directo)
 
 				ra.setInterestRate(7.0);	//válido, el setter es público. La
 											//propiedad existe aunque el campo no se
@@ -176,7 +177,7 @@
 			}
 		}
 
-		Para hacerlo interesante, se pusi la clase RetirementAccount en un paquete diferente al resto de las clases. Veamos ahora el impacto de varios modificadores de acceso en estas clases:
+		Para hacerlo interesante, se puso la clase RetirementAccount en un paquete diferente al resto de las clases. Veamos ahora el impacto de varios modificadores de acceso en estas clases:
 
 			1. Debido a que Account tiene acceso default, es visible sólo en el paquete accts y en consecuencia, RetirementAccount no puede acceder ni extender a la clase Account.
 
@@ -276,7 +277,7 @@
 				public abstract void assemble();	//Se utiliza sólo punto y coma
 			}
 
-		El beneficio de tener clases abstractas es que se puede trabajar con toda una "familia" de clases de manera uniforme in preocuparse si se trata de una subclase u otra. Por ejemplo, si una clase recibe cualquier subclase de Furniture y debe llamar al método assemble, se puede realizar de la siguiente manera sin preocuparse si se trata de un objeto Chair o uno Table:
+		El beneficio de tener clases abstractas es que se puede trabajar con toda una "familia" de clases de manera uniforme sin preocuparse si se trata de una subclase u otra. Por ejemplo, si una clase recibe cualquier subclase de Furniture y debe llamar al método assemble, se puede realizar de la siguiente manera sin preocuparse si se trata de un objeto Chair o uno Table:
 
 			class FurnitureAssembler{
 				public static void assembleAllFurniture(Furniture[] allFurniture){
@@ -310,7 +311,7 @@
 
 		En términos técnicos, una clase final no puede ser extendida (no puede tener clases hijas) y un método final no puede ser sobreescrito por una subclase. Es importante notar que el concepto de abstract es diamtralmente opuesto al de final, ya que una clase o método abstractos están hechos para que cada subclase pueda proveer su propia implementación.
 
-		Una clase final, no necesariamente debe tener un método final, pero en la práctica, debido a que una clase final no puede ser extendida, no es posible sobreescribir ninguno de sus métodos de todas maneras. El punto realmente importante es que una clase final no puede tener un método abstracto, y por tanto una clase final no puede ser abstracta. No tendía sentido debido a que son términos diametralmente opuestos: final singinifica que la clase no puede ser extendida, mientras que abstract significa que la clase no es concreta y debe ser extendida para tener una implementación concreta. Adicionalmente, si una clase final hereda un método abstracto, debe forzosamente proveer la implementación de dicho método, debido a que la palabra final imposibilita que pueda ser implementado en una supuesta subclase.
+		Una clase final, no necesariamente debe tener un método final, pero en la práctica, debido a que una clase final no puede ser extendida, no es posible sobreescribir ninguno de sus métodos de todas maneras. El punto realmente importante es que una clase final no puede tener un método abstracto, y por tanto una clase final no puede ser abstracta. No tendía sentido debido a que son términos diametralmente opuestos: final significa que la clase no puede ser extendida, mientras que abstract significa que la clase no es concreta y debe ser extendida para tener una implementación concreta. Adicionalmente, si una clase final hereda un método abstracto, debe forzosamente proveer la implementación de dicho método, debido a que la palabra final imposibilita que pueda ser implementado en una supuesta subclase.
 
 		Ejemplo de clase final:
 
@@ -413,11 +414,11 @@
 
 			5. Un método private siempre es final aunque no se indique.
 
-			6. Un método privado no puede ser nunca abstract
+			6. Un método private no puede ser nunca abstract
 
 			7. Un método estático puede ser final, pero nunca abstract
 
-		Tip de examen: El examen nos evalpua en el uso de distintas combinaciones de modificadores de acceso, así como de modificadores final, abstract y static aplicadas a métodos. Debemos tener claro dónde pueden y dónde no pueden aplicarse estos modificadores. Sin embargo, el examen no trata de engañarnos en el orden de los modificadores de acceso o de las palabras final y abstract. Sin embargo, es importante saber la secuencia correcta de modificadores en una declaración de métodos:
+		Tip de examen: El examen nos evalúa en el uso de distintas combinaciones de modificadores de acceso, así como de modificadores final, abstract y static aplicadas a métodos. Debemos tener claro dónde pueden y dónde no pueden aplicarse estos modificadores. Sin embargo, el examen no trata de engañarnos en el orden de los modificadores de acceso o de las palabras final y abstract. Sin embargo, es importante saber la secuencia correcta de modificadores en una declaración de métodos:
 
 		<modificador de acceso><static><final o abstract><tipo de retorno> nombreMetodo(<lista de parámetros>).
 
@@ -487,7 +488,7 @@
 					interface Movable{
 						//debe ser marcado como default porque tiene un cuerpo
 						void move1(int x){
-							System.out.println("Dummy implementarion. Moving by " +
+							System.out.println("Dummy implementation. Moving by " +
 							x + " points");
 						}
 					}
@@ -513,7 +514,7 @@
 
 			Nota: Aunque no es relevante para el examen, es posible definir clases, interfaces y enums anidados dentro de una interfaz
 
-			Nota: A pesar de que no es relevante para el examen de OCA 8, debe de tenerse cuidado sobre un serio problema con métodos estáticos y default en Java 8. Si un método se vuelve demasiado grande o si hay muchos métodos con mucho código en compun, no hay manera de refactorizarlo en métodos más pequeños sin exponerlo al mundo, ya que todo dentro de una interfaz es público. Java 9 arregla este proble permitiendo que existan métodos private dentro de una interfaz.
+			Nota: A pesar de que no es relevante para el examen de OCA 8, debe de tenerse cuidado sobre un serio problema con métodos estáticos y default en Java 8. Si un método se vuelve demasiado grande o si hay muchos métodos con mucho código en común, no hay manera de refactorizarlo en métodos más pequeños sin exponerlo al mundo, ya que todo dentro de una interfaz es público. Java 9 arregla este proble permitiendo que existan métodos private dentro de una interfaz.
 
 		Interfaz marcador (marker interface)
 
@@ -539,11 +540,11 @@
 			}
 
 			class Price implements Movable, Readable{
-				public void move { System.out.println("Moviendo..."); }	
-				public void read { System.out.println("Leyendo..."); }
+				public void move { System.out.println("Moviendo precio..."); }	
+				public void read { System.out.println("Leyendo precio..."); }
 			}
 
-		Una vez que una clase declara que implementa una interfaz, debe de proveer una implemetación para dosos los métodos estáticos declarados en la interfaz. Puede implementar los métodos por sí misma o heredarlos desde sus ancestros. Si una interfaz provee una implemetación default para un método, la clase implementadora no necesariamente debe proveer la implementación al método.
+		Una vez que una clase declara que implementa una interfaz, debe de proveer una implemetación para todos los métodos estáticos declarados en la interfaz. Puede implementar los métodos por sí misma o heredarlos desde sus ancestros. Si una interfaz provee una implemetación default para un método, la clase implementadora no necesariamente debe proveer la implementación al método.
 
 		Si la clase no provee una implementación para alguno de los métodos abstractos declarados en la interfaz, la clase debe declararse como abstract. De otro modo el compilador se rehusará a compilar la clase. Por ejemplo, si la clase StockPrice no provee una implementación para el método read declarado en Readable, la clase debe ser declarada abstract:
 
@@ -650,7 +651,7 @@
 
 		Herencia de múltiples versiones de una variable
 
-		Los campos de una interfaz son heredados a la subclase y, por lo tanto, Porocess tiene dos versiones de la variable SIZE. Java permite a una clase heredar múltiples campos con el mismo nombre, siempre que no se intente utilizar dichos campos de manera ambigua. Es decir, no es posible utilizar la variable SIZE sin especificar a cuál de los dos campos SIZE se hace referencia. Esto puede observarse en el siguiente ejemplo:
+		Los campos de una interfaz son heredados a la subclase y, por lo tanto, Process tiene dos versiones de la variable SIZE. Java permite a una clase heredar múltiples campos con el mismo nombre, siempre que no se intente utilizar dichos campos de manera ambigua. Es decir, no es posible utilizar la variable SIZE sin especificar a cuál de los dos campos SIZE se hace referencia. Esto puede observarse en el siguiente ejemplo:
 
 			class Process implements Task, Activity{
 				//implementación de doIt
@@ -722,7 +723,7 @@
 				}
 			}
 
-		El código anterior compila correctamente, pero si se descomenta cualquiera de los dos defaultMethod en Writable, el compilador se quejará. La solución a lo anterior es la misma que con una clase. La interfaz ReadWritable deberá otorgar su propia implementación de defaultMethid para resolver la ambigüedad. Por ejemplo:
+		El código anterior compila correctamente, pero si se descomenta cualquiera de los dos defaultMethod en Writable, el compilador se quejará. La solución a lo anterior es la misma que con una clase. La interfaz ReadWritable deberá otorgar su propia implementación de defaultMethod para resolver la ambigüedad. Por ejemplo:
 
 			interdace ReadWritable extends Readable, Writable{
 				default void defaultMethod(){
@@ -734,7 +735,7 @@
 
 		Heredando múltiples variables con el mismo nombre
 
-		La situación con la variable SIZE es exactamente la misma que cuando una clase implenta a dos interfaces. La interfaz hija recibe ambas versiones de la variable SIZE y sólo existirá un errpr de compilación se accede a la variable SIZE sin especificar a cuál se quiere acceder. Por ejemplo:
+		La situación con la variable SIZE es exactamente la misma que cuando una clase implenta a dos interfaces. La interfaz hija recibe ambas versiones de la variable SIZE y sólo existirá un error de compilación si se accede a la variable SIZE sin especificar a cuál se quiere acceder. Por ejemplo:
 
 			interface ReadWritable extends Readable, Writable{
 				int NEWSIZE = SIZE;	//No compila debido a que SIZE es ambiguo
@@ -754,7 +755,7 @@
 
 			abstract class Animal{
 				public static void main(String[] args){
-					Animal a = new Animal{ };
+					Animal a = new Animal(){ };
 				}
 			}
 
@@ -766,11 +767,11 @@
 				}
 			}
 
-		En el primer código pareciera que se está creando una instancia de Animal, mientras que el segundo pareciera como si se tratase de crear una instancia de Dummy. Lo primero a notar aquí son las llaves, las cuáles no corresponden a la sintaxis para instanciar una clase. Lo que se tiene aquí es en realidad la creación de una clase anónima. Una clase anónima es una clase que no tiene un nombre, ya que no está definida de la forma tradicional en la que solemos definir clases, sino que se crea en el mismo momento en el que se crea una instancia. Lo que debería haber entre las llaves es toda la implementación de estas clases anónimas. En caso de que se tengan métodos abstractos heredados, estos deberían ser implementados dentro de las llaves, pero en este caso no los tienen.
+		En el primer código pareciera que se está creando una instancia de Animal, mientras que el segundo pareciera como si se tratase de crear una instancia de Dummy. Lo primero a notar aquí son las llaves, las cuáles no corresponden a la sintaxis para instanciar una clase. Lo que se tiene aquí es en realidad la creación de una clase anónima. Una clase anónima es una clase que no tiene un nombre, ya que no está definida de la forma tradicional en la que solemos definir clases, sino que se crea en el mismo momento en el que se crea una instancia. Lo que debería haber entre las llaves es toda la implementación de estas clases anónimas. En caso de que se tengan métodos abstractos heredados, estos deberían ser implementados dentro de las llaves, pero en este caso no los tienen y pueden dejarse las llaves vacías.
 
 	9.2.8 Diferencia entre clase abstracta e interfaz
 
-		La diferencia entra una interfaz y una clase abstracta va más allá de las especificaciones técnicas definidas por Java. Conceptualmente, la diferencia fundamental entre una y otra es que es que una interfaz define únicamente el comportamiento y no dice nada acerca del objeto, sino sólo cómo se comporta. Una clase abstracta, por otro lado, define un objeto que impulsa dicho comportamiento. Debe quedar claro que interfaces y clases abstractas no son intercambiables. Incluso cuando una clase abstracta que no tenga métodos no abstractos puede parecer funcionalmente igual a una interfaz, ambas son fundamentalmente diferente. Si se captura comportamiento, debe usarse una interfaz. Si, en cambio, se está capturando un objeto conceptual, se debe utilizar una clase abstracta.
+		La diferencia entra una interfaz y una clase abstracta va más allá de las especificaciones técnicas definidas por Java. Conceptualmente, la diferencia fundamental entre una y otra es que es que una interfaz define únicamente el comportamiento y no dice nada acerca del objeto, sino sólo cómo se comporta. Una clase abstracta, por otro lado, define un objeto que impulsa dicho comportamiento. Debe quedar claro que interfaces y clases abstractas no son intercambiables. Incluso cuando una clase abstracta que no tenga métodos no abstractos puede parecer funcionalmente igual a una interfaz, ambas son fundamentalmente diferentes. Si se captura comportamiento, debe usarse una interfaz. Si, en cambio, se está capturando un objeto conceptual, se debe utilizar una clase abstracta.
 
 9.3 Uso de super y this para acceder a objetos y constructores
 
@@ -815,7 +816,7 @@
 				}
 			}
 
-		De esta manera, el constructor no-args de Object es invocado primer, antes de proceder con la ejecución del constructor de Person. Ahora ¿qué pasaría entonces con el siguiente código?
+		De esta manera, el constructor no-args de Object es invocado primero, antes de proceder con la ejecución del constructor de Person. Ahora ¿qué pasaría entonces con el siguiente código?
 
 			public class Employee extends Person{
 				public Employee(String s){
@@ -847,7 +848,7 @@
 
 		Luego, al realizar la llamada a la superclase al constructor default de Employee (es decir, la clase Person), el compilador devuelve un error al detectar que no existe un constructor no-args de Person.
 
-		Debido a que un objeto sólo puede ser inicializado una vez, sólo es posible llamar una vez al constructor super(<argumentos>). Si se intenta llamar más de una vez, el código no compilará.
+		Debido a que un objeto sólo puede ser inicializado una vez, sólo es posible llamar una vez al constructor super(<argumentos>) y debe ser la primera línea dentro del constructor en el que se usa. Si se intenta llamar más de una vez, el código no compilará.
 
 		Invocando otro constructor usando this(<argumentos>)
 
@@ -890,7 +891,7 @@
 					Manager m = new Manager("A");
 				}
 	
-		¿Cuál será la salida si ejecutamos desde consola la clase Testclass? Lo que ocurre es lo siguiente. Dentro del main de TestClass se crea un objeto Manager con el constructor Manager(String grade), pero al no haber llamada a super, ésta se realiza por default con el constructor no-args, por lo que se invoca a Employee(). Dentro de Employee se llama a this("dummy", "000"), lo que invoca a Employee(String name, String empId). Éste último invoca explícitamente a super(name), por lo que entra en el constructor Person(String name). Dentro de Person(String name) no se llama a ningún constructor explícitamente, por lo que se llama al constructor default de Object y termina la cadena ascendente.
+		¿Cuál será la salida si ejecutamos desde consola la clase Testclass? Lo que ocurre es lo siguiente. Dentro del main de TestClass se crea un objeto Manager con el constructor Manager(String grade), pero al no haber llamada a super, ésta se realiza por default con el constructor no-args, por lo que se invoca a Employee(). Dentro de Employee() se llama a this("dummy", "000"), lo que invoca a Employee(String name, String empId). Éste último invoca explícitamente a super(name), por lo que entra en el constructor Person(String name). Dentro de Person(String name) no se llama a ningún constructor explícitamente, por lo que se llama al constructor default de Object y termina la cadena ascendente.
 
 		Cuando finaliza el constructor default de Object, el control vuelve al constructor Person(String name), imprime "In Person's constructor" y termina, regresando el control a Employee(String name, String empId), el cual imprime "In Employee(name, empid) constructor". El constructor termina y el control vuelve a Employee(), el cual imprime "In Employee() constructor". Por último, el control vuelve al constructor Manager(String grade), el cual imprime "In Manager(grade) constructor" y finaliza, devolviendo el control a TestClass.
 
@@ -903,7 +904,7 @@
 
 	9.3.3 Uso de la variable implícita "super"
 
-		Cuando un método es sobreescrito por una subclase, es imposible ejecutar la versión del método de la superclas en un objeto de la subclase para cualquier clase que no esté relacionada. Sin embargo, la subclase en sí misma puede acceder a la versión del método de la superclas utilizando la variable implicita "super". Cada método de instancia de una clase obtiene esta variable. Es muy parecido a lo que sucede con la variable implícita this, con la diferencia de que this se refiere al objeto actual y super se refiere a los miembros que la clase hereda de la clase padre. El siguiente código muestra su uso:
+		Cuando un método es sobreescrito por una subclase, es imposible ejecutar la versión del método de la superclas en un objeto de la subclase para cualquier clase que no esté relacionada. Sin embargo, la subclase en sí misma puede acceder a la versión del método de la superclase utilizando la variable implicita "super". Cada método de instancia de una clase obtiene esta variable. Es muy parecido a lo que sucede con la variable implícita this, con la diferencia de que this se refiere al objeto actual y super se refiere a los miembros que la clase hereda de la clase padre. El siguiente código muestra su uso:
 
 			class InterestCalculator{
 				public double computeInterest(double principle, int yrs, double rate){
@@ -933,7 +934,7 @@
 				}
 			}
 
-		En el código anterior, la llamada a super.computeInterest(100, 2, 0.1); causa que se invoque la versión de InterestCalculator, mientras que la llamada a computeInterest(100, 2, 0.1); causa que se invoque a la versión de CompoundInterestCalclator. La varuable super está disponible únicamente en métodos de instancia de una clase y puede ser utilizada para acceder a cualquier miembto heredado (tanto estático como de instancia) de la superclase. Lo anterior puede llevarnos a pensar que puede ser una buena idea formar una cadena de supers; es decir, algo como super.super.algunMetodo(). Sin embargo, esto no es posible debido a que no existe ninguna variable llamada super en la clase padre. De hecho no se nos permite crear una variable llamada super en la superclase.
+		En el código anterior, la llamada a super.computeInterest(100, 2, 0.1); causa que se invoque la versión de InterestCalculator, mientras que la llamada a computeInterest(100, 2, 0.1); causa que se invoque a la versión de CompoundInterestCalclator. La variable super está disponible únicamente en métodos de instancia de una clase y puede ser utilizada para acceder a cualquier miembto heredado (tanto estático como de instancia) de la superclase. Lo anterior puede llevarnos a pensar que puede ser una buena idea formar una cadena de supers; es decir, algo como super.super.algunMetodo(). Sin embargo, esto no es posible debido a que no existe ninguna variable llamada super en la clase padre. De hecho no se nos permite crear una variable llamada super en la superclase.
 
 		¿Cómo podríamos entonces acceder a la versión del método de la "clase abuela"? La respuesta es que no es posible. Sólo es posible subir un nivel con la ayuda de super. Es importante notar que esta limitación se debe únicamente al hecho de que estamos hablando de métodos sobreescritos. Si la superclase no sobreescribió el método de su propia superclase, entonces la clase padre hereda el método de la clase abuela, y la clase hija puede acceder a la versión de la clase abuela como si fuera de la clase padre.
 
@@ -941,7 +942,7 @@
 
 		Ahora que hemos visto todos los pasos que hay desde que se carga una clase hasta que se ejecuta el constructor para que la JVM cree un objeto de una clase, podemos resumitlo en los siguientes pasos:
 
-			1. Si existe una superclase, se inicializan los campos estáticos y se ejecutan los inicializadores de instancia de la supeclase en orden de aparición (sólo ocurre una vez por clase).
+			1. Si existe una superclase, se inicializan los campos estáticos y se ejecutan los inicializadores estáticos de la superclase en orden de aparición (sólo ocurre una vez por clase).
 
 			2. Se inicializan los campos estáticos y se ejecutan los inicializadores estáticos de la clase en orden de aparición (sólo ocurre una vez por clase).
 

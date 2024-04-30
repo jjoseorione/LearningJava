@@ -1,6 +1,6 @@
 public class PruebaSwitch1{
 	public static void main(String[] args){
-		int i = 2;
+		int i = 3;
 
 		switch(i){
 			case 0:

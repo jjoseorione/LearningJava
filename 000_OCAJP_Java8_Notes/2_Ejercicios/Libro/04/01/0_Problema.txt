@@ -1,1 +1,1 @@
-1. Crear un array de booleans de longitud 3 dentro del método main. Imprimir los elementos del array sin inicializarlos explicitamente. Observar la salida.
+1. Crear un array de booleanos de longitud 3 dentro del método main. Imprimir los elementos del array sin inicializarlos explicitamente. Observar la salida.

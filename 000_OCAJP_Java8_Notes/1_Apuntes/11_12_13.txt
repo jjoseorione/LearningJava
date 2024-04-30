@@ -1,310 +1,317 @@
-Si en bloques catch se pone primero la excepción más general y luego las más específicas, el código no compilará por código inalcanzable.
+10 Manejo de Excepciones
 
-Si se lanza una excepción desde el bloque finally, la excepción originada en el bloque try o catch es ignorada y la originada en finally es la que se propaga
+	Si en bloques catch se pone primero la excepción más general y luego las más específicas, el código no compilará por código inalcanzable.
 
-Sobreescritura (overriding) es acerca de polimorfismo y aplica a métodos de instancia
-Ocultación (Hiding) aplica para todo lo demás (métodos estáticos y variables estáticas y de instancia). Además, overriding es acerca de enlace dinámico, lo que significa que el método a ejecutar se decide en tiempo de ejecución según el tipo de objeto guardado en la variable. Hiding, por otro lado, es acerca de enlace estático, lo que significa que el método estático o variable a consultar se decide con el tipo de variable.
+	Si se lanza una excepción desde el bloque finally, la excepción originada en el bloque try o catch es ignorada y la originada en finally es la que se propaga
 
-Cuando se sobreescribe un método, el método que se invoca es siempre el método implementado por la clase del objeto que lo invoca.
+11 Trabajando con Herencia II
 
-Los métodos estáticos, las variables estáticas y las variables de instancia son siempre accedidas conforme al tipo declarado en la variable a través de la que se accede, y no acorde al verdadero tipo del objeto al que se está referenciando.
+	Sobreescritura (overriding) es acerca de polimorfismo y aplica a métodos de instancia
+	Ocultación (Hiding) aplica para todo lo demás (métodos estáticos y variables estáticas y de instancia). Además, overriding es acerca de enlace dinámico, lo que significa que el método a ejecutar se decide en tiempo de ejecución según el tipo de objeto guardado en la variable. Hiding, por otro lado, es acerca de enlace estático, lo que significa que el método estático o variable a consultar se decide con el tipo de variable.
 
-Se puede realizar un cast de una clase a otra sólo si el cast tiene lógica en sí. Por ejemplo, se puede realizar un cast para asignar una variable tipo Fruit a de tipo Mango, ya que es posible que el objeto referenciado por la vairable Fruit sea efectivamente un mango. Por otra parte, no es posible realizar un cast que no tenga lógica. Por ejemplo, no es posible realizar un cast para asignar una variable tipo Mango a una tipo Apple, ya que el compilador sabe que no hay manera de que una variable tipo Mango guarde la referencia a un objeto de tipo Apple.
+	Cuando se sobreescribe un método, el método que se invoca es siempre el método implementado por la clase del objeto que lo invoca.
 
-Se puede realizar un cast de cualquier clase a cualquier interfaz, ya que es posible que exista una subclase que de la clase en cuestión y que implemente dicha interfaz. El único caso en el que no es posible, es si la clase en cuestión es final, ya que esto nos indica que no es posible tener una subclase que implemente alguna interfaz.
+	Los métodos estáticos, las variables estáticas y las variables de instancia son siempre accedidas conforme al tipo declarado en la variable a través de la que se accede, y no acorde al verdadero tipo del objeto al que se está referenciando.
 
-Downcasting es cuando se realiza un cast para interpretar una superclase como una de sus subclases (o clases hijas). También se dice que se realiza un estrechamiento de la variable, ya que se reducen las posibilidades de lo que la variable está referenciando. Por ejemplo, un downcasting podría servir para especificar que una variable tipo Fruit está referenciando a una de tipo Mango.
+	Se puede realizar un cast de una clase a otra sólo si el cast tiene lógica en sí. Por ejemplo, se puede realizar un cast para asignar una variable tipo Fruit a una de tipo Mango, ya que es posible que el objeto referenciado por la vairable Fruit sea efectivamente un mango. Por otra parte, no es posible realizar un cast que no tenga lógica. Por ejemplo, no es posible realizar un cast para asignar una variable tipo Mango a una tipo Apple, ya que el compilador sabe que no hay manera de que una variable tipo Mango guarde la referencia a un objeto de tipo Apple.
 
-El upcasting es lo contrario al downcasting y es casi siempre redundante, ya que no es necesario especificar, por ejemplo, que un Mango es una Fruta. El único caso en el que no es redundante es cuando se quiere acceder a los métodos estáticos o a las variables de la superclase que han sido "ocultadas" en la subclase.
+	Se puede realizar un cast de cualquier clase a cualquier interfaz, ya que es posible que exista una subclase que de la clase en cuestión y que implemente dicha interfaz. El único caso en el que no es posible, es si la clase en cuestión es final, ya que esto nos indica que no es posible tener una subclase que implemente alguna interfaz.
 
-Cuando se invoca un método, el compilador determina si es posible la invocación al fijarse en la variable declarada. El compilador no puede fijarse en el objeto al que se hace referencia en dicha variable, ya que no ejecuta código y no tiene certeza de lo que apuntará la variable en tiempo de ejecución. Por lo tanto, si la variable obj es declarada como tipo Object y apunta a un String, la línea int i = obj.length(); no compilará debido a que length() no existe en la clase Object, que es con la que se declaró a obj. Para realizarlo, se necesitaría un casting de la siguiente manera int i = ((String) obj).length();
+	Downcasting es cuando se realiza un cast para interpretar una superclase como una de sus subclases (o clases hijas). También se dice que se realiza un estrechamiento de la variable, ya que se reducen las posibilidades de lo que la variable está referenciando. Por ejemplo, un downcasting podría servir para especificar que una variable tipo Fruit está referenciando a una de tipo Mango.
 
-El casting es necesario cuando se requiere utilizar las características definidas en una subclase pero utilizando una referencia declarada con el tipo de la superclase.
+	El upcasting es lo contrario al downcasting y es casi siempre redundante, ya que no es necesario especificar, por ejemplo, que un Mango es una Fruta. El único caso en el que no es redundante es cuando se quiere acceder a los métodos estáticos o a las variables de la superclase que han sido "ocultadas" en la subclase.
 
-El operador instanceof devuelve un booleano, el cual nos indica si una variable de referencia (del lado izquierdo) apunta a un objeto perteneciente a un tipo (del lado derecho) o alguno de sus subtipos (clase, interfaz o enum). Es decir, nos devuelve la respuesta a si el objeto apuntado por la variable del lado izquierdo, aprueba el test is-a para el tipo especificado del lado derecho.
+	Cuando se invoca un método, el compilador determina si es posible la invocación al fijarse en la variable declarada. El compilador no puede fijarse en el objeto al que se hace referencia en dicha variable, ya que no ejecuta código y no tiene certeza de lo que apuntará la variable en tiempo de ejecución. Por lo tanto, si la variable obj es declarada como tipo Object y apunta a un String, la línea int i = obj.length(); no compilará debido a que length() no existe en la clase Object, que es con la que se declaró a obj. Para realizarlo, se necesitaría un casting de la siguiente manera int i = ((String) obj).length();
 
-El operador instanceof es parecido al casting en el aspecto en que sólo compila si se utiliza de manera plausible. Por ejemplo, si la variable m está declarada como tipo Mango y se realiza la expresión m instanceof Apple, ésta será inválida para el compilador, debido a que no es posible que m apunte a un objeto de tipo Apple.
+	El casting es necesario cuando se requiere utilizar las características definidas en una subclase pero utilizando una referencia declarada con el tipo de la superclase.
 
-Reglas para sobreescritura de métodos:
-	-Accesibilidad: El método nuevo no puede ser menos accesible que el método sobreescrito. Debe ser igual o más accesible.
-	-Tipo de retorno: El tipo de retorno del método nuevo debe ser el mismo o un subtipo del tipo de retorno del método sobreescrito. En caso de retorno de tipos primitivos, debe ser exactamente el mismo.
-	-Parámetros: La lista de parámetros debe ser exactamente la misma en términos de orden y tipos. Los nombres pueden ser diferentes. De otro modo, no sería una sobreescritura, sino una sobrecarga.
-	-Cláusula throws: El método sobreescritor no puede tener una excepción más amplia ni tampoco alguna que no esté incluída en la del método sobreescrito. Es posible que el método sobreescritor tenga la misma cláusula throws, una más específica o ninguna cláusula throws. Recordemos que esto sólo es necesario para excepciones revisadas, ya que son las que le importan al compilador.
+	El operador instanceof devuelve un booleano, el cual nos indica si una variable de referencia (del lado izquierdo) apunta a un objeto perteneciente a un tipo (del lado derecho) o alguno de sus subtipos (clase, interfaz o enum). Es decir, nos devuelve la respuesta a si el objeto apuntado por la variable del lado izquierdo, aprueba el test is-a para el tipo especificado del lado derecho.
 
-No es posible sobreescribir un método estático como método de instancia; tampoco sobreescribir un método de instancia como estático.
+	El operador instanceof es parecido al casting en el aspecto en que sólo compila si se utiliza de manera plausible. Por ejemplo, si la variable m está declarada como tipo Mango y se realiza la expresión m instanceof Apple, ésta será inválida para el compilador, debido a que no es posible que m apunte a un objeto de tipo Apple.
 
-Si la superclase tiene un método privado y por lo tanto no es heredado por la subclase, la subclase puede crear un método con la misma firma sin problema, ya que no existe conflicto porque no heredó el de la superclase
+	Reglas para sobreescritura de métodos:
+		-Accesibilidad: El método nuevo no puede ser menos accesible que el método sobreescrito. Debe ser igual o más accesible.
+		-Tipo de retorno: El tipo de retorno del método nuevo debe ser el mismo o un subtipo del tipo de retorno del método sobreescrito. En caso de retorno de tipos primitivos, debe ser exactamente el mismo.
+		-Parámetros: La lista de parámetros debe ser exactamente la misma en términos de orden y tipos. Los nombres pueden ser diferentes. De otro modo, no sería una sobreescritura, sino una sobrecarga.
+		-Cláusula throws: El método sobreescritor no puede tener una excepción más amplia ni tampoco alguna que no esté incluída en la del método sobreescrito. Es posible que el método sobreescritor tenga la misma cláusula throws, una más específica o ninguna cláusula throws. Recordemos que esto sólo es necesario para excepciones revisadas, ya que son las que le importan al compilador.
 
-Debe quedar completamente claro que el enlace entre el método que se invoca y la clase de la cuál se obtendrá el método, se realiza en tiempo de ejecución. Es decir, hasta que se ejecuta el código es cuando se decide qué método se va a ejecutar, según el objeto al que se apunte en ese momento, sin importar el tipo con el que fue declarada la variable de referencia. El método que se ejecuta es siempre el del objeto.
+	No es posible sobreescribir un método estático como método de instancia; tampoco sobreescribir un método de instancia como estático.
 
-El operador == utilizado entre dos referencias se comporta igual que el casting o el operador instanceof, en el aspecto de que sólo compila si la comparación es plausible. Por ejemplo, si se compara una referencia Integer con una referencia String, el código no compila debido a que es imposible que ambas apunten al mismo objeto. Sin embargo, una coparación entre una referencia Object y una String (por ejemplo) funcionará sin problemas.
+	Si la superclase tiene un método privado y por lo tanto no es heredado por la subclase, la subclase puede crear un método con la misma firma sin problema, ya que no existe conflicto porque no heredó el de la superclase
 
-En cambio, el método equals siempre acepta una referencia Object y por lo tanto es posible realizar incluso comparaciones absurdas como String con Integer. Cuando se suele sobreescribir el método equals, se suele primero comparar si la referencia del objeto enviado como parámetro es la misma del objeto que invoca el método (si da negativo, se devuelve false). Posteriormente, si la comparación es positiva, se comparan los campos para saber si ambos objetos son equivalentes. El método equals de Object devuelve true únicamente si ambas referencias apuntan a exactamente el mismo objeto.
+	Debe quedar completamente claro que el enlace entre el método que se invoca y la clase de la cuál se obtendrá el método, se realiza en tiempo de ejecución. Es decir, hasta que se ejecuta el código es cuando se decide qué método se va a ejecutar, según el objeto al que se apunte en ese momento, sin importar el tipo con el que fue declarada la variable de referencia. El método que se ejecuta es siempre el del objeto.
 
-El comportamiento de concatenación del operando + sólo ocurre si al menos uno de los operandos es un String. La variable debe ser de tipo String.
+	El operador == utilizado entre dos referencias se comporta igual que el casting o el operador instanceof, en el aspecto de que sólo compila si la comparación es plausible. Por ejemplo, si se compara una referencia Integer con una referencia String, el código no compila debido a que es imposible que ambas apunten al mismo objeto. Sin embargo, una comparación entre una referencia Object y una String (por ejemplo) funcionará sin problemas.
 
-StringBuilder es una clase muy similar a String, con la diferencia de que es mutable y no aplican para ella los conceptos de String pool ni internado. Los objetos de StringBuilder son recolectados como basura y no quedan por siempre en memoria. Lo anterior hace a StringBuilder más adecuado para componer cadenas muy largas y que no serán reutilizadas, como archivos xml o logs, mientras que String es más adecuada para cadenas cortas que se utilizarán de manera repetida a lo largo del código.
+	En cambio, el método equals siempre acepta una referencia Object y por lo tanto es posible realizar incluso comparaciones absurdas como String con Integer. Cuando se  sobreescrive el método equals, se suele primero comparar con el oeprador instanceof si la referencia del objeto enviado como parámetro pertenece a la miasma clase del objeto que invoca el método (si da negativo, se devuelve false). Posteriormente, si la comparación es positiva, se comparan los campos para saber si ambos objetos son equivalentes. El método equals de Object realiza la comparación más discrimanatoria posible, ya que devuelve true únicamente si ambas referencias apuntan a exactamente el mismo objeto.
 
-En el examen sólo vienen LocalDate, LocalTime, LocalDateTime, Period (todas en en java.time) y DateTimeFormatter en java.time.formatter
+12 Clases selectas de la API de Java
 
-Duration es un lapso en términos de horas, minutos y segundos. Period es un lapso en términos de días, meses y años. Ambos pueden parecer lo mismo, pero pueden producir resultados diferentes cuando se utilizan en fechas donde se realiza el horario de verano.
+	El comportamiento de concatenación del operando + sólo ocurre si al menos uno de los operandos es un String. La variable debe ser de tipo String.
 
-java.time también contiene los enums Month (JANUARY, FEBRUARY, etc.) y DayOfWeek (MONDAY, TUESDAY, etc.). 
+	StringBuilder es una clase muy similar a String, con la diferencia de que es mutable y no aplican para ella los conceptos de String pool ni internado. Los objetos de StringBuilder son recolectados como basura y no quedan por siempre en memoria. Lo anterior hace a StringBuilder más adecuado para componer cadenas muy largas y que no serán reutilizadas, como archivos xml o logs, mientras que String es más adecuada para cadenas cortas que se utilizarán de manera repetida a lo largo del código.
 
-Todos los objetos Date/Time son inmutables. Todo lo que se hace con ellos es crear objetos, convertirlos a Strings, compararlos y leerlos.
+	En el examen sólo vienen LocalDate, LocalTime, LocalDateTime, Period (todas en en java.time) y DateTimeFormatter en java.time.formatter
 
-Existen 3 formas de crear objetos: especificando cada componente del objeto date/time, utilizando los valores de otro objeto y leyendo una cadena.
+	Duration es un lapso en términos de horas, minutos y segundos. Period es un lapso en términos de días, meses y años. Ambos pueden parecer lo mismo, pero pueden producir resultados diferentes cuando se utilizan en fechas donde se realiza el horario de verano.
 
-Ninguna de las clases date/time tienen constructor público, por lo que no pueden ser creados con new. En su lugar se utilizan los métodos estáticos now, of, y from.
+	java.time también contiene los enums Month (JANUARY, FEBRUARY, etc.) y DayOfWeek (MONDAY, TUESDAY, etc.). 
 
-El método now() devuelve el momento actual. Por ejemplo, LocalDate.now() devuelve la fecha actual, LocalTime.now() la hora actual y LocalDateTime.now() la fecha y hora actual. Period no contiene el método now ya que no representa un tiempo exacto, sino un lapso. En su lugar existe la constante ZERO para crear un Period en cero.
+	Todos los objetos Date/Time son inmutables. Todo lo que se hace con ellos es crear objetos, convertirlos a Strings, compararlos y leerlos.
 
-El método of() sirve para especificar cada componente del objeto a crear: año, mes, día, hora, minuto, segundo y nanosegundo, según corresponda. El nanosegundo es opcional. El mes se puede especificar en entero o con el enum Month. LocalDateTime tiene además un constructor que acepta un LocalDate y un LocalTime. La hora siempre está en 24hrs. Si se excede el rango de algún parámetro, se lanza un java.time.DateTimeException (hija de RunTimeException).
+	Existen 3 formas de crear objetos: especificando cada componente del objeto date/time, utilizando los valores de otro objeto y leyendo una cadena.
 
-La clase Period también contiene los métodos of(int años, int meses, int días), ofDays(int días), ofWeeks(int semanas), ofMonths(int meses), ofYears(int años)
+	Ninguna de las clases date/time tienen constructor público, por lo que no pueden ser creados con new. En su lugar se utilizan los métodos estáticos now, of, y from.
 
-El método from sirve para crear objetos con base en otros de la misma clase. También es posible crear LocalDate y LocalTime con base en un LocalDateTime, ya que éste último tiene tanto componente de tiempo y de fecha. También es posible crear un Period con base en otro Priod utilizando from.
+	El método now() devuelve el momento actual. Por ejemplo, LocalDate.now() devuelve la fecha actual, LocalTime.now() la hora actual y LocalDateTime.now() la fecha y hora actual. Period no contiene el método now ya que no representa un tiempo exacto, sino un lapso. En su lugar existe la constante ZERO para crear un Period en cero.
 
-Métodos de instancia que alteran algún campo para devolver un objeto diferente
+	El método of() sirve para especificar cada componente del objeto a crear: año, mes, día, hora, minuto, segundo y nanosegundo, según corresponda. El nanosegundo es opcional. El mes se puede especificar en entero o con el enum Month. LocalDateTime tiene además un método que acepta un LocalDate y un LocalTime. La hora siempre está en 24hrs. Si se excede el rango de algún parámetro, se lanza un java.time.DateTimeException (hija de RunTimeException).
 
-	plusDays, plusMonths, plusYears, plusWeeks, minusDays, minusMonths, minusYears y minusWeeks. Todos estos sirven en LocalDate, LocalDateTime y Period. 
+	La clase Period también contiene los métodos of(int años, int meses, int días), ofDays(int días), ofWeeks(int semanas), ofMonths(int meses), ofYears(int años)
 
-	plusHours, plusMinutes, plusSeconds, plusNanos, minusHours, minusMinutes, minusSeconds y minusNanos. Todos estos sirven en LocalTime y LocalDateTime.
+	El método from sirve para crear objetos con base en otros de la misma clase. También es posible crear LocalDate y LocalTime con base en un LocalDateTime, ya que éste último tiene tanto componente de tiempo y de fecha. También es posible crear un Period con base en otro Period utilizando from.
 
-	También existen los métodos plus(Period p) y plus(int cantidad, ChronoUnit unidad), donde unidad es un instancia del enum ChronoUnit que puede ser DAYS, WEEKS, MONTHS, YEARS, HOURS, MINUTES, SECONDS o NANOS. Lo mismo existe pero con minus en lugar de plus.
+	Métodos de instancia que alteran algún campo para devolver un objeto diferente
 
-	Los métodos withXXX sirven para modificar una componente específica. Por ejemplo, withYear, withMonth, withHours, withDayOfMonth, etc. Period tiene métodos similares, pero terminan con s: withYears, withMonths, withHours, etc.
+		plusDays, plusMonths, plusYears, plusWeeks, minusDays, minusMonths, minusYears y minusWeeks. Todos estos sirven en LocalDate, LocalDateTime y Period. 
 
-	Adicionalmente, Period tiene el método negated(), el cual vuelve el periodo negativo si es positivo o positivo si es negativo.
+		plusHours, plusMinutes, plusSeconds, plusNanos, minusHours, minusMinutes, minusSeconds y minusNanos. Todos estos sirven en LocalTime y LocalDateTime.
 
-Métodos de instancia que agregan nuevas propiedades a un objeto existente.
+		También existen los métodos plus(Period p) y plus(int cantidad, ChronoUnit unidad), donde unidad es un instancia del enum ChronoUnit que puede ser DAYS, WEEKS, MONTHS, YEARS, HOURS, MINUTES, SECONDS o NANOS. Lo mismo existe pero con minus en lugar de plus.
 
-	Estos objetos cambian el tipo de referencia que se devuelve, ya que su propósito es convertir un LocalDate o un LocalTime en LocalDateTime, o un LocalDateTime en un ZonedDateTime.
+		Los métodos withXXX sirven para modificar una componente específica. Por ejemplo, withYear, withMonth, withHours, withDayOfMonth, etc. Period tiene métodos similares, pero terminan con s: withYears, withMonths, withHours, etc.
 
-	atTime ayuda a agregar tiempo a un LocalDate. Devuelve LocalDateTime.
+		Adicionalmente, Period tiene el método negated(), el cual vuelve el periodo negativo si es positivo o positivo si es negativo.
 
-	atDate ayuda a agregar fecha a un LocalTime. Devuelve LocalDateTime.
+	Métodos de instancia que agregan nuevas propiedades a un objeto existente.
 
-	atZone ayuda a agregar zona horaria a un LocalDateTime. Devuelve ZonedDateTime.
+		Estos objetos cambian el tipo de referencia que se devuelve, ya que su propósito es convertir un LocalDate o un LocalTime en LocalDateTime, o un LocalDateTime en un ZonedDateTime.
 
-	Existen distintas variantes que pueden agregar componentes por separado o tomar un objeto de fecha para agregar fecha o uno de hora para agregar hora. No es posible llamar una componente que ya se tiene en dicho objeto (por ejemplo, agregar hora a un LocalTime). 
+		atTime ayuda a agregar tiempo a un LocalDate. Devuelve LocalDateTime.
 
-	Period no tiene métodos atXXX. No tendría sentido porque ya tiene fecha y no se le puede agregar hora ni zona horaria.
+		atDate ayuda a agregar fecha a un LocalTime. Devuelve LocalDateTime.
 
-Métodos estáticos que crean objetos Date/Time desde CharSequence
+		atZone ayuda a agregar zona horaria a un LocalDateTime. Devuelve ZonedDateTime.
 
-	Las 3 clases Date/Time contienen los métodos estáticos parse(CharSequence text) y parse(CharSquence text, DateTimeFormatter formatter)
+		Existen distintas variantes que pueden agregar componentes por separado o tomar un objeto de fecha para agregar fecha o uno de hora para agregar fecha. No es posible llamar una componente que ya se tiene en dicho objeto (por ejemplo, agregar hora a un LocalTime). 
 
-	Es posible crear nuestros propios formatters, pero los estándares son variables estáticas públicas de la clase DateTimeFormatter. Las principales son ISO_DATE, ISO_TIME e ISO_DATE_TIME. Cuando se omite el formatter en el método parse, se utilizan los formatters  default.
+		Period no tiene métodos atXXX. No tendría sentido porque ya tiene fecha y no se le puede agregar hora ni zona horaria.
 
-	ISO_DATE: YYYY-MM-DD
-	ISO_TIME: HH:MM ó HH:MM:SS
-	ISO_DATE_TIME: YYYY-MM-DDTHH-MM ó YYYY-MM-DDTHH-MM-SS
+	Métodos estáticos que crean objetos Date/Time desde CharSequence
 
-	DateTimeFormatter tiene el método estático ofPattern, el cual nos permite crear nuestro propio formato con las letras y, M, d, H, m, s, n.
+		Las 3 clases Date/Time contienen los métodos estáticos parse(CharSequence text) y parse(CharSquence text, DateTimeFormatter formatter)
 
-	Para crear un Period desde una cadena se usa el estándar ISO-8601, el cual lleva el formato PnYnMnD y PnW. Donde Y son años, M son meses, D son días y W son semanas. Siempre se debe iniciar con P. Por ejemplo: Period p = Period.parse("P1Y2M3D"); crea un periodo de un año, dos meses y 3 días. Se pueden crear periodos negativos negando cada componente o negando todo con un - antes de la P.
+		Es posible crear nuestros propios formatters, pero los estándares son variables estáticas públicas de la clase DateTimeFormatter. Las principales son ISO_DATE, ISO_TIME e ISO_DATE_TIME. Cuando se omite el formatter en el método parse, se utilizan los formatters default antes mencionados.
 
-Convertir objetos date/time en Strings
+		ISO_DATE: YYYY-MM-DD
+		ISO_TIME: HH:MM ó HH:MM:SS
+		ISO_DATE_TIME: YYYY-MM-DDTHH-MM ó YYYY-MM-DDTHH-MM-SS
 
-	Cada clase Date/Time contiene los métodos toString() y format(DateTimeFormatter dtf), y la clase DateTimeFormatter tiene el método format(TemporalAccessor ta). El método toString devuelve el objeto con el formato estándar, mientras que el método format lo devuelve con el formato elegido. 
+		DateTimeFormatter tiene el método estático ofPattern, el cual nos permite crear nuestro propio formato con las letras y, M, d, H, m, s, n.
 
-	Una forma más fácil de crear un objeto DateTimeFormatter en lugar de usar el método estático ofPattern, es utilizar los métodos estáticos ofLocalizedDate, ofLocalizedTime y ofLocalizedDateTime, los cuáles aceptan los enums FormatSyle FULL, LONG, MEDIUM Y SHORT.
+		Para crear un Period desde una cadena se usa el estándar ISO-8601, el cual lleva el formato PnYnMnD y PnW. Donde Y son años, M son meses, D son días y W son semanas. Siempre se debe iniciar con P. Por ejemplo: Period p = Period.parse("P1Y2M3D"); crea un periodo de un año, dos meses y 3 días. Se pueden crear periodos negativos negando cada componente o negando todo con un - antes de la P.
 
-Formas de comparar objetos Date/Time
+	Convertir objetos date/time en Strings
 
-	El método equals devuelve true si se tiene una instancia del mismo objeto y las componentes son exactamente iguales. De otro modo, devuelve false.
+		Cada clase Date/Time contiene los métodos toString() y format(DateTimeFormatter dtf), y la clase DateTimeFormatter tiene el método format(TemporalAccessor ta). El método toString devuelve el objeto con el formato estándar, mientras que el método format lo devuelve con el formato elegido. 
 
-	Todas las clases Date/Time contienen el método de instancia compareTo, el cuál devuelve -1 (u otro negativo) si el argumento es después, 0 si es igual o 1 (u otro positivo) si es antes.
+		Una forma más fácil de crear un objeto DateTimeFormatter en lugar de usar el método estático ofPattern, es utilizar los métodos estáticos ofLocalizedDate, ofLocalizedTime y ofLocalizedDateTime, los cuáles aceptan los enums FormatSyle FULL, LONG, MEDIUM Y SHORT.
 
-	Todas las clases Date/Time tienen el método isAfter/isBefore. Devuelven true o false
+	Formas de comparar objetos Date/Time
 
-	El método isEquals devuelve true o false
+		El método equals devuelve true si se tiene una instancia del mismo objeto y las componentes son exactamente iguales. De otro modo, devuelve false.
 
-	La clase Period contiene los métodos equals, isZero y isNegative. Todos devuelven true o false
+		Todas las clases Date/Time contienen el método de instancia compareTo, el cuál devuelve -1 (u otro negativo) si el argumento es después, 0 si es igual o 1 (u otro positivo) si es antes.
 
-Leer componentes de un objeto DateTime.
+		Todas las clases Date/Time tienen el método isAfter/isBefore. Devuelven true o false
 
-	Las clases Accessor contienen los siguientes getters según corresponda a su lógica:
+		El método isEquals devuelve true o false
 
-		getDayOfWeek()	//Devuelve objeto del enum DayOfWeek
-		getDayOfYear()
-		getHour()
-		getMinute()
-		getMonth()		//Devuelve objeto del enum Month
-		getMonthValue()
-		getNano()
-		getSecond()
-		getYear()
+		La clase Period contiene los métodos equals, isZero y isNegative. Todos devuelven true o false
 
-	La clase Period tiene sólo getYears, getMonths, getDays.
+	Leer componentes de un objeto DateTime.
 
-Es posible encadenar llamadas, ya que la mayoría de los métodos devuelven refercias a objetos. Se debe tener cuidado con el tipo de objeto que se devuelve para no tener consistencia en llamadas a métodos. Por ejemplo, los métodos atXXX devuelven un nuevo tipo de objeto.
+		Las clases Accessor contienen los siguientes getters según corresponda a su lógica:
 
+			getDayOfWeek()	//Devuelve objeto del enum DayOfWeek
+			getDayOfYear()
+			getHour()
+			getMinute()
+			getMonth()		//Devuelve objeto del enum Month
+			getMonthValue()
+			getNano()
+			getSecond()
+			getYear()
 
-java.util.ArrayList es una clase que incorpora muchas funcionalidades que los arrays no tienen y que suelen ser demandadas, como mover elementos de lugar de forma fácil o añadir más elementos de los que se consideraron en un inicio.
+		La clase Period tiene sólo getYears, getMonths, getDays.
 
-ArrayList implementa la interfaz java.util.Collection. Una colección define un conjunto de cosas. Existen diferentes implementaciones que permiten diferentes características o comportamientos de la colección, como mantener el mismo orden o no permitir duplicados. La interfaz List extiende a Collection y se especializa en mantener el mismo orden (como una lista ligada). ArrayList implementa List y se vale de un Array para guardar los elementos.
+	Es posible encadenar llamadas, ya que la mayoría de los métodos devuelven referencias a objetos. Se debe tener cuidado con el tipo de objeto que se devuelve para no tener inconsistencia en llamadas a métodos. Por ejemplo, los métodos atXXX devuelven un nuevo tipo de objeto.
 
-Los genéricos son la manera en que se le especifica al compilador qué tipo de objeto esperamos que el ArrayList almacene. Esta especificación se vuelve necesaria porque una clase podría guardar elementos que no correspondan con el mismo tipo de objeto para el que la lista fue pensada y cuando se intenten leer con cast a tipo String, la JVM devolverá un ClassCastException. Si se utilizan genéricos, el código no compilará desde que se intente guardar un tipo no soportado por la lista. Cuando no se utilizan genéricos, se dice que la lista esde tipo "inseguro".
 
-La forma de crear un ArrayList epecificando el tipo de objeto esperado es la siguiente:
-		ArrayList<String> al = new ArrayList<String>();
-Si se realiza de esta manera, los warnings desaparecerán
 
-Una variable List o ArrayList de tipo seguro se declara agregando el tipo esperado entre los símbolos '<' y '>'. Por ejemplo:
-	ArrayList<String> stringArray;
-	List<Integer> iList;
-	ArrayList<com.acme.Foo> fooList;
+	java.util.ArrayList es una clase que incorpora muchas funcionalidades que los arrays no tienen y que suelen ser demandadas, como mover elementos de lugar de forma fácil o añadir más elementos de los que se consideraron en un inicio.
 
-Un ArrayList de tipo seguro puede instanciarse de manera similar especificando el tipo dentro de < y >. Por ejemplo:
-	new ArrayList<String>();
-	new ArrayList<Integer>();
-	new ArrayList<com.acme.Foo>();
+	ArrayList implementa la interfaz java.util.Collection. Una colección define un conjunto de cosas. Existen diferentes implementaciones que permiten diferentes características o comportamientos de la colección, como mantener el mismo orden o no permitir duplicados. La interfaz List extiende a Collection y se especializa en mantener el mismo orden (como una lista ligada). ArrayList implementa List y se vale de un Array para guardar los elementos.
 
-Si se está instanciando un ArrayList de tipo seguro al mismo tiempo que se asigna a una variable de tipo seguro en la misma sentencia, se puede omitir el tipo en la instanciación. Por ejemplo:
-	ArrayList<String> al = new ArrayList<>();
-El compilador asume el tipo del objeto que guardará ArrayList desde el tipo de la variable. El operador <> se conoce como operador diamante sólo puede ser utilizado en una snetencnia new. Por lo tanto, la sentencia ArrayList<>al; no compilará, pero new ArrayList<>(); sí. Este operador sólo fue creado con el propósito de ahorrar algunos teclazos.
+	Los genéricos son la manera en que se le especifica al compilador qué tipo de objeto esperamos que el ArrayList almacene. Esta especificación se vuelve necesaria porque una clase podría guardar elementos que no correspondan con el mismo tipo de objeto para el que la lista fue pensada y cuando se intenten leer con cast a tipo String, la JVM devolverá un ClassCastException. Si se utilizan genéricos, el código no compilará desde que se intente guardar un tipo no soportado por la lista. Cuando no se utilizan genéricos, se dice que la lista esde tipo "inseguro".
 
-ArrayList tiene los siguientes constructores:
+	La forma de crear un ArrayList epecificando el tipo de objeto esperado es la siguiente:
+			ArrayList<String> al = new ArrayList<String>();
+	Si se realiza de esta manera, los warnings desaparecerán
 
-	• ArrayList()	Crea un AL vacío con capacidad 10
-	• ArrayList(Collection c)	Crea un AL con los elementos de la colección c
-	• ArrayList(int initialCapacity) Crea un AL con la capacidad indicada. Ahorra tiempo al no actualizar constantemente la capacidad
+	Una variable List o ArrayList de tipo seguro se declara agregando el tipo esperado entre los símbolos '<' y '>'. Por ejemplo:
+		ArrayList<String> stringArray;
+		List<Integer> iList;
+		ArrayList<com.acme.Foo> fooList;
 
-El método ensureCapacity(int n) aumenta la capacidad del AL y trimToSize(int n) lo recorta quitando todos los espacios en blanco, reduciendo la capacidad al número de elementos que están contenidos.
+	Un ArrayList de tipo seguro puede instanciarse de manera similar especificando el tipo dentro de < y >. Por ejemplo:
+		new ArrayList<String>();
+		new ArrayList<Integer>();
+		new ArrayList<com.acme.Foo>();
 
-También es posible crear ArrayList utilizando como base un array y el método estático java.util.Arrays.asList.
+	Si se está instanciando un ArrayList de tipo seguro al mismo tiempo que se asigna a una variable de tipo seguro en la misma sentencia, se puede omitir el tipo en la instanciación. Por ejemplo:
+		ArrayList<String> al = new ArrayList<>();
+	El compilador asume el tipo del objeto que guardará ArrayList desde el tipo de la variable. El operador <> se conoce como operador diamante sólo puede ser utilizado en una snetencnia new. Por lo tanto, la sentencia ArrayList<>al; no compilará, pero new ArrayList<>(); sí. Este operador sólo fue creado con el propósito de ahorrar algunos teclazos.
 
-Métodos importantes de ArrayList:
+	ArrayList tiene los siguientes constructores:
 
-	• String toString()
-		Devuelve todos los elementos de un ArrayList encerrados entre llaves y en el orden correcto. Invoca el método toString de cada objeto contenido para mostrarlo como cadenas
+		• ArrayList()	Crea un AL vacío con capacidad 10
+		• ArrayList(Collection c)	Crea un AL con los elementos de la colección c
+		• ArrayList(int initialCapacity) Crea un AL con la capacidad indicada. Ahorra tiempo al no actualizar constantemente la capacidad
 
-	• boolean add(E e)
-		Método declarado en Collection. E corresponde al tipo contenido por el ArrayList. El boolean devuelto indica si se sufrió una modificación al agregar el elemento. Para otras implementaciones es funcional, pero para AL siempre devuelve true.
+	El método ensureCapacity(int n) aumenta la capacidad del AL y trimToSize(int n) lo recorta quitando todos los espacios en blanco, reduciendo la capacidad al número de elementos que están contenidos.
 
-	• void add(int index, E element)
-		Agrega a element en la posición index. El resto de elementos se mueven hacia atrás.
+	También es posible crear ArrayList utilizando como base un array y el método estático java.util.Arrays.asList.
 
-	• boolean addAll(Collection)
-		Para términos del examen, sólo basta saber que Collection puede ser otro ArrayList, de tal forma que agrega todos los elementos del argumento al final del ArrayList que invoca el método.
+	Métodos importantes de ArrayList:
 
-	• E remove(int index)
-		Elimina del AL el elemento en la posición index y lo devuelve.
+		• String toString()
+			Devuelve todos los elementos de un ArrayList encerrados entre llaves y en el orden correcto. Invoca el método toString de cada objeto contenido para mostrarlo como cadenas
 
-	• boolean remove(Object o)
-		Remueve la primera ocurrencia del elemento especificado (si está presente). Devuelve true si el elemento se eliminó en la llamada al método. Si no hubo coincidencia, devuelve false
+		• boolean add(E e)
+			Método declarado en Collection. E corresponde al tipo contenido por el ArrayList. El boolean devuelto indica si se sufrió una modificación al agregar el elemento. Para otras implementaciones es funcional, pero para AL siempre devuelve true.
 
-	• boolean removeAll(Collection)
-		Remueve del AL que lo invoca todos los elementos que estén en la colección que se envía como parámetro. Devuelve true si al menos un elemento fue eliminado en la llamada.
+		• void add(int index, E element)
+			Agrega a element en la posición index. El resto de elementos se mueven hacia atrás.
 
-	• void clear()
-		Remueve todos los elementos del AL
+		• boolean addAll(Collection c)
+			Para términos del examen, sólo basta saber que Collection puede ser otro ArrayList, de tal forma que agrega todos los elementos del argumento al final del ArrayList que invoca el método.
 
-	• E set(int index, E element)
-		Sustitue el elemento de la posición index con el elemento element. Devuelve el elemento que fue remplzado
+		• E remove(int index)
+			Elimina del AL el elemento en la posición index y lo devuelve.
 
-	• boolean contains(Object o)
-		El objeto pasado en el argumento es comparado con cada elemento de la lista utilizando método equals. Devuelve true tan pronto encuentra una coincidencia. Si no encuentra coincidencia, retorna false. Puede detectar nulls, por lo que es posible pasar como parámetro una referencia nula y no devólverá NullPointerException
+		• boolean remove(Object o)
+			Remueve la primera ocurrencia del elemento especificado (si está presente). Devuelve true si el elemento se eliminó en la llamada al método. Si no hubo coincidencia, devuelve false
 
-	• E get(int index)
-		Devuelve el elemento que se encuentra en la posición index. 
+		• boolean removeAll(Collection)
+			Remueve del AL que lo invoca todos los elementos que estén en la colección que se envía como parámetro. Devuelve true si al menos un elemento fue eliminado en la llamada.
 
-	• int indexOf(Object o)
-		El objeto o es comparado con cada elemento de la lista utilizando método equals. Devuelve la posición de la primera coincidencia. Si no hay coincidencia, devuelve -1. Al igual que contains, puede encontrar referencias nulas
+		• void clear()
+			Remueve todos los elementos del AL
 
-	• boolean isEmpty()
-		Devuelve true si el AL está vacío
+		• E set(int index, E element)
+			Sustituye el elemento de la posición index con el elemento element. Devuelve el elemento que fue remplzado
 
-	• int size()
-		Devuelve el número de elementos.
+		• boolean contains(Object o)
+			El objeto pasado en el argumento es comparado con cada elemento de la lista utilizando método equals. Devuelve true tan pronto encuentra una coincidencia. Si no encuentra coincidencia, retorna false. Puede detectar nulls, por lo que es posible pasar como parámetro una referencia nula y no devólverá NullPointerException
 
-	• List<E> subList(int fromIndex, int toIndex)
-		Devuelve una sublista desde el índice inclusivo fromIndex hasta el índice exclusivo toIndex. Si ambos parámetros son iguales, la lista devuelta será vacía. La sublista devuelta sigue "sincronizada" con la original, de tal forma que si se modifica una, la otra también se ve afectada
+		• E get(int index)
+			Devuelve el elemento que se encuentra en la posición index. 
 
-Cosas a recordar sobre ArrayList:
+		• int indexOf(Object o)
+			El objeto o es comparado con cada elemento de la lista utilizando método equals. Devuelve la posición de la primera coincidencia. Si no hay coincidencia, devuelve -1. Al igual que contains, puede encontrar referencias nulas.
 
-	1. Se pueden agregar nulos sin ningún problema
-	2. Se pueden agregar duplicados
-	3. Ninguno de los métodos de ArrayList lanza NullPointerException, sólo IndexOutOfBoundsExcepction en caso de que se trate acceder a un índice no soportado
-	4. Ninguno de los métodos de ArrayList devuelve una referencia al mismo ArrayList. Por lo tanto, no es posible realizar encadenamientos como en StringBuilder.
+		• boolean isEmpty()
+			Devuelve true si el AL está vacío.
 
-	1. no compila
-	2. [b, a]
-	3. [a ,b ,x]
-	4. ab 		bcd		No copila porque add no admite list. En todo caso sería addAll
-	5. abbcd 		abcd
-	6. abcd
+		• int size()
+			Devuelve el número de elementos.
 
+		• List<E> subList(int fromIndex, int toIndex)
+			Devuelve una sublista desde el índice inclusivo fromIndex hasta el índice exclusivo toIndex. Si ambos parámetros son iguales, la lista devuelta será vacía. La sublista devuelta sigue "sincronizada" con la original, de tal forma que si se modifica una, la otra también se ve afectada
 
-Una expresión lambda es para el compilador como una abreviatura que hace dos cosas: define una clase con un método e instancía esa clase. Para ello se define una interfaz con un único método. Donde se espere un objeto de esta interfaz, se agrega la función lambda y el compilador de inmediato lo interpretará como una apreviación de que se creó una clase, se implementó un método y se creó una instancia de ese objeto. 
+	Cosas a recordar sobre ArrayList:
 
-	x -> x.price>1000
+		1. Se pueden agregar nulos sin ningún problema
+		2. Se pueden agregar duplicados
+		3. Ninguno de los métodos de ArrayList lanza NullPointerException, sólo IndexOutOfBoundsException en caso de que se trate acceder a un índice no soportado
+		4. Ninguno de los métodos de ArrayList devuelve una referencia al mismo ArrayList. Por lo tanto, no es posible realizar encadenamientos como en StringBuilder.
 
-	class XYZ implements CarFilter{
-		boolean showCar(Car x){
-			return x.price > 1000
+		1. no compila porque add devuelve un Boolean
+		2. [b, a]
+		3. [a ,b ,x]
+		4. ab 		bcd		No copila porque add no admite list. En todo caso sería addAll
+		5. abbcd 		abcd
+		6. No compila
+
+
+	Una expresión lambda es para el compilador como una abreviatura que hace dos cosas: define una clase con un método e instancía esa clase. Para ello se define una interfaz con un único método. Donde se espere un objeto de esta interfaz, se agrega la función lambda y el compilador de inmediato lo interpretará como una apreviación de que se creó una clase, se implementó un método y se creó una instancia de ese objeto. 
+
+		x -> x.price>1000
+
+		class XYZ implements CarFilter{
+			boolean showCar(Car x){
+				return x.price > 1000
+			}
 		}
-	}
 
-	c -> c.company.equals("Honda")
+		c -> c.company.equals("Honda")
 
-	class XYZ implements CarFilter{
-		boolean showCar(Car c){
-			return c.company.equals("Honda")
+		class XYZ implements CarFilter{
+			boolean showCar(Car c){
+				return c.company.equals("Honda")
+			}
 		}
-	}
 
-La expresión lambdda no especifica el nombre dle método, el tipo de los parámetros ni el tipo de retorno. Todo esto ya está definido por la interfaz y el compilador lo deduce dependiendo el contexto en el que se usa la expresión lambda. La interfaz debe definir exactamente un método, o de otro modo el compilador no sabría qué método se está implementando en la expresión lambda. Si la interfaz o declara más de un método abstracto o ninguno, el compilador no tiene forma de saber qué método se está tratando de implementar con la expresión lambda.
+	La expresión lambdda no especifica el nombre dle método, el tipo de los parámetros ni el tipo de retorno. Todo esto ya está definido por la interfaz y el compilador lo deduce dependiendo el contexto en el que se usa la expresión lambda. La interfaz debe definir exactamente un método, o de otro modo el compilador no sabría qué método se está implementando en la expresión lambda. Si la interfaz o declara más de un método abstracto o ninguno, el compilador no tiene forma de saber qué método se está tratando de implementar con la expresión lambda.
 
-Las expresiones lambda sólo pueden usarse en donde el tipo objetivo es una interfaz con exactamente un método. Esta interfaz recibe el nombre de interfaz funcional. Java incluye muchas interfaces funcionales en el paquete java.util.function. Para el examen OCAJP sólo hace falta conocer la interfaz java.util.function.Predicate.
+	Las expresiones lambda sólo pueden usarse en donde el tipo objetivo es una interfaz con exactamente un método. Esta interfaz recibe el nombre de interfaz funcional. Java incluye muchas interfaces funcionales en el paquete java.util.function. Para el examen OCAJP sólo hace falta conocer la interfaz java.util.function.Predicate.
 
-La expresión lambda se compone de una sección de variables declaradas (parámetros) (en el lado izquierdo) y una sección de código que se desea ejecutar (en el lado derecho), ambas separadas por el operador flecha ->. Existen diferentes maneras de escribir una expresión lambda:
+	La expresión lambda se compone de una sección de variables declaradas (parámetros) (en el lado izquierdo) y una sección de código que se desea ejecutar (en el lado derecho), ambas separadas por el operador flecha ->. Existen diferentes maneras de escribir una expresión lambda:
 
-	• Sin parámetros: El lado drecho debe tener un par de paréntesis vacíos.
-		()->true 	//válido
-		->1 	//no válido
+		• Sin parámetros: El lado drecho debe tener un par de paréntesis vacíos.
+			()->true 	//válido
+			->1 	//no válido
 
-	• Un parámetro sin especificar tipo de dato: Se pueden usar o no usar paréntesis.
-		a -> a*a 	//válido
-		(a) -> a*a 	//válido
+		• Un parámetro sin especificar tipo de dato: Se pueden usar o no usar paréntesis.
+			a -> a*a 	//válido
+			(a) -> a*a 	//válido
 
-	• Un parámetro especificando tipo de dato: Si se especifica el tipo de dato, se deben usar paréntesis.
-		(int a) -> a*a 	//válido
-		int a -> a*a 	//no válido
+		• Un parámetro especificando tipo de dato: Si se especifica el tipo de dato, se deben usar paréntesis.
+			(int a) -> a*a 	//válido
+			int a -> a*a 	//no válido
 
-	• Más de un parámetro: Si una expresión lambda toma más de un parámetro, todos los parámetros deben ser especificados entre paréntesis y separados por coma. Los tipos son opcionales, pero si se especifican, se debe de hacer para todos los parámetros
-		(a, b, c) -> a + b + c 		//válido
-		a, b, c -> a + b + c 		//no válido
-		(int a, int b, int c) -> a + b + c 		//válido
-		int a, int b, int c -> a + b + c 		//no válido
-		(int a, b, int c) -> a + b + c 		//no válido
+		• Más de un parámetro: Si una expresión lambda toma más de un parámetro, todos los parámetros deben ser especificados entre paréntesis y separados por coma. Los tipos son opcionales, pero si se especifican, se debe de hacer para todos los parámetros
+			(a, b, c) -> a + b + c 		//válido
+			a, b, c -> a + b + c 		//no válido
+			(int a, int b, int c) -> a + b + c 		//válido
+			int a, int b, int c -> a + b + c 		//no válido
+			(int a, b, int c) -> a + b + c 		//no válido
 
-	• Código corto con o sin valor de retorno: Si la expresión debe regresar un valor según el método abstracto de la interfaz, se pone simplemente una expresión del lado derecho del operador -> y el compilador tomará el resultado como valor de retorno. No se debe especificar sentencia return, pues el compilador ya lo hace por sí mismo y agregarla supone un error de compilación. De manera similar, si la expresión no debe regresar ningún valor, se puede simplemente agregar una expresión que no devuelva ningún valor. Por ejemplo:
-		a -> a + 2 	//válido
-		a -> return a + 2 	//no válido, no debe haber palabra return
-		(a, b) -> System.out.println(a+b)	//válido
+		• Código corto con o sin valor de retorno: Si la expresión debe regresar un valor según el método abstracto de la interfaz, se pone simplemente una expresión del lado derecho del operador -> y el compilador tomará el resultado como valor de retorno. No se debe especificar sentencia return, pues el compilador ya lo hace por sí mismo y agregarla supone un error de compilación. De manera similar, si la expresión no debe regresar ningún valor, se puede simplemente agregar una expresión que no devuelva ningún valor. Por ejemplo:
+			a -> a + 2 	//válido
+			a -> return a + 2 	//no válido, no debe haber palabra return
+			(a, b) -> System.out.println(a+b)	//válido
 
-	• Bloque de código con o sin valor de retorno: Si se tienen varias líneas de código deben escribirse dentro de llaves y terminadas en punto y coma. Si la expresión debe retornar un valor, se utiliza una sentencia return. Es igual que escribir el cuerpo de un método dentro de una clase. Por ejemplo:
-		(a) ->	{
-					int x = 2;
-					int y = x + a;
-					return y;
-				}
+		• Bloque de código con o sin valor de retorno: Si se tienen varias líneas de código deben escribirse dentro de llaves y terminadas en punto y coma. Si la expresión debe retornar un valor, se utiliza una sentencia return. Es igual que escribir el cuerpo de un método dentro de una clase. Por ejemplo:
+			(a) ->	{
+						int x = 2;
+						int y = x + a;
+						return y;
+					}
 
-		() ->	{
-					int x = 2;
-					int y = 3;
-					System.out.println(x+y);
-				}
+			() ->	{
+						int x = 2;
+						int y = 3;
+						System.out.println(x+y);
+					}
 
-La interfaz java.util.function.Predicate es una interfaz que tiene ya un método que acepta un objeto tipado con genéricos y devuelve un booleano. Esta interfaz provista por java permite que no sea necesario crear nuestra propia interfaz para expresiones lambda. La interfaz Predicate se ve de la siguiente manera:
+	La interfaz java.util.function.Predicate es una interfaz que tiene ya un método que acepta un objeto tipado con genéricos y devuelve un booleano. Esta interfaz provista por java permite que no sea necesario crear nuestra propia interfaz para expresiones lambda. La interfaz Predicate se ve de la siguiente manera:
 
-	interface Predicate<T>{
-		boolean test(T t);
-	}
+		interface Predicate<T>{
+			boolean test(T t);
+		}
 
-T es el tipo que esperamos que se maneje y que será tomado como parámetro por T
+	T es el tipo que esperamos que se maneje y que será tomado como parámetro por T
 
-ArrayList posee un método que hereda de list y que utiliza una interfaz Predicate. El método es boolean removeIf(Predicate<? super E>filter). Este médoto remueve todos los elementos de la lista que satisfagan el predicado sue se otorgue.
+	ArrayList posee un método que hereda de list y que utiliza una interfaz Predicate. El método es boolean removeIf(Predicate<? super E>filter). Este médoto remueve todos los elementos de la lista que satisfagan el predicado sue se otorgue.
