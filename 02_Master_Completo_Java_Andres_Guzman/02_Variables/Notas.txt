@@ -1,10 +1,61 @@
-1. Inroducción a las variables
+Introducción
 	• Java es fuertemente tipado.
 	• La declaración siempre contiene dos partes, el tipo de dato de la variable y su nombre. En la versión 10 ya existe el tipado dinámico con la palabra var.
 	• El tipo de variable determinar lo que la variable puede guardar.
 	• Existen dos principales categorías de tipos: primitivos y referenciados.
 	• Una nombre de variable en Java debe comenzar con cualquier letra (a-z, $, _) y puede ser seguida por cualquier numero de digitos o letras.
 
-2. Variables
+Variables
+
 	• En intelliJ es posible utilizar los atajos sout + TAB y soutv + TAB 
-	• En IntelliJ es posible agregar lenguajes naturales (idiomas) para que no se nos muestren errores ortográficos
+	• En IntelliJ es posible agregar lenguajes naturales (idiomas) para que no se nos muestren errores ortográficos. Se puede con ctrl+alt+s y abre la pestaña Settings -> editor -> proofreading -> español
+
+	• Code -> Comment in line || Comment with block
+
+	Tipos primitivos
+
+		Son tipos de datos que sólo contienen un valor como enteros, flotantes, caracteres, booleanos. Los primitivos tienen tipado débil o estático.
+
+		byte -> 8 bits
+		short -> 16 bits
+		int -> 32 bits
+		long -> 64 bits
+
+		float -> 32 bits
+		long -> 64 bits
+
+		Los boolean sólo pueden ser true o false.
+		Los char utilizan 16 bits (2 bytes). Se pueden definir con el caracter, con un número o con un código unicode: '\uXXXX'.
+
+		Caracteres de escape:
+			\b 	Retroceso
+			\n 	Nueva línea
+			\r 	Retorno de carro
+			\t 	Tabulador
+			\\ 	Diagonal invertida
+			\"  Comillas dobles 
+
+		Los flotantes se pueden escribir en notación científica: Por ejemplo double realDouble = 4.7029235E3
+
+	Constantes importantes en las clase Byte, Short, etc.
+
+		BYTES: Tamaño en bytes
+		SIZE: Tamaño en bits
+		MAX_VALUE: Valor máximo
+		MIN_VALUE: Valor mínimo
+
+	La palabra reservada var sólo puede ser utilizada en métodos. Esto tiene lógica debido a que las variables en métodos deben ser inicializadas SIEMPRE y así se le puede inferir el tipo a la variable declarada con var. La palabra var no puede ser utilizada para crear atributos en una clase.
+
+Sistemas numéricos
+
+	En las subclases de Number se tienen los métodos estáticos toBinaryString(x), toOctalString(x), etc. Los cuales pueden cambiar el sistema numérico en el que se muestra el argumento x. Cuando se imprime un número, se imprime por default en formato decimal. Para lograr imprimirlo en otro formato se utilizan estos métodos.
+
+Entrada de datos
+
+	El paquete javax.swing contiene clases que nos ayudan a mostrar ventanas en pantalla para lograr una aplicación más interactiva y amigable con el usuario. El método JOptionPane.showInputDialog ayuda a ingresar una variable desde una ventana. El método JOptionPane.showMessageDialog ayuda a mostrar un mensaje en una ventana. Ver en tema 18.
+
+	Recordar que para salir del programa se puede utilizar el método System.exit(0). También recordar que es posible llamar al main de la clase en cualquier momento.
+
+Conversión de tipos
+
+	La clase String tiene los métodos estáticos valueOf(arg), similares a los de las clases wrapper, los cúales reciben un dato primitivo y lo convierten a su representación String. También, las clases wrapper tienen el método estático toString(arg), los cuáles reciben un primitivo y lo transforman a su representación en String.

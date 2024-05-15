@@ -17,9 +17,9 @@ Operadores y estructuras de decisión
 Trabajando con métodos
 
 	• La palabra synchronized no puede aplicarse a una clase (sólo a métodos).
-	• La palabra private sí puede aplicarse a una clase si es anidada
-	• Las variables final pueden ser ocultadas en la subclase. En realidad, cualquier variable puede ser ocultada
-	• El método de instancia invocado es siempre el del objeto (polimorfismo, sobreescritura). El método estático o campo (estático o de instancia) invocado es siempre el de la variable
+	• La palabra private sí puede aplicarse a una clase si es anidada, ya que en ese caso puede ser atributo de otra clase.
+	• Las variables final pueden ser ocultadas en la subclase. En realidad, cualquier variable puede ser ocultada definiendo una nueva variable en la subclase con el mismo nombre.
+	• El método de instancia invocado es siempre el del objeto (polimorfismo, sobreescritura). El método estático o campo (estático o de instancia) invocado es siempre el del tipo de la variable
 	• El tipo de retorno siempre va inmediatamente antes del nombre del método
 
 Manejo de excepciones
@@ -29,7 +29,7 @@ Manejo de excepciones
 Trabajando con herencia
 
 	• Los modificadores abstract y static no pueden ir juntos, ya que abstract es para que el método sea sobreescrito y un método estático nunca se sobreescribe.
-	• Un método nativo no puede ser abstract
+	• Un método nativo no puede ser abstract.
 	• Cuando se implementa el método de una interfaz, éste debe ser público, igual que el de la interfaz.
 
 

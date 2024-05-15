@@ -1,6 +1,6 @@
 Anotaciones del Test 1
 
-	1. Para que aparezca el StackTrace se debe llamar a printStackTrace(). Si se imprime únicamente el objeto tipo Exception, sólo se imprime el nombre de la clase y el mensaje del Exception, pero no el StackTrace.
+	1. Para que aparezca el StackTrace se debe llamar a printStackTrace(). Si se imprime únicamente el objeto tipo Exception, sólo se imprime el nombre de la clase y el mensaje del Exception, pero no el StackTrace. Esto aplica para cuando el objeto Exception es mostrado en pantalla por el programador, pero hay que recordar que por defecto la JVM muestra el stackTrace cuando se presenta algun throwable no manejado
 
 	2. El acortamiento implícito no funciona con literales float, long o double. Por ejemplo, aunque la línea char ch = 30 funciona porque 30 cabe en el rango de char, la línea char ch = 30L no compilará porque es long.
 
